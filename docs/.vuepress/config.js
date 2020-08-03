@@ -189,7 +189,13 @@ module.exports = {
         }
       }
     ]
-  ],
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-174264353-1' // UA-00000000-0
+      }
+    ]
+  ]
   // configureWebpack: {
   //   //webpack别名 如![Image from alias](~@alias/image.png)
   //   resolve: {
@@ -198,11 +204,4 @@ module.exports = {
   //     }
   //   }
   // }
-  [
-    '@vuepress/google-analytics',
-    {
-      'ga': 'UA-174264353-1' // UA-00000000-0
-    }
-  ],
-]
 }
