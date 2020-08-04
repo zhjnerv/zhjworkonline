@@ -4,6 +4,6 @@
 set -e
 
 # 百度链接推送
-curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://zhjwork.online&token=i4p8zLkwQ0VQCU0p"
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://zhjwork.online&token=bQ3BODdB8BQiG6Lc"
 
 rm -rf urls.txt # 灭迹
