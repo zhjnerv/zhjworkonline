@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "vuepress-plugin-comment": "^0.7.3",
-    "webpack-dev-server": "^2.11.5"
+    "webpack-dev-server": "^3.11.0"
   }
 }
