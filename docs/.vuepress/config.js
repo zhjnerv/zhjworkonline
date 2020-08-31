@@ -93,7 +93,7 @@ module.exports = {
     //   color: '#11a8cd', // 爱心颜色，默认随机色
     //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
     // }],
-    [ 'vuepress-plugin-mermaidjs'],
+    ['vuepress-plugin-mermaidjs'],
     ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
       thirdparty: [ // 可选，默认 []
         {
@@ -120,7 +120,7 @@ module.exports = {
       ]
     }],
 
-    'vuepress-plugin-baidu-autopush', // 百度自动推送
+    ['vuepress-plugin-baidu-autopush'], // 百度自动推送
 
     ['one-click-copy', { // 代码块复制按钮
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
@@ -174,10 +174,10 @@ module.exports = {
           admin: ['zhjnerv'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
+          id: "<%- (window.location.origin + (frontmatter.to.path || window.location.pathname)).slice(-50) %>",//  页面的唯一标识,长度不能超过50
           title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
           labels: ["Gitalk", "Comment"], // GitHub issue 的标签
-          body:"页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>" // GitHub issue 的内容
+          body: "<%- document.title %>：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>" // GitHub issue 的内容
         }
       }
     ],
@@ -190,12 +190,12 @@ module.exports = {
         }
       }
     ]
-    [
-      '@vuepress/plugin-google-analytics',
+    [ 
+      '@vuepress/google-analytics',
       {
         'ga': 'UA-174264353-1' // UA-00000000-0
       }
-    ]
+    ]  
   ]
   // configureWebpack: {
   //   //webpack别名 如![Image from alias](~@alias/image.png)
