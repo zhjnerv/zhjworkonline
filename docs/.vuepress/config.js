@@ -10,23 +10,7 @@ module.exports = {
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc'}],// 百度统计的站点拥有者验证
     ['meta', { name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
     // ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'}], // 移动端阻止页面缩放
-    [
-      ['script', {}, `
-          // 引入谷歌,不需要可删除这段
-          var hm1 = document.createElement("script");
-          hm1.src = "https://www.googletagmanager.com/gtag/js?id=UA-174264353-1";
-          var s1 = document.getElementsByTagName("script")[0]; 
-          s1.parentNode.insertBefore(hm1, s1);
-          })();
-
-          // 谷歌加载,不需要可删除
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-174264353-1');
-      `]
-  ],
+    
   ],
   markdown: {
     lineNumbers: true // 代码行号
@@ -109,7 +93,7 @@ module.exports = {
     //   color: '#11a8cd', // 爱心颜色，默认随机色
     //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
     // }],
-    ['vuepress-plugin-mermaidjs'],
+    [ 'vuepress-plugin-mermaidjs'],
     ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
       thirdparty: [ // 可选，默认 []
         {
@@ -207,7 +191,7 @@ module.exports = {
       }
     ]
     [
-      '@vuepress/google-analytics',
+      '@vuepress/plugin-google-analytics',
       {
         'ga': 'UA-174264353-1' // UA-00000000-0
       }
