@@ -15,7 +15,16 @@ module.exports = {
                 " window.dataLayer = window.dataLayer || [];\
                 function gtag(){dataLayer.push(arguments);}\
                 gtag('js', new Date());\
-                gtag('config', 'UA-174264353-1');"]
+                gtag('config', 'UA-174264353-1');"
+              ],
+    ['script', {}, `
+              var _hmt = _hmt || [];
+              (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?dfc615edabeab5d88e99daad7d7711d0";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+              `]
   ],
   markdown: {
     lineNumbers: true // 代码行号
