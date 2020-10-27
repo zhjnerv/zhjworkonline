@@ -116,12 +116,9 @@ module.exports = {
           behindUrl: '' // 搜索链接的后面部分，可选，默认 ''
         },
         {
-          title: '在Runoob中搜索',
-          frontUrl: 'https://www.runoob.com/?s=',
-        },
-        {
-          title: '在Vue API中搜索',
-          frontUrl: 'https://cn.vuejs.org/v2/api/#',
+          title: '查询专利发文状态',
+          frontUrl: 'http://cpquery.sipo.gov.cn/txnrss_list.do?q:a=',
+          behindUrl:'&q:b=CN'
         },
         {
           title: '在Bing中搜索',
