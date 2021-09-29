@@ -117,7 +117,7 @@ module.exports = {
         },
         {
           title: '查询专利发文状态',
-          frontUrl: 'http://cpquery.sipo.gov.cn/txnrss_list.do?q:a=',
+          frontUrl: 'http://cpquery.cnipa.gov.cn/txnrss_list.do?q:a=',
           behindUrl:'&q:b=CN'
         },
         {
