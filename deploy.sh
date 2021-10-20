@@ -10,7 +10,7 @@ npm run build
 cd docs/.vuepress/dist
 
 # deploy to github
-echo 'b.zhjwork.online' > CNAME
+echo 'www.zhjwork.online\zhjwork.online' > CNAME
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:zhjnerv/zhjworkonline.git
@@ -26,15 +26,15 @@ git commit -m "${msg}"
 git push -f $githubUrl master:gh-pages # 推送到github
 
 # deploy to coding
-echo 'www.zhjwork.online\zhjwork.online' > CNAME  # 自定义域名
-if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true；$CODING_TOKEN来自于github仓库`Settings/Secrets`设置的私密环境变量
-  codingUrl=git@e.coding.net:zhjwork/zhjwork/zhjwork.git
-else
+#echo 'www.zhjwork.online\zhjwork.online' > CNAME  # 自定义域名
+#if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true；$CODING_TOKEN来自于github仓库`Settings/Secrets`设置的私密环境变量
+#  codingUrl=git@e.coding.net:zhjwork/zhjwork/zhjwork.git
+#else
   codingUrl=https://HeupemlnXU:${CODING_TOKEN}@e.coding.net/zhjwork/zhjwork/zhjwork.git
-fi
-git add -A
-git commit -m "${msg}"
-git push -f $codingUrl master # 推送到coding
+#fi
+#git add -A
+#git commit -m "${msg}"
+#git push -f $codingUrl master # 推送到coding
 
 cd - # 退回开始所在目录
 rm -rf docs/.vuepress/dist
