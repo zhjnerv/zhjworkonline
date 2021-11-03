@@ -14,7 +14,7 @@ tags:
 
 > ## Excerpt
 > 第一步，下载Alook浏览器 官方下载地址
-> 第二步，打开 m.jd.com 这个网站
+> 第二步，打开 [m.jd.com](https://m.jd.com) 这个网站
 > 然后登录你的京东账号，然后按下面的步骤获取京东cookie
 
 
@@ -26,7 +26,7 @@ tags:
 ![](https://p.sda1.dev/3/b7d683fe16634cce0d980c79cffcd426/e452bfae1a10b68e89b96.jpg)
 
 
-## 第二步，打开 m.jd.com 这个网站，如果跳出跳转京东APP的提示则选择**否**
+## 第二步，打开 [m.jd.com](https://m.jd.com) 这个网站，如果跳出跳转京东APP的提示则选择**否**
 ![](https://p.sda1.dev/3/fc8e3548585a1bf1d59c91bc159487a0/09aa44a5d63e086e435d6.jpg)
 ## 第三步，网页右下角点击登录
 ![](https://p.sda1.dev/3/34f378a15c0c69bb6a6a68078da303ee/60e3f735363e9eb5d0596.jpg)
