@@ -24,9 +24,9 @@
     "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-thirdparty-search": "^1.0.2",
     "vuepress-plugin-zooming": "^1.1.7",
-    "vuepress-theme-vdoing": "^1.8.3",
-    "webpack": "^4.44.1",
-    "webpack-dev-server": "^3.11.0",
+    "vuepress-theme-vdoing": "^1.9.4",
+    "webpack": "^5.66.0",
+    "webpack-dev-server": "^4.7.3",
     "yamljs": "^0.3.0"
   },
   "dependencies": {
