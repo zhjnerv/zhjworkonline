@@ -30,6 +30,7 @@
     "yamljs": "^0.3.0"
   },
   "dependencies": {
+    "vue-loader": "^15.9.8",
     "vuepress-plugin-comment": "^0.7.3"
   }
 }
