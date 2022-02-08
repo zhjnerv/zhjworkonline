@@ -14,10 +14,7 @@ tags:
 
 # [手动抓取京东Cookie教程 ](https://zhjwork.online/pages/6982e6/)
 
-# 全新更新，无需在手动获取cookies，直接通过一下网页一键登录。
 
-
-# 👉 [jd.zhjwork.online:5710](http://jd.zhjwork.online:5710)
 
 ---
 
