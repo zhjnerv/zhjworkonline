@@ -23,7 +23,8 @@ tags:
 > 第二步，打开 [m.jd.com](https://m.jd.com) 这个网站
 > 然后登录你的京东账号，然后按下面的步骤获取京东cookie
 
-
+# 可以尝试在这里直接短信登录 风险自担！！！
+[短信登录](http://jd.zhjwork.online:5712/jd/static/)
 
 
 
