@@ -1,0 +1,33 @@
+proxies:
+  - {name: 🇺🇸 洛杉矶MC, server: v2.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: v2.520guge.com}}}
+  - {name: 🇺🇸 圣何塞, server: sj1.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: sj1.520guge.com}}}
+  - {name: 🇺🇸 达拉斯, server: s1.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s1.520guge.com}}}
+  - {name: 🇺🇸 洛杉矶MC 2, server: s2.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s2.520guge.com}}}
+  - {name: 🇺🇸 洛杉矶Psychz, server: s3.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s3.520guge.com}}}
+  - {name: 🇺🇸 洛杉矶colocrossing, server: s4.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s4.520guge.com}}}
+  - {name: 🇺🇸 拉斯维加斯, server: s9.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s9.520guge.com}}}
+  - {name: 🇺🇸 洛杉矶Psychz 2, server: s12.520guge.com, port: 443, type: vmess, uuid: cf1819c8-e530-4626-aec0-87ac04200385, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s12.520guge.com}}}
+  - name: us 祝继华vless-tcp
+    type: vless
+    server: 204.44.93.246
+    port: 443
+    uuid: fc7a4ae8-f706-4a36-af56-3f7445aa1234
+    network: tcp
+    servername: yueyue.zhjwork.online # AKA SNI
+    flow: xtls-rprx-direct # xtls-rprx-origin  # enable XTLS
+    skip-cert-verify: true
+  - name: us 祝继华vless-xtls
+    type: vless
+    server: 204.44.93.246
+    port: 443
+    uuid: fc7a4ae8-f706-4a36-af56-3f7445aa1234
+    network: tcp
+    servername: yueyue.zhjwork.online # AKA SNI
+    flow: xtls-rprx-direct # xtls-rprx-origin  # enable XTLS
+    skip-cert-verify: true
+  - name: us 祝继华trojan
+    type: trojan
+    server: 204.44.93.246
+    port: 443
+    password: ec982ce2-91bb-4ea4-9945-73c57f858f17
+
