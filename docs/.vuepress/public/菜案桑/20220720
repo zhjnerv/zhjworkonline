@@ -2,24 +2,11 @@
 #如果你有自己的配置，也可以自己替换进去，但首先你应该清楚需要动哪里
 mixed-port: 7890
 allow-lan: true
+bind-address: "*"
 mode: rule
 log-level: info
-ipv6: false
-dns:
-  enable: true
-  listen: 0.0.0.0:53
-  ipv6: false
-  default-nameserver:
-    - 8.8.8.8
-    - 223.5.5.5
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  fallback:
-    - 114.114.114.114
-    - 223.5.5.5
+ipv6: true
+
 
 #锚点
 p: &p
@@ -50,7 +37,7 @@ u: &u
     - test
     - openitsub_ml
     - myclash
-    - 本地连接
+    - 零碎连接
     - mylocal
     - test5
     - test6
@@ -77,6 +64,8 @@ pr: &pr
     - 全部
     - 直连
     - 拦截/阻断
+    - 自动回落
+    - 零碎的连接
 
 proxy-providers:
 
@@ -95,10 +84,10 @@ proxy-providers:
 
   myclash:
     <<: *p
-    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/mylinks"
+    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/20220720"
     path: ./proxy_providers/20220720.yaml
 
-  本地连接:
+  零碎连接:
     <<: *p
     url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/somelinks"
     path: ./proxy_providers/somelinks.yaml
@@ -219,11 +208,16 @@ proxy-groups:
   - name: 微博定位
     <<: *pr
     
+  - name: 零碎的连接
+    type: select
+    use:
+      - 零碎连接
+      - mylocal
   - name: 我的所有
     type: select
     use:
       - myclash
-      - 本地连接
+      - 零碎连接
       - mylocal
 
   - name: 国内
@@ -285,6 +279,13 @@ proxy-groups:
   - name: 自动选择
     <<: *u
     type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    tolerance: 10
+    
+  - name: 自动回落
+    <<: *u
+    type: fallback
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     tolerance: 10
@@ -396,6 +397,9 @@ rule-providers:
     path: ./rule_providers/line.yaml
 
 rules:
+  - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
+  - DOMAIN-SUFFIX,anydesk.com,💌 特殊服务
+  - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - RULE-SET,GV,Google Voice
   - RULE-SET,YouTube,YouTube
   - RULE-SET,YouTubeMusic,YouTube
@@ -415,7 +419,4 @@ rules:
   - RULE-SET,ehentai,ehentai
   - DOMAIN,api.weibo.cn,微博定位
   - GEOIP,CN,国内
-  - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
-  - DOMAIN-SUFFIX,anydesk.com,💌 特殊服务
-  - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - MATCH,其他
