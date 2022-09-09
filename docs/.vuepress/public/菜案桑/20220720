@@ -102,8 +102,8 @@ proxy-providers:
 
   myclash:
     <<: *d
-    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/20220720"
-    path: ./proxy_providers/20220720.yaml
+    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/mylinks"
+    path: ./proxy_providers/mylinks.yaml
 
   零碎连接:
     <<: *d
