@@ -41,7 +41,6 @@ proxies:
     tls: true
     ws-opts:
       path: "/lmkBE8V2/"
-
   - name: us rackws-M
     type: vmess
     server: panb.qqdk2019.ml
