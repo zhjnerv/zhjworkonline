@@ -37,11 +37,10 @@ proxies:
     port: 8443
     uuid: 5d0bf466-2d89-11ed-9ac6-00163c78bec9
     network: ws
-    servername: panc.qqdk2019.ml
     tls: true
     ws-opts:
       path: "/lmkBE8V2/"
-  - name: us rackws-M
+  - name: rackws-M
     type: vmess
     server: panb.qqdk2019.ml
     port: 2096
