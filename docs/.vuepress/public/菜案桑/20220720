@@ -617,7 +617,9 @@ proxy-groups:
     url: https://i.ytimg.com/generate_204
     interval: 300
     tolerance: 50
-    <<: *all
+    use:
+      - openitsub_ml
+      - dy01
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -630,17 +632,9 @@ proxy-groups:
     url: https://i.ytimg.com/generate_204
     interval: 1320
     tolerance: 150
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
+    use:
+      - dy01
+      - openitsub_ml
 
 
 
@@ -709,6 +703,8 @@ proxy-groups:
     proxies:
       - DIRECT
       - 我的所有
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
   - name: Global
     type: select
     proxies:
@@ -719,7 +715,6 @@ proxy-groups:
       - 零碎连接
       - 我的所有
       - ♻️ 自动选择
-      - 我的所有
   
 
 #分割线，下面是分流规则
