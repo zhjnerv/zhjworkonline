@@ -417,10 +417,13 @@ proxy-groups:
       - 🚀 节点选择
       - 🔑 手动选择
       - 🔑 手动选择②
-  - name: 零碎的连接
+  - name: 零碎连接
     type: select
     use:
       - 零碎连接
+  - name: mylocal
+    type: select
+    use:
       - mylocal
   - name: 我的所有
     type: select
@@ -428,6 +431,13 @@ proxy-groups:
       - myclash
       - 零碎连接
       - mylocal
+  - name: myclash
+    type: url-test
+    url: https://i.ytimg.com/generate_204
+    interval: 1320
+    tolerance: 150
+    use:
+      - myclash
   - name: ☎️ 电报消息
     type: select
     proxies:
@@ -706,7 +716,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - 零碎的连接
+      - 零碎连接
       - 我的所有
       - ♻️ 自动选择
   
