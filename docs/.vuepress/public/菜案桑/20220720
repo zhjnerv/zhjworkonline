@@ -274,7 +274,7 @@ proxy-providers:
     url: "https://sub.danhu.ml/clash"
     path: ./proxy_providers/dy1.yaml #生成名为'dy1'的配置文件
     # 将 下面一行的url 替换为你的Clash机场订阅链接
-    url: #你的订阅链接（比如https://sub.xxxx/clash)
+    # url: #你的订阅链接（比如https://sub.xxxx/clash)
 
   dy02:
     <<: *d
