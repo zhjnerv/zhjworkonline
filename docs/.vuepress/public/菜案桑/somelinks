@@ -1,4 +1,15 @@
 hysteria://149.57.216.189:40938?protocol=wechat-video&auth=zhj2virmach&peer=wechat.com&insecure=1&upmbps=12&downmbps=62&alpn=h3#US-hysteria
+vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&flow=xtls-rprx-direct&security=xtls&sni=panf.qqdk2019.ml&type=tcp&headerType=none&host=panf.qqdk2019.ml#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_XTLS%2FTLS-direct_TCP
+vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&flow=xtls-rprx-splice&security=xtls&sni=panf.qqdk2019.ml&type=tcp&headerType=none&host=panf.qqdk2019.ml#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_XTLS%2FTLS-splice_TCP
+vless://515543e3-d742-4f18-82c5-355ad7eab3c6@panf.qqdk2019.ml:443?encryption=none&security=tls&sni=panf.qqdk2019.ml&type=ws&host=panf.qqdk2019.ml&path=%2Foneiws#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_WS
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInVzIOelnee7p+WNjnZtZXNzX3dzIiwNCiAgImFkZCI6ICJwYW5mLnFxZGsyMDE5Lm1sIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjUxNTU0M2UzLWQ3NDItNGYxOC04MmM1LTM1NWFkN2VhYjNjNiIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAicGFuZi5xcWRrMjAxOS5tbCIsDQogICJwYXRoIjogIi9vbmVpdndzIiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogInBhbmYucXFkazIwMTkubWwiLA0KICAiYWxwbiI6ICIiDQp9
+vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&security=tls&sni=panf.qqdk2019.ml&alpn=h2&type=grpc&serviceName=oneigrpc&mode=gun#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_gRPC
+trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=http%2F1.1&type=tcp&headerType=none#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8ETrojan
+trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=h2&type=grpc&serviceName=oneitrojangrpc&mode=gun#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8Etrojan_gRPC
+
+------------------------------
+
+
 vmess://eyJ2IjoiMiIsInBzIjoiQnV5Vk0gfCBTaGFyZUNlbnRyZVBybyIsImFkZCI6ImNmLm5haXhpaS50b3AiLCJwb3J0IjoiNDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjVlNmY3ZDFmLWFlMjItNDhiNC05ZDczLTg4MzE0ZGU0ZDRhNyIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvcXZGdmZBZkh2eiIsImhvc3QiOiJidm0ubmFpeGlpLnRvcCIsInRscyI6InRscyJ9
 
 vmess://eyJ2IjoiMiIsInBzIjoiQnV5Vk0gfCBTaGFyZUNlbnRyZVBybyIsImFkZCI6ImNmLm5haXhpaS50b3AiLCJwb3J0IjoiNDQzIiwidHlwZSI6Im5vbmUiLCJpZCI6IjVlNmY3ZDFmLWFlMjItNDhiNC05ZDczLTg4MzE0ZGU0ZDRhNyIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvcXZGdmZBZkh2eiIsImhvc3QiOiJidm0ubmFpeGlpLnRvcCIsInRscyI6InRscyJ9
@@ -7,15 +18,6 @@ vmess://eyJ2IjoiMiIsInBzIjoiU0dBV1MiLCJhZGQiOiJjZi5zY3NldmVycy5jZiIsInBvcnQiOiI0
 
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIuS4nOS6rOWwj+m4oSIsDQogICJhZGQiOiAiMTAzLjE3My4xNzguMTEwIiwNCiAgInBvcnQiOiAiNDA0NDMiLA0KICAiaWQiOiAiQjI1NjA1NDgtNUY3NS0zMDE1LTgyRjktMUMzREY4NjI4MDA5IiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ0Y3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAibm9kZS5uYXBzdGVybmV0di5jb20iLA0KICAicGF0aCI6ICIiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIg0KfQ==
 
-<<<<<<< HEAD
-vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&flow=xtls-rprx-direct&security=xtls&sni=panf.qqdk2019.ml&type=tcp&headerType=none&host=panf.qqdk2019.ml#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_XTLS%2FTLS-direct_TCP
-vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&flow=xtls-rprx-splice&security=xtls&sni=panf.qqdk2019.ml&type=tcp&headerType=none&host=panf.qqdk2019.ml#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_XTLS%2FTLS-splice_TCP
-vless://515543e3-d742-4f18-82c5-355ad7eab3c6@panf.qqdk2019.ml:443?encryption=none&security=tls&sni=panf.qqdk2019.ml&type=ws&host=panf.qqdk2019.ml&path=%2Foneiws#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_WS
-vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInVzIOelnee7p+WNjnZtZXNzX3dzIiwNCiAgImFkZCI6ICJwYW5mLnFxZGsyMDE5Lm1sIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjUxNTU0M2UzLWQ3NDItNGYxOC04MmM1LTM1NWFkN2VhYjNjNiIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAicGFuZi5xcWRrMjAxOS5tbCIsDQogICJwYXRoIjogIi9vbmVpdndzIiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogInBhbmYucXFkazIwMTkubWwiLA0KICAiYWxwbiI6ICIiDQp9
-vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&security=tls&sni=panf.qqdk2019.ml&alpn=h2&type=grpc&serviceName=oneigrpc&mode=gun#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_gRPC
-trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=http%2F1.1&type=tcp&headerType=none#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8ETrojan
-trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=h2&type=grpc&serviceName=oneitrojangrpc&mode=gun#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8Etrojan_gRPC
-=======
 vmess://eyJhZGQiOiJ6ZmQtbW9ibGUuZ2F0a25xaC5jbiIsImFpZCI6IjAiLCJob3N0IjoiIiwiaWQiOiIzMWUxYjcwOC05ZTFmLTNjZDItOTkyOC0zOWI5MDk5NTlkNzkiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE2MTExIiwicHMiOiLmoIflh4Z86aaZ5rivMDHop6PplIF8eDEuMOWAjeeOhyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJ6ZmQtbW9ibGUuZ2F0a25xaC5jbiIsImFpZCI6IjAiLCJob3N0IjoiIiwiaWQiOiIzMWUxYjcwOC05ZTFmLTNjZDItOTkyOC0zOWI5MDk5NTlkNzkiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE2MTEyIiwicHMiOiLmoIflh4Z86aaZ5rivMDLop6PplIF8eDEuMOWAjeeOhyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJ6ZmQtbW9ibGUuZ2F0a25xaC5jbiIsImFpZCI6IjAiLCJob3N0IjoiIiwiaWQiOiIzMWUxYjcwOC05ZTFmLTNjZDItOTkyOC0zOWI5MDk5NTlkNzkiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE2MTEzIiwicHMiOiLmoIflh4Z86aaZ5rivMDPop6PplIF8eDEuMOWAjeeOhyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
@@ -29,4 +31,4 @@ vmess://eyJhZGQiOiJ6ZmQtbW9ibGUuZ2F0a25xaC5jbiIsImFpZCI6IjAiLCJob3N0IjoiIiwiaWQi
 vmess://eyJhZGQiOiJ6ZmQtbW9ibGUuZ2F0a25xaC5jbiIsImFpZCI6IjAiLCJob3N0IjoiIiwiaWQiOiIzMWUxYjcwOC05ZTFmLTNjZDItOTkyOC0zOWI5MDk5NTlkNzkiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE2MTI5IiwicHMiOiLmoIflh4Z85Y+w5rm+MDHliqjmgIHljp/nlJ98eDEuMOWAjeeOhyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJ6ZmQuaW5rIiwiYWlkIjoiMCIsImhvc3QiOiIiLCJpZCI6IjMxZTFiNzA4LTllMWYtM2NkMi05OTI4LTM5YjkwOTk1OWQ3OSIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiMTAwODYiLCJwcyI6IuacgOaWsOWfn+WQjTo1OHpmZGFvLmNvbSIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
 vmess://eyJhZGQiOiJ6ZmQtbW9ibGUuZ2F0a25xaC5jbiIsImFpZCI6IjAiLCJob3N0IjoiIiwiaWQiOiIzMWUxYjcwOC05ZTFmLTNjZDItOTkyOC0zOWI5MDk5NTlkNzkiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiIiwicG9ydCI6IjE2MTMwIiwicHMiOiLmoIflh4Z85Y+w5rm+MDLliqjmgIHljp/nlJ98eDEuMOWAjeeOhyIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
->>>>>>> 8843d980e81863acb81bec4a9435f8c557718ef3
+
