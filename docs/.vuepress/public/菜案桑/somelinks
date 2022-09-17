@@ -7,6 +7,14 @@ vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&s
 trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=http%2F1.1&type=tcp&headerType=none#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8ETrojan
 trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=h2&type=grpc&serviceName=oneitrojangrpc&mode=gun#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8Etrojan_gRPC
 
+trojan://6176a12c-d694-4eed-4c03-dfd78bf07688@107.150.7.45:443?flow=xtls-rprx-direct&security=xtls&sni=pand.qqdk2019.ml&type=tcp&headerType=none&host=pand.qqdk2019.ml#US%20pacific2_Trojan_TLS-direct_TCP
+trojan://6176a12c-d694-4eed-4c03-dfd78bf07688@107.150.7.45:443?flow=xtls-rprx-splice&security=xtls&sni=pand.qqdk2019.ml&type=tcp&headerType=none&host=pand.qqdk2019.ml#US%20pacific2_Trojan_TLS-splice_TCP
+vless://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@pand.qqdk2019.ml:443?encryption=none&security=tls&sni=pand.qqdk2019.ml&type=ws&host=pand.qqdk2019.ml&path=%2Fhpqrws#US%20pacific2_VLESS_WS
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlVTIHBhY2lmaWMyX3ZtZXNzX3dzIiwNCiAgImFkZCI6ICJwYW5kLnFxZGsyMDE5Lm1sIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImEzZTM1OWZjLTlmYjMtMGJiNi1iNzIzLTg5YjgxMDFhYmEwYSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAicGFuZC5xcWRrMjAxOS5tbCIsDQogICJwYXRoIjogIi9ocHFydndzIiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogInBhbmQucXFkazIwMTkubWwiLA0KICAiYWxwbiI6ICIiDQp9
+vless://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?encryption=none&security=tls&sni=pand.qqdk2019.ml&alpn=h2&type=grpc&serviceName=hpqrgrpc&mode=gun#US%20pacific2_VLESS_gRPC
+trojan://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?security=tls&sni=pand.qqdk2019.ml&alpn=http%2F1.1&type=tcp&headerType=none#US%20pacific2_Trojan
+trojan://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?security=tls&sni=pand.qqdk2019.ml&alpn=h2&type=grpc&serviceName=hpqrtrojangrpc&mode=gun#US%20pacific2_trojan_gRPC
+
 ------------------------------
 
 
