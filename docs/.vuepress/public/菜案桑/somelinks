@@ -7,13 +7,9 @@ vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&s
 trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=http%2F1.1&type=tcp&headerType=none#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8ETrojan
 trojan://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?security=tls&sni=panf.qqdk2019.ml&alpn=h2&type=grpc&serviceName=oneitrojangrpc&mode=gun#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8Etrojan_gRPC
 
-trojan://6176a12c-d694-4eed-4c03-dfd78bf07688@107.150.7.45:443?flow=xtls-rprx-direct&security=xtls&sni=pand.qqdk2019.ml&type=tcp&headerType=none&host=pand.qqdk2019.ml#US%20pacific2_Trojan_TLS-direct_TCP
-trojan://6176a12c-d694-4eed-4c03-dfd78bf07688@107.150.7.45:443?flow=xtls-rprx-splice&security=xtls&sni=pand.qqdk2019.ml&type=tcp&headerType=none&host=pand.qqdk2019.ml#US%20pacific2_Trojan_TLS-splice_TCP
-vless://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@pand.qqdk2019.ml:443?encryption=none&security=tls&sni=pand.qqdk2019.ml&type=ws&host=pand.qqdk2019.ml&path=%2Fhpqrws#US%20pacific2_VLESS_WS
-vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlVTIHBhY2lmaWMyX3ZtZXNzX3dzIiwNCiAgImFkZCI6ICJwYW5kLnFxZGsyMDE5Lm1sIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogImEzZTM1OWZjLTlmYjMtMGJiNi1iNzIzLTg5YjgxMDFhYmEwYSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAicGFuZC5xcWRrMjAxOS5tbCIsDQogICJwYXRoIjogIi9ocHFydndzIiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogInBhbmQucXFkazIwMTkubWwiLA0KICAiYWxwbiI6ICIiDQp9
-vless://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?encryption=none&security=tls&sni=pand.qqdk2019.ml&alpn=h2&type=grpc&serviceName=hpqrgrpc&mode=gun#US%20pacific2_VLESS_gRPC
-trojan://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?security=tls&sni=pand.qqdk2019.ml&alpn=http%2F1.1&type=tcp&headerType=none#US%20pacific2_Trojan
-trojan://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?security=tls&sni=pand.qqdk2019.ml&alpn=h2&type=grpc&serviceName=hpqrtrojangrpc&mode=gun#US%20pacific2_trojan_gRPC
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlVTIHBhbmQucXFkazIwMTkubWw6MjA1MyIsDQogICJhZGQiOiAicGFuZC5xcWRrMjAxOS5tbCIsDQogICJwb3J0IjogIjIwNTMiLA0KICAiaWQiOiAiNDJjYTRhM2ItMDcyNy00NDQ3LThlNzktMDM2YThmNDgyYWRhIiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ3cyIsDQogICJ0eXBlIjogIm5vbmUiLA0KICAiaG9zdCI6ICIiLA0KICAicGF0aCI6ICIvQVJ5WFlVYXMvIiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogIiIsDQogICJhbHBuIjogIiINCn0=
+vless://ba365180-70ab-4624-8113-7351b6adc5f2@pane.qqdk2019.ml:2083?encryption=none&security=tls&type=ws&path=%2FiZ0ICdnk%2F#US%20pane.qqdk2019.ml%3A2083
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlVTIDEwNy4xNTAuNy40NTozNTk5NSIsDQogICJhZGQiOiAiMTA3LjE1MC43LjQ1IiwNCiAgInBvcnQiOiAiMzU5OTUiLA0KICAiaWQiOiAiZmZmYTcxZmUtMTUyYy00Y2QxLTkxN2EtNGVkMDhkZTEzOThhIiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJhdXRvIiwNCiAgIm5ldCI6ICJ0Y3AiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiIiwNCiAgInRscyI6ICIiLA0KICAic25pIjogIiIsDQogICJhbHBuIjogIiINCn0=
 
 ------------------------------
 
@@ -21,3 +17,6 @@ trojan://a3e359fc-9fb3-0bb6-b723-89b8101aba0a@107.150.7.45:443?security=tls&sni=
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIuWWgOWxsSIsDQogICJhZGQiOiAia3MuanNoc3h4eHkudG9wIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjgwNmY3NDIyLTVjOWUtNDMxNC1iMjY2LWJmYTg1NmE0NjI3YiIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAia3MuanNoc3h4eHkudG9wIiwNCiAgInBhdGgiOiAiL2h1YWd2d3MiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAia3MuanNoc3h4eHkudG9wIiwNCiAgImFscG4iOiAiIg0KfQ==
 
 trojan://91c063b2-4453-4100-94f7-6e012e4c54c1@usgia.vpot.site:443?tfo=1#%5BTrojan%5D%20%E7%BE%8E%E5%9B%BD%20CN2-GIA%20%7C%204x
+
+socks://S2hDbFRnYWRtOmE4V2oxSlFiN0NKczd1bnJANTkuNTYuNzcuMTQ3OjExMDAy
+socks://dWlvVWxsZGVzOjVXRTRRQ1ozN2pPZHloNkRAMTE3LjI3LjI0Mi4yMTg6ODQ0NQ

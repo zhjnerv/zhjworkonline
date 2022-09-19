@@ -37,7 +37,6 @@ proxies:
     port: 8443
     uuid: 5d0bf466-2d89-11ed-9ac6-00163c78bec9
     network: ws
-    tls: true
     ws-opts:
       path: "/lmkBE8V2/"
   - name: rackws-M
@@ -47,7 +46,6 @@ proxies:
     uuid: 46d1be20-2d88-11ed-9e7a-00163c78bec9
     alterId: 0
     cipher: auto
-    tls: true
     network: ws
     ws-opts:
       path: /rAc6f095/
