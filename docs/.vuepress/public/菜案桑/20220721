@@ -463,6 +463,13 @@ proxy-groups:
       - myclash
       - 零碎连接
       - mylocal
+  - name: 💌 特殊服务
+    type: select
+    proxies:
+      - DIRECT
+      - 我的所有
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -503,7 +510,9 @@ proxy-groups:
     url: https://i.ytimg.com/generate_204
     interval: 1300
     tolerance: 150
-    <<: *all
+    use:
+      - openitsub_ml
+      - 蛋黄
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
@@ -512,7 +521,6 @@ proxy-groups:
     use:
       - 蛋黄
       - openitsub_ml
-
 
 
 #分割线，下面是节点按地区分组并自动测延迟
@@ -530,13 +538,6 @@ proxy-groups:
     t: &t
     <<: *all
     filter: ^(?!.*(?:🇭🇰|🇺🇸|香港|(?i)hk|(?i)hongkong|美国|(?i)US)).*
-  - name: 💌 特殊服务
-    type: select
-    proxies:
-      - DIRECT
-      - 我的所有
-      - 🛠️ 故障转移
-      - ♻️ 自动选择
   - name: Global
     type: select
     proxies:
