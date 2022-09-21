@@ -228,8 +228,8 @@ t: &t  #节点测试参数
 all: &all #所有节点的合集
   use:
     - openitsub_ml
-    - myclash
-    - 零碎连接
+    - mylinks
+    - somelinks
     - mylocal
     - 蛋黄
     - dy02
@@ -256,12 +256,12 @@ proxy-providers:
     url: "https://vercel.daycat.space/Clash.yaml"
     path: ./proxy_providers/openitsub_ml.yaml
 
-  myclash:
+  mylinks:
     <<: *d
     url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/mylinks"
     path: ./proxy_providers/mylinks.yaml
 
-  零碎连接:
+  somelinks:
     <<: *d
     url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/somelinks"
     path: ./proxy_providers/somelinks.yaml
@@ -399,10 +399,10 @@ proxy-groups:
       - 🚀 节点选择
       - 🔑 手动选择
       - 🔑 手动选择②
-  - name: 零碎连接
+  - name: somelinks
     type: select
     use:
-      - 零碎连接
+      - somelinks
   - name: mylocal
     type: select
     use:
@@ -410,16 +410,16 @@ proxy-groups:
   - name: 我的所有
     type: select
     use:
-      - myclash
-      - 零碎连接
+      - mylinks
+      - somelinks
       - mylocal
-  - name: myclash
+  - name: mylinks
     type: url-test
     url: https://i.ytimg.com/generate_204
     interval: 1320
     tolerance: 150
     use:
-      - myclash
+      - mylinks
   - name: ☎️ 电报消息
     type: select
     proxies:
@@ -431,8 +431,8 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - myclash
-      - 零碎连接
+      - mylinks
+      - somelinks
       - mylocal
       - 我的所有
   - name: 🎬 YouTube
@@ -446,8 +446,8 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - myclash
-      - 零碎连接
+      - mylinks
+      - somelinks
       - mylocal
       - 我的所有
   - name: ❓ 谷歌服务
@@ -460,8 +460,8 @@ proxy-groups:
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - 我的所有
-      - myclash
-      - 零碎连接
+      - mylinks
+      - somelinks
       - mylocal
   - name: 💌 特殊服务
     type: select
@@ -545,7 +545,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - 零碎连接
+      - somelinks
       - 我的所有
       - ♻️ 自动选择
   
