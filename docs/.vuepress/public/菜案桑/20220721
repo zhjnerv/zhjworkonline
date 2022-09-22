@@ -364,7 +364,6 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - 🇭🇰 香港节点
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -382,7 +381,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 🇭🇰 香港节点
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -424,7 +422,6 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - 🇭🇰 香港节点
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -439,7 +436,6 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
-      - 🇭🇰 香港节点
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -453,7 +449,6 @@ proxy-groups:
   - name: ❓ 谷歌服务
     type: select
     proxies:
-      - 🇭🇰 香港节点
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -524,11 +519,6 @@ proxy-groups:
 
 
 #分割线，下面是节点按地区分组并自动测延迟
-  - name: 🇭🇰 香港节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 港|🇭🇰|(?i)HK|(?i)Hong
   - name: 🇺🇸 美国节点
     type: select
     <<: *all
@@ -537,7 +527,7 @@ proxy-groups:
     type: url-test
     t: &t
     <<: *all
-    filter: ^(?!.*(?:🇭🇰|🇺🇸|香港|(?i)hk|(?i)hongkong|美国|(?i)US)).*
+    filter: ^(?!.*(?:|🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
     proxies:
