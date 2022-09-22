@@ -401,6 +401,13 @@ proxy-groups:
     type: select
     use:
       - somelinks
+  - name: mylinks
+    type: url-test
+    url: https://i.ytimg.com/generate_204
+    interval: 1320
+    tolerance: 150
+    use:
+      - mylinks
   - name: mylocal
     type: select
     use:
@@ -411,13 +418,6 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
-  - name: mylinks
-    type: url-test
-    url: https://i.ytimg.com/generate_204
-    interval: 1320
-    tolerance: 150
-    use:
-      - mylinks
   - name: ☎️ 电报消息
     type: select
     proxies:
