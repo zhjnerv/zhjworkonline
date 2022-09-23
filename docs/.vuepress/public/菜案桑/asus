@@ -370,7 +370,7 @@ proxy-groups:
       - 蛋黄的连接
 
   - name: 其它地区
-    filter: "^(?!.*(?:|🇺🇸|美国|US)).*"
+    filter: "^(?!.*(?:🇺🇸|美国|US)).*"
     type: select
     use:
       - openitsub_ml

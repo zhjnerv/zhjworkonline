@@ -527,7 +527,7 @@ proxy-groups:
     type: url-test
     t: &t
     <<: *all
-    filter: ^(?!.*(?:|🇺🇸|美国|(?i)US)).*
+    filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
     proxies:
