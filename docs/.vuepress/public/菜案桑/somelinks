@@ -1,4 +1,5 @@
 hysteria://149.57.216.189:40938?protocol=wechat-video&auth=zhj2virmach&peer=wechat.com&insecure=1&upmbps=12&downmbps=62&alpn=h3#US-hysteria
+hysteria://47.87.171.200:64146?protocol=udp&auth=zhj2viramch&peer=www.bing.com&insecure=true&upmbps=40&downmbps=200&alpn=h3#US-hysteria-virmach
 vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&flow=xtls-rprx-direct&security=xtls&sni=panf.qqdk2019.ml&type=tcp&headerType=none&host=panf.qqdk2019.ml#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_XTLS%2FTLS-direct_TCP
 vless://515543e3-d742-4f18-82c5-355ad7eab3c6@204.44.93.246:443?encryption=none&flow=xtls-rprx-splice&security=xtls&sni=panf.qqdk2019.ml&type=tcp&headerType=none&host=panf.qqdk2019.ml#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_XTLS%2FTLS-splice_TCP
 vless://515543e3-d742-4f18-82c5-355ad7eab3c6@panf.qqdk2019.ml:443?encryption=none&security=tls&sni=panf.qqdk2019.ml&type=ws&host=panf.qqdk2019.ml&path=%2Foneiws#us%20%E7%A5%9D%E7%BB%A7%E5%8D%8EVLESS_WS
