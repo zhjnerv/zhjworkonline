@@ -232,7 +232,7 @@ all: &all #所有节点的合集
     - somelinks
     - mylocal
     - 蛋黄
-    - dy02
+    - paimon
     - dy03
     - dy04
     - dy05  
@@ -271,15 +271,15 @@ proxy-providers:
     path: ./mylocal/somelinks.yaml
   蛋黄:
     <<: *d
-    url: "https://sub.danhu.ml/clash"
+    url: "https://sec.danhu.ml/clash?token=TlsRITv80mBhV548faj0iH3M"
     path: ./proxy_providers/蛋黄.yaml #生成名为'dy1'的配置文件
     # 将 下面一行的url 替换为你的Clash机场订阅链接
     # url: #你的订阅链接（比如https://sub.xxxx/clash)
 
-  dy02:
+  paimon:
     <<: *d
     path: ./proxy_providers/dy2.yaml
-    url: #你的订阅链接
+    url: "https://www.prop.cf/?name=paimon" #你的订阅链接
 
   dy03:
     <<: *d
@@ -508,6 +508,7 @@ proxy-groups:
     use:
       - openitsub_ml
       - 蛋黄
+      - paimon
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
@@ -516,6 +517,7 @@ proxy-groups:
     use:
       - 蛋黄
       - openitsub_ml
+      - paimon
 
 
 #分割线，下面是节点按地区分组并自动测延迟
