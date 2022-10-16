@@ -253,7 +253,7 @@ all: &all #所有节点的合集
 proxy-providers:
   openitsub_ml:
     <<: *d
-    url: "https://vercel.daycat.space/Clash.yaml"
+    url: "https://openit.daycat.space/clash"
     path: ./proxy_providers/openitsub_ml.yaml
 
   mylinks:
