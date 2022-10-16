@@ -241,9 +241,19 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 300
+      interval: 3000
     url: "https://sec.danhu.ml/clash?token=TlsRITv80mBhV548faj0iH3M"
     path: ./proxy_providers/danhu.yaml
+
+  paimon:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 3000
+    url: "https://github.com/paimonhub/Paimonnode/raw/b2c4d379ec9b7782d3f657df669d603a81c661bc/publish/clash.yaml"
+    path: ./proxy_providers/paimon.yaml
 
 proxy-groups:
 
@@ -368,6 +378,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - 蛋黄的连接
+      - paimon
 
   - name: 其它地区
     filter: "^(?!.*(?:🇺🇸|美国|US)).*"
@@ -377,6 +388,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - 蛋黄的连接
+      - paimon
 
   - name: 全部
     type: select
@@ -385,12 +397,14 @@ proxy-groups:
       - mylinks
       - somelinks
       - 蛋黄的连接
+      - paimon
   - name: 自动选择
     use:
       - openitsub_ml
       - mylinks
       - somelinks
       - 蛋黄的连接
+      - paimon
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
