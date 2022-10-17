@@ -596,6 +596,7 @@ rule-providers:
 
 rules:
   - DOMAIN-SUFFIX,anydesk.com,💌 特殊服务
+  - DOMAIN-SUFFIX,sec.danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务

@@ -207,11 +207,11 @@ proxy-providers:
 
   openitsub_ml:
     type: http
-    interval: 1800
+    interval: 3600
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 300
+      interval: 1000
     url: "https://openit.daycat.space/clash"
     path: ./proxy_providers/openitsub_ml.yaml
 
@@ -237,22 +237,22 @@ proxy-providers:
 
   蛋黄的连接:
     type: http
-    interval: 1800
+    interval: 3600
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 3000
+      interval: 10000
     url: "https://sec.danhu.ml/clash?token=TlsRITv80mBhV548faj0iH3M"
     path: ./proxy_providers/danhu.yaml
 
   paimon:
     type: http
-    interval: 1800
+    interval: 3600
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 3000
-    url: "https://github.com/paimonhub/Paimonnode/raw/b2c4d379ec9b7782d3f657df669d603a81c661bc/publish/clash.yaml"
+      interval: 1000
+    url: "https://www.prop.cf/?name=paimon"
     path: ./proxy_providers/paimon.yaml
 
 proxy-groups:
