@@ -253,7 +253,7 @@ all: &all #所有节点的合集
 proxy-providers:
   openitsub_ml:
     <<: *d
-    url: "https://openit.daycat.space/clash"
+    url: "https://raw.githubusercontent.com/yu-steven/openit/main/Clash.yaml"
     path: ./proxy_providers/openitsub_ml.yaml
 
   mylinks:
