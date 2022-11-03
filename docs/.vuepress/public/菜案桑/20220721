@@ -601,6 +601,7 @@ rules:
   - DOMAIN-SUFFIX,ouo.io,Global
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
+  - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务  
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Google,❓ 谷歌服务
   - RULE-SET,Telegram,☎️ 电报消息
