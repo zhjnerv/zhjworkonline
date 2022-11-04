@@ -235,14 +235,14 @@ proxy-providers:
     url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/somelinks"
     path: ./proxy_providers/somelinks.yaml
 
-  蛋黄的连接:
+  free-v2ray-merge的连接:
     type: http
     interval: 3600
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 10000
-    url: "https://sec.danhu.ml/clash?token=TlsRITv80mBhV548faj0iH3M"
+    url: "https://raw.githubusercontent.com/Jia-Pingwa/free-v2ray-merge/main/output.txt"
     path: ./proxy_providers/danhu.yaml
 
   paimon:
@@ -377,7 +377,7 @@ proxy-groups:
       - openitsub_ml
       - mylinks
       - somelinks
-      - 蛋黄的连接
+      - free-v2ray-merge的连接
       - paimon
 
   - name: 其它地区
@@ -387,7 +387,7 @@ proxy-groups:
       - openitsub_ml
       - mylinks
       - somelinks
-      - 蛋黄的连接
+      - free-v2ray-merge的连接
       - paimon
 
   - name: 全部
@@ -396,14 +396,14 @@ proxy-groups:
       - openitsub_ml
       - mylinks
       - somelinks
-      - 蛋黄的连接
+      - free-v2ray-merge的连接
       - paimon
   - name: 自动选择
     use:
       - openitsub_ml
       - mylinks
       - somelinks
-      - 蛋黄的连接
+      - free-v2ray-merge的连接
       - paimon
     type: url-test
     url: 'http://www.gstatic.com/generate_204'

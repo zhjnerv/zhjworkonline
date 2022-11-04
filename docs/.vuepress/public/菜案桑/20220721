@@ -231,7 +231,7 @@ all: &all #所有节点的合集
     - mylinks
     - somelinks
     - mylocal
-    - 蛋黄
+    - free-v2ray-merge的连接
     - paimon
     - dy03
     - dy04
@@ -269,10 +269,10 @@ proxy-providers:
   mylocal:
     <<: *q
     path: ./mylocal/somelinks.yaml
-  蛋黄:
+  free-v2ray-merge的连接:
     <<: *d
-    url: "https://sec.danhu.ml/clash?token=TlsRITv80mBhV548faj0iH3M"
-    path: ./proxy_providers/蛋黄.yaml #生成名为'dy1'的配置文件
+    url: "https://raw.githubusercontent.com/Jia-Pingwa/free-v2ray-merge/main/output.txt"
+    path: ./proxy_providers/free-v2ray-merge的连接.yaml #生成名为'dy1'的配置文件
     # 将 下面一行的url 替换为你的Clash机场订阅链接
     # url: #你的订阅链接（比如https://sub.xxxx/clash)
 
@@ -498,7 +498,8 @@ proxy-groups:
     tolerance: 50
     use:
       - openitsub_ml
-      - 蛋黄
+      - free-v2ray-merge的连接
+      - paimon
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -507,7 +508,7 @@ proxy-groups:
     tolerance: 150
     use:
       - openitsub_ml
-      - 蛋黄
+      - free-v2ray-merge的连接
       - paimon
   - name: ♻️ 自动选择
     type: url-test
@@ -515,7 +516,7 @@ proxy-groups:
     interval: 1320
     tolerance: 150
     use:
-      - 蛋黄
+      - free-v2ray-merge的连接
       - openitsub_ml
       - paimon
 
