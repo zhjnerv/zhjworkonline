@@ -484,6 +484,7 @@ rule-providers:
 
 
 rules:
+  - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - DOMAIN-SUFFIX,sec.danhu.ml,微博定位
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
