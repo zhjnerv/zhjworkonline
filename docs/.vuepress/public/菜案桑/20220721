@@ -465,6 +465,7 @@ proxy-groups:
       - 我的所有
       - 🛠️ 故障转移
       - ♻️ 自动选择
+      - somelinks
   - name: 🛡️ 隐私防护
     type: select
     proxies:
