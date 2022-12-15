@@ -212,7 +212,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 1000
-    url: "https://raw.githubusercontent.com/yu-steven/openit/main/Clash.yaml"
+    url: "https://sub.sharecentre.online/sub/clash.yml"
     path: ./proxy_providers/openitsub_ml.yaml
 
   mylinks:
@@ -245,15 +245,15 @@ proxy-providers:
     url: "https://raw.githubusercontent.com/Jia-Pingwa/free-v2ray-merge/main/output.txt"
     path: ./proxy_providers/danhu.yaml
 
-  paimon:
+  openit-2:
     type: http
     interval: 3600
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 10000
-    url: "https://www.prop.cf/?name=paimon"
-    path: ./proxy_providers/paimon.yaml
+    url: "https://openit.pw/clash"
+    path: ./proxy_providers/openit-2.yaml
 
 proxy-groups:
 
@@ -378,7 +378,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - free-v2ray-merge的连接
-      - paimon
+      - openit-2
 
   - name: 其它地区
     filter: "^(?!.*(?:🇺🇸|美国|US)).*"
@@ -388,7 +388,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - free-v2ray-merge的连接
-      - paimon
+      - openit-2
 
   - name: 全部
     type: select
@@ -397,14 +397,14 @@ proxy-groups:
       - mylinks
       - somelinks
       - free-v2ray-merge的连接
-      - paimon
+      - openit-2
   - name: 自动选择
     use:
       - openitsub_ml
       - mylinks
       - somelinks
       - free-v2ray-merge的连接
-      - paimon
+      - openit-2
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
     interval: 300

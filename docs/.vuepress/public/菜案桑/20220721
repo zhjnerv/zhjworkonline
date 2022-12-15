@@ -233,7 +233,7 @@ all: &all #所有节点的合集
     - somelinks
     - mylocal
     - free-v2ray-merge的连接
-    - paimon
+    - openit-2
     - dy03
     - dy04
     - dy05  
@@ -254,7 +254,7 @@ all: &all #所有节点的合集
 proxy-providers:
   openitsub_ml:
     <<: *d
-    url: "https://raw.githubusercontent.com/yu-steven/openit/main/Clash.yaml"
+    url: "https://sub.sharecentre.online/sub/clash.yml"
     path: ./proxy_providers/openitsub_ml.yaml
 
   mylinks:
@@ -277,10 +277,10 @@ proxy-providers:
     # 将 下面一行的url 替换为你的Clash机场订阅链接
     # url: #你的订阅链接（比如https://sub.xxxx/clash)
 
-  paimon:
+  openit-2:
     <<: *d
     path: ./proxy_providers/dy2.yaml
-    url: "https://www.prop.cf/?name=paimon" #你的订阅链接
+    url: "https://openit.pw/clash" #你的订阅链接
 
   dy03:
     <<: *d
@@ -501,7 +501,7 @@ proxy-groups:
     use:
       - openitsub_ml
       - free-v2ray-merge的连接
-      - paimon
+      - openit-2
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -511,7 +511,7 @@ proxy-groups:
     use:
       - openitsub_ml
       - free-v2ray-merge的连接
-      - paimon
+      - openit-2
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
@@ -520,7 +520,7 @@ proxy-groups:
     use:
       - free-v2ray-merge的连接
       - openitsub_ml
-      - paimon
+      - openit-2
 
 
 #分割线，下面是节点按地区分组并自动测延迟
