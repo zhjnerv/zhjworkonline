@@ -254,7 +254,7 @@ all: &all #所有节点的合集
 proxy-providers:
   openitsub_ml:
     <<: *d
-    url: "https://sub.sharecentre.online/sub/clash.yml"
+    url: "https://sub.sharecentre.online/sub"
     path: ./proxy_providers/openitsub_ml.yaml
 
   mylinks:
@@ -280,7 +280,7 @@ proxy-providers:
   openit-2:
     <<: *d
     path: ./proxy_providers/dy2.yaml
-    url: "https://openit.pw/clash" #你的订阅链接
+    url: "https://sub.cm/X8Hq4Co" #你的订阅链接
 
   dy03:
     <<: *d
