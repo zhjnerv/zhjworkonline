@@ -228,14 +228,14 @@ t: &t  #节点测试参数
 
 all: &all #所有节点的合集
   use:
-    - openitsub_ml
+    - sharecentrepro
     - mylinks
     - somelinks
     - mylocal
     - free-v2ray-merge的连接
     - openit-2
-    - dy03
-    - dy04
+    - paimon
+    - 蛋黄
     - dy05  
     - dy06
     - dy07
@@ -252,10 +252,10 @@ all: &all #所有节点的合集
 
 #分割线，下面是放你的机场订阅链接的
 proxy-providers:
-  openitsub_ml:
+  sharecentrepro:
     <<: *d
     url: "https://sub.sharecentre.online/sub"
-    path: ./proxy_providers/openitsub_ml.yaml
+    path: ./proxy_providers/sharecentrepro.yaml
 
   mylinks:
     <<: *d
@@ -282,15 +282,15 @@ proxy-providers:
     path: ./proxy_providers/dy2.yaml
     url: "https://sub.cm/X8Hq4Co" #你的订阅链接
 
-  dy03:
+  paimon:
     <<: *d
-    path: ./proxy_providers/dy3.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/paimon.yaml
+    url: "https://sub.pmsub.me/clash.yaml" #你的订阅链接
 
-  dy04:
+  蛋黄:
     <<: *d
-    path: ./proxy_providers/dy4.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/蛋黄.yaml
+    url: "https://sub.danhu.ml/base64?token=FProxies" #你的订阅链接
 
   dy05:
     <<: *d
@@ -499,9 +499,11 @@ proxy-groups:
     interval: 300
     tolerance: 50
     use:
-      - openitsub_ml
+      - sharecentrepro
       - free-v2ray-merge的连接
       - openit-2
+      - 蛋黄
+      - paimon
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -509,9 +511,11 @@ proxy-groups:
     interval: 1300
     tolerance: 150
     use:
-      - openitsub_ml
+      - sharecentrepro
       - free-v2ray-merge的连接
       - openit-2
+      - 蛋黄
+      - paimon
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
@@ -519,10 +523,10 @@ proxy-groups:
     tolerance: 150
     use:
       - free-v2ray-merge的连接
-      - openitsub_ml
+      - sharecentrepro
       - openit-2
-
-
+      - 蛋黄
+      - paimon
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
