@@ -1,11 +1,5 @@
-proxies:
-  - {name: 🇺🇸 洛杉矶MC, server: v2.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: v2.1qaz.sbs}}}
-  - {name: 🇺🇸 圣何塞, server: sj1.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: sj1.1qaz.sbs}}}
-  - {name: 🇺🇸 达拉斯, server: s1.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s1.1qaz.sbs}}}
-  - {name: 🇺🇸 洛杉矶MC 2, server: s2.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s2.1qaz.sbs}}}
-  - {name: 🇺🇸 洛杉矶Psychz, server: s3.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s3.1qaz.sbs}}}
-  - {name: 🇺🇸 洛杉矶colocrossing, server: s4.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s4.1qaz.sbs}}}
-  - {name: 🇺🇸 拉斯维加斯, server: s9.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s9.1qaz.sbs}}}
-  - {name: 🇺🇸 洛杉矶Psychz 2, server: s12.1qaz.sbs, port: 443, type: vmess, uuid: db5a8d99-d7cb-49f0-acc0-3bc8b8ee51ea, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, network: ws, ws-opts: {path: /happy, headers: {Host: s12.1qaz.sbs}}}
-  
-
+trojan://password@s1.1qaz.sbs:1443?security=tls&sni=s1.1qaz.sbs&type=tcp&headerType=none&host=s1.1qaz.sbs#s1
+trojan://password@s12.1qaz.sbs:1443?security=tls&sni=s12.1qaz.sbs&type=tcp&headerType=none&host=s12.1qaz.sbs#s12
+trojan://password@s2.1qaz.sbs:1443?security=tls&sni=s2.1qaz.sbs&type=tcp&headerType=none&host=s2.1qaz.sbs#s2
+trojan://password@s9.1qaz.sbs:1443?security=tls&sni=s9.1qaz.sbs&type=tcp&headerType=none&host=s9.1qaz.sbs#s9
+trojan://password@s3.1qaz.sbs:1443?security=tls&sni=s3.1qaz.sbs&type=tcp&headerType=none&host=s3.1qaz.sbs#s3
