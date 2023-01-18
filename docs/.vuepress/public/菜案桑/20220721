@@ -251,6 +251,7 @@ all: &all #所有节点的合集
     - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
 
 #分割线，下面是放你的机场订阅链接的
+proxies:
 proxy-providers:
   sharecentrepro:
     <<: *d
