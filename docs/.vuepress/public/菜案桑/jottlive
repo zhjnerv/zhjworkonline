@@ -1,3 +1,5 @@
+# Clash.Mini : https://jott.live/raw/20221209
+
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -296,7 +298,7 @@ proxy-providers:
   dy05:
     <<: *d
     path: ./proxy_providers/dy05.yaml
-    url: "https://backend.yx.lu/sub?target=clash&url=https%3A%2F%2Fxui.pages.dev%2Fxui-final.txt&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&udp=true&new_name=true" #你的订阅链接
+    url: "https://suo.yt/V78H0If" #你的订阅链接
 
   dy06:
     <<: *d
