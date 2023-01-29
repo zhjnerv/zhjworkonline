@@ -202,6 +202,7 @@ dns:
   
 
 #分割线，下面是放你的机场订阅链接的
+proxies:
 proxy-providers:
   sharecentrepro:
     type: http
@@ -761,9 +762,14 @@ rule-providers:
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
     path: ./Rules/Lan.yaml
 
+  github:
+    <<: *r
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
+    path: ./Rules/github.yaml
+
 rules:
   - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
-  - DOMAIN-SUFFIX,sec.danhu.ml,🚩 社交平台IP归属地
+  - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
@@ -773,6 +779,7 @@ rules:
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Google,❓ 谷歌服务
+  - RULE-SET,github,❓ 谷歌服务
   - RULE-SET,Telegram,☎️ 电报消息
   - RULE-SET,BanEasyPrivacy,🛡️ 隐私防护
   - RULE-SET,Advertising,🚫 广告拦截
