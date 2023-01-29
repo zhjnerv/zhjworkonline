@@ -199,161 +199,217 @@ dns:
       - +.googleapis.cn
       - +.googleapis.com
       - +.gvt1.com
-
-d: &d  #机场订阅参数
-  type: http
-  interval: 3600
-  health-check:
-   enable: true
-   url: https://i.ytimg.com/generate_204
-   interval: 10000
-
-r: &r #分流规则订阅参数
-  type: http
-  behavior: classical
-  interval: 86400
   
-q: &q #本地文件订阅参数
-  type: file
-  interval: 3600
-  health-check:
-    enable: true
-    url: http://www.gstatic.com/generate_204
-    interval: 3000
-
-t: &t  #节点测试参数
-  url: https://i.ytimg.com/generate_204
-  interval: 6000
-  tolerance: 250
-
-all: &all #所有节点的合集
-  use:
-    - sharecentrepro
-    - mylinks
-    - somelinks
-    - mylocal
-    - free-v2ray-merge的连接
-    - openit-2
-    - paimon
-    - 蛋黄
-    - dy05  
-    - dy06
-    - dy07
-    - dy08
-    - dy09
-    - dy10
-    - dy11
-    - dy12
-    - dy13
-    - dy14
-    - dy15
-    - dy16
-    - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
 
 #分割线，下面是放你的机场订阅链接的
 proxy-providers:
   sharecentrepro:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     url: "https://sub.sharecentre.online/sub"
     path: ./proxy_providers/sharecentrepro.yaml
 
   mylinks:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/mylinks"
     path: ./proxy_providers/mylinks.yaml
 
   somelinks:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/somelinks"
     path: ./proxy_providers/somelinks.yaml
 
   mylocal:
-    <<: *q
+    type: file
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10000
     path: ./mylocal/somelinks.yaml
   free-v2ray-merge的连接:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     url: "https://raw.githubusercontent.com/Jia-Pingwa/free-v2ray-merge/main/output.txt"
     path: ./proxy_providers/free-v2ray-merge的连接.yaml #生成名为'dy1'的配置文件
     # 将 下面一行的url 替换为你的Clash机场订阅链接
     # url: #你的订阅链接（比如https://sub.xxxx/clash)
 
   openit-2:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy2.yaml
     url: "https://sub.cm/X8Hq4Co" #你的订阅链接
 
   paimon:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/paimon.yaml
     url: "https://sub.pmsub.me/clash.yaml" #你的订阅链接
 
   蛋黄:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/蛋黄.yaml
     url: "https://sub.danhu.ml/base64?token=FProxies" #你的订阅链接
 
   dy05:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy5.yaml
     url: #你的订阅链接
 
   dy06:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy6.yaml
     url: #你的订阅链接
 
   dy07:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy7.yaml
     url: #你的订阅链接
 
   dy08:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy8.yaml
     url: #你的订阅链接
 
   dy09:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy9.yaml
     url: #你的订阅链接
 
   dy10:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy10.yaml
     url: #你的订阅链接
 
   dy11:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy11.yaml
     url: #你的订阅链接
 
   dy12:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy12.yaml
     url: #你的订阅链接
 
   dy13:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy13.yaml
     url: #你的订阅链接
 
   dy14:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy14.yaml
     url: #你的订阅链接
 
   dy15:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy15.yaml
     url: #你的订阅链接
 
   dy16:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy16.yaml
     url: #你的订阅链接
 
   dy17:
-    <<: *d
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
     path: ./proxy_providers/dy17.yaml
     url: #你的订阅链接
 
@@ -374,10 +430,52 @@ proxy-groups:
       - DIRECT
   - name: 🔑 手动选择
     type: select
-    <<: *all
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🔑 手动选择②
     type: select
-    <<: *all
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🚩 社交平台IP归属地
     type: select
     proxies:
@@ -530,12 +628,54 @@ proxy-groups:
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
-    <<: *all
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: url-test
     t: &t
-    <<: *all
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
@@ -552,52 +692,72 @@ proxy-groups:
 #分割线，下面是分流规则
 rule-providers:
   IPfake:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: "https://raw.fastgit.org/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
     path: ./Rules/IPfake.yaml
 
   YouTube:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
     path: ./Rules/YouTube.yaml
 
   Telegram:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
     path: ./Rules/Telegram.yaml
 
   Google:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
     path: ./Rules/google.yaml
 
   BanEasyPrivacy:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml"
     path: ./Rules/BanEasyPrivacy.yaml
 
   Advertising:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical.yaml
     path: ./Rules/Advertising.yaml
 
   Download:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Download/Download.yaml
     path: ./Rules/Download.yaml
 
   ChinaMax:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
     path: ./Rules/ChinaMax.yaml
 
   Global:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
     path: ./Rules/Global.yaml
 
   Lan:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
     path: ./Rules/Lan.yaml
 
