@@ -763,7 +763,9 @@ rule-providers:
     path: ./Rules/Lan.yaml
 
   github:
-    <<: *r
+    type: http
+    behavior: classical
+    interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
     path: ./Rules/github.yaml
 
