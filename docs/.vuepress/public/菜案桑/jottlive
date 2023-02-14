@@ -564,10 +564,11 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 我的所有
       - 🛠️ 故障转移
       - ♻️ 自动选择
-      - somelinks
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
   - name: 🛡️ 隐私防护
     type: select
     proxies:
