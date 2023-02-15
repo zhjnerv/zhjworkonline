@@ -1,3 +1,5 @@
+# Clash.Mini : https://jott.live/raw/20221209
+
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -284,7 +286,7 @@ proxy-providers:
     path: ./proxy_providers/蛋黄.yaml
     url: "https://sub.danhu.ml/base64?token=FProxies" #你的订阅链接
 
-  dy05:
+  raw.fastgit.org/freefq/:
     type: http
     interval: 3600
     health-check:
@@ -292,9 +294,9 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy5.yaml
-    url: #你的订阅链接
+    url: "https://raw.fastgit.org/freefq/free/master/v2" #你的订阅链接
 
-  dy06:
+  https://sub.cloudflare.quest:
     type: http
     interval: 3600
     health-check:
@@ -302,7 +304,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy6.yaml
-    url: #你的订阅链接
+    url: "https://sub.cloudflare.quest" #你的订阅链接
 
   dy07:
     type: http
@@ -440,8 +442,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - dy05  
-      - dy06
+      - raw.fastgit.org/freefq/  
+      - https://sub.cloudflare.quest
       - dy07
       - dy08
       - dy09
@@ -464,8 +466,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - dy05  
-      - dy06
+      - raw.fastgit.org/freefq/  
+      - https://sub.cloudflare.quest
       - dy07
       - dy08
       - dy09
@@ -562,10 +564,11 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 我的所有
       - 🛠️ 故障转移
       - ♻️ 自动选择
-      - somelinks
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -638,8 +641,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - dy05  
-      - dy06
+      - raw.fastgit.org/freefq/  
+      - https://sub.cloudflare.quest
       - dy07
       - dy08
       - dy09
@@ -664,8 +667,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - dy05  
-      - dy06
+      - raw.fastgit.org/freefq/  
+      - https://sub.cloudflare.quest
       - dy07
       - dy08
       - dy09
