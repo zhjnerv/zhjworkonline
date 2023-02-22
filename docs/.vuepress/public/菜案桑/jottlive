@@ -544,6 +544,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
+      - ♻️ 自动选择
       - mylinks
       - somelinks
       - mylocal
@@ -555,7 +556,7 @@ proxy-groups:
       - 🍁 其他地区
       - 🔑 手动选择
       - 🛠️ 故障转移
-      - 🔵 负载均衡
+      - ♻️ 自动选择
       - 我的所有
       - mylinks
       - somelinks
@@ -569,6 +570,7 @@ proxy-groups:
       - 🍁 其他地区
       - 🔑 手动选择
       - 🔑 手动选择②
+      - 🔵 负载均衡
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -598,8 +600,8 @@ proxy-groups:
   - name: 🛠️ 故障转移
     type: fallback
     url: https://i.ytimg.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 300 #测ping时间(秒)
+    tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
       - sharecentrepro
       - free-v2ray-merge的连接
@@ -610,8 +612,8 @@ proxy-groups:
     type: load-balance
     strategy: consistent-hashing
     url: https://i.ytimg.com/generate_204
-    interval: 1300
-    tolerance: 150
+    interval: 300
+    tolerance: 100
     use:
       - sharecentrepro
       - free-v2ray-merge的连接
@@ -621,7 +623,7 @@ proxy-groups:
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
-    interval: 1320
+    interval: 320
     tolerance: 150
     use:
       - free-v2ray-merge的连接
