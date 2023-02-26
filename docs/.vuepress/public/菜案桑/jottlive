@@ -776,6 +776,7 @@ rule-providers:
 
 rules:
   - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
+  - DOMAIN-SUFFIX,synology.com,🇨🇳 全球直连
   - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
