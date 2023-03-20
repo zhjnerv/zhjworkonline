@@ -244,6 +244,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 10000
     path: ./mylocal/somelinks.yaml
+
   free-v2ray-merge的连接:
     type: http
     interval: 3600
@@ -306,15 +307,15 @@ proxy-providers:
     path: ./proxy_providers/dy6.yaml
     url: "https://sub.cloudflare.quest" #你的订阅链接
 
-  dy07:
+  getafreenode:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy7.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/getafreenode.yaml
+    url: "https://getafreenode.com/subscribe/?uuid=533B70E6-AC0E-4AC7-A6B1-98F1B5ECB2C6" #你的订阅链接
 
   dy08:
     type: http
@@ -444,7 +445,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -468,7 +469,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -659,7 +660,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -685,7 +686,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -796,6 +797,7 @@ rule-providers:
 
 rules:
   - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
+  - DOMAIN-SUFFIX,getafreenode.com,🇨🇳 全球直连
   - DOMAIN-SUFFIX,synology.com,🇨🇳 全球直连
   - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
