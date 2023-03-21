@@ -572,6 +572,28 @@ proxy-groups:
       - 🔑 手动选择
       - 🔑 手动选择②
       - 🔵 负载均衡
+      - 🔀 变化代理池
+  - name: 🔀 变化代理池
+    type: select
+    use:
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - raw.fastgit.org/freefq/  
+      - https://sub.cloudflare.quest
+      - getafreenode
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🛡️ 隐私防护
     type: select
     proxies:
