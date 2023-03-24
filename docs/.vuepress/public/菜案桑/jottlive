@@ -820,6 +820,7 @@ rule-providers:
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - DOMAIN-SUFFIX,getafreenode.com,DIRECT
+  - DOMAIN-SUFFIX,quickconnect.to,DIRECT
   - DOMAIN-SUFFIX,synology.com,DIRECT
   - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
   - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
