@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 cfw-latency-timeout: 6000
-external-controller: "0.0.0.0:9090"
+external-controller: 127.0.0.1:9090
 dns:
   enable: true
   ipv6: false
@@ -817,11 +817,7 @@ rule-providers:
     interval: 86400
 
 rules:
-  - DOMAIN-SUFFIX,anydesk.com,DIRECT
-  - DOMAIN-SUFFIX,quickconnect.to,DIRECT
-  - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
-  - DOMAIN-SUFFIX,synology.com,DIRECT
-  - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
+  - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
   - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
