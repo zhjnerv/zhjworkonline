@@ -1,12 +1,10 @@
-# Clash.Mini : https://jott.live/raw/20221209
-
 mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: info
 ipv6: false
 cfw-latency-timeout: 6000
-external-controller: 127.0.0.1:9090
+external-controller: "0.0.0.0:9090"
 dns:
   enable: true
   ipv6: false
@@ -97,6 +95,7 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.dns.sb/dns-query
     - https://dns.rubyfish.cn/dns-query
+    - https://doh.apad.pro/dns-query
   fallback:
     - 9.9.9.9
     - 149.112.112.112
@@ -244,6 +243,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 10000
     path: ./mylocal/somelinks.yaml
+
   free-v2ray-merge的连接:
     type: http
     interval: 3600
@@ -284,7 +284,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/蛋黄.yaml
-    url: "https://sub.danhu.ml/base64?token=FProxies" #你的订阅链接
+    url: "https://sub.danhu.ml/clash?token=FProxies230315MCX" #你的订阅链接
 
   raw.fastgit.org/freefq/:
     type: http
@@ -306,15 +306,15 @@ proxy-providers:
     path: ./proxy_providers/dy6.yaml
     url: "https://sub.cloudflare.quest" #你的订阅链接
 
-  dy07:
+  getafreenode:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy7.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/getafreenode.yaml
+    url: "https://getafreenode.com/subscribe/?uuid=533B70E6-AC0E-4AC7-A6B1-98F1B5ECB2C6" #你的订阅链接
 
   dy08:
     type: http
@@ -444,7 +444,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -468,7 +468,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -571,6 +571,28 @@ proxy-groups:
       - 🔑 手动选择
       - 🔑 手动选择②
       - 🔵 负载均衡
+      - 🔀 变化代理池
+  - name: 🔀 变化代理池
+    type: select
+    use:
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - raw.fastgit.org/freefq/  
+      - https://sub.cloudflare.quest
+      - getafreenode
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -578,6 +600,20 @@ proxy-groups:
       - DIRECT
       - 🔑 手动选择
       - 🍁 其他地区
+  - name: ❤️‍🔥 不可描述
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
   - name: ⏬ 下载平台
     type: select
     proxies:
@@ -645,7 +681,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -671,7 +707,7 @@ proxy-groups:
       - 蛋黄
       - raw.fastgit.org/freefq/  
       - https://sub.cloudflare.quest
-      - dy07
+      - getafreenode
       - dy08
       - dy09
       - dy10
@@ -773,9 +809,19 @@ rule-providers:
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
     path: ./Rules/github.yaml
+  NSFW:
+    type: http
+    behavior: classical
+    path: ./RuleSet/NSFW.yaml
+    url: https://raw.githubusercontent.com/tanmoumou252/NSFW-website-rule-for-Clash/main/NSFW.yaml
+    interval: 86400
 
 rules:
-  - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
+  - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,quickconnect.to,DIRECT
+  - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
+  - DOMAIN-SUFFIX,synology.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
   - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
@@ -784,6 +830,7 @@ rules:
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
   - DOMAIN-SUFFIX,openai.com,❓ 谷歌服务  
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
+  - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Google,❓ 谷歌服务
   - RULE-SET,github,❓ 谷歌服务
