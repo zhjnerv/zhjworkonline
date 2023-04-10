@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 ipv6: false
 cfw-latency-timeout: 6000
-external-controller: "0.0.0.0:9090"
+external-controller: 127.0.0.1:9090
 
 proxies:
 proxy-providers:
