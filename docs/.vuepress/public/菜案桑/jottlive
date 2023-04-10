@@ -1,12 +1,10 @@
-# Clash.Mini : https://jott.live/raw/20221209
-
 mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: info
 ipv6: false
 cfw-latency-timeout: 6000
-external-controller: "0.0.0.0:9090"
+external-controller: 127.0.0.1:9090
 dns:
   enable: true
   ipv6: false
@@ -97,6 +95,7 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.dns.sb/dns-query
     - https://dns.rubyfish.cn/dns-query
+    - https://doh.apad.pro/dns-query
   fallback:
     - 9.9.9.9
     - 149.112.112.112
