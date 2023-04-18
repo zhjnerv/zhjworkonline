@@ -1,206 +1,63 @@
+# Clash.Mini : https://jott.live/raw/20221209
+
 mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: info
 ipv6: false
 cfw-latency-timeout: 6000
-external-controller: 127.0.0.1:9090
+external-controller: "0.0.0.0:9090"
 dns:
   enable: true
+  listen: 0.0.0.0:53
   ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  proxy-server-nameserver:
-    - tls://1.0.0.1:853
-    - tls://dot.pub
-    - quic://c.passcloud.xyz:784
-  fake-ip-filter:
-    - "*.lan"
-    - "*.local"
-    - dns.msftncsi.com
-    - www.msftncsi.com
-    - www.msftconnecttest.com
-    - stun.*.*.*
-    - stun.*.*
-    - miwifi.com
-    - music.163.com
-    - "*.music.163.com"
-    - "*.126.net"
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - y.qq.com
-    - "*.y.qq.com"
-    - streamoc.music.tc.qq.com
-    - mobileoc.music.tc.qq.com
-    - isure.stream.qqmusic.qq.com
-    - dl.stream.qqmusic.qq.com
-    - aqqmusic.tc.qq.com
-    - amobile.music.tc.qq.com
-    - "*.xiami.com"
-    - "*.music.migu.cn"
-    - music.migu.cn
-    - netis.cc
-    - router.asus.com
-    - repeater.asus.com
-    - routerlogin.com
-    - routerlogin.net
-    - tendawifi.com
-    - tendawifi.net
-    - tplinklogin.net
-    - tplinkwifi.net
-    - tplinkrepeater.net
-    - "*.ntp.org.cn"
-    - "*.openwrt.pool.ntp.org"
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-    - localhost.ptlogin2.qq.com
-    - "*.*.*.srv.nintendo.net"
-    - "*.*.stun.playstation.net"
-    - xbox.*.*.microsoft.com
-    - "*.ipv6.microsoft.com"
-    - "*.*.xboxlive.com"
-    - speedtest.cros.wr.pvp.net
   default-nameserver:
-    - 9.9.9.9
+   - 119.29.29.29
+   - 223.5.5.5
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - localhost.ptlogin2.qq.com
+  - '*.*.*.*.srv.nintendo.net'
+  - '*.*.*.stun.playstation.net'
+  - 'xbox.*.microsoft.com'
+  - '*.*.*.xboxlive.com'
   nameserver:
-    - 1.2.4.8
-    - 210.2.4.8
-    - 223.5.5.5
-    - 223.6.6.6
-    - 52.80.52.52
-    - 117.50.10.10
-    - 180.76.76.76
-    - 119.28.28.28
-    - 119.29.29.29
-    - 114.114.114.114
-    - 114.114.115.115
-    - 101.226.4.6
-    - 218.30.118.6
-    - 123.125.81.6
-    - 140.207.198.6
-    - 202.38.64.1
-    - 202.112.20.131
-    - 202.141.160.95
-    - 202.141.160.99
-    - 202.141.176.95
-    - 202.141.176.99
-    - tls://dot.pub:853
-    - tls://1.12.12.12:853
-    - tls://120.53.53.53:853
-    - https://doh.pub/dns-query
-    - https://sm2.doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://doh.dns.sb/dns-query
-    - https://dns.rubyfish.cn/dns-query
-    - https://doh.apad.pro/dns-query
+    - https://cn-east.iqiqzz.com/dns-query
+    - https://cn-south.iqiqzz.com/dns-query
   fallback:
-    - 9.9.9.9
-    - 149.112.112.112
-    - 8.8.4.4
-    - 8.8.8.8
-    - 1.0.0.1
-    - 1.1.1.1
-    - 208.67.220.220
-    - 208.67.220.222
-    - 208.67.222.220
-    - 208.67.222.222
-    - 195.46.39.39
-    - 195.46.39.40
-    - 168.95.1.1
-    - 203.80.96.10
-    - 168.95.192.1
-    - 164.124.101.2
-    - 164.124.107.9
-    - 203.248.252.2
-    - 203.248.242.2
-    - 80.80.80.80
-    - 80.80.81.81
-    - 199.85.126.10
-    - 199.85.127.10
-    - 168.126.63.1
-    - 168.126.63.2
-    - 139.175.252.16
-    - 139.175.55.244
-    - 202.45.84.58
-    - 202.45.84.59
-    - 8.26.56.26
-    - 23.253.163.53
-    - 77.88.8.1
-    - 77.88.8.8
-    - 89.233.43.71
-    - 91.239.100.100
-    - 198.101.242.72
-    - 8.20.247.20
-    - 64.6.64.6
-    - 64.6.65.6
-    - 209.244.0.3
-    - 209.244.0.4
-    - 210.220.163.82
-    - 219.250.36.130
-    - 202.14.67.4
-    - 84.200.69.80
-    - 84.200.70.40
-    - 202.14.67.14
-    - 156.154.70.1
-    - 156.154.71.1
-    - 216.146.35.35
-    - 216.146.36.36
-    - 77.109.148.136
-    - 77.109.148.137
-    - 101.101.101.101
-    - 101.102.103.104
-    - 74.82.42.42
-    - 66.220.18.42
-    - https://dns.quad9.net/dns-query
-    - https://dns9.quad9.net/dns-query
-    - tls://dns.google:853
-    - https://8.8.4.4/dns-query
-    - https://8.8.8.8/dns-query
-    - https://dns.google/dns-query
-    - tls://1.0.0.1:853
-    - tls://1.1.1.1:853
-    - tls://one.one.one.one
-    - tls://1dot1dot1dot1.cloudflare-dns.com
-    - https://1.0.0.1/dns-query
-    - https://1.1.1.1/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.daycat.space/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://dns-family.adguard.com/dns-query
-    - https://dns-unfiltered.adguard.com/dns-query
-    - tls://b.iqiq.io:853
-    - tls://h.iqiq.io:853
-    - tls://j.iqiq.io:853
-    - tls://c.passcloud.xyz:853
-    - tls://x.passcloud.xyz:853
-    - https://a.passcloud.xyz/hk
-    - https://a.passcloud.xyz/am
-    - https://a.passcloud.xyz/us
-    - https://a.passcloud.xyz/sz
-    - https://a.passcloud.xyz/cdn
-    - https://a.passcloud.xyz/dns-query
-    - https://worldwide.passcloud.xyz/dns-query
+    - https://dns-google.heinu.cf/dns-query
+    - https://dns-adguard.heinu.cf/dns-query
+    - https://dns.cloudflare.com/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-      - 127.0.0.1/8
-      - 0.0.0.0/32
-    domain:
-      - +.google.com
-      - +.facebook.com
-      - +.twitter.com
-      - +.youtube.com
-      - +.xn--ngstr-lra8j.com
-      - +.google.cn
-      - +.googleapis.cn
-      - +.googleapis.com
-      - +.gvt1.com
-  
+  domain:
+    - '+.google.com'
+    - '+.facebook.com'
+    - '+.youtube.com'
+    - '+.github.com'
+  ipcidr:
+    - '220.0.0.0/4'
+    - '240.0.0.0/4'
+    - '0.0.0.0/8'
+    - '10.0.0.0/8'
+    - '100.64.0.0/10'
+    - '127.0.0.0/8'
+    - '169.254.0.0/16'
+    - '172.16.0.0/12'
+    - '192.0.0.0/24'
+    - '192.0.2.0/24'
+    - '192.88.99.0/24'
+    - '192.168.0.0/16'
+    - '198.18.0.0/15'
+    - '198.51.100.0/24'
+    - '203.0.113.0/24'
+    - '224.0.0.0/3'
+    - '::1/128'
+    - 'fc00::/7'
+    - 'fe80::/10'
 
 #分割线，下面是放你的机场订阅链接的
 proxies:
@@ -817,14 +674,18 @@ rule-providers:
     interval: 86400
 
 rules:
-  - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
+  - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,quickconnect.to,DIRECT
+  - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
+  - DOMAIN-SUFFIX,synology.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
   - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
-  - DOMAIN-SUFFIX,openai.com,❓ 谷歌服务  
+  - DOMAIN-SUFFIX,openai.com,🎬 YouTube
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
   - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
