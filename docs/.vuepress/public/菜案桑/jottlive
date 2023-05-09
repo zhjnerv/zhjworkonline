@@ -473,6 +473,20 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
+  - name: ❗ openAI
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
   - name: ⏬ 下载平台
     type: select
     proxies:
@@ -682,9 +696,17 @@ rule-providers:
     path: ./RuleSet/NSFW.yaml
     url: https://raw.githubusercontent.com/tanmoumou252/NSFW-website-rule-for-Clash/main/NSFW.yaml
     interval: 86400
+  AI:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ai.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    interval: 86400
 
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,poe.com,❗ openAI
+  - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
   - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
   - DOMAIN-SUFFIX,synology.com,DIRECT
@@ -697,6 +719,7 @@ rules:
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
   - DOMAIN-SUFFIX,openai.com,🎬 YouTube
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
+  - RULE-SET,AI,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Spotify,🎬 YouTube
