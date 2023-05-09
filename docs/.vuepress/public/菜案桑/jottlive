@@ -734,7 +734,6 @@ rules:
   - GEOIP,CN,🇨🇳 全球直连
   - RULE-SET,ChinaMax,🇨🇳 全球直连
   - RULE-SET,Global,Global
-  - GEOSITE,biliintl, ❓ 谷歌服务
   - GEOSITE,ehentai,❤️‍🔥 不可描述
   - GEOSITE,github,❓ 谷歌服务
   - GEOSITE,twitter,❓ 谷歌服务
@@ -742,15 +741,13 @@ rules:
   - GEOSITE,google,❓ 谷歌服务
   - GEOSITE,telegram,☎️ 电报消息
   - GEOSITE,netflix,🎬 YouTube
-  - GEOSITE,bilibili,全球直连
   - GEOSITE,bahamut,❓ 谷歌服务
   - GEOSITE,spotify,🎬 YouTube
   - GEOSITE,geolocation-!cn,🐟 漏网之鱼
-
   - GEOIP,google,❓ 谷歌服务
   - GEOIP,netflix,🎬 YouTube
   - GEOIP,telegram,☎️ 电报消息
   - GEOIP,twitter,❓ 谷歌服务
-  - GEOSITE,CN,全球直连
-  - GEOIP,CN,全球直连
+  - GEOSITE,CN,🇨🇳 全球直连
+  - GEOIP,CN,🇨🇳 全球直连
   - MATCH,🐟 漏网之鱼
