@@ -156,7 +156,7 @@ proxy-providers:
     path: ./proxy_providers/dy5.yaml
     url: "https://raw.fastgit.org/freefq/free/master/v2" #你的订阅链接
 
-  https://sub.cloudflare.quest:
+  胖或:
     type: http
     interval: 3600
     health-check:
@@ -164,7 +164,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy6.yaml
-    url: "https://sub.cloudflare.quest" #你的订阅链接
+    url: "https://suo.yt/bBDVKaJ" #你的订阅链接
 
   getafreenode:
     type: http
@@ -303,7 +303,7 @@ proxy-groups:
       - paimon
       - 蛋黄
       - raw.fastgit.org/freefq/  
-      - https://sub.cloudflare.quest
+      - 胖或
       - getafreenode
       - dy08
       - dy09
@@ -327,7 +327,7 @@ proxy-groups:
       - paimon
       - 蛋黄
       - raw.fastgit.org/freefq/  
-      - https://sub.cloudflare.quest
+      - 胖或
       - getafreenode
       - dy08
       - dy09
@@ -441,7 +441,7 @@ proxy-groups:
       - paimon
       - 蛋黄
       - raw.fastgit.org/freefq/  
-      - https://sub.cloudflare.quest
+      - 胖或
       - getafreenode
       - dy08
       - dy09
@@ -540,7 +540,7 @@ proxy-groups:
       - paimon
       - 蛋黄
       - raw.fastgit.org/freefq/  
-      - https://sub.cloudflare.quest
+      - 胖或
       - getafreenode
       - dy08
       - dy09
@@ -566,7 +566,7 @@ proxy-groups:
       - paimon
       - 蛋黄
       - raw.fastgit.org/freefq/  
-      - https://sub.cloudflare.quest
+      - 胖或
       - getafreenode
       - dy08
       - dy09
