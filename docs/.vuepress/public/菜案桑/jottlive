@@ -7,59 +7,6 @@ log-level: info
 ipv6: false
 cfw-latency-timeout: 6000
 external-controller: "0.0.0.0:9090"
-unified-delay: false
-tcp-concurrent: true
-geodata-mode: true
-geox-url:
-  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-
-find-process-mode: strict
-global-client-fingerprint: chrome
-
-profile:
-  store-selected: true
-  store-fake-ip: true
-
-sniffer:
-  enable: true
-  sniff:
-    TLS:
-      ports: [443, 8443]
-    HTTP:
-      ports: [80, 8080-8880]
-      override-destination: true
-
-tun:
-  enable: true
-  stack: system
-  dns-hijack:
-    - 'any:53'
-  auto-route: true
-  auto-detect-interface: true
-
-dns:
-  enable: true
-  listen: :1053
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
-  fake-ip-filter:
-    - '*'
-    - '+.lan'
-  default-nameserver:
-    - 223.5.5.5
-  nameserver:
-    - 'tls://8.8.4.4#dns'
-    - 'tls://1.0.0.1#dns'
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
-  nameserver-policy:
-    "geosite:cn,private":
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
-
 
 #分割线，下面是放你的机场订阅链接的
 proxies:
@@ -175,7 +122,7 @@ proxy-providers:
     path: ./proxy_providers/getafreenode.yaml
     url: "https://getafreenode.com/subscribe/?uuid=533B70E6-AC0E-4AC7-A6B1-98F1B5ECB2C6" #你的订阅链接
 
-  dy08:
+  https://sub.yxjnode.com/sub:
     type: http
     interval: 3600
     health-check:
@@ -183,7 +130,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy8.yaml
-    url: #你的订阅链接
+    url: 'https://sub.yxjnode.com/sub' #你的订阅链接
 
   dy09:
     type: http
@@ -304,7 +251,7 @@ proxy-groups:
       - raw.fastgit.org/freefq/  
       - 胖或
       - getafreenode
-      - dy08
+      - https://sub.yxjnode.com/sub
       - dy09
       - dy10
       - dy11
@@ -328,7 +275,7 @@ proxy-groups:
       - raw.fastgit.org/freefq/  
       - 胖或
       - getafreenode
-      - dy08
+      - https://sub.yxjnode.com/sub
       - dy09
       - dy10
       - dy11
@@ -442,7 +389,7 @@ proxy-groups:
       - raw.fastgit.org/freefq/  
       - 胖或
       - getafreenode
-      - dy08
+      - https://sub.yxjnode.com/sub
       - dy09
       - dy10
       - dy11
@@ -555,7 +502,7 @@ proxy-groups:
       - raw.fastgit.org/freefq/  
       - 胖或
       - getafreenode
-      - dy08
+      - https://sub.yxjnode.com/sub
       - dy09
       - dy10
       - dy11
@@ -581,7 +528,7 @@ proxy-groups:
       - raw.fastgit.org/freefq/  
       - 胖或
       - getafreenode
-      - dy08
+      - https://sub.yxjnode.com/sub
       - dy09
       - dy10
       - dy11
