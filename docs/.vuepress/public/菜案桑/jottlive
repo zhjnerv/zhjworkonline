@@ -649,7 +649,12 @@ rule-providers:
     path: ./RuleSet/ai.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
     interval: 86400
-
+  Bing:
+    type: http
+    behavior: classical
+    path: ./RuleSet/bing.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    interval: 86400
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - DOMAIN-SUFFIX,poe.com,❗ openAI
@@ -664,9 +669,9 @@ rules:
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
-  - DOMAIN-SUFFIX,openai.com,🎬 YouTube
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
   - RULE-SET,AI,❗ openAI
+  - RULE-SET,Bing,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Spotify,🎬 YouTube
