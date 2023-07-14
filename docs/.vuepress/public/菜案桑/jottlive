@@ -377,7 +377,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🔵 负载均衡
       - 🔀 变化代理池
-      - 节点选择
+      - 🚀 节点选择
   - name: 🔀 变化代理池
     type: select
     use:
