@@ -1,5 +1,3 @@
-# Clash.Mini : https://jott.live/raw/20221209
-
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -90,7 +88,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/蛋黄.yaml
-    url: "https://sub.danhu.ml/clash?token=FProxies230419BlrgcNUIYZziRGii" #你的订阅链接
+    url: "https://sub.danhu.ml/urls?token=FProxies230419BlrgcNUIYZziRGii" #你的订阅链接
 
   raw.fastgit.org/freefq/:
     type: http
@@ -110,7 +108,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy6.yaml
-    url: "https://suo.yt/bBDVKaJ" #你的订阅链接
+    url: "https://pastebin.com/raw/xWWAYfeq" #你的订阅链接
 
   getafreenode:
     type: http
@@ -120,7 +118,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/getafreenode.yaml
-    url: "https://getafreenode.com/subscribe/?uuid=533B70E6-AC0E-4AC7-A6B1-98F1B5ECB2C6" #你的订阅链接
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0" #你的订阅链接
 
   https://sub.yxjnode.com/sub:
     type: http
@@ -132,7 +130,7 @@ proxy-providers:
     path: ./proxy_providers/dy8.yaml
     url: 'https://sub.yxjnode.com/sub' #你的订阅链接
 
-  dy09:
+  不知名的git公开连接:
     type: http
     interval: 3600
     health-check:
@@ -140,7 +138,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy9.yaml
-    url: #你的订阅链接
+    url: 'https://raw.githubusercontent.com/gitbigg/permalink/main/subscribe'#你的订阅链接
 
   dy10:
     type: http
@@ -237,6 +235,7 @@ proxy-groups:
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - DIRECT
+      - 我的所有
   - name: 🔑 手动选择
     type: select
     use:
@@ -252,7 +251,7 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - dy09
+      - 不知名的git公开连接
       - dy10
       - dy11
       - dy12
@@ -276,7 +275,7 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - dy09
+      - 不知名的git公开连接
       - dy10
       - dy11
       - dy12
@@ -378,6 +377,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🔵 负载均衡
       - 🔀 变化代理池
+      - 节点选择
   - name: 🔀 变化代理池
     type: select
     use:
@@ -390,7 +390,7 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - dy09
+      - 不知名的git公开连接
       - dy10
       - dy11
       - dy12
@@ -503,7 +503,7 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - dy09
+      - 不知名的git公开连接
       - dy10
       - dy11
       - dy12
@@ -529,7 +529,7 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - dy09
+      - 不知名的git公开连接
       - dy10
       - dy11
       - dy12
@@ -649,9 +649,17 @@ rule-providers:
     path: ./RuleSet/ai.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
     interval: 86400
-
+  Bing:
+    type: http
+    behavior: classical
+    path: ./RuleSet/bing.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    interval: 86400
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
+  - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
+  - IP-CIDR,149.154.167.220/32,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
@@ -664,9 +672,9 @@ rules:
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
-  - DOMAIN-SUFFIX,openai.com,🎬 YouTube
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
   - RULE-SET,AI,❗ openAI
+  - RULE-SET,Bing,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Spotify,🎬 YouTube
