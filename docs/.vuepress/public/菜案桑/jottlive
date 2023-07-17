@@ -98,7 +98,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy5.yaml
-    url: "https://raw.fastgit.org/freefq/free/master/v2" #你的订阅链接
+    url: "http://raw.fastgit.org/freefq/free/master/v2" #你的订阅链接
 
   胖或:
     type: http
