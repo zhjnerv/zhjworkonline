@@ -130,7 +130,7 @@ proxy-providers:
     path: ./proxy_providers/dy8.yaml
     url: 'https://sub.yxjnode.com/sub' #你的订阅链接
 
-  不知名的git公开连接:
+  mfuu/v2ray:
     type: http
     interval: 3600
     health-check:
@@ -138,57 +138,57 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy9.yaml
-    url: 'https://raw.githubusercontent.com/gitbigg/permalink/main/subscribe'#你的订阅链接
+    url: 'https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml'#你的订阅链接
 
-  dy10:
+  Bardiafa/Free-V2ray-Config/main/Sub7:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy10.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/Bardiafa/Free-V2ray-Config/main/Sub7.yaml
+    url: 'https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Sub7.txt'#你的订阅链接
 
-  dy11:
+  peasoft/NoMoreWalls:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy11.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/peasoft/NoMoreWalls.yaml
+    url: 'https://ghproxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt'#你的订阅链接
 
-  dy12:
+  mahdibland/V2RayAggregator:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy12.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/mahdibland/V2RayAggregator.yaml
+    url: 'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt'#你的订阅链接
 
-  dy13:
+  aiboboxx/v2rayfree:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy13.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/aiboboxx/v2rayfree.yaml
+    url: 'https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2'#你的订阅链接
 
-  dy14:
+  ermaozi/get_subscribe:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy14.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/ermaozi/get_subscribe.yaml
+    url: 'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt'#你的订阅链接
 
   dy15:
     type: http
@@ -251,12 +251,12 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - 不知名的git公开连接
-      - dy10
-      - dy11
-      - dy12
-      - dy13
-      - dy14
+      - mfuu/v2ray
+      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - peasoft/NoMoreWalls
+      - mahdibland/V2RayAggregator
+      - aiboboxx/v2rayfree
+      - ermaozi/get_subscribe
       - dy15
       - dy16
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
@@ -275,12 +275,12 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - 不知名的git公开连接
-      - dy10
-      - dy11
-      - dy12
-      - dy13
-      - dy14
+      - mfuu/v2ray
+      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - peasoft/NoMoreWalls
+      - mahdibland/V2RayAggregator
+      - aiboboxx/v2rayfree
+      - ermaozi/get_subscribe
       - dy15
       - dy16
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
@@ -390,12 +390,12 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - 不知名的git公开连接
-      - dy10
-      - dy11
-      - dy12
-      - dy13
-      - dy14
+      - mfuu/v2ray
+      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - peasoft/NoMoreWalls
+      - mahdibland/V2RayAggregator
+      - aiboboxx/v2rayfree
+      - ermaozi/get_subscribe
       - dy15
       - dy16
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
@@ -503,12 +503,12 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - 不知名的git公开连接
-      - dy10
-      - dy11
-      - dy12
-      - dy13
-      - dy14
+      - mfuu/v2ray
+      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - peasoft/NoMoreWalls
+      - mahdibland/V2RayAggregator
+      - aiboboxx/v2rayfree
+      - ermaozi/get_subscribe
       - dy15
       - dy16
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
@@ -529,12 +529,12 @@ proxy-groups:
       - 胖或
       - getafreenode
       - https://sub.yxjnode.com/sub
-      - 不知名的git公开连接
-      - dy10
-      - dy11
-      - dy12
-      - dy13
-      - dy14
+      - mfuu/v2ray
+      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - peasoft/NoMoreWalls
+      - mahdibland/V2RayAggregator
+      - aiboboxx/v2rayfree
+      - ermaozi/get_subscribe
       - dy15
       - dy16
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
