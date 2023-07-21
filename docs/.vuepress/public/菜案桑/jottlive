@@ -662,6 +662,7 @@ rules:
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
+  - DOMAIN-SUFFIX,claude.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
   - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
   - DOMAIN-SUFFIX,synology.com,DIRECT
