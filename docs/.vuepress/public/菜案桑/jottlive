@@ -78,7 +78,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/paimon.yaml
-    url: "https://sub.pmsub.me/clash.yaml" #你的订阅链接
+    url: "https://sub.pmsub.me/base64" #你的订阅链接
 
   蛋黄:
     type: http
