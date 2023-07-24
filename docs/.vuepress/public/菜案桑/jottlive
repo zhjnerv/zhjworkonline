@@ -88,9 +88,9 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/蛋黄.yaml
-    url: "https://sub.danhu.ml/urls?token=FProxies230419BlrgcNUIYZziRGii" #你的订阅链接
+    url: #你的订阅链接
 
-  raw.fastgit.org/freefq/:
+  dy11:
     type: http
     interval: 3600
     health-check:
@@ -98,17 +98,17 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy5.yaml
-    url: "http://raw.fastgit.org/freefq/free/master/v2" #你的订阅链接
+    url: #你的订阅链接
 
-  胖或:
+  胖虎:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy6.yaml
-    url: "https://pastebin.com/raw/xWWAYfeq" #你的订阅链接
+    path: ./proxy_providers/胖虎.yaml
+    url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
 
   getafreenode:
     type: http
@@ -247,8 +247,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - raw.fastgit.org/freefq/  
-      - 胖或
+      - dy11  
+      - 胖虎
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
@@ -271,8 +271,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - raw.fastgit.org/freefq/  
-      - 胖或
+      - dy11  
+      - 胖虎
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
@@ -386,8 +386,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - raw.fastgit.org/freefq/  
-      - 胖或
+      - dy11  
+      - 胖虎
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
@@ -499,8 +499,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - raw.fastgit.org/freefq/  
-      - 胖或
+      - dy11  
+      - 胖虎
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
@@ -525,8 +525,8 @@ proxy-groups:
       - openit-2
       - paimon
       - 蛋黄
-      - raw.fastgit.org/freefq/  
-      - 胖或
+      - dy11  
+      - 胖虎
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
@@ -667,7 +667,6 @@ rules:
   - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
   - DOMAIN-SUFFIX,synology.com,DIRECT
   - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
-  - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
   - DOMAIN-SUFFIX,ouo.io,Global
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
