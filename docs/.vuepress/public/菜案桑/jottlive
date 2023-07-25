@@ -659,6 +659,7 @@ rules:
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
+  - DOMAIN-SUFFIX,telegram.org,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,claude.ai,❗ openAI
