@@ -80,7 +80,7 @@ proxy-providers:
     path: ./proxy_providers/paimon.yaml
     url: "https://sub.pmsub.me/base64" #你的订阅链接
 
-  蛋黄:
+  蛋黄:   #已失效
     type: http
     interval: 3600
     health-check:
@@ -515,7 +515,6 @@ proxy-groups:
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: url-test
-    t: &t
     use:
       - sharecentrepro
       - mylinks
