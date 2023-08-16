@@ -1,0 +1,491 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+cfw-latency-timeout: 6000
+external-controller: "0.0.0.0:9090"
+
+
+
+#分割线，下面是放你的机场订阅链接的
+proxies:
+proxy-providers:
+  sharecentrepro:
+    type: http
+    interval: 3670
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: "https://sub.sharecentre.online/sub"
+    path: ./proxy_providers/sharecentrepro.yaml
+
+  mylinks:
+    type: http
+    interval: 3800
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: #"https://jott.live/raw/mylink"
+    path: ./proxy_providers/mylinks.yaml
+
+  somelinks:
+    type: http
+    interval: 46000
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: "https://jott.live/raw/somelink"
+    path: ./proxy_providers/somelinks.yaml
+
+  mylocal:
+    type: file
+    interval: 3900
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10000
+    path: ./mylocal/somelinks.yaml
+
+  胖虎:
+    type: http
+    interval: 5600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/胖虎.yaml
+    url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
+
+  getafreenode:
+    type: http
+    interval: 4700
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/getafreenode.yaml
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0" #你的订阅链接
+
+  dy17:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy17.yaml
+    url: #你的订阅链接
+
+#还有订阅的话继续往下加 dy18 dy19 ……
+
+#分割线，下面是“代理”页面出现的分组，“name”是一级分组，“proxies”是二级分组，选节点用的
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - DIRECT
+      - 我的所有
+  - name: 🔑 手动选择
+    type: select
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - 胖虎
+      - getafreenode
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+  - name: 🔑 手动选择②
+    type: select
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - 胖虎
+      - getafreenode
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+  - name: 🚩 社交平台IP归属地
+    type: select
+    proxies:
+      - DIRECT
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - DIRECT
+      - 🚀 节点选择
+      - 🔑 手动选择
+      - 🔑 手动选择②
+  - name: somelinks
+    type: select
+    use:
+      - somelinks
+  - name: mylinks
+    type: url-test
+    url: https://i.ytimg.com/generate_204
+    interval: 10320
+    tolerance: 150
+    use:
+      - mylinks
+  - name: mylocal
+    type: select
+    interval: 10320
+    use:
+      - mylocal
+  - name: 我的所有
+    type: select
+    interval: 10320
+    use:
+      - mylinks
+      - somelinks
+      - mylocal
+  - name: ☎️ 电报消息
+    type: select
+    interval: 10320
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: 🎬 YouTube
+    type: select
+    interval: 10320
+    proxies:
+      - 🚀 节点选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - ♻️ 自动选择
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: ❓ 谷歌服务
+    type: select
+    interval: 10320
+    proxies:
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
+      - 我的所有
+      - mylinks
+      - somelinks
+      - mylocal
+  - name: 💌 特殊服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🔵 负载均衡
+      - 🔀 变化代理池
+      - 🚀 节点选择
+  - name: 🔀 变化代理池
+    type: select
+    use:
+      - mylocal
+      - 胖虎
+      - getafreenode
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+  - name: 🛡️ 隐私防护
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 🔑 手动选择
+      - 🍁 其他地区
+  - name: ❤️‍🔥 不可描述
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: ❗ openAI
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: ⏬ 下载平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🔑 手动选择
+      - 🍁 其他地区
+  - name: 🇨🇳 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🔑 手动选择
+  - name: 🚫 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🛠️ 故障转移
+    type: fallback
+    url: https://i.ytimg.com/generate_204
+    interval: 300 #测ping时间(秒)
+    tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
+    use:
+      - sharecentrepro
+  - name: 🔵 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://i.ytimg.com/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - sharecentrepro
+  - name: ♻️ 自动选择
+    type: url-test
+    url: https://i.ytimg.com/generate_204
+    interval: 3200
+    tolerance: 150
+    use:
+      - sharecentrepro
+#分割线，下面是节点按地区分组并自动测延迟
+  - name: 🇺🇸 美国节点
+    type: select
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - 胖虎
+      - getafreenode
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+    filter: 美|🇺🇸|(?i)US|(?i)States|American
+  - name: 🍁 其他地区
+    type: url-test
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - 胖虎
+      - getafreenode
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+    filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
+  - name: Global
+    type: select
+    proxies:
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - somelinks
+      - 我的所有
+      - ♻️ 自动选择
+  
+
+#分割线，下面是分流规则
+rule-providers:
+  IPfake:
+    type: http
+    behavior: classical
+    interval: 84400
+    url: "https://raw.fastgit.org/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
+    path: ./Rules/IPfake.yaml
+
+  YouTube:
+    type: http
+    behavior: classical
+    interval: 82400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./Rules/YouTube.yaml
+
+  Spotify:
+    type: http
+    behavior: classical
+    interval: 76400
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./Rules/Spotify.yaml
+
+
+  Telegram:
+    type: http
+    behavior: classical
+    interval: 96400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
+    path: ./Rules/Telegram.yaml
+
+  Google:
+    type: http
+    behavior: classical
+    interval: 78600
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
+    path: ./Rules/google.yaml
+
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    interval: 98400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml"
+    path: ./Rules/BanEasyPrivacy.yaml
+
+  Advertising:
+    type: http
+    behavior: classical
+    interval: 186400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical.yaml
+    path: ./Rules/Advertising.yaml
+
+  Download:
+    type: http
+    behavior: classical
+    interval: 136400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Download/Download.yaml
+    path: ./Rules/Download.yaml
+
+  ChinaMax:
+    type: http
+    behavior: classical
+    interval: 93400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
+    path: ./Rules/ChinaMax.yaml
+
+  Global:
+    type: http
+    behavior: classical
+    interval: 146400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
+    path: ./Rules/Global.yaml
+
+  Lan:
+    type: http
+    behavior: classical
+    interval: 166400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
+    path: ./Rules/Lan.yaml
+
+  github:
+    type: http
+    behavior: classical
+    interval: 556400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
+    path: ./Rules/github.yaml
+  NSFW:
+    type: http
+    behavior: classical
+    path: ./RuleSet/NSFW.yaml
+    url: https://raw.githubusercontent.com/tanmoumou252/NSFW-website-rule-for-Clash/main/NSFW.yaml
+    interval: 206400
+  AI:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ai.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    interval: 186400
+  Bing:
+    type: http
+    behavior: classical
+    path: ./RuleSet/bing.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    interval: 286400
+rules:
+  - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
+  - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
+  - DOMAIN-SUFFIX,hongjianguo.com,🇨🇳 全球直连
+  - IP-CIDR,149.154.167.220/32,☎️ 电报消息
+  - DOMAIN-SUFFIX,poe.com,❗ openAI
+  - DOMAIN-SUFFIX,theb.ai,❗ openAI
+  - DOMAIN-SUFFIX,claude.ai,❗ openAI
+  - DOMAIN-SUFFIX,quickconnect.to,DIRECT
+  - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
+  - DOMAIN-SUFFIX,synology.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
+  - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
+  - DOMAIN-SUFFIX,ouo.io,Global
+  - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
+  - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
+  - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
+  - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
+  - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
+  - RULE-SET,AI,❗ openAI
+  - RULE-SET,Bing,❗ openAI
+  - RULE-SET,NSFW,❤️‍🔥 不可描述
+  - RULE-SET,YouTube,🎬 YouTube
+  - RULE-SET,Spotify,🎬 YouTube
+  - RULE-SET,Google,❓ 谷歌服务
+  - RULE-SET,github,❓ 谷歌服务
+  - RULE-SET,Telegram,☎️ 电报消息
+  - RULE-SET,BanEasyPrivacy,🛡️ 隐私防护
+  - RULE-SET,Advertising,🚫 广告拦截
+  - RULE-SET,Download,⏬ 下载平台
+  - RULE-SET,IPfake,🚩 社交平台IP归属地
+  - RULE-SET,Lan,🇨🇳 全球直连
+  - GEOIP,CN,🇨🇳 全球直连
+  - RULE-SET,ChinaMax,🇨🇳 全球直连
+  - RULE-SET,Global,Global
+  - GEOSITE,ehentai,❤️‍🔥 不可描述
+  - GEOSITE,github,❓ 谷歌服务
+  - GEOSITE,twitter,❓ 谷歌服务
+  - GEOSITE,youtube,🎬 YouTube
+  - GEOSITE,google,❓ 谷歌服务
+  - GEOSITE,telegram,☎️ 电报消息
+  - GEOSITE,netflix,🎬 YouTube
+  - GEOSITE,bahamut,❓ 谷歌服务
+  - GEOSITE,spotify,🎬 YouTube
+  - GEOIP,google,❓ 谷歌服务
+  - GEOIP,netflix,🎬 YouTube
+  - GEOIP,telegram,☎️ 电报消息
+  - GEOIP,twitter,❓ 谷歌服务
+  - GEOSITE,CN,🇨🇳 全球直连
+  - GEOIP,CN,🇨🇳 全球直连
+  - MATCH,🐟 漏网之鱼
