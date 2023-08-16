@@ -440,6 +440,7 @@ rule-providers:
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
+  - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
   - DOMAIN-SUFFIX,hongjianguo.com,🇨🇳 全球直连
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
