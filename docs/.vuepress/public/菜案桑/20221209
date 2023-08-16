@@ -126,6 +126,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
+      - 🚀 节点选择
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -164,6 +165,7 @@ proxy-groups:
     interval: 10320
     proxies:
       - ♻️ 自动选择
+      - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -195,6 +197,7 @@ proxy-groups:
     interval: 10320
     proxies:
       - 🇺🇸 美国节点
+      - 🚀 节点选择
       - 🍁 其他地区
       - 🔑 手动选择
       - 🛠️ 故障转移
@@ -229,6 +232,7 @@ proxy-groups:
       - DIRECT
       - 🔑 手动选择
       - 🍁 其他地区
+      - 🚀 节点选择
   - name: ❤️‍🔥 不可描述
     type: select
     proxies:
@@ -239,6 +243,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
+      - 🚀 节点选择
       - mylinks
       - somelinks
       - mylocal
@@ -247,6 +252,7 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
+      - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -265,6 +271,7 @@ proxy-groups:
       - 🔵 负载均衡
       - 🔑 手动选择
       - 🍁 其他地区
+      - 🚀 节点选择
   - name: 🇨🇳 全球直连
     type: select
     proxies:
@@ -276,6 +283,7 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
+      - 🚀 节点选择
   - name: 🛠️ 故障转移
     type: fallback
     url: https://i.ytimg.com/generate_204
@@ -328,6 +336,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
+      - 🚀 节点选择
       - somelinks
       - 我的所有
       - ♻️ 自动选择
