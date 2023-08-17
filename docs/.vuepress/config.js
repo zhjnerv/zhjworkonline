@@ -3,7 +3,7 @@ const nav = require('./config/nav.js');
 module.exports = {
   title: "Zhjwork.online",
   description: '知识产权博客，个人记录日志。分享知识产权相关的内容。专利,商标,版权,诉讼,淘宝维权,女儿,申请模版,下载,EAC,CPC,代理', // 描述,以 <meta> 标签渲染到页面html中
-  base: '/', // '/<github仓库名>/'， 默认'/' 
+  base: '/zhjworkonline/', // '/<github仓库名>/'， 默认'/' 
   head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
     ['meta', { name: 'keywords', content: '知识产权博客，个人记录日志。分享知识产权相关的内容。专利,商标,版权,诉讼,淘宝维权,女儿,申请模版,下载,EAC,CPC,代理,markdown'}],
