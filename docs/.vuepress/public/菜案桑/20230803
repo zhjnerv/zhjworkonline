@@ -641,6 +641,7 @@ rule-providers:
     interval: 86400
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
   - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
