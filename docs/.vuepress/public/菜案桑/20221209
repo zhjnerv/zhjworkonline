@@ -448,6 +448,7 @@ rule-providers:
     interval: 286400
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
