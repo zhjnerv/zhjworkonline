@@ -116,17 +116,17 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/dy9.yaml
-    url: 'https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml'#你的订阅链接
+    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
 
-  Bardiafa/Free-V2ray-Config/main/Sub7:
+  barry-far/V2ray-Configs:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/Bardiafa/Free-V2ray-Config/main/Sub7.yaml
-    url: #'https://raw.githubusercontent.com/Bardiafa/Free-V2ray-Config/main/Sub7.txt'#你的订阅链接
+    path: ./proxy_providers/barry-far/V2ray-Configs.yaml
+    url: "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
 
   peasoft/NoMoreWalls:
     type: http
@@ -136,7 +136,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/peasoft/NoMoreWalls.yaml
-    url: 'https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt'#你的订阅链接
+    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt" #你的订阅链接
 
   mahdibland/V2RayAggregator:
     type: http
@@ -146,7 +146,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/mahdibland/V2RayAggregator.yaml
-    url: #'https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt'#你的订阅链接
+    url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt" #你的订阅链接
 
   aiboboxx/v2rayfree:
     type: http
@@ -156,7 +156,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/aiboboxx/v2rayfree.yaml
-    url: 'https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2'#你的订阅链接
+    url: "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2" #你的订阅链接
 
   ermaozi/get_subscribe:
     type: http
@@ -166,7 +166,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/ermaozi/get_subscribe.yaml
-    url: 'https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt'#你的订阅链接
+    url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
 
   w1770946466/Auto_proxy:
     type: http
@@ -176,7 +176,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/w1770946466/Auto_proxy.yaml
-    url: 'https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7'#你的订阅链接
+    url: "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
 
   dy16:
     type: http
@@ -238,7 +238,7 @@ proxy-groups:
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
-      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - barry-far/V2ray-Configs
       - peasoft/NoMoreWalls
       - mahdibland/V2RayAggregator
       - aiboboxx/v2rayfree
@@ -261,7 +261,7 @@ proxy-groups:
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
-      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - barry-far/V2ray-Configs
       - peasoft/NoMoreWalls
       - mahdibland/V2RayAggregator
       - aiboboxx/v2rayfree
@@ -378,7 +378,7 @@ proxy-groups:
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
-      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - barry-far/V2ray-Configs
       - peasoft/NoMoreWalls
       - mahdibland/V2RayAggregator
       - aiboboxx/v2rayfree
@@ -488,7 +488,7 @@ proxy-groups:
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
-      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - barry-far/V2ray-Configs
       - peasoft/NoMoreWalls
       - mahdibland/V2RayAggregator
       - aiboboxx/v2rayfree
@@ -512,7 +512,7 @@ proxy-groups:
       - getafreenode
       - https://sub.yxjnode.com/sub
       - mfuu/v2ray
-      - Bardiafa/Free-V2ray-Config/main/Sub7
+      - barry-far/V2ray-Configs
       - peasoft/NoMoreWalls
       - mahdibland/V2RayAggregator
       - aiboboxx/v2rayfree
