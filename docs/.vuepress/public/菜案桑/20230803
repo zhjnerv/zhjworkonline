@@ -293,7 +293,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5600
     path: ./proxy_providers/dy17.yaml
-    url: #你的订阅链接
+    url: "https://sub.starnetcn.com/api/v1/client/subscribe?token=877abce4ae3033f13f35a59b4f6b20bd&flag=clash" #你的订阅链接
 
 #还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
 
