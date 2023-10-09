@@ -7,12 +7,6 @@ cfw-latency-timeout: 6000
 external-controller: "0.0.0.0:9090"
 
 #分割线，DNS已经TUN等设置
-geodata-mode: true
-geox-url:
-  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-
 find-process-mode: strict
 global-client-fingerprint: chrome
 
@@ -28,8 +22,6 @@ sniffer:
     HTTP:
       ports: [80, 8080-8880]
       override-destination: true
-      
-      
 tun:
   enable: true
   stack: system
@@ -212,7 +204,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 4800
-    path: ./proxy_providers/barry-far/V2ray-Configs.yaml
+    path: ./proxy_providers/barry-far_V2ray-Configs.yaml
     url: "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
 
   peasoft/NoMoreWalls:
@@ -222,7 +214,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 4900
-    path: ./proxy_providers/peasoft/NoMoreWalls.yaml
+    path: ./proxy_providers/peasoft_NoMoreWalls.yaml
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt" #你的订阅链接
 
   mahdibland/V2RayAggregator:
@@ -232,7 +224,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5000
-    path: ./proxy_providers/mahdibland/V2RayAggregator.yaml
+    path: ./proxy_providers/mahdibland_V2RayAggregator.yaml
     url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt" #你的订阅链接
 
   aiboboxx/v2rayfree:
@@ -242,7 +234,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5100
-    path: ./proxy_providers/aiboboxx/v2rayfree.yaml
+    path: ./proxy_providers/aiboboxx_v2rayfree.yaml
     url: "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2" #你的订阅链接
 
   ermaozi/get_subscribe:
@@ -252,7 +244,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5200
-    path: ./proxy_providers/ermaozi/get_subscribe.yaml
+    path: ./proxy_providers/ermaozi_get_subscribe.yaml
     url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
 
   w1770946466/Auto_proxy:
@@ -262,7 +254,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5300
-    path: ./proxy_providers/w1770946466/Auto_proxy.yaml
+    path: ./proxy_providers/w1770946466_Auto_proxy.yaml
     url: "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
 
   dy16:
@@ -762,22 +754,6 @@ rules:
   - RULE-SET,Download,⏬ 下载平台
   - RULE-SET,IPfake,🚩 社交平台IP归属地
   - RULE-SET,Lan,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
   - RULE-SET,ChinaMax,🇨🇳 全球直连
   - RULE-SET,Global,Global
-  - GEOSITE,ehentai,❤️‍🔥 不可描述
-  - GEOSITE,github,❓ 谷歌服务
-  - GEOSITE,twitter,❓ 谷歌服务
-  - GEOSITE,youtube,🎬 YouTube
-  - GEOSITE,google,❓ 谷歌服务
-  - GEOSITE,telegram,☎️ 电报消息
-  - GEOSITE,netflix,🎬 YouTube
-  - GEOSITE,bahamut,❓ 谷歌服务
-  - GEOSITE,spotify,🎬 YouTube
-  - GEOIP,google,❓ 谷歌服务
-  - GEOIP,netflix,🎬 YouTube
-  - GEOIP,telegram,☎️ 电报消息
-  - GEOIP,twitter,❓ 谷歌服务
-  - GEOSITE,CN,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
   - MATCH,🐟 漏网之鱼
