@@ -166,7 +166,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4400
     path: ./proxy_providers/胖虎.yaml
-    url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
 
   getafreenode:
     type: http
@@ -196,7 +196,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4700
     path: ./proxy_providers/dy9.yaml
-    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
 
   barry-far_V2ray-Configs:
     type: http
@@ -206,7 +206,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4800
     path: ./proxy_providers/barry-far_V2ray-Configs.yaml
-    url: "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
 
   peasoft-NoMoreWalls:
     type: http
@@ -216,7 +216,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4900
     path: ./proxy_providers/peasoft-NoMoreWalls.yaml
-    url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt" #你的订阅链接
 
   mahdibland-V2RayAggregator:
     type: http
@@ -226,7 +226,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5000
     path: ./proxy_providers/mahdibland-V2RayAggregator.yaml
-    url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt" #你的订阅链接
 
   aiboboxx-v2rayfree:
     type: http
@@ -236,7 +236,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5100
     path: ./proxy_providers/aiboboxx-v2rayfree.yaml
-    url: "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2" #你的订阅链接
 
   ermaozi-get_subscribe:
     type: http
@@ -246,7 +246,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5200
     path: ./proxy_providers/ermaozi-get_subscribe.yaml
-    url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
 
   w1770946466-Auto_proxy:
     type: http
@@ -256,7 +256,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5300
     path: ./proxy_providers/w1770946466-Auto_proxy.yaml
-    url: "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
 
   dy16:
     type: http
@@ -276,7 +276,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 1500
     path: ./proxy_providers/SSRSUB.yaml
-    url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
 
   dy17:
     type: http
