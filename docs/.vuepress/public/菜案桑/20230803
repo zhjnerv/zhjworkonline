@@ -307,17 +307,17 @@ proxy-groups:
   - name: 🔑 手动选择
     type: select
     use:
-      - sharecentrepro
       - mylinks
       - somelinks
       - mylocal
+      - sharecentrepro
       - paimon
       - 蛋黄
       - dy11  
       - 胖虎
       - getafreenode
       - dy01
-      - mfuu/v2ray
+      - mfuu-v2ray
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -340,7 +340,7 @@ proxy-groups:
       - 胖虎
       - getafreenode
       - dy01
-      - mfuu/v2ray
+      - mfuu-v2ray
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -364,12 +364,12 @@ proxy-groups:
   - name: 🐟 漏网之鱼
     type: select
     proxies:
+      - DIRECT
+      - 🔑 手动选择
       - ♻️ 自动选择
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - DIRECT
       - 🚀 节点选择
-      - 🔑 手动选择
       - 🔑 手动选择②
   - name: somelinks
     type: select
@@ -457,7 +457,7 @@ proxy-groups:
       - 胖虎
       - getafreenode
       - dy01
-      - mfuu/v2ray
+      - mfuu-v2ray
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -567,7 +567,7 @@ proxy-groups:
       - 胖虎
       - getafreenode
       - dy01
-      - mfuu/v2ray
+      - mfuu-v2ray
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -591,7 +591,7 @@ proxy-groups:
       - 胖虎
       - getafreenode
       - dy01
-      - mfuu/v2ray
+      - mfuu-v2ray
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
