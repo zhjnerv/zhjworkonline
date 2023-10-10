@@ -99,6 +99,7 @@ proxy-providers:
   sharecentrepro:
     type: http
     interval: 3700
+    exclude-filter: "套餐到期|欢迎使用|剩余流量"
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
@@ -185,17 +186,17 @@ proxy-providers:
     path: ./proxy_providers/getafreenode.yaml
     url: "https://getafreenode.com/subscribe/?uuid=98A9399C-6845-496D-B2D3-43BBAF6D28F3" #你的订阅链接
 
-  https://sub.yxjnode.com/sub:
+  dy01:
     type: http
     interval: 4600
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 4600
-    path: ./proxy_providers/dy8.yaml
-    url: #'https://sub.yxjnode.com/sub' #你的订阅链接
+    path: ./proxy_providers/dy01.yaml
+    url: #'dy01' #你的订阅链接
 
-  mfuu/v2ray:
+  mfuu-v2ray:
     type: http
     interval: 4700
     health-check:
@@ -205,64 +206,64 @@ proxy-providers:
     path: ./proxy_providers/dy9.yaml
     url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
 
-  barry-far/V2ray-Configs:
+  barry-far_V2ray-Configs:
     type: http
     interval: 4800
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 4800
-    path: ./proxy_providers/barry-far/V2ray-Configs.yaml
+    path: ./proxy_providers/barry-far_V2ray-Configs.yaml
     url: "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
 
-  peasoft/NoMoreWalls:
+  peasoft-NoMoreWalls:
     type: http
     interval: 4900
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 4900
-    path: ./proxy_providers/peasoft/NoMoreWalls.yaml
+    path: ./proxy_providers/peasoft-NoMoreWalls.yaml
     url: "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt" #你的订阅链接
 
-  mahdibland/V2RayAggregator:
+  mahdibland-V2RayAggregator:
     type: http
     interval: 5000
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5000
-    path: ./proxy_providers/mahdibland/V2RayAggregator.yaml
+    path: ./proxy_providers/mahdibland-V2RayAggregator.yaml
     url: "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt" #你的订阅链接
 
-  aiboboxx/v2rayfree:
+  aiboboxx-v2rayfree:
     type: http
     interval: 5100
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5100
-    path: ./proxy_providers/aiboboxx/v2rayfree.yaml
+    path: ./proxy_providers/aiboboxx-v2rayfree.yaml
     url: "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2" #你的订阅链接
 
-  ermaozi/get_subscribe:
+  ermaozi-get_subscribe:
     type: http
     interval: 5200
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5200
-    path: ./proxy_providers/ermaozi/get_subscribe.yaml
+    path: ./proxy_providers/ermaozi-get_subscribe.yaml
     url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
 
-  w1770946466/Auto_proxy:
+   w1770946466-Auto_proxy:
     type: http
     interval: 5300
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5300
-    path: ./proxy_providers/w1770946466/Auto_proxy.yaml
+    path: ./proxy_providers/ w1770946466-Auto_proxy.yaml
     url: "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
 
   dy16:
@@ -275,13 +276,13 @@ proxy-providers:
     path: ./proxy_providers/dy16.yaml
     url: #你的订阅链接
 
-  t.me/SSRSUB:
+  t.me-SSRSUB:
     type: http
     interval: 5500
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 5500
+     interval: 1500
     path: ./proxy_providers/SSRSUB.yaml
     url: "https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
 
@@ -291,11 +292,11 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 5600
+     interval: 600
     path: ./proxy_providers/dy17.yaml
-    url: "https://sub.starnetcn.com/api/v1/client/subscribe?token=877abce4ae3033f13f35a59b4f6b20bd&flag=clash" #你的订阅链接
+    url: #"" #你的订阅链接
 
-#还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
+#还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
 
 #分割线，下面是“代理”页面出现的分组，“name”是一级分组，“proxies”是二级分组，选节点用的
 proxy-groups:
@@ -323,17 +324,17 @@ proxy-groups:
       - dy11  
       - 胖虎
       - getafreenode
-      - https://sub.yxjnode.com/sub
+      - dy01
       - mfuu/v2ray
-      - barry-far/V2ray-Configs
-      - peasoft/NoMoreWalls
-      - mahdibland/V2RayAggregator
-      - aiboboxx/v2rayfree
-      - ermaozi/get_subscribe
-      - w1770946466/Auto_proxy
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      -  w1770946466-Auto_proxy
       - dy16
-      - t.me/SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
+      - t.me-SSRSUB
+      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🔑 手动选择②
     type: select
     use:
@@ -346,17 +347,17 @@ proxy-groups:
       - dy11  
       - 胖虎
       - getafreenode
-      - https://sub.yxjnode.com/sub
+      - dy01
       - mfuu/v2ray
-      - barry-far/V2ray-Configs
-      - peasoft/NoMoreWalls
-      - mahdibland/V2RayAggregator
-      - aiboboxx/v2rayfree
-      - ermaozi/get_subscribe
-      - w1770946466/Auto_proxy
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      -  w1770946466-Auto_proxy
       - dy16
-      - t.me/SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
+      - t.me-SSRSUB
+      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🚩 社交平台IP归属地
     type: select
     proxies:
@@ -463,17 +464,17 @@ proxy-groups:
       - dy11  
       - 胖虎
       - getafreenode
-      - https://sub.yxjnode.com/sub
+      - dy01
       - mfuu/v2ray
-      - barry-far/V2ray-Configs
-      - peasoft/NoMoreWalls
-      - mahdibland/V2RayAggregator
-      - aiboboxx/v2rayfree
-      - ermaozi/get_subscribe
-      - w1770946466/Auto_proxy
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      -  w1770946466-Auto_proxy
       - dy16
-      - t.me/SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
+      - t.me-SSRSUB
+      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -573,17 +574,17 @@ proxy-groups:
       - dy11  
       - 胖虎
       - getafreenode
-      - https://sub.yxjnode.com/sub
+      - dy01
       - mfuu/v2ray
-      - barry-far/V2ray-Configs
-      - peasoft/NoMoreWalls
-      - mahdibland/V2RayAggregator
-      - aiboboxx/v2rayfree
-      - ermaozi/get_subscribe
-      - w1770946466/Auto_proxy
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      -  w1770946466-Auto_proxy
       - dy16
-      - t.me/SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
+      - t.me-SSRSUB
+      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: url-test
@@ -597,17 +598,17 @@ proxy-groups:
       - dy11  
       - 胖虎
       - getafreenode
-      - https://sub.yxjnode.com/sub
+      - dy01
       - mfuu/v2ray
-      - barry-far/V2ray-Configs
-      - peasoft/NoMoreWalls
-      - mahdibland/V2RayAggregator
-      - aiboboxx/v2rayfree
-      - ermaozi/get_subscribe
-      - w1770946466/Auto_proxy
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      -  w1770946466-Auto_proxy
       - dy16
-      - t.me/SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me/SSRSUB dy19 ……
+      - t.me-SSRSUB
+      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
