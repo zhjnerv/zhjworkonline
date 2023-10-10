@@ -7,12 +7,6 @@ cfw-latency-timeout: 6000
 external-controller: "0.0.0.0:9090"
 
 #分割线，DNS已经TUN等设置
-geodata-mode: true
-geox-url:
-  geoip: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
-  geosite: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
-
 find-process-mode: strict
 global-client-fingerprint: chrome
 
@@ -28,8 +22,6 @@ sniffer:
     HTTP:
       ports: [80, 8080-8880]
       override-destination: true
-      
-      
 tun:
   enable: true
   stack: system
@@ -256,14 +248,14 @@ proxy-providers:
     path: ./proxy_providers/ermaozi-get_subscribe.yaml
     url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
 
-   w1770946466-Auto_proxy:
+  w1770946466-Auto_proxy:
     type: http
     interval: 5300
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5300
-    path: ./proxy_providers/ w1770946466-Auto_proxy.yaml
+    path: ./proxy_providers/w1770946466-Auto_proxy.yaml
     url: "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
 
   dy16:
@@ -331,7 +323,7 @@ proxy-groups:
       - mahdibland-V2RayAggregator
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
-      -  w1770946466-Auto_proxy
+      - w1770946466-Auto_proxy
       - dy16
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -354,7 +346,7 @@ proxy-groups:
       - mahdibland-V2RayAggregator
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
-      -  w1770946466-Auto_proxy
+      - w1770946466-Auto_proxy
       - dy16
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -471,7 +463,7 @@ proxy-groups:
       - mahdibland-V2RayAggregator
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
-      -  w1770946466-Auto_proxy
+      - w1770946466-Auto_proxy
       - dy16
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -581,7 +573,7 @@ proxy-groups:
       - mahdibland-V2RayAggregator
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
-      -  w1770946466-Auto_proxy
+      - w1770946466-Auto_proxy
       - dy16
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -605,7 +597,7 @@ proxy-groups:
       - mahdibland-V2RayAggregator
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
-      -  w1770946466-Auto_proxy
+      - w1770946466-Auto_proxy
       - dy16
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -763,22 +755,6 @@ rules:
   - RULE-SET,Download,⏬ 下载平台
   - RULE-SET,IPfake,🚩 社交平台IP归属地
   - RULE-SET,Lan,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
   - RULE-SET,ChinaMax,🇨🇳 全球直连
   - RULE-SET,Global,Global
-  - GEOSITE,ehentai,❤️‍🔥 不可描述
-  - GEOSITE,github,❓ 谷歌服务
-  - GEOSITE,twitter,❓ 谷歌服务
-  - GEOSITE,youtube,🎬 YouTube
-  - GEOSITE,google,❓ 谷歌服务
-  - GEOSITE,telegram,☎️ 电报消息
-  - GEOSITE,netflix,🎬 YouTube
-  - GEOSITE,bahamut,❓ 谷歌服务
-  - GEOSITE,spotify,🎬 YouTube
-  - GEOIP,google,❓ 谷歌服务
-  - GEOIP,netflix,🎬 YouTube
-  - GEOIP,telegram,☎️ 电报消息
-  - GEOIP,twitter,❓ 谷歌服务
-  - GEOSITE,CN,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
   - MATCH,🐟 漏网之鱼
