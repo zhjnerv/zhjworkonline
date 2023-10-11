@@ -95,7 +95,7 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 3700
+     interval: 700
     url: "https://sub.sharecentre.online/sub"
     path: ./proxy_providers/sharecentrepro.yaml
 
@@ -125,7 +125,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 4000
+      interval: 300
     path: ./mylocal/somelinks.yaml
 
   paimon:
@@ -134,29 +134,9 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4100
+     interval: 410
     path: ./proxy_providers/paimon.yaml
     url: "https://sub.pmsub.me/clash.yaml" #你的订阅链接
-
-  蛋黄:
-    type: http
-    interval: 4200
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4200
-    path: ./proxy_providers/蛋黄.yaml
-    url: #你的订阅链接
-
-  dy11:
-    type: http
-    interval: 4300
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4300
-    path: ./proxy_providers/dy5.yaml
-    url: #你的订阅链接
 
   胖虎:
     type: http
@@ -164,7 +144,7 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4400
+     interval: 440
     path: ./proxy_providers/胖虎.yaml
     url: #"https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
 
@@ -177,16 +157,6 @@ proxy-providers:
      interval: 4550
     path: ./proxy_providers/getafreenode.yaml
     url: "https://getafreenode.com/subscribe/?uuid=98A9399C-6845-496D-B2D3-43BBAF6D28F3" #你的订阅链接
-
-  dy01:
-    type: http
-    interval: 4600
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 460
-    path: ./proxy_providers/dy01.yaml
-    url: #'dy01' #你的订阅链接
 
   mfuu-v2ray:
     type: http
@@ -258,16 +228,6 @@ proxy-providers:
     path: ./proxy_providers/w1770946466-Auto_proxy.yaml
     url: #"https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
 
-  dy16:
-    type: http
-    interval: 5400
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 5400
-    path: ./proxy_providers/dy16.yaml
-    url: #你的订阅链接
-
   t.me-SSRSUB:
     type: http
     interval: 5500
@@ -278,6 +238,38 @@ proxy-providers:
     path: ./proxy_providers/SSRSUB.yaml
     url: #"https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
 
+#这里开始是空的配置----
+
+  dy01:
+    type: http
+    interval: 4600
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 460
+    path: ./proxy_providers/dy01.yaml
+    url: #'dy01' #你的订阅链接
+
+  dy11:
+    type: http
+    interval: 4300
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 4300
+    path: ./proxy_providers/dy5.yaml
+    url: #你的订阅链接
+
+  dy16:
+    type: http
+    interval: 5400
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 5400
+    path: ./proxy_providers/dy16.yaml
+    url: #你的订阅链接
+
   dy17:
     type: http
     interval: 5600
@@ -287,6 +279,17 @@ proxy-providers:
      interval: 600
     path: ./proxy_providers/dy17.yaml
     url: #"" #你的订阅链接
+
+  蛋黄:
+    type: http
+    interval: 4200
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 4200
+    path: ./proxy_providers/蛋黄.yaml
+    url: #你的订阅链接
+
 
 #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
 
