@@ -184,7 +184,7 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4600
+     interval: 460
     path: ./proxy_providers/dy01.yaml
     url: #'dy01' #你的订阅链接
 
@@ -194,17 +194,17 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4700
+     interval: 470
     path: ./proxy_providers/dy9.yaml
-    url: #"https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
+    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
 
-  barry-far_V2ray-Configs:
+  barry-far_V2ray-Configs: #纯链接
     type: http
     interval: 4800
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4800
+     interval: 480
     path: ./proxy_providers/barry-far_V2ray-Configs.yaml
     url: #"https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
 
@@ -214,9 +214,9 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4900
+     interval: 490
     path: ./proxy_providers/peasoft-NoMoreWalls.yaml
-    url: #"https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml" #你的订阅链接
 
   mahdibland-V2RayAggregator:
     type: http
@@ -226,9 +226,9 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5000
     path: ./proxy_providers/mahdibland-V2RayAggregator.yaml
-    url: #"https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml" #你的订阅链接
 
-  aiboboxx-v2rayfree:
+  aiboboxx-v2rayfree: #没什么大用，放弃了
     type: http
     interval: 5100
     health-check:
@@ -246,9 +246,9 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5200
     path: ./proxy_providers/ermaozi-get_subscribe.yaml
-    url: #"https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml" #你的订阅链接
 
-  w1770946466-Auto_proxy:
+  w1770946466-Auto_proxy: #base64链接
     type: http
     interval: 5300
     health-check:
