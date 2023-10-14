@@ -115,7 +115,7 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 3900
+     interval: 900
     url: "https://jott.live/raw/somelink"
     path: ./proxy_providers/somelinks.yaml
 
@@ -154,7 +154,7 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 4550
+     interval: 550
     path: ./proxy_providers/getafreenode.yaml
     url: "https://getafreenode.com/subscribe/?uuid=98A9399C-6845-496D-B2D3-43BBAF6D28F3" #你的订阅链接
 
@@ -164,7 +164,7 @@ proxy-providers:
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
-     interval: 470
+     interval: 4470
     path: ./proxy_providers/dy9.yaml
     url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
 
