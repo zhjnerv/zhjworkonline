@@ -298,6 +298,8 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
+      - somelinks
+      - DIRECT
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -305,7 +307,6 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - DIRECT
       - 我的所有
   - name: 🔑 手动选择
     type: select
@@ -395,6 +396,21 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
+  - name: ❗ openAI
+    type: select
+    proxies:
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🚀 节点选择
   - name: ☎️ 电报消息
     type: select
     proxies:
@@ -454,6 +470,7 @@ proxy-groups:
     type: select
     use:
       - mylocal
+      - sharecentrepro
       - paimon
       - 蛋黄
       - dy11  
@@ -481,6 +498,10 @@ proxy-groups:
   - name: ❤️‍🔥 不可描述
     type: select
     proxies:
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -489,25 +510,7 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - mylinks
-      - somelinks
-      - mylocal
-      - 我的所有
-  - name: ❗ openAI
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - 🇺🇸 美国节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - 🚀 节点选择
-      - mylinks
-      - somelinks
-      - mylocal
-      - 我的所有
+
   - name: ⏬ 下载平台
     type: select
     proxies:
@@ -523,6 +526,7 @@ proxy-groups:
       - DIRECT
       - 🚀 节点选择
       - 🔑 手动选择
+      - somelinks
   - name: 🚫 广告拦截
     type: select
     proxies:
@@ -534,28 +538,73 @@ proxy-groups:
     interval: 300 #测ping时间(秒)
     tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
+      - mylocal
       - sharecentrepro
-      - 蛋黄
       - paimon
+      - 蛋黄
+      - dy11  
+      - 胖虎
+      - getafreenode
+      - dy01
+      - mfuu-v2ray
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      - w1770946466-Auto_proxy
+      - dy16
+      - t.me-SSRSUB
+      - dy17 
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
     url: https://cp.cloudflare.com/generate_204
-    interval: 300
+    interval: 3000
     tolerance: 100
     use:
+      - mylocal
       - sharecentrepro
-      - 蛋黄
       - paimon
+      - 蛋黄
+      - dy11  
+      - 胖虎
+      - getafreenode
+      - dy01
+      - mfuu-v2ray
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      - w1770946466-Auto_proxy
+      - dy16
+      - t.me-SSRSUB
+      - dy17 
   - name: ♻️ 自动选择
     type: url-test
     url: https://cp.cloudflare.com/generate_204
     interval: 320
     tolerance: 150
     use:
+      - mylocal
       - sharecentrepro
-      - 蛋黄
       - paimon
+      - 蛋黄
+      - dy11  
+      - 胖虎
+      - getafreenode
+      - dy01
+      - mfuu-v2ray
+      - barry-far_V2ray-Configs
+      - peasoft-NoMoreWalls
+      - mahdibland-V2RayAggregator
+      - aiboboxx-v2rayfree
+      - ermaozi-get_subscribe
+      - w1770946466-Auto_proxy
+      - dy16
+      - t.me-SSRSUB
+      - dy17 
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
@@ -582,7 +631,7 @@ proxy-groups:
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
-    type: url-test
+    type: select
     use:
       - sharecentrepro
       - mylinks
@@ -608,12 +657,12 @@ proxy-groups:
   - name: Global
     type: select
     proxies:
+      - somelinks
       - 🔑 手动选择
       - 🚀 节点选择
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - somelinks
       - 我的所有
       - ♻️ 自动选择
   
