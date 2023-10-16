@@ -2,7 +2,7 @@ mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: info
-ipv6: false
+ipv6: true
 cfw-latency-timeout: 6000
 external-controller: "0.0.0.0:9090"
 
