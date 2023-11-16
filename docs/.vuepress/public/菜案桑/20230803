@@ -146,7 +146,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 440
     path: ./proxy_providers/胖虎.yaml
-    url: #"https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
+    url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
 
   getafreenode:
     type: http
