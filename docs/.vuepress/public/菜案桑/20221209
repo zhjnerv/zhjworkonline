@@ -449,13 +449,14 @@ rule-providers:
     interval: 286400
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
+  - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #搜狗词库同步
   - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
   - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
-  - DOMAIN-SUFFIX,hongjianguo.com,🇨🇳 全球直连
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
@@ -470,7 +471,6 @@ rules:
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
-  - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
   - RULE-SET,AI,❗ openAI
   - RULE-SET,Bing,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述
@@ -484,22 +484,6 @@ rules:
   - RULE-SET,Download,⏬ 下载平台
   - RULE-SET,IPfake,🚩 社交平台IP归属地
   - RULE-SET,Lan,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
   - RULE-SET,ChinaMax,🇨🇳 全球直连
   - RULE-SET,Global,Global
-  - GEOSITE,ehentai,❤️‍🔥 不可描述
-  - GEOSITE,github,❓ 谷歌服务
-  - GEOSITE,twitter,❓ 谷歌服务
-  - GEOSITE,youtube,🎬 YouTube
-  - GEOSITE,google,❓ 谷歌服务
-  - GEOSITE,telegram,☎️ 电报消息
-  - GEOSITE,netflix,🎬 YouTube
-  - GEOSITE,bahamut,❓ 谷歌服务
-  - GEOSITE,spotify,🎬 YouTube
-  - GEOIP,google,❓ 谷歌服务
-  - GEOIP,netflix,🎬 YouTube
-  - GEOIP,telegram,☎️ 电报消息
-  - GEOIP,twitter,❓ 谷歌服务
-  - GEOSITE,CN,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
   - MATCH,🐟 漏网之鱼

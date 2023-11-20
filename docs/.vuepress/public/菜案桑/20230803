@@ -773,6 +773,8 @@ rule-providers:
     interval: 86400
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
+  - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #搜狗词库同步
   - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
@@ -793,7 +795,6 @@ rules:
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
-  - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
   - RULE-SET,AI,❗ openAI
   - RULE-SET,Bing,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述

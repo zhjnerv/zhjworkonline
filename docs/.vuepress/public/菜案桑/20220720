@@ -1,824 +1,202 @@
-mixed-port: 7890
-allow-lan: true
+######### 锚点 start #######
+# proxy 相关
+pr: &pr {type: select, proxies: [默认,香港,台湾,日本,新加坡,美国,其它地区,全部节点,自动选择,DIRECT]}
+
+#这里是订阅更新和延迟测试相关的
+p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
+
+use: &use
+  type: select
+  use:
+  - provider1
+  - provider2
+
+######### 锚点 end #######
+
+
+# url 里填写自己的订阅,名称不能重复
+proxy-providers:
+  provider1:
+    <<: *p
+    url: "https://jott.live/raw/somelink"
+
+  provider2:
+    <<: *p
+    url: "https://jott.live/raw/mylink"
+
 mode: rule
+ipv6: true
 log-level: info
-ipv6: false
-cfw-latency-timeout: 6000
+allow-lan: true
+mixed-port: 7890
+unified-delay: false
+tcp-concurrent: true
+external-controller: 127.0.0.1:9090
+
+geodata-mode: true
+geox-url:
+  geoip: "https://fastly.jsdelivr.net/gh/MerlinKodo/meta-rules-dat@release/geoip.dat"
+  geosite: "https://fastly.jsdelivr.net/gh/MerlinKodo/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://fastly.jsdelivr.net/gh/MerlinKodo/meta-rules-dat@release/country.mmdb"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - 'any:53'
+  auto-route: true
+  auto-detect-interface: true
+
 dns:
   enable: true
-  ipv6: false
+  listen: :1053
+  ipv6: true
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  proxy-server-nameserver:
-    - tls://1.0.0.1:853
-    - tls://dot.pub
-    - quic://c.passcloud.xyz:784
+  fake-ip-range: 28.0.0.1/8
   fake-ip-filter:
-    - "*.lan"
-    - "*.local"
-    - dns.msftncsi.com
-    - www.msftncsi.com
-    - www.msftconnecttest.com
-    - stun.*.*.*
-    - stun.*.*
-    - miwifi.com
-    - music.163.com
-    - "*.music.163.com"
-    - "*.126.net"
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - y.qq.com
-    - "*.y.qq.com"
-    - streamoc.music.tc.qq.com
-    - mobileoc.music.tc.qq.com
-    - isure.stream.qqmusic.qq.com
-    - dl.stream.qqmusic.qq.com
-    - aqqmusic.tc.qq.com
-    - amobile.music.tc.qq.com
-    - "*.xiami.com"
-    - "*.music.migu.cn"
-    - music.migu.cn
-    - netis.cc
-    - router.asus.com
-    - repeater.asus.com
-    - routerlogin.com
-    - routerlogin.net
-    - tendawifi.com
-    - tendawifi.net
-    - tplinklogin.net
-    - tplinkwifi.net
-    - tplinkrepeater.net
-    - "*.ntp.org.cn"
-    - "*.openwrt.pool.ntp.org"
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-    - localhost.ptlogin2.qq.com
-    - "*.*.*.srv.nintendo.net"
-    - "*.*.stun.playstation.net"
-    - xbox.*.*.microsoft.com
-    - "*.ipv6.microsoft.com"
-    - "*.*.xboxlive.com"
-    - speedtest.cros.wr.pvp.net
+    - '*'
+    - '+.lan'
+    - '+.local'
   default-nameserver:
-    - 9.9.9.9
-  nameserver:
-    - 1.2.4.8
-    - 210.2.4.8
     - 223.5.5.5
-    - 223.6.6.6
-    - 52.80.52.52
-    - 117.50.10.10
-    - 180.76.76.76
-    - 119.28.28.28
-    - 119.29.29.29
-    - 114.114.114.114
-    - 114.114.115.115
-    - 101.226.4.6
-    - 218.30.118.6
-    - 123.125.81.6
-    - 140.207.198.6
-    - 202.38.64.1
-    - 202.112.20.131
-    - 202.141.160.95
-    - 202.141.160.99
-    - 202.141.176.95
-    - 202.141.176.99
-    - tls://dot.pub:853
-    - tls://1.12.12.12:853
-    - tls://120.53.53.53:853
+  nameserver:
+    - 'tls://8.8.4.4#dns'
+    - 'tls://1.0.0.1#dns'
+  proxy-server-nameserver:
     - https://doh.pub/dns-query
-    - https://sm2.doh.pub/dns-query
-    - https://1.12.12.12/dns-query
-    - https://120.53.53.53/dns-query
-    - https://dns.alidns.com/dns-query
-    - https://doh.dns.sb/dns-query
-    - https://dns.rubyfish.cn/dns-query
-  fallback:
-    - 9.9.9.9
-    - 149.112.112.112
-    - 8.8.4.4
-    - 8.8.8.8
-    - 1.0.0.1
-    - 1.1.1.1
-    - 208.67.220.220
-    - 208.67.220.222
-    - 208.67.222.220
-    - 208.67.222.222
-    - 195.46.39.39
-    - 195.46.39.40
-    - 168.95.1.1
-    - 203.80.96.10
-    - 168.95.192.1
-    - 164.124.101.2
-    - 164.124.107.9
-    - 203.248.252.2
-    - 203.248.242.2
-    - 80.80.80.80
-    - 80.80.81.81
-    - 199.85.126.10
-    - 199.85.127.10
-    - 168.126.63.1
-    - 168.126.63.2
-    - 139.175.252.16
-    - 139.175.55.244
-    - 202.45.84.58
-    - 202.45.84.59
-    - 8.26.56.26
-    - 23.253.163.53
-    - 77.88.8.1
-    - 77.88.8.8
-    - 89.233.43.71
-    - 91.239.100.100
-    - 198.101.242.72
-    - 8.20.247.20
-    - 64.6.64.6
-    - 64.6.65.6
-    - 209.244.0.3
-    - 209.244.0.4
-    - 210.220.163.82
-    - 219.250.36.130
-    - 202.14.67.4
-    - 84.200.69.80
-    - 84.200.70.40
-    - 202.14.67.14
-    - 156.154.70.1
-    - 156.154.71.1
-    - 216.146.35.35
-    - 216.146.36.36
-    - 77.109.148.136
-    - 77.109.148.137
-    - 101.101.101.101
-    - 101.102.103.104
-    - 74.82.42.42
-    - 66.220.18.42
-    - https://dns.quad9.net/dns-query
-    - https://dns9.quad9.net/dns-query
-    - tls://dns.google:853
-    - https://8.8.4.4/dns-query
-    - https://8.8.8.8/dns-query
-    - https://dns.google/dns-query
-    - tls://1.0.0.1:853
-    - tls://1.1.1.1:853
-    - tls://one.one.one.one
-    - tls://1dot1dot1dot1.cloudflare-dns.com
-    - https://1.0.0.1/dns-query
-    - https://1.1.1.1/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.daycat.space/dns-query
-    - https://dns.adguard.com/dns-query
-    - https://dns-family.adguard.com/dns-query
-    - https://dns-unfiltered.adguard.com/dns-query
-    - tls://b.iqiq.io:853
-    - tls://h.iqiq.io:853
-    - tls://j.iqiq.io:853
-    - tls://c.passcloud.xyz:853
-    - tls://x.passcloud.xyz:853
-    - https://a.passcloud.xyz/hk
-    - https://a.passcloud.xyz/am
-    - https://a.passcloud.xyz/us
-    - https://a.passcloud.xyz/sz
-    - https://a.passcloud.xyz/cdn
-    - https://a.passcloud.xyz/dns-query
-    - https://worldwide.passcloud.xyz/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-      - 127.0.0.1/8
-      - 0.0.0.0/32
-    domain:
-      - +.google.com
-      - +.facebook.com
-      - +.twitter.com
-      - +.youtube.com
-      - +.xn--ngstr-lra8j.com
-      - +.google.cn
-      - +.googleapis.cn
-      - +.googleapis.com
-      - +.gvt1.com
+  nameserver-policy:
+    "geosite:cn,private":
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
 
-d: &d  #机场订阅参数
-  type: http
-  interval: 3600
-  health-check:
-   enable: true
-   url: https://i.ytimg.com/generate_204
-   interval: 10000
+proxies:
+  # - name: "WARP"
+  #   type: wireguard
+  #   server: engage.cloudflareclient.com
+  #   port: 2408
+  #   ip: "172.16.0.2/32"
+  #   ipv6: "2606::1/128"        # 自行替换
+  #   private-key: "private-key" # 自行替换
+  #   public-key: "public-key"   # 自行替换
+  #   udp: true
+  #   reserved: "abba"           # 自行替换
+  #   mtu: 1280
+  #   dialer-proxy: "dns"
+  #   remote-dns-resolve: true
+  #   dns:
+  #     - https://dns.cloudflare.com/dns-query
 
-r: &r #分流规则订阅参数
-  type: http
-  behavior: classical
-  interval: 86400
-  
-q: &q #本地文件订阅参数
-  type: file
-  interval: 3600
-  health-check:
-    enable: true
-    url: http://www.gstatic.com/generate_204
-    interval: 3000
-
-t: &t  #节点测试参数
-  url: https://i.ytimg.com/generate_204
-  interval: 6000
-  tolerance: 250
-
-all: &all #所有节点的合集
-  use:
-    - openitsub_ml
-    - myclash
-    - 零碎连接
-    - mylocal
-    - dy01
-    - dy02
-    - dy03
-    - dy04
-    - dy05  
-    - dy06
-    - dy07
-    - dy08
-    - dy09
-    - dy10
-    - dy11
-    - dy12
-    - dy13
-    - dy14
-    - dy15
-    - dy16
-    - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
-
-#分割线，下面是放你的机场订阅链接的
-proxy-providers:
-  openitsub_ml:
-    <<: *d
-    url: "https://vercel.daycat.space/Clash.yaml"
-    path: ./proxy_providers/openitsub_ml.yaml
-
-  myclash:
-    <<: *d
-    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/mylinks"
-    path: ./proxy_providers/mylinks.yaml
-
-  零碎连接:
-    <<: *d
-    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/somelinks"
-    path: ./proxy_providers/somelinks.yaml
-
-  mylocal:
-    <<: *q
-    path: ./mylocal/somelinks.yaml
-  dy01:
-    <<: *d
-    url: "https://sub.danhu.ml/clash"
-    path: ./proxy_providers/dy1.yaml #生成名为'dy1'的配置文件
-    # 将 下面一行的url 替换为你的Clash机场订阅链接
-    # url: #你的订阅链接（比如https://sub.xxxx/clash)
-
-  dy02:
-    <<: *d
-    path: ./proxy_providers/dy2.yaml
-    url: #你的订阅链接
-
-  dy03:
-    <<: *d
-    path: ./proxy_providers/dy3.yaml
-    url: #你的订阅链接
-
-  dy04:
-    <<: *d
-    path: ./proxy_providers/dy4.yaml
-    url: #你的订阅链接
-
-  dy05:
-    <<: *d
-    path: ./proxy_providers/dy5.yaml
-    url: #你的订阅链接
-
-  dy06:
-    <<: *d
-    path: ./proxy_providers/dy6.yaml
-    url: #你的订阅链接
-
-  dy07:
-    <<: *d
-    path: ./proxy_providers/dy7.yaml
-    url: #你的订阅链接
-
-  dy08:
-    <<: *d
-    path: ./proxy_providers/dy8.yaml
-    url: #你的订阅链接
-
-  dy09:
-    <<: *d
-    path: ./proxy_providers/dy9.yaml
-    url: #你的订阅链接
-
-  dy10:
-    <<: *d
-    path: ./proxy_providers/dy10.yaml
-    url: #你的订阅链接
-
-  dy11:
-    <<: *d
-    path: ./proxy_providers/dy11.yaml
-    url: #你的订阅链接
-
-  dy12:
-    <<: *d
-    path: ./proxy_providers/dy12.yaml
-    url: #你的订阅链接
-
-  dy13:
-    <<: *d
-    path: ./proxy_providers/dy13.yaml
-    url: #你的订阅链接
-
-  dy14:
-    <<: *d
-    path: ./proxy_providers/dy14.yaml
-    url: #你的订阅链接
-
-  dy15:
-    <<: *d
-    path: ./proxy_providers/dy15.yaml
-    url: #你的订阅链接
-
-  dy16:
-    <<: *d
-    path: ./proxy_providers/dy16.yaml
-    url: #你的订阅链接
-
-  dy17:
-    <<: *d
-    path: ./proxy_providers/dy17.yaml
-    url: #你的订阅链接
-
-#还有订阅的话继续往下加 dy18 dy19 ……
-
-#分割线，下面是“代理”页面出现的分组，“name”是一级分组，“proxies”是二级分组，选节点用的
 proxy-groups:
-  - name: 🚀 节点选择
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - 免流节点
-      - DIRECT
-  - name: 🔑 手动选择
-    type: select
-    <<: *all
-  - name: 🔑 手动选择②
-    type: select
-    <<: *all
-  - name: 🚩 社交平台IP归属地
-    type: select
-    proxies:
-      - DIRECT
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - 免流节点
-  - name: 🐟 漏网之鱼
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - DIRECT
-      - 🚀 节点选择
-      - 🔑 手动选择
-      - 🔑 手动选择②
-  - name: 零碎连接
-    type: select
-    use:
-      - 零碎连接
-  - name: mylocal
-    type: select
-    use:
-      - mylocal
-  - name: 我的所有
-    type: select
-    use:
-      - myclash
-      - 零碎连接
-      - mylocal
-  - name: myclash
-    type: url-test
-    url: https://i.ytimg.com/generate_204
-    interval: 1320
-    tolerance: 150
-    use:
-      - myclash
-  - name: ☎️ 电报消息
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇬🇧 英国节点
-      - 🇫🇷 法国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - myclash
-      - 零碎连接
-      - mylocal
-      - 我的所有
-  - name: 📺 BiliBili
-    type: select
-    proxies:
-      - DIRECT
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🔑 手动选择
-  - name: 🎬 YouTube
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇬🇧 英国节点
-      - 🇫🇷 法国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - myclash
-      - 零碎连接
-      - mylocal
-      - 我的所有
-  - name: 📷 TikTok
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇯🇵 日本节点
-      - 🇸🇬 新加坡节点
-      - 🇰🇷 韩国节点
-      - 🇫🇷 法国节点
-      - 🇺🇸 美国节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - DIRECT
-  - name: 🎥 Netflix
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇫🇷 法国节点
-      - 🇩🇪 德国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - DIRECT
-  - name: 📹 Disney+
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - DIRECT
-  - name: ❓ 谷歌服务
-    type: select
-    proxies:
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - 我的所有
-      - myclash
-      - 零碎连接
-      - mylocal
-  - name: 🛡️ 隐私防护
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      - 🔑 手动选择
-      - 🍁 其他地区
-  - name: 🎮 游戏平台
-    type: select
-    proxies:
-      - DIRECT
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🇩🇪 德国节点
-      - 🇫🇷 法国节点
-      - 🇬🇧 英国节点
-      - 🇰🇷 韩国节点
-      - 🇷🇺 俄罗斯节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-  - name: ⏬ 下载平台
-    type: select
-    proxies:
-      - DIRECT
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - 🔑 手动选择
-      - 🍁 其他地区
-  - name: 🌲 BT种子
-    type: select
-    proxies:
-      - DIRECT
-      - 🔵 负载均衡
-      - 🛠️ 故障转移
-      - 🍁 其他地区
-      - 🔑 手动选择
-  - name: 🇨🇳 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - 🔑 手动选择
-  - name: 🚫 广告拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🛠️ 故障转移
-    type: fallback
-    url: https://i.ytimg.com/generate_204
-    interval: 300
-    tolerance: 50
-    use:
-      - openitsub_ml
-      - dy01
-  - name: 🔵 负载均衡
-    type: load-balance
-    strategy: consistent-hashing
-    url: https://i.ytimg.com/generate_204
-    interval: 1300
-    tolerance: 150
-    <<: *all
-  - name: ♻️ 自动选择
-    type: url-test
-    url: https://i.ytimg.com/generate_204
-    interval: 1320
-    tolerance: 150
-    use:
-      - dy01
-      - openitsub_ml
 
+  - {name: 默认, type: select, proxies: [DIRECT, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}
 
+  # - {name: dns, type: select, proxies: [DIRECT, WARP, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}  # 加入 WARP
+  - {name: dns, type: select, proxies: [DIRECT, 自动选择, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点]}
 
-#分割线，下面是节点按地区分组并自动测延迟
-  - name: 🇭🇰 香港节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 港|🇭🇰|(?i)HK|(?i)Hong
-  - name: 🇹🇼 台湾节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 台|🇨🇳|🇹🇼|湾|(?i)TW|(?i)Taiwan|CN|(?i)China|中国
-  - name: 🇸🇬 新加坡节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter:  狮|🇸🇬|坡|(?i)SG|(?i)Singapore
-  - name: 🇯🇵 日本节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 日|🇯🇵|东京|(?i)JP|(?i)Japan|(?i)Tokyo
-  - name: 🇺🇸 美国节点
-    type: select
-    <<: *all
-    filter: 美|🇺🇸|(?i)US|(?i)States|American
-  - name: 🇩🇪 德国节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 德|🇩🇪|(?i)DE|(?i)Germany
-  - name: 🇬🇧 英国节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 英|🇬🇧|(?i)uk|(?i)Britain|(?i)eng|伦敦
-  - name: 🇷🇺 俄罗斯节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 俄|🇷🇺|(?i)RU|(?i)Russian|(?i)Moscow
-  - name: 🇰🇷 韩国节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 韩|🇰🇷|(?i)KR|(?i)KOR|首尔|韩|韓|(?i)Korea
-  - name: 🇫🇷 法国节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 法|🇫🇷|(?i)FRA|巴黎|(?i)Paris
-  - name: 🍁 其他地区
-    type: url-test
-    t: &t
-    <<: *all
-    filter: ^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|🇫🇷|🇰🇷|广停|广东|中国|国内|(?i)China|香港|(?i)hk|(?i)fr|(?i)hongkong|台|台湾|(?i)TW|(?i)taiwan|日本|(?i)jp|(?i)Tokyo|(?i)japan|新加坡|(?i)sg|(?i)Singapore|美国|(?i)US|韩|(?i)South Korea|俄|英|德|(?i)RU|(?i)GB|(?i)DE)).*
-  - name: 免流节点
-    type: url-test
-    t: &t
-    <<: *all
-    filter: 80|443|(?i)TCP|浙停|广停|绿通|免流
-  - name: 💌 特殊服务
-    type: select
-    proxies:
-      - DIRECT
-      - 我的所有
-      - 🛠️ 故障转移
-      - ♻️ 自动选择
-  - name: Global
-    type: select
-    proxies:
-      - 🔑 手动选择
-      - 🔑 手动选择②
-      - 🛠️ 故障转移
-      - 🔵 负载均衡
-      - 零碎连接
-      - 我的所有
-      - ♻️ 自动选择
-  
+  - {name: Google, <<: *pr}
 
-#分割线，下面是分流规则
-rule-providers:
-  IPfake:
-    <<: *r
-    url: "https://raw.fastgit.org/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
-    path: ./Rules/IPfake.yaml
+  - {name: Telegram, <<: *pr}
 
-  BiliBili:
-    <<: *r
-    url: "https://raw.fastgit.org/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
-    path: ./Rules/bilibili.yaml
+  - {name: Twitter, <<: *pr}
 
-  Disney:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Disney/Disney.yaml"
-    path: ./Rules/Disney.yaml
+  - {name: Pixiv, <<: *pr}
 
-  Netflix:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Netflix/Netflix.yaml
-    path: ./Rules/Netflix.yaml
+  - {name: ehentai, <<: *pr}
 
-  TikTok:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/TikTok/TikTok.yaml"
-    path: ./Rules/TikTok.yaml
+  - {name: 哔哩哔哩, <<: *pr}
 
-  YouTube:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
-    path: ./Rules/YouTube.yaml
+  - {name: 哔哩东南亚, <<: *pr}
 
-  Telegram:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
-    path: ./Rules/Telegram.yaml
+  - {name: 巴哈姆特, <<: *pr}
 
-  Google:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
-    path: ./Rules/google.yaml
+  - {name: YouTube, <<: *pr}
 
-  Game:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Game/Game.yaml"
-    path: ./Rules/Game.yaml
+  - {name: NETFLIX, <<: *pr}
 
-  BanEasyPrivacy:
-    <<: *r
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml"
-    path: ./Rules/BanEasyPrivacy.yaml
+  - {name: Spotify, <<: *pr}
 
-  Advertising:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical.yaml
-    path: ./Rules/Advertising.yaml
+  - {name: Github, <<: *pr}
 
-  Download:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Download/Download.yaml
-    path: ./Rules/Download.yaml
+  - {name: 国内, type: select, proxies: [DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}
 
-  PrivateTracker:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PrivateTracker/PrivateTracker.yaml
-    path: ./Rules/PrivateTracker.yaml
+  - {name: 其他, <<: *pr}
 
-  ChinaMax:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
-    path: ./Rules/ChinaMax.yaml
+#分隔,下面是地区分组
+  - {name: 香港, <<: *use,filter: "(?i)港|hk|hongkong|hong kong"}
 
-  Global:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
-    path: ./Rules/Global.yaml
+  - {name: 台湾, <<: *use, filter: "(?i)台|tw|taiwan"}
 
-  Lan:
-    <<: *r
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
-    path: ./Rules/Lan.yaml
+  - {name: 日本, <<: *use, filter: "(?i)日本|jp|japan"}
+
+  - {name: 美国, <<: *use, filter: "(?i)美|us|unitedstates|united states"}
+
+  - {name: 新加坡, <<: *use, filter: "(?i)(新|sg|singapore)"}
+
+  - {name: 其它地区, <<: *use, filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"}
+
+  - {name: 全部节点, <<: *use}
+
+  - {name: 自动选择, <<: *use, tolerance: 2, type: url-test}
 
 rules:
-  - DOMAIN-SUFFIX,anydesk.com,💌 特殊服务
-  - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
+  # - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT # quic
+  - DOMAIN-SUFFIX,anydesk.com,国内
+  - PROCESS-NAME,userNetSchedule.exe,国内 #搜狗词库同步
+  - PROCESS-NAME,DownloadSDKServer.exe,国内 #搜狗词库同步
+  - DOMAIN-SUFFIX,discord.com,Google #聊天软件discord分流规则
+  - DOMAIN-SUFFIX,jott.live,国内
+  - DOMAIN-SUFFIX,qqdk2019.net,其他
+  - DOMAIN-SUFFIX,wipo.int,Google # 世界知识产权组织的分流规则
+  - DOMAIN-SUFFIX,infomaniak.com,Google # ik.me的邮箱规则
+  - DOMAIN-SUFFIX,jdbstatic.com,Google
+  - DOMAIN-SUFFIX,poe.com,Google
+  - DOMAIN-SUFFIX,theb.ai,Google
+  - DOMAIN-SUFFIX,claude.ai,Google
+  - DOMAIN-SUFFIX,quickconnect.to,国内
+  - DOMAIN-SUFFIX,getafreenode.com,其他
+  - DOMAIN-SUFFIX,synology.com,国内
+  - DOMAIN-SUFFIX,sharepoint.com,其他
+  - DOMAIN-SUFFIX,exoclick.com,其他
   - DOMAIN-SUFFIX,ouo.io,Global
-  - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
-  - RULE-SET,BiliBili,📺 BiliBili
-  - RULE-SET,YouTube,🎬 YouTube
-  - RULE-SET,Netflix,🎥 Netflix
-  - RULE-SET,Disney,📹 Disney+
-  - RULE-SET,TikTok,📷 TikTok
-  - RULE-SET,Google,❓ 谷歌服务
-  - RULE-SET,Telegram,☎️ 电报消息
-  - RULE-SET,Game,🎮 游戏平台
-  - RULE-SET,BanEasyPrivacy,🛡️ 隐私防护
-  - RULE-SET,Advertising,🚫 广告拦截
-  - RULE-SET,Download,⏬ 下载平台
-  - RULE-SET,PrivateTracker,🌲 BT种子
-  - RULE-SET,IPfake,🚩 社交平台IP归属地
-  - RULE-SET,Lan,🇨🇳 全球直连
-  - GEOIP,CN,🇨🇳 全球直连
-  - RULE-SET,ChinaMax,🇨🇳 全球直连
-  - RULE-SET,Global,Global
-  - MATCH,🐟 漏网之鱼
+  - DOMAIN-SUFFIX,p.sda1.dev,其他
+  - DOMAIN-SUFFIX,translate.googleapis.com,Google
+  - DOMAIN-SUFFIX,anonfiles.com,Google 
+  - DOMAIN-SUFFIX,filechan.org,Google  
+  - GEOSITE,biliintl, 哔哩东南亚
+  - GEOSITE,ehentai,ehentai
+  - GEOSITE,github,Github
+  - GEOSITE,twitter,Twitter
+  - GEOSITE,youtube,YouTube
+  - GEOSITE,google,Google
+  - GEOSITE,telegram,Telegram
+  - GEOSITE,netflix,NETFLIX
+  - GEOSITE,bilibili,哔哩哔哩
+  - GEOSITE,bahamut,巴哈姆特
+  - GEOSITE,spotify,Spotify
+  - GEOSITE,geolocation-!cn,其他
+
+  # - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,CN))),REJECT # quic
+  - GEOIP,google,Google
+  - GEOIP,netflix,NETFLIX
+  - GEOIP,telegram,Telegram
+  - GEOIP,twitter,Twitter
+  - GEOSITE,pixiv,Pixiv
+  - GEOSITE,CN,国内
+  - GEOIP,CN,国内
+  - MATCH,其他
