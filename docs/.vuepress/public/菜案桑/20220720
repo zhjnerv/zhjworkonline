@@ -1,27 +1,22 @@
-######### 锚点 start #######
-# proxy 相关
-pr: &pr {type: select, proxies: [默认,香港,台湾,日本,新加坡,美国,其它地区,全部节点,自动选择,DIRECT]}
-
-#这里是订阅更新和延迟测试相关的
-p: &p {type: http, interval: 3600, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300}}
-
-use: &use
-  type: select
-  use:
-  - provider1
-  - provider2
-
-######### 锚点 end #######
-
 
 # url 里填写自己的订阅,名称不能重复
 proxy-providers:
   provider1:
-    <<: *p
+    type: http
+    interval: 3600
+    health-check: 
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
     url: "https://jott.live/raw/somelink"
 
   provider2:
-    <<: *p
+    type: http
+    interval: 3600
+    health-check: 
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
     url: "https://jott.live/raw/mylink"
 
 mode: rule
@@ -104,55 +99,128 @@ proxies:
 
 proxy-groups:
 
-  - {name: 默认, type: select, proxies: [DIRECT, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}
+  - name: 默认
+    type: select
+    proxies: [DIRECT, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]
 
-  # - {name: dns, type: select, proxies: [DIRECT, WARP, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}  # 加入 WARP
-  - {name: dns, type: select, proxies: [DIRECT, 自动选择, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点]}
+  - name: dns
+    type: select
+    proxies: [DIRECT, 自动选择, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点]
 
-  - {name: Google, <<: *pr}
+  - name: Google
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: Telegram, <<: *pr}
+  - name: Telegram
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: Twitter, <<: *pr}
+  - name: Twitter
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: Pixiv, <<: *pr}
+  - name: Pixiv
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: ehentai, <<: *pr}
+  - name: ehentai
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: 哔哩哔哩, <<: *pr}
+  - name: 哔哩哔哩
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: 哔哩东南亚, <<: *pr}
+  - name: 哔哩东南亚
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: 巴哈姆特, <<: *pr}
+  - name: 巴哈姆特
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: YouTube, <<: *pr}
+  - name: YouTube
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: NETFLIX, <<: *pr}
+  - name: NETFLIX
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: Spotify, <<: *pr}
+  - name: Spotify
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: Github, <<: *pr}
+  - name: Github
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
 
-  - {name: 国内, type: select, proxies: [DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]}
+  - name: 国内
+    type: select
+    proxies: [DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]
 
-  - {name: 其他, <<: *pr}
+  - name: 其他
+    type: select
+    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
+
 
 #分隔,下面是地区分组
-  - {name: 香港, <<: *use,filter: "(?i)港|hk|hongkong|hong kong"}
+  - name: 香港
+    type: select
+    use:
+      - provider1
+      - provider2
+    filter: "(?i)港|hk|hongkong|hong kong"
 
-  - {name: 台湾, <<: *use, filter: "(?i)台|tw|taiwan"}
+  - name: 台湾
+    type: select
+    use:
+      - provider1
+      - provider2
+    filter: "(?i)台|tw|taiwan"
 
-  - {name: 日本, <<: *use, filter: "(?i)日本|jp|japan"}
+  - name: 日本
+    type: select
+    use:
+      - provider1
+      - provider2
+    filter: "(?i)日本|jp|japan"
 
-  - {name: 美国, <<: *use, filter: "(?i)美|us|unitedstates|united states"}
+  - name: 美国
+    type: select
+    use:
+      - provider1
+      - provider2
+    filter: "(?i)美|us|unitedstates|united states"
 
-  - {name: 新加坡, <<: *use, filter: "(?i)(新|sg|singapore)"}
+  - name: 新加坡
+    type: select
+    use:
+      - provider1
+      - provider2
+    filter: "(?i)(新|sg|singapore)"
 
-  - {name: 其它地区, <<: *use, filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"}
+  - name: 其它地区
+    type: select
+    use:
+      - provider1
+      - provider2
+    filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"
 
-  - {name: 全部节点, <<: *use}
+  - name: 全部节点
+    type: select
+    use:
+      - provider1
+      - provider2
 
-  - {name: 自动选择, <<: *use, tolerance: 2, type: url-test}
+  - name: 自动选择
+    type: select
+    use:
+      - provider1
+      - provider2
+    tolerance: 2
+    type: url-test
+
 
 rules:
   # - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT # quic
