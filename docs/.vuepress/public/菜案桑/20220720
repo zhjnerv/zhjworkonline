@@ -173,7 +173,7 @@ rules:
   - DOMAIN-SUFFIX,synology.com,国内
   - DOMAIN-SUFFIX,sharepoint.com,其他
   - DOMAIN-SUFFIX,exoclick.com,其他
-  - DOMAIN-SUFFIX,ouo.io,Global
+  - DOMAIN-SUFFIX,ouo.io,其他
   - DOMAIN-SUFFIX,p.sda1.dev,其他
   - DOMAIN-SUFFIX,translate.googleapis.com,Google
   - DOMAIN-SUFFIX,anonfiles.com,Google 
