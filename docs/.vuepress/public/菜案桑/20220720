@@ -214,12 +214,11 @@ proxy-groups:
       - provider2
 
   - name: 自动选择
-    type: select
+    type: url-test
     use:
       - provider1
       - provider2
     tolerance: 2
-    type: url-test
 
 
 rules:
