@@ -10,6 +10,13 @@ external-controller: "0.0.0.0:9090"
 
 #分割线，下面是放你的机场订阅链接的
 proxies:
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60000
+    password: 87f055ba
+    sni: www.bing.com
+    skip-cert-verify: true
 proxy-providers:
   sharecentrepro:
     type: http
@@ -19,7 +26,7 @@ proxy-providers:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    url: "https://sub.sharecentre.online/sub"
+    url: #"https://sub.sharecentre.online/sub"
     path: ./proxy_providers/sharecentrepro.yaml
 
   mylinks:
@@ -59,7 +66,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/胖虎.yaml
-    url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
+    url: #"https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
 
   getafreenode:
     type: http
@@ -69,7 +76,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/getafreenode.yaml
-    url: "https://getafreenode.com/subscribe/?uuid=98A9399C-6845-496D-B2D3-43BBAF6D28F3" #你的订阅链接
+    url: "https://getafreenode.com/subscribe/?uuid=59B0263A-6AC0-4F98-BC64-59DF1BE9361B" #你的订阅链接
 
   dy17:
     type: http
@@ -177,6 +184,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
+      - hy2-us-zjh
   - name: 🎬 YouTube
     type: select
     interval: 10320
@@ -193,6 +201,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
+      - hy2-us-zjh
   - name: ❓ 谷歌服务
     type: select
     interval: 10320
@@ -207,6 +216,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
+      - hy2-us-zjh
   - name: 💌 特殊服务
     type: select
     proxies:
@@ -249,6 +259,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
+      - hy2-us-zjh
   - name: ❗ openAI
     type: select
     proxies:
@@ -264,6 +275,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
+      - hy2-us-zjh
   - name: ⏬ 下载平台
     type: select
     proxies:
