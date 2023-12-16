@@ -108,7 +108,7 @@ proxy-providers:
     url: "https://sub.sharecentre.online/sub"
     path: ./proxy_providers/sharecentrepro.yaml
 
-  mylinks:
+  mylink:
     type: http
     interval: 3800
     health-check:
@@ -116,7 +116,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 3800
     url: "https://jott.live/raw/mylink"
-    path: ./proxy_providers/mylinks.yaml
+    path: ./proxy_providers/mylink.yaml
 
   somelinks:
     type: http
@@ -297,7 +297,8 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: #你的订阅链接
+    url: https://paste.gg/p/TG@FProxies/aad4db5b63c94a8da5a461b6039858c3/files/9ffe8a2d5934409aa025c641e8d45b3b/raw #你的订阅链接
+    filter: Hs|Ns
 
 
 #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -323,7 +324,7 @@ proxy-groups:
     proxies:
       - hy2-us-zjh
     use:
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - sharecentrepro
@@ -349,7 +350,7 @@ proxy-groups:
       - hy2-us-zjh
     use:
       - sharecentrepro
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - paimon
@@ -394,13 +395,13 @@ proxy-groups:
     type: select
     use:
       - somelinks
-  - name: mylinks
+  - name: mylink
     type: url-test
     url: https://cp.cloudflare.com/generate_204
     interval: 1320
     tolerance: 150
     use:
-      - mylinks
+      - mylink
   - name: mylocal
     type: select
     use:
@@ -410,14 +411,14 @@ proxy-groups:
     proxies:
       - hy2-us-zjh
     use:
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
   - name: ❗ openAI
     type: select
     proxies:
       - hy2-us-zjh
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - 我的所有
@@ -441,7 +442,7 @@ proxy-groups:
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - 🚀 节点选择
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - 我的所有
@@ -457,7 +458,7 @@ proxy-groups:
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - ♻️ 自动选择
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - 我的所有
@@ -472,7 +473,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🚀 节点选择
       - 我的所有
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
   - name: 💌 特殊服务
@@ -520,7 +521,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - 我的所有
@@ -634,7 +635,7 @@ proxy-groups:
     type: select
     use:
       - sharecentrepro
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - paimon
@@ -658,7 +659,7 @@ proxy-groups:
     type: select
     use:
       - sharecentrepro
-      - mylinks
+      - mylink
       - somelinks
       - mylocal
       - paimon
