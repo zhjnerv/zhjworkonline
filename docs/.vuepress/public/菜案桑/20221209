@@ -5,10 +5,7 @@ log-level: info
 ipv6: true
 cfw-latency-timeout: 6000
 external-controller: "0.0.0.0:9090"
-
-
-
-#分割线，下面是放你的机场订阅链接的
+#分割线，下面是代理的配置
 proxies:
   - name: hy2-us-zjh
     type: hysteria2
@@ -17,6 +14,9 @@ proxies:
     password: 87f055ba
     sni: www.bing.com
     skip-cert-verify: true
+
+#分割线，下面是放你的机场订阅链接的
+
 proxy-providers:
   sharecentrepro:
     type: http
@@ -95,6 +95,7 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
+      - hy2-us-zjh
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -107,6 +108,7 @@ proxy-groups:
   - name: 🔑 手动选择
     type: select
     use:
+      - hy2-us-zjh
       - sharecentrepro
       - mylinks
       - somelinks
@@ -117,6 +119,7 @@ proxy-groups:
   - name: 🔑 手动选择②
     type: select
     use:
+      - hy2-us-zjh
       - sharecentrepro
       - mylinks
       - somelinks
@@ -138,6 +141,7 @@ proxy-groups:
   - name: 🐟 漏网之鱼
     type: select
     proxies:
+      - hy2-us-zjh
       - ♻️ 自动选择
       - 🛠️ 故障转移
       - 🔵 负载均衡
@@ -172,6 +176,7 @@ proxy-groups:
     type: select
     interval: 10320
     proxies:
+      - hy2-us-zjh
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -184,11 +189,11 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
-      - hy2-us-zjh
   - name: 🎬 YouTube
     type: select
     interval: 10320
     proxies:
+      - hy2-us-zjh
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -201,11 +206,11 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
-      - hy2-us-zjh
   - name: ❓ 谷歌服务
     type: select
     interval: 10320
     proxies:
+      - hy2-us-zjh
       - 🇺🇸 美国节点
       - 🚀 节点选择
       - 🍁 其他地区
@@ -216,7 +221,6 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
-      - hy2-us-zjh
   - name: 💌 特殊服务
     type: select
     proxies:
@@ -247,6 +251,7 @@ proxy-groups:
   - name: ❤️‍🔥 不可描述
     type: select
     proxies:
+      - hy2-us-zjh
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -259,10 +264,10 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
-      - hy2-us-zjh
   - name: ❗ openAI
     type: select
     proxies:
+      - hy2-us-zjh
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -275,7 +280,6 @@ proxy-groups:
       - somelinks
       - mylocal
       - 我的所有
-      - hy2-us-zjh
   - name: ⏬ 下载平台
     type: select
     proxies:
@@ -304,6 +308,7 @@ proxy-groups:
     tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
       - sharecentrepro
+      - somelinks
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -311,6 +316,7 @@ proxy-groups:
     interval: 300
     tolerance: 100
     use:
+      - somelinks
       - sharecentrepro
   - name: ♻️ 自动选择
     type: url-test
@@ -318,6 +324,7 @@ proxy-groups:
     interval: 3200
     tolerance: 150
     use:
+      - somelinks
       - sharecentrepro
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
@@ -345,6 +352,7 @@ proxy-groups:
   - name: Global
     type: select
     proxies:
+      - hy2-us-zjh
       - 🔑 手动选择
       - 🔑 手动选择②
       - 🛠️ 故障转移
