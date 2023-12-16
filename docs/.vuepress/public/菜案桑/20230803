@@ -85,8 +85,17 @@ dns:
       - "+.googlevideo.com"
       - "+.msftconnecttest.com"
       - "+.msftncsi.com"
-#分割线，下面是放你的机场订阅链接的
+
+#分割线，下面是代理的配置
 proxies:
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60000
+    password: 87f055ba
+    sni: www.bing.com
+    skip-cert-verify: true
+#分割线，下面是放你的机场订阅链接的
 proxy-providers:
   sharecentrepro:
     type: http
@@ -298,6 +307,7 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
+      - hy2-us-zjh
       - somelinks
       - DIRECT
       - ♻️ 自动选择
@@ -308,8 +318,10 @@ proxy-groups:
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - 我的所有
-  - name: 🔑 手动选择
+  - name: 🔑 手动选择 #注意配置 use 和 proxies 混用
     type: select
+    proxies:
+      - hy2-us-zjh
     use:
       - mylinks
       - somelinks
@@ -333,6 +345,8 @@ proxy-groups:
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🔑 手动选择②
     type: select
+    proxies:
+      - hy2-us-zjh
     use:
       - sharecentrepro
       - mylinks
@@ -368,6 +382,7 @@ proxy-groups:
   - name: 🐟 漏网之鱼
     type: select
     proxies:
+      - hy2-us-zjh
       - DIRECT
       - 🔑 手动选择
       - ♻️ 自动选择
@@ -392,6 +407,8 @@ proxy-groups:
       - mylocal
   - name: 我的所有
     type: select
+    proxies:
+      - hy2-us-zjh
     use:
       - mylinks
       - somelinks
@@ -399,6 +416,7 @@ proxy-groups:
   - name: ❗ openAI
     type: select
     proxies:
+      - hy2-us-zjh
       - mylinks
       - somelinks
       - mylocal
@@ -414,6 +432,7 @@ proxy-groups:
   - name: ☎️ 电报消息
     type: select
     proxies:
+      - hy2-us-zjh
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -429,6 +448,7 @@ proxy-groups:
   - name: 🎬 YouTube
     type: select
     proxies:
+      - hy2-us-zjh
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -444,6 +464,7 @@ proxy-groups:
   - name: ❓ 谷歌服务
     type: select
     proxies:
+      - hy2-us-zjh
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -498,6 +519,7 @@ proxy-groups:
   - name: ❤️‍🔥 不可描述
     type: select
     proxies:
+      - hy2-us-zjh
       - mylinks
       - somelinks
       - mylocal
@@ -581,12 +603,14 @@ proxy-groups:
       - dy16
       - t.me-SSRSUB
       - dy17 
+      - somelinks
   - name: ♻️ 自动选择
     type: url-test
     url: https://cp.cloudflare.com/generate_204
     interval: 320
     tolerance: 150
     use:
+      - somelinks
       - mylocal
       - sharecentrepro
       - paimon
@@ -657,6 +681,7 @@ proxy-groups:
   - name: Global
     type: select
     proxies:
+      - hy2-us-zjh
       - somelinks
       - 🔑 手动选择
       - 🚀 节点选择

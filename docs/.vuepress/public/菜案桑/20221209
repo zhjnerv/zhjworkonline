@@ -107,8 +107,9 @@ proxy-groups:
       - 我的所有
   - name: 🔑 手动选择
     type: select
-    use:
+    proxies:
       - hy2-us-zjh
+    use:
       - sharecentrepro
       - mylinks
       - somelinks
@@ -118,8 +119,9 @@ proxy-groups:
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🔑 手动选择②
     type: select
-    use:
+    proxies:
       - hy2-us-zjh
+    use:
       - sharecentrepro
       - mylinks
       - somelinks
