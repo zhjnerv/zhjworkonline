@@ -802,6 +802,8 @@ rules:
   - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
   - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #搜狗词库同步
   - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
+  - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
+  - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
