@@ -384,6 +384,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - somelinks
       - DIRECT
       - 🔑 手动选择
       - ♻️ 自动选择
@@ -800,7 +801,8 @@ rule-providers:
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
-  - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #搜狗词库同步
+  - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #迅雷
+  - PROCESS-NAME,RayLinkService.exe,🇨🇳 全球直连 #raylink
   - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
   - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
   - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
