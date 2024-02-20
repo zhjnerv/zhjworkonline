@@ -813,6 +813,7 @@ rules:
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
+  - DOMAIN-SUFFIX,caifree.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,claude.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
