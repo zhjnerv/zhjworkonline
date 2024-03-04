@@ -247,6 +247,18 @@ proxy-providers:
     path: ./proxy_providers/SSRSUB.yaml
     url: #"https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
 
+  蛋黄:
+    type: http
+    interval: 4200
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 4200
+    path: ./proxy_providers/蛋黄.yaml
+    url: https://paste.gg/p/TG@FProxies/7e885925fcf243339ec3a354f66d3b88/files/8c9afe1b4dd447e9837b75bb7a299a7c/raw #clash订阅链接
+    filter: Hs|Ns
+
+
 #这里开始是空的配置----
 
   dy01:
@@ -289,16 +301,7 @@ proxy-providers:
     path: ./proxy_providers/dy17.yaml
     url: #"" #你的订阅链接
 
-  蛋黄:
-    type: http
-    interval: 4200
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4200
-    path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/aad4db5b63c94a8da5a461b6039858c3/files/9ffe8a2d5934409aa025c641e8d45b3b/raw #你的订阅链接
-    filter: Hs|Ns
+
 
 
 #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
