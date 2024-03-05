@@ -247,6 +247,18 @@ proxy-providers:
     path: ./proxy_providers/SSRSUB.yaml
     url: #"https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
 
+  蛋黄:
+    type: http
+    interval: 4200
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 4200
+    path: ./proxy_providers/蛋黄.yaml
+    url: https://paste.gg/p/TG@FProxies/7e885925fcf243339ec3a354f66d3b88/files/8c9afe1b4dd447e9837b75bb7a299a7c/raw #clash订阅链接
+    filter: Hs|Ns
+
+
 #这里开始是空的配置----
 
   dy01:
@@ -289,16 +301,7 @@ proxy-providers:
     path: ./proxy_providers/dy17.yaml
     url: #"" #你的订阅链接
 
-  蛋黄:
-    type: http
-    interval: 4200
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4200
-    path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/aad4db5b63c94a8da5a461b6039858c3/files/9ffe8a2d5934409aa025c641e8d45b3b/raw #你的订阅链接
-    filter: Hs|Ns
+
 
 
 #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
@@ -798,6 +801,12 @@ rule-providers:
     path: ./RuleSet/bing.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
     interval: 86400
+  Copilot:
+    type: http
+    behavior: classical
+    path: ./RuleSet/copilot.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
@@ -813,6 +822,7 @@ rules:
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
+  - DOMAIN-SUFFIX,caifree.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,claude.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
@@ -827,6 +837,7 @@ rules:
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
   - RULE-SET,AI,❗ openAI
   - RULE-SET,Bing,❗ openAI
+  - RULE-SET,Copilot,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Spotify,🎬 YouTube

@@ -470,6 +470,12 @@ rule-providers:
     path: ./RuleSet/bing.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
     interval: 286400
+  Copilot:
+    type: http
+    behavior: classical
+    path: ./RuleSet/copilot.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
   - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
@@ -485,6 +491,7 @@ rules:
   - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
   - IP-CIDR,149.154.167.220/32,☎️ 电报消息
   - DOMAIN-SUFFIX,poe.com,❗ openAI
+  - DOMAIN-SUFFIX,caifree.com,❗ openAI
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,claude.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
@@ -499,6 +506,7 @@ rules:
   - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
   - RULE-SET,AI,❗ openAI
   - RULE-SET,Bing,❗ openAI
+  - RULE-SET,Copilot,❗ openAI
   - RULE-SET,NSFW,❤️‍🔥 不可描述
   - RULE-SET,YouTube,🎬 YouTube
   - RULE-SET,Spotify,🎬 YouTube
