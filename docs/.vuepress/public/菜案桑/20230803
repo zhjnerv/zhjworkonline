@@ -257,7 +257,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 460
     path: ./proxy_providers/dy01.yaml
-    url: #'dy01' #你的订阅链接
+    url: 'https://v2ray-nodes.lgf4591.workers.dev/sub/b58a6cd1-43da-4506-aaec-308045412f2d' # cloudflare-pages-vpn
 
   dy11:
     type: http
