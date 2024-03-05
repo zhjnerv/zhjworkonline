@@ -1,0 +1,5 @@
+trojan://password@s1.1qaz.sbs:1443?security=tls&sni=s1.1qaz.sbs&type=tcp&headerType=none&host=s1.1qaz.sbs#s1
+trojan://password@s12.1qaz.sbs:1443?security=tls&sni=s12.1qaz.sbs&type=tcp&headerType=none&host=s12.1qaz.sbs#s12
+trojan://password@s2.1qaz.sbs:1443?security=tls&sni=s2.1qaz.sbs&type=tcp&headerType=none&host=s2.1qaz.sbs#s2
+trojan://password@s9.1qaz.sbs:1443?security=tls&sni=s9.1qaz.sbs&type=tcp&headerType=none&host=s9.1qaz.sbs#s9
+trojan://password@s3.1qaz.sbs:1443?security=tls&sni=s3.1qaz.sbs&type=tcp&headerType=none&host=s3.1qaz.sbs#s3
