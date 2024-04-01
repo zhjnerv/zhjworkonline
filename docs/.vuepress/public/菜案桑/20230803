@@ -95,6 +95,13 @@ proxies:
     password: 87f055ba
     sni: www.bing.com
     skip-cert-verify: true
+  - name: hy2-us-ccs
+    type: hysteria2
+    server: 107.175.32.131
+    port: 25217
+    password: c938f338
+    sni: www.bing.com
+    skip-cert-verify: true
 #分割线，下面是放你的机场订阅链接的
 proxy-providers:
   sharecentrepro:
@@ -255,7 +262,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/7e885925fcf243339ec3a354f66d3b88/files/8c9afe1b4dd447e9837b75bb7a299a7c/raw #clash订阅链接
+    url: https://paste.gg/p/TG@FProxies/13d91781d4d6419b90759161362fe5c6/files/266d79b2ac1745c4af6c4857fffe8925/raw #clash订阅链接
     filter: Hs|Ns
 
 
@@ -312,6 +319,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - somelinks
       - DIRECT
       - ♻️ 自动选择
@@ -326,6 +334,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
     use:
       - mylink
       - somelinks
@@ -351,6 +360,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
     use:
       - sharecentrepro
       - mylink
@@ -387,6 +397,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - somelinks
       - DIRECT
       - 🔑 手动选择
@@ -414,6 +425,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
     use:
       - mylink
       - somelinks
@@ -422,6 +434,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - mylink
       - somelinks
       - mylocal
@@ -438,6 +451,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -454,6 +468,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -470,6 +485,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -525,6 +541,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - mylink
       - somelinks
       - mylocal
@@ -687,6 +704,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - somelinks
       - 🔑 手动选择
       - 🚀 节点选择
