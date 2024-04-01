@@ -14,6 +14,14 @@ proxies:
     password: 87f055ba
     sni: www.bing.com
     skip-cert-verify: true
+  
+  - name: hy2-us-ccs
+    type: hysteria2
+    server: 107.175.32.131
+    port: 25217
+    password: c938f338
+    sni: www.bing.com
+    skip-cert-verify: true
 
 #分割线，下面是放你的机场订阅链接的
 
@@ -96,6 +104,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -109,6 +118,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
     use:
       - sharecentrepro
       - mylinks
@@ -121,6 +131,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
     use:
       - sharecentrepro
       - mylinks
@@ -144,6 +155,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - somelinks
       - ♻️ 自动选择
       - 🛠️ 故障转移
@@ -180,6 +192,7 @@ proxy-groups:
     interval: 10320
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -197,6 +210,7 @@ proxy-groups:
     interval: 10320
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -214,6 +228,7 @@ proxy-groups:
     interval: 10320
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - 🇺🇸 美国节点
       - 🚀 节点选择
       - 🍁 其他地区
@@ -255,6 +270,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -271,6 +287,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -356,6 +373,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - hy2-us-ccs
       - 🔑 手动选择
       - 🔑 手动选择②
       - 🛠️ 故障转移
