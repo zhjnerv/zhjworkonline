@@ -144,15 +144,15 @@ proxy-providers:
       interval: 300
     path: ./mylocal/somelinks.yaml
 
-  paimon:
+  zrabur:
     type: http
     interval: 4100
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 410
-    path: ./proxy_providers/paimon.yaml
-    url: "https://sub.pmsub.me/clash.yaml" #你的订阅链接
+    path: ./proxy_providers/zeabur.yaml
+    url: "https://subs.zeabur.app/clash" #你的订阅链接
 
   胖虎:
     type: http
@@ -340,7 +340,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - sharecentrepro
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -366,7 +366,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -514,7 +514,7 @@ proxy-groups:
     use:
       - mylocal
       - sharecentrepro
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -585,7 +585,7 @@ proxy-groups:
     use:
       - mylocal
       - sharecentrepro
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -610,7 +610,7 @@ proxy-groups:
     use:
       - mylocal
       - sharecentrepro
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -636,7 +636,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - sharecentrepro
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -660,7 +660,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
@@ -684,7 +684,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - paimon
+      - zrabur
       - 蛋黄
       - dy11  
       - 胖虎
