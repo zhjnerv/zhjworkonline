@@ -172,7 +172,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 550
     path: ./proxy_providers/getafreenode.yaml
-    url: "https://getafreenode.com/subscribe/?uuid=7d6829d4-5a84-488f-946d-99ace88b4055" #你的订阅链接
+    url: "https://getafreenode.com/subscribe/?uuid=f64bc720-e43d-4342-9b33-3939f2ae6d0e" #你的订阅链接
 
   mfuu-v2ray:
     type: http
