@@ -835,6 +835,7 @@ rules:
   - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
   - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
+  - DOMAIN-SUFFIX,getgrass.io,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
   - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则
