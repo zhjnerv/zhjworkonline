@@ -1,5 +1,32 @@
-trojan://password@s1.1qaz.sbs:1443?security=tls&sni=s1.1qaz.sbs&type=tcp&headerType=none&host=s1.1qaz.sbs#s1
-trojan://password@s12.1qaz.sbs:1443?security=tls&sni=s12.1qaz.sbs&type=tcp&headerType=none&host=s12.1qaz.sbs#s12
-trojan://password@s2.1qaz.sbs:1443?security=tls&sni=s2.1qaz.sbs&type=tcp&headerType=none&host=s2.1qaz.sbs#s2
-trojan://password@s9.1qaz.sbs:1443?security=tls&sni=s9.1qaz.sbs&type=tcp&headerType=none&host=s9.1qaz.sbs#s9
-trojan://password@s3.1qaz.sbs:1443?security=tls&sni=s3.1qaz.sbs&type=tcp&headerType=none&host=s3.1qaz.sbs#s3
+proxies:
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60000
+    password: 87f055ba
+    sni: www.bing.com
+    skip-cert-verify: true
+  - name: MiLU
+    type: hysteria2
+    server: yin.za.net
+    port: 59129
+    password: e1276a3f
+    sni: www.bing.com
+    skip-cert-verify: true
+  - name: MiNL
+    type: hysteria2
+    server: sep.za.org
+    port: 59035
+    password: a39deeb4
+    sni: www.bing.com
+    skip-cert-verify: true
+  - name: MiUS
+    type: hysteria2
+    server: deep.za.net
+    port: 7239
+    password: cac76976
+    sni: www.bing.com
+    skip-cert-verify: true
+    
+    
+   
