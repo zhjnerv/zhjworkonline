@@ -84,7 +84,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/getafreenode.yaml
-    url: "https://getafreenode.com/subscribe/?uuid=59B0263A-6AC0-4F98-BC64-59DF1BE9361B" #你的订阅链接
+    url: "https://getafreenode.com/subscribe/?uuid=f64bc720-e43d-4342-9b33-3939f2ae6d0e" #你的订阅链接
 
   dy17:
     type: http
@@ -499,10 +499,16 @@ rules:
   - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
   - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #迅雷
   - PROCESS-NAME,RayLinkService.exe,🇨🇳 全球直连 #raylink
+  - PROCESS-NAME,rustdesk.exe,DIRECT #rustdesk
   - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
+  - DOMAIN-SUFFIX,chaturbate.com,❤️‍🔥 不可描述
+  - DOMAIN-SUFFIX,stripchat.com,❤️‍🔥 不可描述
+  - DOMAIN-SUFFIX,fujm.qqdk2019.net,DIRECT #github分流规则
   - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
   - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
+  - DOMAIN-SUFFIX,getgrass.io,DIRECT #grass分流
+  - DOMAIN-SUFFIX,ghost.io,DIRECT #grass分流
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
   - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则

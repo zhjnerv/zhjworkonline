@@ -122,7 +122,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 3800
-    url: "https://jott.live/raw/mylink"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
     path: ./proxy_providers/mylink.yaml
 
   somelinks:
@@ -132,7 +132,7 @@ proxy-providers:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 900
-    url: "https://jott.live/raw/somelink"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
     path: ./proxy_providers/somelinks.yaml
 
   mylocal:
@@ -262,7 +262,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/13d91781d4d6419b90759161362fe5c6/files/266d79b2ac1745c4af6c4857fffe8925/raw #clash订阅链接
+    url: https://paste.gg/p/TG@FProxies/fcbe34179b104f639056d3adca379733/files/8b3320e40b234077a86079ba06346d7f/raw #clash订阅链接
     filter: Hs|Ns
 
 
