@@ -842,6 +842,8 @@ rules:
   - DOMAIN-SUFFIX,getgrass.io,DIRECT #grass分流
   - DOMAIN-SUFFIX,ghost.io,DIRECT #grass分流
   - DOMAIN-SUFFIX,bigdatacloud.net,DIRECT #grass分流
+  - DOMAIN-SUFFIX,wynd.network.net,DIRECT #grass分流
+  - DOMAIN-SUFFIX,amazontrust.com,DIRECT #grass分流
   - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
   - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
   - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则
@@ -860,7 +862,7 @@ rules:
   - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
   - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
   - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
-  - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
+  - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务
   - RULE-SET,AI,❗ openAI
   - RULE-SET,Bing,❗ openAI
   - RULE-SET,Copilot,❗ openAI
