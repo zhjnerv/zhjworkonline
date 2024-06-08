@@ -262,7 +262,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/fcbe34179b104f639056d3adca379733/files/8b3320e40b234077a86079ba06346d7f/raw #clash订阅链接
+    url: https://paste.gg/p/TG@FProxies/e1ffa8443e9d436293e3dca51c78c2ec/files/4646c50233c7411688dc5efa4adb4cc4/raw #clash订阅链接
     filter: Hs|Ns
 
 
@@ -407,7 +407,10 @@ proxy-groups:
       - 🚀 节点选择
       - 🔑 手动选择②
   - name: somelinks
-    type: select
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 90
     use:
       - somelinks
   - name: mylink
