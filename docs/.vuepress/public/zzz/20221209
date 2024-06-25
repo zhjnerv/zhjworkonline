@@ -44,7 +44,7 @@ proxy-providers:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    url: #"https://jott.live/raw/mylink"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
     path: ./proxy_providers/mylinks.yaml
 
   somelinks:
@@ -54,7 +54,7 @@ proxy-providers:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    url: "https://jott.live/raw/somelink"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
     path: ./proxy_providers/somelinks.yaml
 
   mylocal:
