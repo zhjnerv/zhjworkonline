@@ -838,7 +838,6 @@ rules:
   - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
   - DOMAIN-SUFFIX,chaturbate.com,❤️‍🔥 不可描述
   - DOMAIN-SUFFIX,stripchat.com,❤️‍🔥 不可描述
-  - DOMAIN-SUFFIX,fujm.qqdk2019.net,DIRECT #github分流规则
   - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
   - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
