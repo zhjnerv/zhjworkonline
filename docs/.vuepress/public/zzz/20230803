@@ -144,7 +144,7 @@ proxy-providers:
       interval: 300
     path: ./mylocal/somelinks.yaml
 
-  zrabur:
+  LINUXDO:
     type: http
     interval: 4100
     health-check:
@@ -152,7 +152,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 410
     path: ./proxy_providers/zeabur.yaml
-    url: "https://subs.zeabur.app/clash" #你的订阅链接
+    url: "https://csicd782-isu.acyunv.buzz/api/v1/client/subscribe?token=c0cfd8deda4283d0ac7d0aef136f2d79" #https://linux.do/t/topic/160732
 
   胖虎:
     type: http
@@ -182,7 +182,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4470
     path: ./proxy_providers/dy9.yaml
-    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml" #你的订阅链接
+    url: "https://tg.z-cloud.dynv6.net/token=Rn87qQA0uYVXBnFDocvwJ9fxnUoj1jiEExPB2W2jpCe4Grt7iqiyG123Ea5DEpk" #你的订阅链接
 
   barry-far_V2ray-Configs: #纯链接
     type: http
@@ -262,7 +262,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/e1ffa8443e9d436293e3dca51c78c2ec/files/4646c50233c7411688dc5efa4adb4cc4/raw #clash订阅链接
+    url: https://paste.gg/p/TG@FProxies/987fc82e2e95407eb2918b983cc3c414/files/8c808f96b2b640a6b1d3045959a12d95/raw #clash订阅链接
     filter: Hs|Ns
 
 
@@ -340,7 +340,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - sharecentrepro
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -366,7 +366,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -517,7 +517,7 @@ proxy-groups:
     use:
       - mylocal
       - sharecentrepro
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -588,7 +588,7 @@ proxy-groups:
     use:
       - mylocal
       - sharecentrepro
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -613,7 +613,7 @@ proxy-groups:
     use:
       - mylocal
       - sharecentrepro
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -639,7 +639,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - sharecentrepro
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -663,7 +663,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
@@ -687,7 +687,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - zrabur
+      - LINUXDO
       - 蛋黄
       - dy11  
       - 胖虎
