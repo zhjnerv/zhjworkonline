@@ -265,6 +265,15 @@ proxy-providers:
     url: https://paste.gg/p/TG@FProxies/987fc82e2e95407eb2918b983cc3c414/files/8c808f96b2b640a6b1d3045959a12d95/raw #clash订阅链接
     filter: Hs|Ns
 
+  52pokemon:
+    type: http
+    interval: 4300
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 4300
+    path: ./proxy_providers/dy5.yaml
+    url: https://link01.pikachucloud.site/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976 #你的订阅链接
 
 #这里开始是空的配置----
 
@@ -278,15 +287,6 @@ proxy-providers:
     path: ./proxy_providers/dy01.yaml
     url: 'https://v2ray-nodes.lgf4591.workers.dev/sub/b58a6cd1-43da-4506-aaec-308045412f2d' # cloudflare-pages-vpn
 
-  dy11:
-    type: http
-    interval: 4300
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4300
-    path: ./proxy_providers/dy5.yaml
-    url: #你的订阅链接
 
   neko-warp:
     type: http
@@ -342,7 +342,7 @@ proxy-groups:
       - sharecentrepro
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -368,7 +368,7 @@ proxy-groups:
       - mylocal
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -519,7 +519,7 @@ proxy-groups:
       - sharecentrepro
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -590,7 +590,7 @@ proxy-groups:
       - sharecentrepro
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -615,7 +615,7 @@ proxy-groups:
       - sharecentrepro
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -641,7 +641,7 @@ proxy-groups:
       - sharecentrepro
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -665,7 +665,7 @@ proxy-groups:
       - mylocal
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
@@ -689,7 +689,7 @@ proxy-groups:
       - mylocal
       - LINUXDO
       - 蛋黄
-      - dy11  
+      - 52pokemon  
       - 胖虎
       - getafreenode
       - dy01
