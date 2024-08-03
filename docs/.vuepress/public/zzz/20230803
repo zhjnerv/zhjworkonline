@@ -288,15 +288,15 @@ proxy-providers:
     url: 'https://v2ray-nodes.lgf4591.workers.dev/sub/b58a6cd1-43da-4506-aaec-308045412f2d' # cloudflare-pages-vpn
 
 
-  neko-warp:
+  mjjonone:
     type: http
     interval: 5400
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 5400
-    path: ./proxy_providers/neko-warp.yaml
-    url: https://neko-warp.nloli.xyz #你的订阅链接
+    path: ./proxy_providers/mjjonone.yaml
+    url: https://allsub.king361.cf #https://github.com/mjjonone/mjj?tab=readme-ov-file
 
   dy17:
     type: http
@@ -353,7 +353,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🔑 手动选择②
@@ -379,7 +379,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🚩 社交平台IP归属地
@@ -433,7 +433,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - neko-warp
+      - mjjonone
   - name: ❗ openAI
     type: select
     proxies:
@@ -530,7 +530,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🛡️ 隐私防护
@@ -601,7 +601,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17 
   - name: 🔵 负载均衡
@@ -626,7 +626,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17 
       - somelinks
@@ -652,7 +652,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17 
 #分割线，下面是节点按地区分组并自动测延迟
@@ -676,7 +676,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
@@ -700,7 +700,7 @@ proxy-groups:
       - aiboboxx-v2rayfree
       - ermaozi-get_subscribe
       - w1770946466-Auto_proxy
-      - neko-warp
+      - mjjonone
       - t.me-SSRSUB
       - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
