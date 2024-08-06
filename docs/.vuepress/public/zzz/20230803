@@ -298,15 +298,15 @@ proxy-providers:
     path: ./proxy_providers/mjjonone.yaml
     url: https://allsub.king361.cf #https://github.com/mjjonone/mjj?tab=readme-ov-file
 
-  dy17:
+  o00p:
     type: http
     interval: 5600
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 600
-    path: ./proxy_providers/dy17.yaml
-    url: #"" #你的订阅链接
+    path: ./proxy_providers/o00p.yaml
+    url: https://clash.vcr.us.kg/yaml #https://t.me/c/1472750099/3005
 
 
 
@@ -355,7 +355,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🔑 手动选择②
     type: select
     proxies:
@@ -381,7 +381,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🚩 社交平台IP归属地
     type: select
     proxies:
@@ -532,7 +532,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -603,7 +603,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17 
+      - o00p 
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -628,7 +628,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17 
+      - o00p 
       - somelinks
   - name: ♻️ 自动选择
     type: url-test
@@ -654,7 +654,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17 
+      - o00p 
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
@@ -678,7 +678,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: select
@@ -702,7 +702,7 @@ proxy-groups:
       - w1770946466-Auto_proxy
       - mjjonone
       - t.me-SSRSUB
-      - dy17    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
