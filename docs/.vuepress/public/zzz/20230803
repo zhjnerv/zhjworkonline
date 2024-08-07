@@ -841,6 +841,7 @@ rules:
   - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
   - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
   - DOMAIN-SUFFIX,jott.live,DIRECT
+  - DOMAIN-SUFFIX,fujm,DIRECT
   - DOMAIN-SUFFIX,getgrass.io,DIRECT #grass分流
   - DOMAIN-SUFFIX,ghost.io,DIRECT #grass分流
   - DOMAIN-SUFFIX,bigdatacloud.net,DIRECT #grass分流
