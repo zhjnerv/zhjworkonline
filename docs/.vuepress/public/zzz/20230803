@@ -608,7 +608,7 @@ proxy-groups:
     type: load-balance
     strategy: consistent-hashing
     url: https://cp.cloudflare.com/generate_204
-    interval: 3000
+    interval: 300
     tolerance: 100
     use:
       - mylocal
