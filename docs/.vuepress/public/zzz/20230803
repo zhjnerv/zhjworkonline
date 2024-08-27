@@ -152,7 +152,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 410
     path: ./proxy_providers/zeabur.yaml
-    url: "https://tg.z-cloud.dynv6.net/token=Rn87qQA0uYVXBnFDocvwJ9fxnUoj1jiEExPB2W2jpCe4Grt7iqiyG123Ea5DEpkG" #https://linux.do/t/topic/160732
+    url: "https://clash.llleman.com/clach.yml" #https://linux.do/t/topic/187035
 
   胖虎:
     type: http
