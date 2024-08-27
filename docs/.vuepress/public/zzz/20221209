@@ -66,15 +66,15 @@ proxy-providers:
       interval: 10000
     path: ./mylocal/somelinks.yaml
 
-  胖虎:
+  VCR_US:
     type: http
     interval: 5600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/胖虎.yaml
-    url: #"https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
+    path: ./proxy_providers/VCR_US.yaml
+    url: "https://clash.vcr.us.kg/yaml" #你的订阅链接
 
   getafreenode:
     type: http
@@ -124,7 +124,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
-      - 胖虎
+      - VCR_US
       - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🔑 手动选择②
@@ -137,7 +137,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
-      - 胖虎
+      - VCR_US
       - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🚩 社交平台IP归属地
@@ -255,7 +255,7 @@ proxy-groups:
     type: select
     use:
       - mylocal
-      - 胖虎
+      - VCR_US
       - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🛡️ 隐私防护
@@ -354,7 +354,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
-      - 胖虎
+      - VCR_US
       - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
@@ -365,7 +365,7 @@ proxy-groups:
       - mylinks
       - somelinks
       - mylocal
-      - 胖虎
+      - VCR_US
       - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
