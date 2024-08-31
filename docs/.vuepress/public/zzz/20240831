@@ -1,0 +1,188 @@
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - 'dns.msftncsi.com'
+    - 'www.msftncsi.com'
+    - 'www.msftconnecttest.com'
+
+###开始建立锚点
+
+# 所有节点
+all: &all {type: select, use: [订阅 1, 订阅 2, 订阅 3, 订阅 4, 订阅 8]}
+
+# 解锁 AI
+ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [订阅 1, 订阅 7], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+
+# 备用应急
+backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 3, 订阅 6, 订阅 7]}
+
+# 精选节点
+best: &best {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 1, 订阅 2, 订阅 8]}
+
+# 自动筛选最快节点
+fly: &fly {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 1, 订阅 2, 订阅 4, 订阅 8]}
+
+# 订阅更新和延迟测试相关
+p: &p {type: http, interval: 21600, health-check: {enable: true, url: "http://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
+
+###结束建立锚点
+
+proxy-providers:  # Meta支持机场通用订阅
+
+  订阅 1: # 井号后面是注释，可修改
+    <<: *p
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+  
+  订阅 2: # 下面的订阅 3 是一个标准示例，非可用订阅
+    <<: *p
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+  
+  订阅 3: # BPB
+    <<: *p
+    url: "https://hew666.github.io/vpn/node.txt"
+ 
+  订阅 4: # 在你没有弄明白规则的写法之前，不要随意删减订阅 1 至订阅 8，哪怕 url 为空
+    <<: *p
+    url: "https://clash.llleman.com/clach.yml"
+
+  订阅 5: # 
+    <<: *p
+    url: "https://clash.vcr.us.kg/yaml"
+    
+  订阅 6: # 
+    <<: *p
+    url: ""
+    
+  订阅 7: # 
+    <<: *p
+    url: ""
+    
+  订阅 8: # 
+    <<: *p
+    url: ""
+
+proxy-groups:
+
+# 功能分组
+  
+  - name: 🌏️ 节点选择
+    type: select
+    proxies:
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+      - DIRECT
+      
+  - name: 🚀 自动选择
+    <<: *fly
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: 🔄 手动切换
+    <<: *all
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: ✅ 解锁 AI
+    <<: *ai
+
+  - name: ⬇ 精选节点
+    <<: *best
+
+  - name: ⬇ 备用应急
+    <<: *backup
+    filter: "(?i)^(?!unavailable).*$"
+
+  - name: ↪️ 漏网之鱼
+    type: select
+    proxies:
+      - 🌏️ 节点选择
+      - DIRECT
+
+# 规则
+rules:
+
+# 解锁AI
+  - RULE-SET,ai, ✅ 解锁 AI
+  - RULE-SET,Gemini, ✅ 解锁 AI
+  - DOMAIN,claude.ai,✅ 解锁 AI
+  - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
+  - DOMAIN,anthropic.com,✅ 解锁 AI
+  - DOMAIN,claude.ai,✅ 解锁 AI
+  - DOMAIN,console.anthropic.com,✅ 解锁 AI
+  - DOMAIN,anthropic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
+  - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
+  - DOMAIN,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,auth0.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,events.statsigapi.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,featuregates.org,✅ 解锁 AI
+  - DOMAIN-SUFFIX,host.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,identrust.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercom.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercomcdn.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,launchdarkly.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaistatic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,observeit.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,poe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,segment.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,sentry.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-KEYWORD,openai,✅ 解锁 AI
+
+# 默认规则
+  - RULE-SET,collection,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,↪️ 漏网之鱼
+
+rule-providers:
+
+  collection: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/collection.yaml
+    url: "https://gist.githubusercontent.com/cnfree8964/0864fd1d2e88936a095fb40d74ce4993/raw/collection.yaml"
+
+  ai:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/ai.yaml
+    url: "https://fastly.jsdelivr.net/gh/MadisonWirtanen/WARP-Clash-with-ZJU-Rules@main/ai.yaml"
+    interval: 86400
+    
+  Gemini: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Gemini.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Gemini.yaml"
+    interval: 86400
