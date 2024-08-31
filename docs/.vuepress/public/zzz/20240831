@@ -1,3 +1,18 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: "0.0.0.0:9090"
+
+#分割线，DNS已经TUN等设置
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
 dns:
   enable: true
   ipv6: false
