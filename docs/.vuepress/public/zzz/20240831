@@ -45,7 +45,7 @@ dns:
 all: &all {type: select, use: [订阅 1, 订阅 2, 订阅 3, 订阅 4, 订阅 8]}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [订阅 1, 订阅 7], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [订阅 1, 订阅 7], proxies: [🔄 手动切换], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
 
 # 备用应急
 backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 3, 订阅 6, 订阅 7]}
@@ -139,6 +139,7 @@ rules:
 # 解锁AI
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Gemini, ✅ 解锁 AI
+  - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
   - DOMAIN,anthropic.com,✅ 解锁 AI
