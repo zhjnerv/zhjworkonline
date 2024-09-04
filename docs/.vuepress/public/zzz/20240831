@@ -42,19 +42,19 @@ dns:
 ###开始建立锚点
 
 # 所有节点
-all: &all {type: select, use: [订阅 1, 订阅 2, 订阅 3, 订阅 4, 订阅 8]}
+all: &all {type: select, use: [somelinks, mylinks, hew666, 订阅 4, 订阅 8]}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [订阅 1, 订阅 7], proxies: [🔄 手动切换], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, 订阅 7], proxies: [🔄 手动切换], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
 
 # 备用应急
-backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 3, 订阅 6, 订阅 7]}
+backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [hew666, getafreenode, 订阅 7]}
 
 # 精选节点
-best: &best {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 1, 订阅 2, 订阅 8]}
+best: &best {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 订阅 8]}
 
 # 自动筛选最快节点
-fly: &fly {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [订阅 1, 订阅 2, 订阅 4, 订阅 8]}
+fly: &fly {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 订阅 4, 订阅 8]}
 
 # 订阅更新和延迟测试相关
 p: &p {type: http, interval: 21600, health-check: {enable: true, url: "http://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
@@ -63,27 +63,27 @@ p: &p {type: http, interval: 21600, health-check: {enable: true, url: "http://ww
 
 proxy-providers:  # Meta支持机场通用订阅
 
-  订阅 1: # 井号后面是注释，可修改
+  somelinks: # 井号后面是注释，可修改
     <<: *p
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
   
-  订阅 2: # 下面的订阅 3 是一个标准示例，非可用订阅
+  mylinks: # 下面的hew666 是一个标准示例，非可用订阅
     <<: *p
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
   
-  订阅 3: # BPB
+  hew666: # BPB
     <<: *p
     url: "https://hew666.github.io/vpn/node.txt"
  
-  订阅 4: # 在你没有弄明白规则的写法之前，不要随意删减订阅 1 至订阅 8，哪怕 url 为空
+  订阅 4: # 在你没有弄明白规则的写法之前，不要随意删减somelinks 至订阅 8，哪怕 url 为空
     <<: *p
     url: "https://clash.llleman.com/clach.yml"
 
-  订阅 5: # 
+  竹影: # 
     <<: *p
     url: "https://clash.vcr.us.kg/yaml"
     
-  订阅 6: # 
+  getafreenode: # 
     <<: *p
     url: "https://getafreenode.com/subscribe/?uuid=6e330dae-6f8f-4f49-9185-50e9c706379c"
     
