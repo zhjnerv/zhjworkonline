@@ -45,10 +45,10 @@ dns:
 all: &all {type: select, use: [somelinks, mylinks, hew666, 订阅 4, 订阅 8]}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, 订阅 7], proxies: [🔄 手动切换], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, linuxdo好人, 竹影], proxies: [🔄 手动切换], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
 
 # 备用应急
-backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [hew666, getafreenode, 订阅 7]}
+backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [hew666, getafreenode, linuxdo好人]}
 
 # 精选节点
 best: &best {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 订阅 8]}
@@ -87,9 +87,9 @@ proxy-providers:  # Meta支持机场通用订阅
     <<: *p
     url: "https://getafreenode.com/subscribe/?uuid=6e330dae-6f8f-4f49-9185-50e9c706379c"
     
-  订阅 7: # 
+  linuxdo好人: # https://linux.do/t/topic/196349
     <<: *p
-    url: ""
+    url: "https://j2s.buzz/v3/subscr?id=939901fa08cf42e7b027966bfebce3b5"
     
   订阅 8: # 
     <<: *p
