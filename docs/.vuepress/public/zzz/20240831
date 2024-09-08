@@ -142,7 +142,7 @@ rules:
   - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
   - DOMAIN-KEYWORD,fujm,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT #迅雷
-  - DOMAIN-SUFFIX,qqdk2019.net,🔄 手动切换
+  - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
   - DOMAIN,anthropic.com,✅ 解锁 AI
