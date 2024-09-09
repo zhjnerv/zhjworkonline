@@ -5,7 +5,6 @@ log-level: info
 ipv6: true
 external-controller: "0.0.0.0:9090"
 
-#分割线，DNS已经TUN等设置
 find-process-mode: strict
 global-client-fingerprint: chrome
 
@@ -39,66 +38,97 @@ dns:
     - 'www.msftncsi.com'
     - 'www.msftconnecttest.com'
 
-###开始建立锚点
-
-# 所有节点
-all: &all {type: select, use: [somelinks, mylinks, hew666, 订阅 4, 订阅 8]}
-
-# 解锁 AI
-ai: &ai {type: url-test, url: "http://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, linuxdo好人, 竹影], proxies: [🔄 手动切换], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
-
-# 备用应急
-backup: &backup {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [hew666, getafreenode, linuxdo好人]}
-
-# 精选节点
-best: &best {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 订阅 8]}
-
-# 自动筛选最快节点
-fly: &fly {type: url-test, url: "http://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 订阅 4, 订阅 8]}
-
-# 订阅更新和延迟测试相关
-p: &p {type: http, interval: 21600, health-check: {enable: true, url: "http://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
-
-###结束建立锚点
-
-proxy-providers:  # Meta支持机场通用订阅
-
-  somelinks: # 井号后面是注释，可修改
-    <<: *p
+proxy-providers:
+  somelinks:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
   
-  mylinks: # 下面的hew666 是一个标准示例，非可用订阅
-    <<: *p
+  mylinks:
+    type: http  
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
   
-  hew666: # BPB
-    <<: *p
+  hew666:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://hew666.github.io/vpn/node.txt"
  
-  订阅 4: # 在你没有弄明白规则的写法之前，不要随意删减somelinks 至订阅 8，哪怕 url 为空
-    <<: *p
+  订阅 4:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://clash.llleman.com/clach.yml"
 
-  竹影: # 
-    <<: *p
+  竹影:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://clash.vcr.us.kg/yaml"
     
-  getafreenode: # 
-    <<: *p
+  getafreenode:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://getafreenode.com/subscribe/?uuid=6e330dae-6f8f-4f49-9185-50e9c706379c"
     
-  linuxdo好人: # https://linux.do/t/topic/196349
-    <<: *p
+  linuxdo好人:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
     url: "https://j2s.buzz/v3/subscr?id=939901fa08cf42e7b027966bfebce3b5"
     
-  订阅 8: # 
-    <<: *p
-    url: ""
+  订阅 8:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://davy520.pages.dev/96821107-ac42-438a-b781-a5999197a21c#%E8%87%AA%E5%BB%BA"
+  
+  mylocal:
+    type: file
+    interval: 4000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    path: ./mylocal/测试.yaml
 
 proxy-groups:
-
-# 功能分组
-  
   - name: 🌏️ 节点选择
     type: select
     proxies:
@@ -110,21 +140,68 @@ proxy-groups:
       - DIRECT
       
   - name: 🚀 自动选择
-    <<: *fly
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+    use:
+      - somelinks
+      - mylinks
+      - 订阅 4
+      - 订阅 8
+      - 竹影
+      - mylocal
     filter: "(?i)^(?!unavailable).*$"
     
-  - name: 🔄 手动切换
-    <<: *all
+  - name: 🔄 手动切换 
+    type: select
+    use:
+      - somelinks
+      - mylinks
+      - hew666
+      - 订阅 4
+      - 订阅 8
+      - mylocal
     filter: "(?i)^(?!unavailable).*$"
     
   - name: ✅ 解锁 AI
-    <<: *ai
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 120
+    tolerance: 50
+    lazy: true
+    use:
+      - somelinks
+      - linuxdo好人
+      - mylinks
+      - 竹影
+      - mylocal
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
 
   - name: ⬇ 精选节点
-    <<: *best
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+    use:
+      - somelinks
+      - mylinks
+      - 订阅 8
 
   - name: ⬇ 备用应急
-    <<: *backup
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+    use:
+      - hew666
+      - getafreenode
+      - linuxdo好人
+      - 订阅 8
+      - 订阅 4
     filter: "(?i)^(?!unavailable).*$"
 
   - name: ↪️ 漏网之鱼
@@ -133,15 +210,12 @@ proxy-groups:
       - 🌏️ 节点选择
       - DIRECT
 
-# 规则
 rules:
-
-# 解锁AI
-  - RULE-SET,ai, ✅ 解锁 AI
-  - RULE-SET,Gemini, ✅ 解锁 AI
+  - RULE-SET,ai,✅ 解锁 AI
+  - RULE-SET,Gemini,✅ 解锁 AI
   - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
   - DOMAIN-KEYWORD,fujm,DIRECT
-  - PROCESS-NAME,DownloadSDKServer.exe,DIRECT #迅雷
+  - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
@@ -175,14 +249,11 @@ rules:
   - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
   - DOMAIN-KEYWORD,openai,✅ 解锁 AI
-
-# 默认规则
   - RULE-SET,collection,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
   - MATCH,↪️ 漏网之鱼
 
 rule-providers:
-
   collection: 
     type: http
     behavior: classical
