@@ -107,7 +107,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://j2s.buzz/v3/subscr?id=939901fa08cf42e7b027966bfebce3b5"
+    url: "https://dy.5468936.xyz/"
     
   订阅 8:
     type: http

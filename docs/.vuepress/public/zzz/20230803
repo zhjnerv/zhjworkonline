@@ -265,7 +265,7 @@ proxy-providers:
     url: https://paste.gg/p/TG@FProxies/987fc82e2e95407eb2918b983cc3c414/files/8c808f96b2b640a6b1d3045959a12d95/raw #clash订阅链接
     filter: Hs|Ns
 
-  空订阅
+  空订阅:
     type: http
     interval: 4300
     health-check:
@@ -273,7 +273,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4300
     path: ./proxy_providers/dy5.yaml
-    url: #https://link01.pikachucloud.site/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976 #你的订阅链接
+    url: https://dy.5468936.xyz/ #你的订阅链接
 
 #这里开始是空的配置----
 
@@ -432,6 +432,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - mjjonone
+      - 空订阅
   - name: ❗ openAI
     type: select
     proxies:
