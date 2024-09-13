@@ -174,7 +174,7 @@ proxy-providers:
     path: ./proxy_providers/hew666-GitHub.yaml
     url: "https://hew666.github.io/vpn/node.txt" #你的订阅链接
 
-  mfuu-v2ray:
+  colo优选:
     type: http
     interval: 4700
     health-check:
@@ -182,7 +182,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4470
     path: ./proxy_providers/dy9.yaml
-    url: "https://tg.z-cloud.dynv6.net/token=Rn87qQA0uYVXBnFDocvwJ9fxnUoj1jiEExPB2W2jpCe4Grt7iqiyG123Ea5DEpk" #你的订阅链接
+    url: "https://dingyue.qqdk2019.net" #你的订阅链接
 
   barry-far_V2ray-Configs: #纯链接
     type: http
@@ -345,7 +345,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -370,7 +370,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -411,6 +411,7 @@ proxy-groups:
     tolerance: 90
     use:
       - somelinks
+      - colo优选
   - name: mylink
     type: url-test
     url: https://cp.cloudflare.com/generate_204
@@ -521,7 +522,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -591,7 +592,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -615,7 +616,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -640,7 +641,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -663,7 +664,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
@@ -686,7 +687,7 @@ proxy-groups:
       - 胖虎
       - hew666-GitHub
       - dy01
-      - mfuu-v2ray
+      - colo优选
       - barry-far_V2ray-Configs
       - peasoft-NoMoreWalls
       - mahdibland-V2RayAggregator
