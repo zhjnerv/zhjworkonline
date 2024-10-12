@@ -164,15 +164,15 @@ proxy-providers:
     path: ./proxy_providers/胖虎.yaml
     url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
 
-  hew666-GitHub:
+  getafreenode:
     type: http
     interval: 4550
     health-check:
      enable: true
      url: https://cp.cloudflare.com/generate_204
      interval: 550
-    path: ./proxy_providers/hew666-GitHub.yaml
-    url: "https://hew666.github.io/vpn/node.txt" #你的订阅链接
+    path: ./proxy_providers/getafreenode.yaml
+    url: "https://getafreenode.com/subscribe/?uuid=db256554-7254-4a42-83f4-b3a5cfd9ecd9" #你的订阅链接
 
   colo优选:
     type: http
@@ -343,7 +343,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -368,7 +368,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -520,7 +520,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -590,7 +590,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -614,7 +614,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -639,7 +639,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -662,7 +662,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -685,7 +685,7 @@ proxy-groups:
       - LINUXDO
       - 蛋黄
       - 胖虎
-      - hew666-GitHub
+      - getafreenode
       - dy01
       - colo优选
       - barry-far_V2ray-Configs
@@ -851,7 +851,7 @@ rules:
   - DOMAIN-SUFFIX,theb.ai,❗ openAI
   - DOMAIN-SUFFIX,claude.ai,❗ openAI
   - DOMAIN-SUFFIX,quickconnect.to,DIRECT
-  - DOMAIN-SUFFIX,hew666-GitHub.com,💌 特殊服务
+  - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
   - DOMAIN-SUFFIX,synology.com,DIRECT
   - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
   - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
