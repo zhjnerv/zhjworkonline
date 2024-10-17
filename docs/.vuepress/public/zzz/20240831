@@ -67,7 +67,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://hew666.github.io/vpn/node.txt"
+    url: ""
  
   订阅 4:
     type: http
