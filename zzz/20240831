@@ -1,0 +1,280 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: "0.0.0.0:9090"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - 'dns.msftncsi.com'
+    - 'www.msftncsi.com'
+    - 'www.msftconnecttest.com'
+
+proxy-providers:
+  somelinks:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+  
+  mylinks:
+    type: http  
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+  
+  hew666:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: ""
+ 
+  订阅 4:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://clash.llleman.com/clach.yml"
+
+  竹影:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://clash.vcr.us.kg/yaml"
+    
+  colo优选:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://dingyue.qqdk2019.net"
+    
+  linuxdo好人:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://dy.5468936.xyz/"
+    
+  订阅 8:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://linuxdo.dingyue.cc.ua/clash.yaml"
+  
+  mylocal:
+    type: file
+    interval: 4000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    path: ./mylocal/测试.yaml
+
+proxy-groups:
+  - name: 🌏️ 节点选择
+    type: select
+    proxies:
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+      - DIRECT
+      
+  - name: 🚀 自动选择
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+    use:
+      - somelinks
+      - mylinks
+      - 订阅 4
+      - 订阅 8
+      - 竹影
+      - mylocal
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: 🔄 手动切换 
+    type: select
+    use:
+      - somelinks
+      - mylinks
+      - hew666
+      - 订阅 4
+      - 订阅 8
+      - mylocal
+      - colo优选
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: ✅ 解锁 AI
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 120
+    tolerance: 50
+    lazy: true
+    use:
+      - somelinks
+      - linuxdo好人
+      - mylinks
+      - 竹影
+      - mylocal
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
+
+  - name: ⬇ 精选节点
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+    use:
+      - somelinks
+      - mylinks
+      - 订阅 8
+      - colo优选
+
+  - name: ⬇ 备用应急
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+    use:
+      - hew666
+      - colo优选
+      - linuxdo好人
+      - 订阅 8
+      - 订阅 4
+    filter: "(?i)^(?!unavailable).*$"
+
+  - name: ↪️ 漏网之鱼
+    type: select
+    proxies:
+      - 🌏️ 节点选择
+      - DIRECT
+
+rules:
+  - RULE-SET,ai,✅ 解锁 AI
+  - RULE-SET,Gemini,✅ 解锁 AI
+  - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
+  - DOMAIN-KEYWORD,fujm,DIRECT
+  - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
+  - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
+  - DOMAIN,claude.ai,✅ 解锁 AI
+  - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
+  - DOMAIN,anthropic.com,✅ 解锁 AI
+  - DOMAIN,claude.ai,✅ 解锁 AI
+  - DOMAIN,console.anthropic.com,✅ 解锁 AI
+  - DOMAIN,anthropic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
+  - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
+  - DOMAIN,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,auth0.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,events.statsigapi.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,featuregates.org,✅ 解锁 AI
+  - DOMAIN-SUFFIX,host.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,identrust.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercom.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercomcdn.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,launchdarkly.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaistatic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,observeit.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,poe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,segment.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,sentry.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-KEYWORD,openai,✅ 解锁 AI
+  - RULE-SET,collection,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,↪️ 漏网之鱼
+
+rule-providers:
+  collection: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/collection.yaml
+    url: "https://gist.githubusercontent.com/cnfree8964/0864fd1d2e88936a095fb40d74ce4993/raw/collection.yaml"
+
+  ai:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/ai.yaml
+    url: "https://fastly.jsdelivr.net/gh/MadisonWirtanen/WARP-Clash-with-ZJU-Rules@main/ai.yaml"
+    interval: 86400
+    
+  Gemini: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Gemini.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Gemini.yaml"
+    interval: 86400
