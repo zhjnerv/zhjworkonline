@@ -117,7 +117,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://davy520.pages.dev/96821107-ac42-438a-b781-a5999197a21c#%E8%87%AA%E5%BB%BA"
+    url: "https://linuxdo.dingyue.cc.ua/clash.yaml"
   
   mylocal:
     type: file
