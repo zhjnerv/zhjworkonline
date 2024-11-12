@@ -115,7 +115,7 @@ dns:
 
 # 代理提供商配置
 proxy-providers:
-somelinks:
+  somelinks:
     type: http
     interval: 21600
     health-check:
