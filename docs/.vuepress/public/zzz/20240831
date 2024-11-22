@@ -59,15 +59,15 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
   
-  hew666:
+  蛋黄:
     type: http
     interval: 21600
     health-check:
       enable: true
       url: "http://www.google.com/generate_204"
       interval: 1800
-      filter: "(?i)^(?!unavailable).*$"
-    url: ""
+      filter: Hs|Ns
+    url: "https://paste.gg/p/TG@FProxies/07d2c9efd8ae41ab82e2ad8097220ae6/files/09e4e87518a1479d9665942377e0966e/raw"
  
   订阅 4:
     type: http
@@ -159,7 +159,7 @@ proxy-groups:
     use:
       - somelinks
       - mylinks
-      - hew666
+      - 蛋黄
       - 订阅 4
       - 订阅 8
       - mylocal
@@ -199,7 +199,7 @@ proxy-groups:
     tolerance: 50
     lazy: true
     use:
-      - hew666
+      - 蛋黄
       - colo优选
       - linuxdo好人
       - 订阅 8
