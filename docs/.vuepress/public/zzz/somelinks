@@ -1,6 +1,6 @@
 virmach
-hysteria2://87f055ba@141.11.89.172:60000/?insecure=1&sni=www.bing.com#virmach-Hysteria2
-hysteria2://87f055ba@141.11.89.172:60000,60001-65000/?insecure=1&sni=www.bing.com#virmach-Hysteria2
+hysteria2://87f055ba@141.11.89.172:60000/?insecure=1&sni=www.bing.com#virmach-us-Hysteria2
+hysteria2://87f055ba@141.11.89.172:60000,60001-65000/?insecure=1&sni=www.bing.com#virmach-us-Hysteria2
 
 rack
 hysteria://66.103.206.249:45193?protocol=wechat-video&auth=wtCcjw9B6G32A6xeppUoqRQav0806z4t4SYG5u6KqRsJlITHae&obfsParam=&peer=wechat.com&insecure=1&upmbps=11&downmbps=55&alpn=h3#Hys-US-RACK 
