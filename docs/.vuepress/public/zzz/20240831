@@ -216,7 +216,7 @@ rules:
   - RULE-SET,ai,✅ 解锁 AI
   - RULE-SET,Gemini,✅ 解锁 AI
   - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
-  - DOMAIN-KEYWORD,fujm,DIRECT
+  #- DOMAIN-KEYWORD,fujm,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN,claude.ai,✅ 解锁 AI
