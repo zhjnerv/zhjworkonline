@@ -109,6 +109,16 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
     url: "https://dy.5468936.xyz/"
     
+  linuxdo好人2:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://proxy.sakuraikaede.com/storage-apac-cfr2.sakuraikaede.com/linuxdo-share.txt"
+    
   订阅 8:
     type: http
     interval: 21600
@@ -147,6 +157,7 @@ proxy-groups:
     lazy: true
     use:
       - somelinks
+      - colo优选
       - mylinks
       - 订阅 4
       - 订阅 8
@@ -164,6 +175,8 @@ proxy-groups:
       - 订阅 8
       - mylocal
       - colo优选
+      - linuxdo好人2
+      - linuxdo好人
     filter: "(?i)^(?!unavailable).*$"
     
   - name: ✅ 解锁 AI
@@ -189,7 +202,9 @@ proxy-groups:
     use:
       - somelinks
       - mylinks
-      - 订阅 8
+      - linuxdo好人2
+      - linuxdo好人
+      - 竹影
       - colo优选
 
   - name: ⬇ 备用应急
