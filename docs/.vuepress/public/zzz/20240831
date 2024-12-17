@@ -97,7 +97,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://dingyue.qqdk2019.net"
+    url: "https://storage-apac-cfr2.sakuraikaede.com/linuxdo-share.yaml"
     
   linuxdo好人:
     type: http
@@ -188,6 +188,7 @@ proxy-groups:
     use:
       - somelinks
       - linuxdo好人
+      - linuxdo好人2
       - mylinks
       - 竹影
       - mylocal
