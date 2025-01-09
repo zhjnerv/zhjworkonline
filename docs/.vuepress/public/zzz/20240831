@@ -69,7 +69,7 @@ proxy-providers:
       filter: Hs|Ns
     url: "https://paste.gg/p/TG@FProxies/506150c4aca64c1fa209b190415d759f/files/fa72a7f521884a27a77036b23c4877c9/raw"
  
-  订阅 4:
+  getafreenode:
     type: http
     interval: 21600
     health-check:
@@ -77,7 +77,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://linuxdo.dingyue.cc.ua/clash.yaml"
+    url: "https://getafreenode.com/subscribe/?uuid=db256554-7254-4a42-83f4-b3a5cfd9ecd9"
 
   竹影:
     type: http
@@ -159,7 +159,7 @@ proxy-groups:
       - somelinks
       - colo优选
       - mylinks
-      - 订阅 4
+      - getafreenode
       - 订阅 8
       - 竹影
       - mylocal
@@ -171,7 +171,7 @@ proxy-groups:
       - somelinks
       - mylinks
       - 蛋黄
-      - 订阅 4
+      - getafreenode
       - 订阅 8
       - mylocal
       - colo优选
@@ -219,7 +219,7 @@ proxy-groups:
       - colo优选
       - linuxdo好人
       - 订阅 8
-      - 订阅 4
+      - getafreenode
     filter: "(?i)^(?!unavailable).*$"
 
   - name: ↪️ 漏网之鱼
