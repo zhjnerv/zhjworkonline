@@ -67,7 +67,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: Hs|Ns
-    url: "https://paste.gg/p/TG@FProxies/07d2c9efd8ae41ab82e2ad8097220ae6/files/09e4e87518a1479d9665942377e0966e/raw"
+    url: "https://paste.gg/p/TG@FProxies/506150c4aca64c1fa209b190415d759f/files/fa72a7f521884a27a77036b23c4877c9/raw"
  
   订阅 4:
     type: http
@@ -77,7 +77,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://clash.llleman.com/clach.yml"
+    url: "https://linuxdo.dingyue.cc.ua/clash.yaml"
 
   竹影:
     type: http
@@ -237,6 +237,7 @@ rules:
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
   - DOMAIN,anthropic.com,✅ 解锁 AI
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN,console.anthropic.com,✅ 解锁 AI
