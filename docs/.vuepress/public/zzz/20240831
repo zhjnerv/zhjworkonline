@@ -236,10 +236,6 @@ rules:
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN,claude.ai,✅ 解锁 AI
-  - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
-  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
-  - DOMAIN,anthropic.com,✅ 解锁 AI
-  - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN,console.anthropic.com,✅ 解锁 AI
   - DOMAIN,anthropic.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
