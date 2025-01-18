@@ -77,7 +77,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://getafreenode.com/subscribe/?uuid=db256554-7254-4a42-83f4-b3a5cfd9ecd9"
+    url: "https://getafreenode.com/subscribe/?uuid=3a47a8d5-dfb2-4798-aaea-c4a31ba00b71"
 
   竹影:
     type: http
