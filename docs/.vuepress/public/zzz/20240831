@@ -97,7 +97,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://storage-apac-cfr2.sakuraikaede.com/linuxdo-share.yaml"
+    url: "https://drive.google.com/uc?export=download&id=1S1rueYQNEYUbP-Gcv_QZ1vReNhffq6_1"
     
   linuxdo好人:
     type: http
@@ -117,7 +117,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://proxy.sakuraikaede.com/storage-apac-cfr2.sakuraikaede.com/linuxdo-share.txt"
+    url: "https://js.crvesoft.top/c/?token=e1eb8f2bcdc96c34b6944b959c6204f6"
     
   订阅 8:
     type: http
