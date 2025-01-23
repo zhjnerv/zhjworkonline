@@ -496,6 +496,7 @@ rule-providers:
 
 rules:
   - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,4chat.me,DIRECT
   - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
   - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #迅雷
   - PROCESS-NAME,RayLinkService.exe,🇨🇳 全球直连 #raylink
