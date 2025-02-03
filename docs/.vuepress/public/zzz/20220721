@@ -282,7 +282,7 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     path: ./proxy_providers/蛋黄.yaml
-    url: "https://sub.danhu.ml/base64?token=FProxies" #你的订阅链接
+    url: "https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64" #你的订阅链接
 
   dy05:
     type: http

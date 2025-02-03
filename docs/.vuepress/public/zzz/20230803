@@ -262,7 +262,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: https://paste.gg/p/TG@FProxies/07d2c9efd8ae41ab82e2ad8097220ae6/files/09e4e87518a1479d9665942377e0966e/raw #clash订阅链接
+    url: https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64 #clash订阅链接
     filter: Hs|Ns
 
   空订阅:

@@ -67,7 +67,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: Hs|Ns
-    url: "https://paste.gg/p/TG@FProxies/506150c4aca64c1fa209b190415d759f/files/fa72a7f521884a27a77036b23c4877c9/raw"
+    url: "https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64"
  
   getafreenode:
     type: http
