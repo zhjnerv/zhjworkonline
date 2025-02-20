@@ -77,7 +77,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "http://18.163.200.184:2704/ee84b16b-85f3-4593-8cd9-99390aebf27f/proxies"
+    url: "https://v1.mk/ZHULueY" # https://linux.do/t/topic/441178
 
   竹影:
     type: http
@@ -117,7 +117,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://js.crvesoft.top/c/?token=e1eb8f2bcdc96c34b6944b959c6204f6"
+    url: "https://www.bwbd.us.kg/api/public/dl/OUqF3vIu/cloudflare/clash_yaml/V1.yaml" # https://linux.do/t/topic/416950
     
   订阅 8:
     type: http
@@ -127,7 +127,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://linuxdo.dingyue.cc.ua/clash.yaml"
+    url: "https://mxlsub.me/free" # https://linux.do/t/topic/197070
   
   mylocal:
     type: file
@@ -158,9 +158,7 @@ proxy-groups:
     use:
       - somelinks
       - colo优选
-      - mylinks
       - 不知名的好人
-      - 订阅 8
       - 竹影
       - mylocal
     filter: "(?i)^(?!unavailable).*$"
@@ -187,8 +185,6 @@ proxy-groups:
     lazy: true
     use:
       - somelinks
-      - linuxdo好人
-      - linuxdo好人2
       - mylinks
       - 竹影
       - mylocal
@@ -207,7 +203,6 @@ proxy-groups:
       - linuxdo好人
       - 竹影
       - colo优选
-
   - name: ⬇ 备用应急
     type: url-test
     url: "http://www.google.com/generate_204"
