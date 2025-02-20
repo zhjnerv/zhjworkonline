@@ -97,7 +97,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://drive.google.com/uc?export=download&id=1S1rueYQNEYUbP-Gcv_QZ1vReNhffq6_1"
+    url: "http://csgo3.fask511.cfd:1588/api/v1/client/subscribe?token=145b15f91f224adcb7fff14c738aa737" # https://linux.do/t/topic/437146
     
   linuxdo好人:
     type: http
