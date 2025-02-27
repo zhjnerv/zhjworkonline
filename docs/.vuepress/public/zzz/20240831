@@ -310,5 +310,5 @@ rule-providers:
     type: http
     behavior: ipcidr
     format: yaml
-    path:./rules/telegram.yaml
+    path: ./rules/telegram.yaml
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
