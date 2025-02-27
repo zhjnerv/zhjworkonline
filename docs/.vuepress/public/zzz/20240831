@@ -308,7 +308,7 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Google.yaml"
   telegram:
     type: http
-    behavior: ipcidr
+    behavior: classical
     format: yaml
     path: ./rules/telegram.yaml
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
