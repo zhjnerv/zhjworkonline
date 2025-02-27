@@ -148,7 +148,16 @@ proxy-groups:
       - ⬇ 精选节点
       - ⬇ 备用应急
       - DIRECT
-      
+  - name:  📢 电报
+    type: select
+    proxies:
+      - 🌏️ 节点选择
+      - DIRECT
+      - 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+
   - name: 🚀 自动选择
     type: url-test
     url: "http://www.google.com/generate_204"
@@ -227,6 +236,7 @@ rules:
   - RULE-SET,ai,✅ 解锁 AI
   - RULE-SET,Gemini,✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
+  - RULE-SET,telegramcidr,📢 电报
   - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
   #- DOMAIN-KEYWORD,fujm,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
@@ -296,3 +306,9 @@ rule-providers:
     format: yaml
     path: ./rules/Google.yaml
     url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Google.yaml"
+  telegram:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    path:./rules/telegram.yaml
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
