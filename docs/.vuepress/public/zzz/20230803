@@ -152,7 +152,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 410
     path: ./proxy_providers/zeabur.yaml
-    url: "https://clash.llleman.com/clach.yml" #https://linux.do/t/topic/187035
+    url: #"https://clash.llleman.com/clach.yml" #https://linux.do/t/topic/187035
 
   胖虎:
     type: http
@@ -285,7 +285,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 460
     path: ./proxy_providers/dy01.yaml
-    url: 'https://v2ray-nodes.lgf4591.workers.dev/sub/b58a6cd1-43da-4506-aaec-308045412f2d' # cloudflare-pages-vpn
+    url: 'https://45.137.181.216/link/R26SPGJS18NRZIOA?clash=1' # cloudflare-pages-vpn
 
 
   mjjonone:
