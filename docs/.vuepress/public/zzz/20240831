@@ -47,6 +47,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
+      timeout: 10000
     override:
       additional-prefix: "somelinks"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
@@ -60,6 +61,7 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 18000
       filter: "(?i)^(?!unavailable).*$"
+      timeout: 10000
     override:
       additional-prefix: "mylinks"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
