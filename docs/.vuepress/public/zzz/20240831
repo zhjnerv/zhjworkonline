@@ -47,7 +47,10 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "somelinks"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+    path: ./代理集缓存/somelinks.yaml
   
   mylinks:
     type: http  
@@ -55,9 +58,12 @@ proxy-providers:
     health-check:
       enable: true
       url: "http://www.google.com/generate_204"
-      interval: 1800
+      interval: 18000
       filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "mylinks"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+    path: ./代理集缓存/mylinks.yaml
   
   蛋黄:
     type: http
@@ -67,8 +73,11 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: Hs|Ns
-    url: "https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64"
- 
+    override:
+      additional-prefix: "蛋黄"
+    url: "https://sub.danhu.ddns-ip.net/paste/zrGnix8y5gf3hv6z/base64"
+    path: ./代理集缓存/蛋黄.yaml
+
   不知名的好人:
     type: http
     interval: 21600
@@ -77,7 +86,11 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "不知名的好人"
     url: "https://v1.mk/ZHULueY" # https://linux.do/t/topic/441178
+    path: ./代理集缓存/不知名的好人.yaml
+
 
   竹影:
     type: http
@@ -87,7 +100,10 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "竹影"
     url: "https://clash.vcr.us.kg/yaml"
+    path: ./代理集缓存/竹影.yaml
     
   colo优选:
     type: http
@@ -98,7 +114,10 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "http://pool.cfip.nyc.mn" # https://linux.do/t/topic/446252
-    
+    path: ./代理集缓存/colo优选.yaml
+    override:
+      additional-prefix: "colo优选"
+
   linuxdo好人:
     type: http
     interval: 21600
@@ -107,8 +126,11 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "linuxdo好人"
     url: "https://dy.5468936.xyz/"
-    
+    path: ./代理集缓存/linuxdo好人.yaml
+
   linuxdo好人2:
     type: http
     interval: 21600
@@ -117,7 +139,10 @@ proxy-providers:
       url: "http://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "linuxdo好人2"
     url: "https://www.bwbd.us.kg/api/public/dl/OUqF3vIu/cloudflare/clash_yaml/V1.yaml" # https://linux.do/t/topic/416950
+    path: ./代理集缓存/linuxdo好人2.yaml
     
   订阅 8:
     type: http
@@ -128,6 +153,10 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://mxlsub.me/free" # https://linux.do/t/topic/197070
+    path: ./代理集缓存/订阅 8.yaml
+    override:
+      additional-prefix: "订阅 8"
+
   
   mylocal:
     type: file
@@ -137,6 +166,50 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
     path: ./mylocal/测试.yaml
+    override:
+      additional-prefix: "mylocal"
+
+  测试1_op_api:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "测试1_op_api"
+    url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
+    path: ./代理集缓存/测试1_op_api.yaml
+
+
+  测试2维吉尼亚:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "测试2维吉尼亚"
+    url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
+    path: ./代理集缓存/测试2维吉尼亚.yaml
+
+  宝可梦星云:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "宝可梦星云"
+    url: "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976"
+    path: ./代理集缓存/宝可梦星云.yaml
+
+
 
 proxy-groups:
   - name: 🌏️ 节点选择
@@ -145,25 +218,25 @@ proxy-groups:
       - 🚀 自动选择
       - 🔄 手动切换
       - ✅ 解锁 AI
-      - ⬇ 精选节点
-      - ⬇ 备用应急
+      - 💟 核心之选
+      - 📊 测试之选
+      - 🔁 故障转移
       - DIRECT
-  - name:  📢 电报
+  - name: 📢 电报
     type: select
     proxies:
+      - 🔁 故障转移
       - 🌏️ 节点选择
-      - 🚀 自动选择
       - 🔄 手动切换
       - ✅ 解锁 AI
-      - ⬇ 精选节点
-      - ⬇ 备用应急
+      - 💟 核心之选
+      - 📊 测试之选
 
   - name: 🚀 自动选择
     type: url-test
     url: "http://www.google.com/generate_204"
-    interval: 300
-    tolerance: 50
-    lazy: true
+    interval: 900
+    tolerance: 1000
     use:
       - somelinks
       - colo优选
@@ -187,51 +260,61 @@ proxy-groups:
     filter: "(?i)^(?!unavailable).*$"
     
   - name: ✅ 解锁 AI
-    type: url-test
-    url: "http://www.google.com/generate_204"
-    interval: 120
-    tolerance: 50
-    lazy: true
+    type: select
     use:
       - somelinks
       - mylinks
       - 竹影
       - mylocal
-    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
-
-  - name: ⬇ 精选节点
-    type: url-test
-    url: "http://www.google.com/generate_204"
-    interval: 300
-    tolerance: 50
-    lazy: true
-    use:
-      - somelinks
-      - mylinks
+      - colo优选
+      - 不知名的好人
+      - 蛋黄
       - linuxdo好人2
       - linuxdo好人
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
+
+  - name: 💟 核心之选
+    type: select
+    use:
+      - somelinks
       - 竹影
-      - colo优选
-  - name: ⬇ 备用应急
-    type: url-test
+      - mylocal
+      - 宝可梦星云
+
+  - name: 📊 测试之选
+    type: select
+    use:
+      - 测试1_op_api
+      - 测试2维吉尼亚
+      - mylocal
+      - 宝可梦星云
+    filter: "(?i)^(?!unavailable).*$"
+
+
+  - name: 🔁 故障转移
+    type: fallback
     url: "http://www.google.com/generate_204"
     interval: 300
     tolerance: 50
-    lazy: true
     use:
-      - 蛋黄
-      - colo优选
-      - linuxdo好人
+      - 测试1_op_api
+      - 测试2维吉尼亚
       - 订阅 8
+      - linuxdo好人2
+      - linuxdo好人
+      - colo优选
       - 不知名的好人
-    filter: "(?i)^(?!unavailable).*$"
+      - 蛋黄
+      - mylinks
+      - 竹影
+      - somelinks
+      - 宝可梦星云
 
   - name: ↪️ 漏网之鱼
     type: select
     proxies:
       - 🌏️ 节点选择
       - DIRECT
-
 rules:
   - RULE-SET,ai,✅ 解锁 AI
   - RULE-SET,Gemini,✅ 解锁 AI
