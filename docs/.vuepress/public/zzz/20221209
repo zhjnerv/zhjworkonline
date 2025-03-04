@@ -14,29 +14,10 @@ proxies:
     password: 87f055ba
     sni: www.bing.com
     skip-cert-verify: true
-  
-  - name: hy2-us-ccs
-    type: hysteria2
-    server: 107.175.32.131
-    port: 25217
-    password: c938f338
-    sni: www.bing.com
-    skip-cert-verify: true
 
 #分割线，下面是放你的机场订阅链接的
 
 proxy-providers:
-  sharecentrepro:
-    type: http
-    interval: 3670
-    exclude-filter: "套餐到期|欢迎使用|剩余流量"
-    health-check:
-     enable: true
-     url: https://i.ytimg.com/generate_204
-     interval: 10000
-    url: #"https://sub.sharecentre.online/sub"
-    path: ./proxy_providers/sharecentrepro.yaml
-
   mylinks:
     type: http
     interval: 3800
@@ -76,16 +57,6 @@ proxy-providers:
     path: ./proxy_providers/VCR_US.yaml
     url: "https://clash.vcr.us.kg/yaml" #你的订阅链接
 
-  getafreenode:
-    type: http
-    interval: 4700
-    health-check:
-     enable: true
-     url: https://i.ytimg.com/generate_204
-     interval: 10000
-    path: ./proxy_providers/getafreenode.yaml
-    url: "https://getafreenode.com/subscribe/?uuid=3a47a8d5-dfb2-4798-aaea-c4a31ba00b71" #你的订阅链接
-
   dy17:
     type: http
     interval: 3600
@@ -104,7 +75,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -118,27 +88,21 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
     use:
-      - sharecentrepro
       - mylinks
       - somelinks
       - mylocal
       - VCR_US
-      - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🔑 手动选择②
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
     use:
-      - sharecentrepro
       - mylinks
       - somelinks
       - mylocal
       - VCR_US
-      - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🚩 社交平台IP归属地
     type: select
@@ -155,7 +119,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - somelinks
       - ♻️ 自动选择
       - 🛠️ 故障转移
@@ -192,7 +155,6 @@ proxy-groups:
     interval: 10320
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -210,7 +172,6 @@ proxy-groups:
     interval: 10320
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -228,7 +189,6 @@ proxy-groups:
     interval: 10320
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - 🇺🇸 美国节点
       - 🚀 节点选择
       - 🍁 其他地区
@@ -256,7 +216,6 @@ proxy-groups:
     use:
       - mylocal
       - VCR_US
-      - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🛡️ 隐私防护
     type: select
@@ -270,7 +229,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -287,7 +245,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - ♻️ 自动选择
       - 🚀 节点选择
       - 🇺🇸 美国节点
@@ -327,7 +284,6 @@ proxy-groups:
     interval: 300 #测ping时间(秒)
     tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
-      - sharecentrepro
       - somelinks
   - name: 🔵 负载均衡
     type: load-balance
@@ -337,7 +293,6 @@ proxy-groups:
     tolerance: 100
     use:
       - somelinks
-      - sharecentrepro
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
@@ -345,35 +300,29 @@ proxy-groups:
     tolerance: 150
     use:
       - somelinks
-      - sharecentrepro
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
     use:
-      - sharecentrepro
       - mylinks
       - somelinks
       - mylocal
       - VCR_US
-      - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: url-test
     use:
-      - sharecentrepro
       - mylinks
       - somelinks
       - mylocal
       - VCR_US
-      - getafreenode
       - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - 🔑 手动选择
       - 🔑 手动选择②
       - 🛠️ 故障转移
@@ -382,7 +331,7 @@ proxy-groups:
       - somelinks
       - 我的所有
       - ♻️ 自动选择
-  
+
 
 #分割线，下面是分流规则
 rule-providers:
