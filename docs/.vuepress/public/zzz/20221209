@@ -57,15 +57,15 @@ proxy-providers:
     path: ./proxy_providers/VCR_US.yaml
     url: "https://clash.vcr.us.kg/yaml" #你的订阅链接
 
-  dy17:
+  宝可梦星云:
     type: http
     interval: 3600
     health-check:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/dy17.yaml
-    url: #你的订阅链接
+    path: ./proxy_providers/宝可梦星云.yaml
+    url: https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976
 
 #还有订阅的话继续往下加 dy18 dy19 ……
 
@@ -93,7 +93,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - VCR_US
-      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🔑 手动选择②
     type: select
     proxies:
@@ -103,7 +103,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - VCR_US
-      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🚩 社交平台IP归属地
     type: select
     proxies:
@@ -216,7 +216,7 @@ proxy-groups:
     use:
       - mylocal
       - VCR_US
-      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -308,7 +308,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - VCR_US
-      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: url-test
@@ -317,7 +317,7 @@ proxy-groups:
       - somelinks
       - mylocal
       - VCR_US
-      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
