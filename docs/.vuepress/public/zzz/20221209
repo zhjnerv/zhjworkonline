@@ -38,14 +38,6 @@ proxy-providers:
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
     path: ./proxy_providers/somelinks.yaml
 
-  mylocal:
-    type: file
-    interval: 3900
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 10000
-    path: ./mylocal/somelinks.yaml
 
   VCR_US:
     type: http
@@ -76,42 +68,16 @@ proxy-groups:
     proxies:
       - hy2-us-zjh
       - ♻️ 自动选择
-      - 🇺🇸 美国节点
-      - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - DIRECT
-      - 我的所有
-  - name: 🔑 手动选择
-    type: select
-    proxies:
-      - hy2-us-zjh
-    use:
-      - mylinks
-      - somelinks
-      - mylocal
-      - VCR_US
-      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
-  - name: 🔑 手动选择②
-    type: select
-    proxies:
-      - hy2-us-zjh
-    use:
-      - mylinks
-      - somelinks
-      - mylocal
-      - VCR_US
-      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
+
   - name: 🚩 社交平台IP归属地
     type: select
     proxies:
       - DIRECT
       - 🇺🇸 美国节点
       - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - 🚀 节点选择
@@ -119,37 +85,12 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - somelinks
       - ♻️ 自动选择
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - DIRECT
       - 🚀 节点选择
-      - 🔑 手动选择
-      - 🔑 手动选择②
-  - name: somelinks
-    type: select
-    use:
-      - somelinks
-  - name: mylinks
-    type: url-test
-    url: https://i.ytimg.com/generate_204
-    interval: 10320
-    tolerance: 150
-    use:
-      - mylinks
-  - name: mylocal
-    type: select
-    interval: 10320
-    use:
-      - mylocal
-  - name: 我的所有
-    type: select
-    interval: 10320
-    use:
-      - mylinks
-      - somelinks
-      - mylocal
+
   - name: ☎️ 电报消息
     type: select
     interval: 10320
@@ -159,14 +100,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - mylinks
-      - somelinks
-      - mylocal
-      - 我的所有
+
   - name: 🎬 YouTube
     type: select
     interval: 10320
@@ -175,15 +111,11 @@ proxy-groups:
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - ♻️ 自动选择
-      - mylinks
-      - somelinks
-      - mylocal
-      - 我的所有
+
+
   - name: ❓ 谷歌服务
     type: select
     interval: 10320
@@ -192,13 +124,8 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 节点选择
       - 🍁 其他地区
-      - 🔑 手动选择
       - 🛠️ 故障转移
       - ♻️ 自动选择
-      - 我的所有
-      - mylinks
-      - somelinks
-      - mylocal
   - name: 💌 特殊服务
     type: select
     proxies:
@@ -206,15 +133,13 @@ proxy-groups:
       - 🛠️ 故障转移
       - ♻️ 自动选择
       - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
+
       - 🔵 负载均衡
       - 🔀 变化代理池
       - 🚀 节点选择
   - name: 🔀 变化代理池
     type: select
     use:
-      - mylocal
       - VCR_US
       - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
   - name: 🛡️ 隐私防护
@@ -222,8 +147,6 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
-      - 🔑 手动选择
-      - 🍁 其他地区
       - 🚀 节点选择
   - name: ❤️‍🔥 不可描述
     type: select
@@ -232,15 +155,11 @@ proxy-groups:
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
+
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - 🚀 节点选择
-      - mylinks
-      - somelinks
-      - mylocal
-      - 我的所有
+
   - name: ❗ openAI
     type: select
     proxies:
@@ -249,21 +168,16 @@ proxy-groups:
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
-      - 🔑 手动选择
-      - 🔑 手动选择②
+
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - mylinks
-      - somelinks
-      - mylocal
-      - 我的所有
+
   - name: ⏬ 下载平台
     type: select
     proxies:
       - DIRECT
       - 🛠️ 故障转移
       - 🔵 负载均衡
-      - 🔑 手动选择
       - 🍁 其他地区
       - 🚀 节点选择
   - name: 🇨🇳 全球直连
@@ -271,7 +185,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - 🚀 节点选择
-      - 🔑 手动选择
   - name: 🚫 广告拦截
     type: select
     proxies:
@@ -285,6 +198,8 @@ proxy-groups:
     tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
       - somelinks
+      - mylinks
+      - VCR_US
   - name: 🔵 负载均衡
     type: load-balance
     strategy: consistent-hashing
@@ -300,13 +215,14 @@ proxy-groups:
     tolerance: 150
     use:
       - somelinks
+      - mylinks
+      - VCR_US
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
     use:
       - mylinks
       - somelinks
-      - mylocal
       - VCR_US
       - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
@@ -315,7 +231,6 @@ proxy-groups:
     use:
       - mylinks
       - somelinks
-      - mylocal
       - VCR_US
       - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
@@ -323,13 +238,9 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - 🔑 手动选择
-      - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
       - 🚀 节点选择
-      - somelinks
-      - 我的所有
       - ♻️ 自动选择
 
 
