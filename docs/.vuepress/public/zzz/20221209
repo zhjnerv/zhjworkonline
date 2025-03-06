@@ -111,6 +111,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🛠️ 故障转移
       - DIRECT
+      - ✋ 手动选择
 
   - name: 🚩 社交平台IP归属地
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - 🛠️ 故障转移
       - DIRECT
       - 🚀 节点选择
+      - ✋ 手动选择
 
   - name: ☎️ 电报消息
     type: select
@@ -138,6 +140,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🍁 其他地区
       - 🛠️ 故障转移
+      - ✋ 手动选择
       
 
   - name: 🎬 YouTube
@@ -150,6 +153,7 @@ proxy-groups:
       - 🍁 其他地区
       - 🛠️ 故障转移
       - ♻️ 自动选择
+      - ✋ 手动选择
 
 
   - name: ❓ 谷歌服务
@@ -161,6 +165,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🛠️ 故障转移
       - ♻️ 自动选择
+      - ✋ 手动选择
 
   - name: 💌 特殊服务
     type: select
@@ -194,6 +199,7 @@ proxy-groups:
       - 🍁 其他地区
       - 🛠️ 故障转移
       - 🚀 节点选择
+      - ✋ 手动选择
 
   - name: ❗ openAI
     type: select
@@ -204,6 +210,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🛠️ 故障转移
+      - ✋ 手动选择
       
 
   - name: ⏬ 下载平台
@@ -211,7 +218,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - 🛠️ 故障转移
-      
       - 🍁 其他地区
       - 🚀 节点选择
   - name: 🇨🇳 全球直连
@@ -273,9 +279,9 @@ proxy-groups:
     proxies:
       - hy2-us-zjh
       - 🛠️ 故障转移
-      
       - 🚀 节点选择
       - ♻️ 自动选择
+      - ✋ 手动选择
 
 
 #分割线，下面是分流规则
