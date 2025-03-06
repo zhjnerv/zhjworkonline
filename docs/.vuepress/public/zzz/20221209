@@ -5,6 +5,40 @@ log-level: info
 ipv6: true
 cfw-latency-timeout: 6000
 external-controller: "0.0.0.0:9090"
+
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - 'dns.msftncsi.com'
+    - 'www.msftncsi.com'
+    - 'www.msftconnecttest.com'
 #分割线，下面是代理的配置
 proxies:
   - name: hy2-us-zjh
@@ -26,7 +60,6 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
-    path: ./proxy_providers/mylinks.yaml
 
   somelinks:
     type: http
@@ -36,7 +69,6 @@ proxy-providers:
      url: https://i.ytimg.com/generate_204
      interval: 10000
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
-    path: ./proxy_providers/somelinks.yaml
 
 
   VCR_US:
@@ -46,7 +78,6 @@ proxy-providers:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/VCR_US.yaml
     url: "https://clash.vcr.us.kg/yaml" #你的订阅链接
 
   宝可梦星云:
@@ -56,8 +87,18 @@ proxy-providers:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    path: ./proxy_providers/宝可梦星云.yaml
     url: https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976
+
+  Op-api:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
+
 
 #还有订阅的话继续往下加 dy18 dy19 ……
 
@@ -69,7 +110,6 @@ proxy-groups:
       - hy2-us-zjh
       - ♻️ 自动选择
       - 🛠️ 故障转移
-      - 🔵 负载均衡
       - DIRECT
 
   - name: 🚩 社交平台IP归属地
@@ -79,7 +119,6 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🛠️ 故障转移
-      - 🔵 负载均衡
       - 🚀 节点选择
   - name: 🐟 漏网之鱼
     type: select
@@ -87,7 +126,6 @@ proxy-groups:
       - hy2-us-zjh
       - ♻️ 自动选择
       - 🛠️ 故障转移
-      - 🔵 负载均衡
       - DIRECT
       - 🚀 节点选择
 
@@ -98,10 +136,9 @@ proxy-groups:
       - hy2-us-zjh
       - ♻️ 自动选择
       - 🚀 节点选择
-      - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🛠️ 故障转移
-      - 🔵 负载均衡
+      
 
   - name: 🎬 YouTube
     type: select
@@ -112,7 +149,6 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🛠️ 故障转移
-      - 🔵 负载均衡
       - ♻️ 自动选择
 
 
@@ -123,9 +159,9 @@ proxy-groups:
       - hy2-us-zjh
       - 🇺🇸 美国节点
       - 🚀 节点选择
-      - 🍁 其他地区
       - 🛠️ 故障转移
       - ♻️ 自动选择
+
   - name: 💌 特殊服务
     type: select
     proxies:
@@ -133,15 +169,16 @@ proxy-groups:
       - 🛠️ 故障转移
       - ♻️ 自动选择
       - 🍁 其他地区
-
-      - 🔵 负载均衡
-      - 🔀 变化代理池
+      - ✋ 手动选择
       - 🚀 节点选择
-  - name: 🔀 变化代理池
+  - name: ✋ 手动选择
     type: select
     use:
       - VCR_US
-      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19
+      - Op-api
+      - somelinks
+      - mylinks
   - name: 🛡️ 隐私防护
     type: select
     proxies:
@@ -155,9 +192,7 @@ proxy-groups:
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
-
       - 🛠️ 故障转移
-      - 🔵 负载均衡
       - 🚀 节点选择
 
   - name: ❗ openAI
@@ -168,16 +203,15 @@ proxy-groups:
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
-
       - 🛠️ 故障转移
-      - 🔵 负载均衡
+      
 
   - name: ⏬ 下载平台
     type: select
     proxies:
       - DIRECT
       - 🛠️ 故障转移
-      - 🔵 负载均衡
+      
       - 🍁 其他地区
       - 🚀 节点选择
   - name: 🇨🇳 全球直连
@@ -195,28 +229,26 @@ proxy-groups:
     type: fallback
     url: https://i.ytimg.com/generate_204
     interval: 300 #测ping时间(秒)
-    tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
-      - somelinks
       - mylinks
       - VCR_US
-  - name: 🔵 负载均衡
-    type: load-balance
-    strategy: consistent-hashing
-    url: https://i.ytimg.com/generate_204
-    interval: 300
-    tolerance: 100
-    use:
+      - 宝可梦星云
+      - Op-api
       - somelinks
+
+
+
   - name: ♻️ 自动选择
     type: url-test
     url: https://i.ytimg.com/generate_204
-    interval: 3200
+    interval: 330
     tolerance: 150
     use:
       - somelinks
       - mylinks
       - VCR_US
+      - 宝可梦星云
+      - Op-api
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
     type: select
@@ -224,7 +256,8 @@ proxy-groups:
       - mylinks
       - somelinks
       - VCR_US
-      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云
+      - Op-api #还有订阅的话继续往下加 dy18 dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
     type: url-test
@@ -232,14 +265,15 @@ proxy-groups:
       - mylinks
       - somelinks
       - VCR_US
-      - 宝可梦星云    #还有订阅的话继续往下加 dy18 dy19 ……
+      - 宝可梦星云   
+      - Op-api
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
     type: select
     proxies:
       - hy2-us-zjh
       - 🛠️ 故障转移
-      - 🔵 负载均衡
+      
       - 🚀 节点选择
       - ♻️ 自动选择
 
