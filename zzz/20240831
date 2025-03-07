@@ -1,0 +1,399 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: "0.0.0.0:9090"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - 'dns.msftncsi.com'
+    - 'www.msftncsi.com'
+    - 'www.msftconnecttest.com'
+
+proxy-providers:
+  somelinks:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+      timeout: 10000
+    override:
+      additional-prefix: "somelinks-"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+    path: ./代理集缓存/somelinks.yaml
+  
+  mylinks:
+    type: http  
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 18000
+      filter: "(?i)^(?!unavailable).*$"
+      timeout: 10000
+    override:
+      additional-prefix: "mylinks-"
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+    path: ./代理集缓存/mylinks.yaml
+  
+  蛋黄:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: Hs|Ns
+    override:
+      additional-prefix: "蛋黄-"
+    url: "https://sub.danhu.ddns-ip.net/paste/zrGnix8y5gf3hv6z/base64"
+    path: ./代理集缓存/蛋黄.yaml
+
+  不知名的好人:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "不知名的好人-"
+    url: "https://v1.mk/ZHULueY" # https://linux.do/t/topic/441178
+    path: ./代理集缓存/不知名的好人.yaml
+
+
+  竹影:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "竹影-"
+    url: "https://clash.vcr.us.kg/yaml"
+    path: ./代理集缓存/竹影.yaml
+    
+  colo优选:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "http://pool.cfip.nyc.mn" # https://linux.do/t/topic/446252
+    path: ./代理集缓存/colo优选.yaml
+    override:
+      additional-prefix: "colo优选-"
+
+  linuxdo好人:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "linuxdo好人-"
+    url: "https://dy.5468936.xyz/"
+    path: ./代理集缓存/linuxdo好人.yaml
+
+  linuxdo好人2:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "linuxdo好人2-"
+    url: "https://www.bwbd.us.kg/api/public/dl/OUqF3vIu/cloudflare/clash_yaml/V1.yaml" # https://linux.do/t/topic/416950
+    path: ./代理集缓存/linuxdo好人2.yaml
+    
+  订阅 8:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    url: "https://mxlsub.me/free" # https://linux.do/t/topic/197070
+    path: ./代理集缓存/订阅 8.yaml
+    override:
+      additional-prefix: "订阅 8-"
+
+  
+  mylocal:
+    type: file
+    interval: 4000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    path: ./mylocal/测试.yaml
+    override:
+      additional-prefix: "mylocal-"
+
+  测试1_op_api:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "测试1_op_api-"
+    url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
+    path: ./代理集缓存/测试1_op_api.yaml
+
+
+  测试2维吉尼亚:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "测试2维吉尼亚-"
+    url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
+    path: ./代理集缓存/测试2维吉尼亚.yaml
+
+  宝可梦星云:
+    type: http
+    interval: 21600
+    health-check:
+      enable: true
+      url: "http://www.google.com/generate_204"
+      interval: 1800
+      filter: "(?i)^(?!unavailable).*$"
+    override:
+      additional-prefix: "宝可梦星云-"
+    url: "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976"
+    path: ./代理集缓存/宝可梦星云.yaml
+
+
+
+proxy-groups:
+  - name: 🌏️ 节点选择
+    type: select
+    proxies:
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - 💟 核心之选
+      - 📊 测试之选
+      - 🔁 故障转移
+      - DIRECT
+  - name: 📢 电报
+    type: select
+    proxies:
+      - 🔁 故障转移
+      - 🌏️ 节点选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - 💟 核心之选
+      - 📊 测试之选
+
+  - name: 🚀 自动选择
+    type: url-test
+    url: "http://www.google.com/generate_204"
+    interval: 900
+    tolerance: 1000
+    use:
+      - somelinks
+      - colo优选
+      - 不知名的好人
+      - 竹影
+      - mylocal
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: 🔄 手动切换 
+    type: select
+    use:
+      - somelinks
+      - mylinks
+      - 蛋黄
+      - 不知名的好人
+      - 订阅 8
+      - mylocal
+      - colo优选
+      - linuxdo好人2
+      - linuxdo好人
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: ✅ 解锁 AI
+    type: select
+    use:
+      - somelinks
+      - mylinks
+      - 竹影
+      - mylocal
+      - colo优选
+      - 不知名的好人
+      - 蛋黄
+      - linuxdo好人2
+      - linuxdo好人
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
+
+  - name: 💟 核心之选
+    type: select
+    use:
+      - somelinks
+      - 竹影
+      - mylocal
+      - 宝可梦星云
+
+  - name: 📊 测试之选
+    type: select
+    use:
+      - 测试1_op_api
+      - 测试2维吉尼亚
+      - mylocal
+      - 宝可梦星云
+    filter: "(?i)^(?!unavailable).*$"
+
+
+  - name: 🔁 故障转移
+    type: fallback
+    url: "http://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    use:
+      - 测试1_op_api
+      - 测试2维吉尼亚
+      - 订阅 8
+      - linuxdo好人2
+      - linuxdo好人
+      - colo优选
+      - 不知名的好人
+      - 蛋黄
+      - mylinks
+      - 竹影
+      - somelinks
+      - 宝可梦星云
+
+  - name: ↪️ 漏网之鱼
+    type: select
+    proxies:
+      - 🌏️ 节点选择
+      - DIRECT
+rules:
+  - RULE-SET,ai,✅ 解锁 AI
+  - RULE-SET,Gemini,✅ 解锁 AI
+  - RULE-SET,Google,✅ 解锁 AI
+  - RULE-SET,telegram,📢 电报
+  - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
+  #- DOMAIN-KEYWORD,fujm,DIRECT
+  - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
+  - PROCESS-NAME,qbittorrent.exe,DIRECT
+  - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,4chat.me,DIRECT
+  - DOMAIN,claude.ai,✅ 解锁 AI
+  - DOMAIN,console.anthropic.com,✅ 解锁 AI
+  - DOMAIN,anthropic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
+  - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
+  - DOMAIN,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,auth0.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,events.statsigapi.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,featuregates.org,✅ 解锁 AI
+  - DOMAIN-SUFFIX,host.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,identrust.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercom.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercomcdn.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,launchdarkly.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaistatic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,observeit.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,poe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,segment.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,sentry.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-KEYWORD,openai,✅ 解锁 AI
+  - RULE-SET,collection,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,↪️ 漏网之鱼
+
+rule-providers:
+  collection: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/collection.yaml
+    url: "https://gist.githubusercontent.com/cnfree8964/0864fd1d2e88936a095fb40d74ce4993/raw/collection.yaml"
+
+  ai:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/ai.yaml
+    url: "https://fastly.jsdelivr.net/gh/MadisonWirtanen/WARP-Clash-with-ZJU-Rules@main/ai.yaml"
+    interval: 86400
+    
+  Gemini: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Gemini.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Gemini.yaml"
+    interval: 86400
+
+  Google:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Google.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Google.yaml"
+  telegram:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/telegram.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"

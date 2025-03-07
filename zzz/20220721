@@ -1,0 +1,795 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+cfw-latency-timeout: 6000
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  proxy-server-nameserver:
+    - tls://1.0.0.1:853
+    - tls://dot.pub
+    - quic://c.passcloud.xyz:784
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - dns.msftncsi.com
+    - www.msftncsi.com
+    - www.msftconnecttest.com
+    - stun.*.*.*
+    - stun.*.*
+    - miwifi.com
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - netis.cc
+    - router.asus.com
+    - repeater.asus.com
+    - routerlogin.com
+    - routerlogin.net
+    - tendawifi.com
+    - tendawifi.net
+    - tplinklogin.net
+    - tplinkwifi.net
+    - tplinkrepeater.net
+    - "*.ntp.org.cn"
+    - "*.openwrt.pool.ntp.org"
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - localhost.ptlogin2.qq.com
+    - "*.*.*.srv.nintendo.net"
+    - "*.*.stun.playstation.net"
+    - xbox.*.*.microsoft.com
+    - "*.ipv6.microsoft.com"
+    - "*.*.xboxlive.com"
+    - speedtest.cros.wr.pvp.net
+  default-nameserver:
+    - 9.9.9.9
+  nameserver:
+    - 1.2.4.8
+    - 210.2.4.8
+    - 223.5.5.5
+    - 223.6.6.6
+    - 52.80.52.52
+    - 117.50.10.10
+    - 180.76.76.76
+    - 119.28.28.28
+    - 119.29.29.29
+    - 114.114.114.114
+    - 114.114.115.115
+    - 101.226.4.6
+    - 218.30.118.6
+    - 123.125.81.6
+    - 140.207.198.6
+    - 202.38.64.1
+    - 202.112.20.131
+    - 202.141.160.95
+    - 202.141.160.99
+    - 202.141.176.95
+    - 202.141.176.99
+    - tls://dot.pub:853
+    - tls://1.12.12.12:853
+    - tls://120.53.53.53:853
+    - https://doh.pub/dns-query
+    - https://sm2.doh.pub/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://doh.dns.sb/dns-query
+    - https://dns.rubyfish.cn/dns-query
+  fallback:
+    - 9.9.9.9
+    - 149.112.112.112
+    - 8.8.4.4
+    - 8.8.8.8
+    - 1.0.0.1
+    - 1.1.1.1
+    - 208.67.220.220
+    - 208.67.220.222
+    - 208.67.222.220
+    - 208.67.222.222
+    - 195.46.39.39
+    - 195.46.39.40
+    - 168.95.1.1
+    - 203.80.96.10
+    - 168.95.192.1
+    - 164.124.101.2
+    - 164.124.107.9
+    - 203.248.252.2
+    - 203.248.242.2
+    - 80.80.80.80
+    - 80.80.81.81
+    - 199.85.126.10
+    - 199.85.127.10
+    - 168.126.63.1
+    - 168.126.63.2
+    - 139.175.252.16
+    - 139.175.55.244
+    - 202.45.84.58
+    - 202.45.84.59
+    - 8.26.56.26
+    - 23.253.163.53
+    - 77.88.8.1
+    - 77.88.8.8
+    - 89.233.43.71
+    - 91.239.100.100
+    - 198.101.242.72
+    - 8.20.247.20
+    - 64.6.64.6
+    - 64.6.65.6
+    - 209.244.0.3
+    - 209.244.0.4
+    - 210.220.163.82
+    - 219.250.36.130
+    - 202.14.67.4
+    - 84.200.69.80
+    - 84.200.70.40
+    - 202.14.67.14
+    - 156.154.70.1
+    - 156.154.71.1
+    - 216.146.35.35
+    - 216.146.36.36
+    - 77.109.148.136
+    - 77.109.148.137
+    - 101.101.101.101
+    - 101.102.103.104
+    - 74.82.42.42
+    - 66.220.18.42
+    - https://dns.quad9.net/dns-query
+    - https://dns9.quad9.net/dns-query
+    - tls://dns.google:853
+    - https://8.8.4.4/dns-query
+    - https://8.8.8.8/dns-query
+    - https://dns.google/dns-query
+    - tls://1.0.0.1:853
+    - tls://1.1.1.1:853
+    - tls://one.one.one.one
+    - tls://1dot1dot1dot1.cloudflare-dns.com
+    - https://1.0.0.1/dns-query
+    - https://1.1.1.1/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.daycat.space/dns-query
+    - https://dns.adguard.com/dns-query
+    - https://dns-family.adguard.com/dns-query
+    - https://dns-unfiltered.adguard.com/dns-query
+    - tls://b.iqiq.io:853
+    - tls://h.iqiq.io:853
+    - tls://j.iqiq.io:853
+    - tls://c.passcloud.xyz:853
+    - tls://x.passcloud.xyz:853
+    - https://a.passcloud.xyz/hk
+    - https://a.passcloud.xyz/am
+    - https://a.passcloud.xyz/us
+    - https://a.passcloud.xyz/sz
+    - https://a.passcloud.xyz/cdn
+    - https://a.passcloud.xyz/dns-query
+    - https://worldwide.passcloud.xyz/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+      - 127.0.0.1/8
+      - 0.0.0.0/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.twitter.com
+      - +.youtube.com
+      - +.xn--ngstr-lra8j.com
+      - +.google.cn
+      - +.googleapis.cn
+      - +.googleapis.com
+      - +.gvt1.com
+  
+
+#分割线，下面是放你的机场订阅链接的
+proxies:
+proxy-providers:
+  sharecentrepro:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: "https://sub.sharecentre.online/sub"
+    path: ./proxy_providers/sharecentrepro.yaml
+
+  mylinks:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/mylinks"
+    path: ./proxy_providers/mylinks.yaml
+
+  somelinks:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: "https://zhjwork.online/%E8%8F%9C%E6%A1%88%E6%A1%91/somelinks"
+    path: ./proxy_providers/somelinks.yaml
+
+  mylocal:
+    type: file
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 10000
+    path: ./mylocal/somelinks.yaml
+  free-v2ray-merge的连接:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    url: "https://raw.githubusercontent.com/Jia-Pingwa/free-v2ray-merge/main/output.txt"
+    path: ./proxy_providers/free-v2ray-merge的连接.yaml #生成名为'dy1'的配置文件
+    # 将 下面一行的url 替换为你的Clash机场订阅链接
+    # url: #你的订阅链接（比如https://sub.xxxx/clash)
+
+  openit-2:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy2.yaml
+    url: "https://sub.cm/X8Hq4Co" #你的订阅链接
+
+  paimon:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/paimon.yaml
+    url: "https://sub.pmsub.me/clash.yaml" #你的订阅链接
+
+  蛋黄:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/蛋黄.yaml
+    url: "https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64" #你的订阅链接
+
+  dy05:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy5.yaml
+    url: #你的订阅链接
+
+  dy06:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy6.yaml
+    url: #你的订阅链接
+
+  dy07:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy7.yaml
+    url: #你的订阅链接
+
+  dy08:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy8.yaml
+    url: #你的订阅链接
+
+  dy09:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy9.yaml
+    url: #你的订阅链接
+
+  dy10:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy10.yaml
+    url: #你的订阅链接
+
+  dy11:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy11.yaml
+    url: #你的订阅链接
+
+  dy12:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy12.yaml
+    url: #你的订阅链接
+
+  dy13:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy13.yaml
+    url: #你的订阅链接
+
+  dy14:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy14.yaml
+    url: #你的订阅链接
+
+  dy15:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy15.yaml
+    url: #你的订阅链接
+
+  dy16:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy16.yaml
+    url: #你的订阅链接
+
+  dy17:
+    type: http
+    interval: 3600
+    health-check:
+     enable: true
+     url: https://i.ytimg.com/generate_204
+     interval: 10000
+    path: ./proxy_providers/dy17.yaml
+    url: #你的订阅链接
+
+#还有订阅的话继续往下加 dy18 dy19 ……
+
+#分割线，下面是“代理”页面出现的分组，“name”是一级分组，“proxies”是二级分组，选节点用的
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - DIRECT
+  - name: 🔑 手动选择
+    type: select
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+  - name: 🔑 手动选择②
+    type: select
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+  - name: 🚩 社交平台IP归属地
+    type: select
+    proxies:
+      - DIRECT
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - DIRECT
+      - 🚀 节点选择
+      - 🔑 手动选择
+      - 🔑 手动选择②
+  - name: somelinks
+    type: select
+    use:
+      - somelinks
+  - name: mylinks
+    type: url-test
+    url: https://i.ytimg.com/generate_204
+    interval: 1320
+    tolerance: 150
+    use:
+      - mylinks
+  - name: mylocal
+    type: select
+    use:
+      - mylocal
+  - name: 我的所有
+    type: select
+    use:
+      - mylinks
+      - somelinks
+      - mylocal
+  - name: ☎️ 电报消息
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: 🎬 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - mylinks
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: ❓ 谷歌服务
+    type: select
+    proxies:
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 我的所有
+      - mylinks
+      - somelinks
+      - mylocal
+  - name: 💌 特殊服务
+    type: select
+    proxies:
+      - DIRECT
+      - 我的所有
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
+      - somelinks
+  - name: 🛡️ 隐私防护
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 🔑 手动选择
+      - 🍁 其他地区
+  - name: ⏬ 下载平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🔑 手动选择
+      - 🍁 其他地区
+  - name: 🇨🇳 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🔑 手动选择
+  - name: 🚫 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🛠️ 故障转移
+    type: fallback
+    url: https://i.ytimg.com/generate_204
+    interval: 300
+    tolerance: 50
+    use:
+      - sharecentrepro
+      - free-v2ray-merge的连接
+      - openit-2
+      - 蛋黄
+      - paimon
+  - name: 🔵 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://i.ytimg.com/generate_204
+    interval: 1300
+    tolerance: 150
+    use:
+      - sharecentrepro
+      - free-v2ray-merge的连接
+      - openit-2
+      - 蛋黄
+      - paimon
+  - name: ♻️ 自动选择
+    type: url-test
+    url: https://i.ytimg.com/generate_204
+    interval: 1320
+    tolerance: 150
+    use:
+      - free-v2ray-merge的连接
+      - sharecentrepro
+      - openit-2
+      - 蛋黄
+      - paimon
+#分割线，下面是节点按地区分组并自动测延迟
+  - name: 🇺🇸 美国节点
+    type: select
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+    filter: 美|🇺🇸|(?i)US|(?i)States|American
+  - name: 🍁 其他地区
+    type: url-test
+    t: &t
+    use:
+      - sharecentrepro
+      - mylinks
+      - somelinks
+      - mylocal
+      - free-v2ray-merge的连接
+      - openit-2
+      - paimon
+      - 蛋黄
+      - dy05  
+      - dy06
+      - dy07
+      - dy08
+      - dy09
+      - dy10
+      - dy11
+      - dy12
+      - dy13
+      - dy14
+      - dy15
+      - dy16
+      - dy17    #还有订阅的话继续往下加 dy18 dy19 ……
+    filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
+  - name: Global
+    type: select
+    proxies:
+      - 🔑 手动选择
+      - 🔑 手动选择②
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - somelinks
+      - 我的所有
+      - ♻️ 自动选择
+  
+
+#分割线，下面是分流规则
+rule-providers:
+  IPfake:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://raw.fastgit.org/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
+    path: ./Rules/IPfake.yaml
+
+  YouTube:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./Rules/YouTube.yaml
+
+  Telegram:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
+    path: ./Rules/Telegram.yaml
+
+  Google:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
+    path: ./Rules/google.yaml
+
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml"
+    path: ./Rules/BanEasyPrivacy.yaml
+
+  Advertising:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical.yaml
+    path: ./Rules/Advertising.yaml
+
+  Download:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Download/Download.yaml
+    path: ./Rules/Download.yaml
+
+  ChinaMax:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
+    path: ./Rules/ChinaMax.yaml
+
+  Global:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
+    path: ./Rules/Global.yaml
+
+  Lan:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
+    path: ./Rules/Lan.yaml
+
+  github:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
+    path: ./Rules/github.yaml
+
+rules:
+  - DOMAIN-SUFFIX,anydesk.com,🇨🇳 全球直连
+  - DOMAIN-SUFFIX,4chat.me,全球直连
+  - DOMAIN-SUFFIX,danhu.ml,🚩 社交平台IP归属地
+  - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
+  - DOMAIN-SUFFIX,ouo.io,Global
+  - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
+  - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
+  - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
+  - DOMAIN-SUFFIX,openai.com,❓ 谷歌服务  
+  - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务  
+  - RULE-SET,YouTube,🎬 YouTube
+  - RULE-SET,Google,❓ 谷歌服务
+  - RULE-SET,github,❓ 谷歌服务
+  - RULE-SET,Telegram,☎️ 电报消息
+  - RULE-SET,BanEasyPrivacy,🛡️ 隐私防护
+  - RULE-SET,Advertising,🚫 广告拦截
+  - RULE-SET,Download,⏬ 下载平台
+  - RULE-SET,IPfake,🚩 社交平台IP归属地
+  - RULE-SET,Lan,🇨🇳 全球直连
+  - GEOIP,CN,🇨🇳 全球直连
+  - RULE-SET,ChinaMax,🇨🇳 全球直连
+  - RULE-SET,Global,Global
+  - MATCH,🐟 漏网之鱼
