@@ -38,7 +38,7 @@ dns:
     - 'www.msftconnecttest.com'
 
 ###开始建立锚点
-
+proxies: 
 # 所有节点
 all: &all {type: select, use: [somelinks, mylinks, 蛋黄, 不知名的好人, Linuxdo好人2]}
 
