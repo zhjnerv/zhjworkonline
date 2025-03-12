@@ -49,7 +49,7 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
       timeout: 10000
     override:
-      additional-prefix: [somelinks]
+      additional-prefix: "[somelinks]"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
     path: ./代理集缓存/somelinks.yaml
   
@@ -63,7 +63,7 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
       timeout: 10000
     override:
-      additional-prefix: [mylinks]
+      additional-prefix: "[mylinks]"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
     path: ./代理集缓存/mylinks.yaml
   
@@ -76,7 +76,7 @@ proxy-providers:
       interval: 1800
       filter: Hs|Ns
     override:
-      additional-prefix: [蛋黄]
+      additional-prefix: "[蛋黄]"
     url: "https://sub.danhu.ddns-ip.net/paste/zrGnix8y5gf3hv6z/base64"
     path: ./代理集缓存/蛋黄.yaml
 
@@ -89,7 +89,7 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [不知名的好人]
+      additional-prefix: "[不知名的好人]"
     url: "https://v1.mk/ZHULueY" # https://linux.do/t/topic/441178
     path: ./代理集缓存/不知名的好人.yaml
 
@@ -103,7 +103,7 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [竹影]
+      additional-prefix: "[竹影]"
     url: "https://clash.vcr.us.kg/yaml"
     path: ./代理集缓存/竹影.yaml
     
@@ -118,7 +118,7 @@ proxy-providers:
     url: "http://pool.cfip.nyc.mn" # https://linux.do/t/topic/446252
     path: ./代理集缓存/colo优选.yaml
     override:
-      additional-prefix: [colo优选]
+      additional-prefix: "[colo优选]"
 
   linuxdo好人:
     type: http
@@ -129,7 +129,7 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [linuxdo好人]
+      additional-prefix: "[linuxdo好人]"
     url: "https://dy.5468936.xyz/"
     path: ./代理集缓存/linuxdo好人.yaml
 
@@ -142,8 +142,8 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [linuxdo好人2]
-    url: "https://www.bwbd.us.kg/api/public/dl/OUqF3vIu/cloudflare/clash_yaml/V1.yaml" # https://linux.do/t/topic/416950
+      additional-prefix: "[linuxdo好人2]"
+    url: "http://em7.buzz/v3/subscr?id=f28151a7c5f24cd89ee1e04b5b3837c9" # https://linux.do/t/topic/416950
     path: ./代理集缓存/linuxdo好人2.yaml
     
   订阅 8:
@@ -157,7 +157,7 @@ proxy-providers:
     url: "https://mxlsub.me/free" # https://linux.do/t/topic/197070
     path: ./代理集缓存/订阅 8.yaml
     override:
-      additional-prefix: [订阅 8]
+      additional-prefix: "[订阅 8]"
 
   
   mylocal:
@@ -169,7 +169,7 @@ proxy-providers:
       interval: 300
     path: ./mylocal/测试.yaml
     override:
-      additional-prefix: [mylocal]
+      additional-prefix: "[mylocal]"
 
   测试1_op_api:
     type: http
@@ -180,7 +180,7 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [测试1_op_api]
+      additional-prefix: "[测试1_op_api]"
     url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
     path: ./代理集缓存/测试1_op_api.yaml
 
@@ -194,7 +194,7 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [测试2维吉尼亚]
+      additional-prefix: "[测试2维吉尼亚]"
     url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
     path: ./代理集缓存/测试2维吉尼亚.yaml
 
@@ -207,7 +207,7 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: [宝可梦星云]
+      additional-prefix: "[宝可梦星云]"
     url: "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976"
     path: ./代理集缓存/宝可梦星云.yaml
 

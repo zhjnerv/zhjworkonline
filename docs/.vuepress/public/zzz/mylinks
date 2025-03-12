@@ -24,4 +24,6 @@ hysteria2://7f296eb7-d9d4-4541-8b30-6f543e1053a2@209.141.47.127:50004?alpn=h3&in
 hysteria2://1ea83632-34af-40b6-9817-94d007033fbb@209.141.47.127:50003?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
 hysteria2://08a354ec-a45f-4faf-a4bf-6b56cd84b261@209.141.47.127:50005?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
 
-localhost = snell, 209.141.47.127, 2345, psk=LcLOkRYbfvCPEr2z, version=4, tfo=true, reuse=true, ecn=true
+vless://4e999bcb-78e6-4491-812f-c35649f81deb@67.230.166.240:21499?security=reality&sni=yahoo.com&fp=chrome&pbk=hKS0mCbYpZxV8-___Rukszp3lOqbpFkSwrZlGcJhKnA&sid=61632773c7&spx=/&type=tcp&encryption=none#linux.do
+
+vless://248917da-866f-425f-ea14-a7504e12451c@45.192.243.61:57545?encryption=none&security=reality&sni=swdist.apple.com&fp=chrome&pbk=UK7qxWWGfRQcQfwaGpHnqmmqqJBut4jxve8AeDDJ2UI&allowInsecure=1&type=tcp&headerType=none#%E4%B8%9C%E4%BA%AC-DUCKY%20CLOUD
