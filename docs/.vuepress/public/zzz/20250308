@@ -65,59 +65,59 @@ proxy-providers:  # Meta支持机场通用订阅
     <<: *p
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
     override:
-      additional-prefix: "somelinks-"
+      additional-prefix: [somelinks]
   
   mylinks: # 下面的蛋黄 是一个标准示例，非可用订阅
     <<: *p
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
     override:
-      additional-prefix: "mylinks-"
+      additional-prefix: [mylinks]
   
   蛋黄: # BPB
     <<: *p
     url: "https://sub.danhu.ddns-ip.net/paste/zrGnix8y5gf3hv6z/base64"
     override:
-      additional-prefix: "蛋黄-"
+      additional-prefix: [蛋黄]
 
  
   不知名的好人: # 在你没有弄明白规则的写法之前，不要随意删减somelinks 至Linuxdo好人2，哪怕 url 为空
     <<: *p
     url: "https://v1.mk/ZHULueY"
     override:
-      additional-prefix: "不知名的好人-"
+      additional-prefix: [不知名的好人]
 
 
   竹影: # 
     <<: *p
     url: "https://clash.vcr.us.kg/yaml"
     override:
-      additional-prefix: "竹影-"
+      additional-prefix: [竹影]
     
   colo优选: # 
     <<: *p
     url: "http://pool.cfip.nyc.mn"
     override:
-      additional-prefix: "colo优选-"
+      additional-prefix: [colo优选]
 
     
   Linuxdo好人: # 
     <<: *p
     url: "https://dy.5468936.xyz/"
     override:
-      additional-prefix: "Linuxdo好人-"
+      additional-prefix: [Linuxdo好人]
 
     
   Linuxdo好人2: # 
     <<: *p
     url: "https://www.bwbd.us.kg/api/public/dl/OUqF3vIu/cloudflare/clash_yaml/V1.yaml"
     override:
-      additional-prefix: "Linuxdo好人2-"
+      additional-prefix: [Linuxdo好人2]
 
   神奇的订阅8: # 
     <<: *p
     url: "https://mxlsub.me/free"
     override:
-      additional-prefix: "神奇的订阅8-"
+      additional-prefix: [神奇的订阅8]
 
   mylocal:
     type: file
@@ -128,25 +128,25 @@ proxy-providers:  # Meta支持机场通用订阅
       interval: 300
     path: ./mylocal/测试.yaml
     override:
-      additional-prefix: "mylocal-"
+      additional-prefix: [mylocal]
 
   测试1-OP-API : # 
     <<: *p
     url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
     override:
-      additional-prefix: "测试1-OP-API-"
+      additional-prefix: [测试1-OP-API]
 
   测试2维吉尼亚: # 
     <<: *p
     url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
     override:
-      additional-prefix: "测试2维吉尼亚-"
+      additional-prefix: [测试2维吉尼亚]
 
   宝可梦星云: # 
     <<: *p
     url: "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976"
     override:
-      additional-prefix: "宝可梦-"
+      additional-prefix: [宝可梦]
 
 
 
