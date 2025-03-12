@@ -7,3 +7,21 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlx1ODk3Rlx1OTZDNVx1NTZGRSIsDQogICJhZGQi
 西雅图
 
 hy2://e20abb22a245edb0@fast.yxmm.xyz:8443/?insecure=1&sni=TG%E9%A2%91%E9%81%93%40zqnb122100#%E9%A6%99%E6%B8%AF%F0%9F%87%AD%F0%9F%87%B0%20HY2
+
+https://linux.do/t/topic/487202
+
+vless://69bd62bd-96f9-4431-a8fb-734bc39acf72@209.141.47.127:30001?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=-bl3I3wywWBit7mmRq36AyOi5ETKnQZhrnGjuuCEH1s&fp=chrome#233boy-reality-209.141.47.127
+vless://6af42270-4aaa-4126-b312-6cd4e94b62e2@209.141.47.127:30002?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=dash.cloudflare.com&pbk=3SytUXd_LBt-4LWE6DPdIuXLF6O9HDRdHfPstvfdWDc&fp=chrome#233boy-reality-209.141.47.127
+vless://c65fa3dd-176e-4216-9b29-2791a0952aaf@209.141.47.127:30003?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=nv2BMBtlbp3inbHAdIuQuM_OUBHvqQG0mrCPHuU-1AI&fp=chrome#233boy-reality-209.141.47.127
+vless://148e4833-0997-4105-a32d-a3534cdc405e@209.141.47.127:30004?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=-cz8O1OD_lBGnerqaAQrTy8a_UoXguSdF86ax4PtsVk&fp=chrome#233boy-reality-209.141.47.127
+vless://c27ce794-8cfb-4a3f-803c-cc037c40cacb@209.141.47.127:30005?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=1ptUmDWaBGis5SITjUiMttr--h956niiv7Oo5DC0rlY&fp=chrome#233boy-reality-209.141.47.127
+vless://a09e182d-3085-4e0b-9c4d-0e4024c6b5f7@209.141.47.127:30006?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=w8Mjcdt-3dIJ4jhwT0QNaXl5cBD2WVeKmsv9Hg0W8H0&fp=chrome#233boy-reality-209.141.47.127
+vless://9137d2af-68f3-432f-a935-8d50ed6356e1@209.141.47.127:30007?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.amazon.com&pbk=cj9Me57Zsr17SfH8-kVx_SrUtqV6GRZs-pDpkEnrw0I&fp=chrome#233boy-reality-209.141.47.127
+
+hysteria2://cc8270bf-fcd1-47ab-b161-6b556e083e91@209.141.47.127:50001?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
+hysteria2://34b99733-b272-4f40-9244-12116fd1d84b@209.141.47.127:50002?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
+hysteria2://7f296eb7-d9d4-4541-8b30-6f543e1053a2@209.141.47.127:50004?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
+hysteria2://1ea83632-34af-40b6-9817-94d007033fbb@209.141.47.127:50003?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
+hysteria2://08a354ec-a45f-4faf-a4bf-6b56cd84b261@209.141.47.127:50005?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
+
+localhost = snell, 209.141.47.127, 2345, psk=LcLOkRYbfvCPEr2z, version=4, tfo=true, reuse=true, ecn=true
