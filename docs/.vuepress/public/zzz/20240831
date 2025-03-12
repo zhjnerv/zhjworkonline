@@ -37,6 +37,7 @@ dns:
     - 'dns.msftncsi.com'
     - 'www.msftncsi.com'
     - 'www.msftconnecttest.com'
+    - '+.argotunnel.com'
 proxies: 
 proxy-providers:
   somelinks:

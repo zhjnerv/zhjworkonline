@@ -36,6 +36,7 @@ dns:
     - 'dns.msftncsi.com'
     - 'www.msftncsi.com'
     - 'www.msftconnecttest.com'
+    - '+.argotunnel.com'
 
 ###开始建立锚点
 proxies: 
