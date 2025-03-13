@@ -179,7 +179,21 @@ proxy-groups:
       - 📊 测试之选
       - 💟 核心之选
       - 🔁 故障转移
-      
+  - name: ↪️ 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+      - DIRECT
+      - 📊 测试之选
+      - 💟 核心之选
+      - 🔁 故障转移
+
+
+
   - name: 🚀 自动选择
     <<: *fly
     filter: "(?i)^(?!unavailable).*$"
@@ -198,11 +212,7 @@ proxy-groups:
     <<: *backup
     filter: "(?i)^(?!unavailable).*$"
 
-  - name: ↪️ 漏网之鱼
-    type: select
-    proxies:
-      - 🌏️ 节点选择
-      - DIRECT
+
   - name: 💟 核心之选
     type: select
     use:
@@ -246,6 +256,7 @@ rules:
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
+  - DOMAIN-KEYWORD,fujm,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择

@@ -234,6 +234,33 @@ proxy-groups:
       - 💟 核心之选
       - 📊 测试之选
 
+
+  - name: ↪️ 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - 💟 核心之选
+      - 📊 测试之选
+      - 🔁 故障转移
+      - DIRECT
+
+  - name: ✅ 解锁 AI
+    type: select
+    use:
+      - somelinks
+      - mylinks
+      - 竹影
+      - mylocal
+      - colo优选
+      - 不知名的好人
+      - 蛋黄
+      - linuxdo好人2
+      - linuxdo好人
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
+
+
   - name: 🚀 自动选择
     type: url-test
     url: "http://www.google.com/generate_204"
@@ -261,19 +288,6 @@ proxy-groups:
       - linuxdo好人
     filter: "(?i)^(?!unavailable).*$"
     
-  - name: ✅ 解锁 AI
-    type: select
-    use:
-      - somelinks
-      - mylinks
-      - 竹影
-      - mylocal
-      - colo优选
-      - 不知名的好人
-      - 蛋黄
-      - linuxdo好人2
-      - linuxdo好人
-    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
 
   - name: 💟 核心之选
     type: select
@@ -312,18 +326,14 @@ proxy-groups:
       - somelinks
       - 宝可梦星云
 
-  - name: ↪️ 漏网之鱼
-    type: select
-    proxies:
-      - 🌏️ 节点选择
-      - DIRECT
+
 rules:
   - RULE-SET,ai,✅ 解锁 AI
   - RULE-SET,Gemini,✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
   - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
-  #- DOMAIN-KEYWORD,fujm,DIRECT
+  - DOMAIN-KEYWORD,fujm,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
