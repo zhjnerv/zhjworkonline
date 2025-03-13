@@ -186,7 +186,7 @@ proxy-providers:
     path: ./代理集缓存/测试1_op_api.yaml
 
 
-  测试2维吉尼亚:
+  Linuxdo冷门节点: #https://linux.do/t/topic/442990
     type: http
     interval: 21600
     health-check:
@@ -195,9 +195,9 @@ proxy-providers:
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: "[测试2维吉尼亚]"
-    url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
-    path: ./代理集缓存/测试2维吉尼亚.yaml
+      additional-prefix: "[Linuxdo冷门节点]"
+    url: "https://kkb.9901158.xyz/loc.yaml"
+    path: ./代理集缓存/Linuxdo冷门节点.yaml
 
   宝可梦星云:
     type: http
@@ -302,7 +302,7 @@ proxy-groups:
     type: select
     use:
       - 测试1_op_api
-      - 测试2维吉尼亚
+      - Linuxdo冷门节点
       - mylocal
       - 宝可梦星云
     filter: "(?i)^(?!unavailable).*$"
@@ -315,7 +315,7 @@ proxy-groups:
     tolerance: 50
     use:
       - 测试1_op_api
-      - 测试2维吉尼亚
+      - Linuxdo冷门节点
       - 订阅 8
       - linuxdo好人2
       - linuxdo好人

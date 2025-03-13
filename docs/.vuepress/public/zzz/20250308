@@ -137,11 +137,11 @@ proxy-providers:  # Meta支持机场通用订阅
     override:
       additional-prefix: "[测试1-OP-API]"
 
-  测试2维吉尼亚: # 
+  Linuxdo冷门节点: # 
     <<: *p
-    url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
+    url: "https://kkb.9901158.xyz/loc.yaml"
     override:
-      additional-prefix: "[测试2维吉尼亚]"
+      additional-prefix: "[Linuxdo冷门节点]"
 
   宝可梦星云: # 
     <<: *p
@@ -226,7 +226,7 @@ proxy-groups:
     type: select
     use:
       - 测试1-OP-API
-      - 测试2维吉尼亚
+      - Linuxdo冷门节点
       - mylocal
       - 宝可梦星云
     filter: "(?i)^(?!unavailable).*$"
@@ -239,7 +239,7 @@ proxy-groups:
     tolerance: 50
     use:
       - 测试1-OP-API
-      - 测试2维吉尼亚
+      - Linuxdo冷门节点
       - 神奇的订阅8
       - Linuxdo好人2
       - Linuxdo好人
