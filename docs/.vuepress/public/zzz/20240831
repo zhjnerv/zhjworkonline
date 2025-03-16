@@ -144,7 +144,7 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
     override:
       additional-prefix: "[linuxdo好人2]"
-    url: "http://em7.buzz/v3/subscr?id=f28151a7c5f24cd89ee1e04b5b3837c9" # https://linux.do/t/topic/416950
+    url: "https://link.chunkburst.cc/c/unlimited" # https://linux.do/t/topic/495576
     path: ./代理集缓存/linuxdo好人2.yaml
     
   订阅 8:

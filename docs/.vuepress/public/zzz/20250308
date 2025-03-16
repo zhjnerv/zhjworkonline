@@ -110,7 +110,7 @@ proxy-providers:  # Meta支持机场通用订阅
     
   Linuxdo好人2: # 
     <<: *p
-    url: "http://em7.buzz/v3/subscr?id=f28151a7c5f24cd89ee1e04b5b3837c9"
+    url: "https://link.chunkburst.cc/c/unlimited" #https://linux.do/t/topic/495576
     override:
       additional-prefix: "[Linuxdo好人2]"
 
