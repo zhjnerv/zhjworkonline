@@ -110,7 +110,7 @@ proxy-providers:  # Meta支持机场通用订阅
     
   Linuxdo好人2: # 
     <<: *p
-    url: "http://em7.buzz/v3/subscr?id=f28151a7c5f24cd89ee1e04b5b3837c9"
+    url: "https://link.chunkburst.cc/c/unlimited" #https://linux.do/t/topic/495576
     override:
       additional-prefix: "[Linuxdo好人2]"
 
@@ -137,11 +137,15 @@ proxy-providers:  # Meta支持机场通用订阅
     override:
       additional-prefix: "[测试1-OP-API]"
 
-  测试2维吉尼亚: # 
+  Linuxdo冷门节点: # 
     <<: *p
+<<<<<<< HEAD
     url: "https://v1.mk/x87NJ2B"
+=======
+    url: "https://kkb.9901158.xyz/loc.yaml"
+>>>>>>> e8f6b9dc3d64913eae55052543845f1615536ca5
     override:
-      additional-prefix: "[测试2维吉尼亚]"
+      additional-prefix: "[Linuxdo冷门节点]"
 
   宝可梦星云: # 
     <<: *p
@@ -226,7 +230,7 @@ proxy-groups:
     type: select
     use:
       - 测试1-OP-API
-      - 测试2维吉尼亚
+      - Linuxdo冷门节点
       - mylocal
       - 宝可梦星云
     filter: "(?i)^(?!unavailable).*$"
@@ -239,7 +243,7 @@ proxy-groups:
     tolerance: 50
     use:
       - 测试1-OP-API
-      - 测试2维吉尼亚
+      - Linuxdo冷门节点
       - 神奇的订阅8
       - Linuxdo好人2
       - Linuxdo好人
