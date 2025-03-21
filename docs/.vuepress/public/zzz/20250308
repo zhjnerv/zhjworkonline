@@ -139,7 +139,7 @@ proxy-providers:  # Meta支持机场通用订阅
 
   测试2维吉尼亚: # 
     <<: *p
-    url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
+    url: "https://v1.mk/x87NJ2B"
     override:
       additional-prefix: "[测试2维吉尼亚]"
 

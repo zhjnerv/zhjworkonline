@@ -196,7 +196,7 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
     override:
       additional-prefix: "[测试2维吉尼亚]"
-    url: "https://subgdmn7.top/link/pWMt79TeFXVeKu8U?clash=1"
+    url: "https://v1.mk/x87NJ2B"
     path: ./代理集缓存/测试2维吉尼亚.yaml
 
   宝可梦星云:
