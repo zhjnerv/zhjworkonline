@@ -78,7 +78,7 @@ proxy-providers:
      enable: true
      url: https://i.ytimg.com/generate_204
      interval: 10000
-    url: "https://clash.vcr.us.kg/yaml" #你的订阅链接
+    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fsdk.bhqt.fun%3A443&insert=false" #你的订阅链接
 
   宝可梦星云:
     type: http

@@ -88,9 +88,9 @@ proxy-providers:  # Meta支持机场通用订阅
       additional-prefix: "[不知名的好人]"
 
 
-  竹影: # 
+  竹影: # https://linux.do/t/topic/508201
     <<: *p
-    url: "https://clash.vcr.us.kg/yaml"
+    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fsdk.bhqt.fun%3A443&insert=false"
     override:
       additional-prefix: "[竹影]"
     

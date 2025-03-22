@@ -105,7 +105,7 @@ proxy-providers:
       filter: "(?i)^(?!unavailable).*$"
     override:
       additional-prefix: "[竹影]"
-    url: "https://clash.vcr.us.kg/yaml"
+    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fsdk.bhqt.fun%3A443&insert=false"
     path: ./代理集缓存/竹影.yaml
     
   colo优选:
