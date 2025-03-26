@@ -150,7 +150,11 @@ proxy-providers:  # Meta支持机场通用订阅
     override:
       additional-prefix: "[宝可梦]"
 
-
+  长期有效自动更新: #https://github.com/wzdnzd/aggregator/issues/91
+    <<: *p
+    url: "https://imperialb.in/r/gynacebx"
+    override:
+      additional-prefix: "[长期更新]"
 
 proxy-groups:
 
@@ -230,16 +234,17 @@ proxy-groups:
       - Linuxdo冷门节点
       - mylocal
       - 宝可梦星云
+      - 长期有效自动更新
     filter: "(?i)^(?!unavailable).*$"
 
 
   - name: 🔁 故障转移
     type: fallback
     url: "http://www.google.com/generate_204"
-    interval: 300
-    tolerance: 50
+    interval: 60
     use:
       - 测试1-OP-API
+      - 长期有效自动更新
       - Linuxdo冷门节点
       - 神奇的订阅8
       - Linuxdo好人2
