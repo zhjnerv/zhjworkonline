@@ -45,7 +45,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
       timeout: 10000
@@ -59,7 +59,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 18000
       filter: "(?i)^(?!unavailable).*$"
       timeout: 10000
@@ -73,7 +73,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: Hs|Ns
     override:
@@ -86,7 +86,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -100,7 +100,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -113,7 +113,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "http://pool.cfip.nyc.mn" # https://linux.do/t/topic/446252
@@ -126,7 +126,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -139,7 +139,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -152,7 +152,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://mxlsub.me/free" # https://linux.do/t/topic/197070
@@ -177,7 +177,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -191,7 +191,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -204,7 +204,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     override:
@@ -264,7 +264,7 @@ proxy-groups:
 
   - name: 🚀 自动选择
     type: url-test
-    url: "http://www.google.com/generate_204"
+    url: "https://www.google.com/generate_204"
     interval: 900
     tolerance: 1000
     use:
@@ -310,7 +310,7 @@ proxy-groups:
 
   - name: 🔁 故障转移
     type: fallback
-    url: "http://www.google.com/generate_204"
+    url: "https://www.google.com/generate_204"
     interval: 300
     tolerance: 50
     use:

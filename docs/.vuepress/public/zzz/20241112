@@ -120,7 +120,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
@@ -130,7 +130,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
@@ -140,7 +140,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: ""
@@ -150,7 +150,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://clash.llleman.com/clach.yml"
@@ -160,7 +160,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fsdk.bhqt.fun%3A443&insert=false"
@@ -170,7 +170,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://dingyue.qqdk2019.net"
@@ -180,7 +180,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://dy.5468936.xyz/"
@@ -190,7 +190,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://linuxdo.dingyue.cc.ua/clash.yaml"

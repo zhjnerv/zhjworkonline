@@ -94,7 +94,7 @@ proxy-providers:
     interval: 21600
     health-check:
       enable: true
-      url: "http://www.google.com/generate_204"
+      url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
     url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
