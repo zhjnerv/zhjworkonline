@@ -120,7 +120,7 @@ proxy-providers:  # Meta支持机场通用订阅
     
   Linuxdo好人: # 
     <<: *p
-    url: "https://dy.5468936.xyz/"
+    url: "https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d"
     override:
       additional-prefix: "[Linuxdo好人]"
 
