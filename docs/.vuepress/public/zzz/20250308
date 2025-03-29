@@ -11,6 +11,16 @@ global-client-fingerprint: chrome
 profile:
   store-selected: true
   store-fake-ip: true
+tun:
+  enable: true
+  stack: system  # 让 Mihomo 直接使用系统的网络协议栈
+  auto-route: true  # 自动配置路由
+  auto-detect-interface: true  # 自动检测网卡
+  dns-hijack:
+    - 198.18.0.2  # 劫持 DNS 解析，防止 DNS 泄漏
+    - "[fd00::1]"  # 确保 IPv6 DNS 也被劫持
+
+
 dns:
   enable: true
   ipv6: true
@@ -22,6 +32,7 @@ dns:
   nameserver:
     - 1.1.1.1
     - 8.8.8.8
+    - "https://[2606:4700:4700::1111]/dns-query" # Cloudflare IPv6 DNS
     - 2606:4700:4700::1111 # Cloudflare IPv6 DNS
     - 2001:4860:4860::8888 # Google IPv6 DNS
   fallback:
@@ -34,7 +45,7 @@ dns:
     geoip-code: CN
     ipcidr:
       - 240.0.0.0/4
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
@@ -264,7 +275,7 @@ proxy-groups:
       - 宝可梦星云
 # 规则
 rules:
-
+  - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
