@@ -183,7 +183,7 @@ proxy-providers:
       url: "https://www.google.com/generate_204"
       interval: 1800
       filter: "(?i)^(?!unavailable).*$"
-    url: "https://dy.5468936.xyz/"
+    url: "https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d"
     
   订阅 8:
     type: http

@@ -273,7 +273,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4300
     path: ./proxy_providers/dy5.yaml
-    url: https://dy.5468936.xyz/ #你的订阅链接
+    url: https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d #你的订阅链接
 
 #这里开始是空的配置----
 

@@ -11,24 +11,41 @@ global-client-fingerprint: chrome
 profile:
   store-selected: true
   store-fake-ip: true
+tun:
+  enable: true
+  stack: system  # 让 Mihomo 直接使用系统的网络协议栈
+  auto-route: true  # 自动配置路由
+  auto-detect-interface: true  # 自动检测网卡
+  dns-hijack:
+    - 198.18.0.2  # 劫持 DNS 解析，防止 DNS 泄漏
+    - "[fd00::1]"  # 确保 IPv6 DNS 也被劫持
+
+
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   default-nameserver:
     - 223.5.5.5
     - 223.6.6.6
+    - 2400:3200::1      # 阿里DNS IPv6地址
+    - 2400:3200:baba::1 # 阿里DNS IPv6地址
   nameserver:
     - 1.1.1.1
     - 8.8.8.8
+    - "https://[2606:4700:4700::1111]/dns-query" # Cloudflare IPv6 DNS
+    - 2606:4700:4700::1111 # Cloudflare IPv6 DNS
+    - 2001:4860:4860::8888 # Google IPv6 DNS
   fallback:
     - tls://1.1.1.1:853
     - tls://8.8.8.8:853
+    - tls://[2606:4700:4700::1111]:853 # Cloudflare IPv6 DNS (TLS)
+    - tls://[2001:4860:4860::8888]:853 # Google IPv6 DNS (TLS)
   fallback-filter:
     geoip: true
     geoip-code: CN
     ipcidr:
       - 240.0.0.0/4
-  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
@@ -103,7 +120,7 @@ proxy-providers:  # Meta支持机场通用订阅
     
   Linuxdo好人: # 
     <<: *p
-    url: "https://dy.5468936.xyz/"
+    url: "https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d"
     override:
       additional-prefix: "[Linuxdo好人]"
 
@@ -258,7 +275,7 @@ proxy-groups:
       - 宝可梦星云
 # 规则
 rules:
-
+  - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
