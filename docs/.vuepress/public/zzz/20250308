@@ -118,11 +118,17 @@ proxy-providers:  # Meta支持机场通用订阅
       additional-prefix: "[colo优选]"
 
     
-  Linuxdo好人: # 
+  Getafreenode: # 
     <<: *p
-    url: "https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d"
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0"
+    header:
+      User-Agent: 
+      - "Mozilla/5.0"
+      - "AppleWebKit/537.36"
+      - "Chrome/113.0.0.0"
+      - "Safari/537.36"
     override:
-      additional-prefix: "[Linuxdo好人]"
+      additional-prefix: "[Getafreenode]"
 
     
   Linuxdo好人2: # 
