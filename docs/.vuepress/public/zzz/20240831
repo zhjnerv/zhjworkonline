@@ -262,7 +262,7 @@ proxy-groups:
       - 不知名的好人
       - 蛋黄
       - linuxdo好人2
-      - linuxdo好人
+      - Getafreenode
     filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
 
 
@@ -290,7 +290,7 @@ proxy-groups:
       - mylocal
       - colo优选
       - linuxdo好人2
-      - linuxdo好人
+      - Getafreenode
     filter: "(?i)^(?!unavailable).*$"
     
 
@@ -322,7 +322,7 @@ proxy-groups:
       - Linuxdo冷门节点
       - 订阅 8
       - linuxdo好人2
-      - linuxdo好人
+      - Getafreenode
       - colo优选
       - 不知名的好人
       - 蛋黄
