@@ -121,18 +121,22 @@ proxy-providers:
     override:
       additional-prefix: "[colo优选]"
 
-  linuxdo好人:
+  Getafreenode:
     type: http
     interval: 21600
     health-check:
       enable: true
       url: "https://www.google.com/generate_204"
       interval: 1800
-      filter: "(?i)^(?!unavailable).*$"
     override:
-      additional-prefix: "[linuxdo好人]"
-    url: "https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d"
-    path: ./代理集缓存/linuxdo好人.yaml
+      additional-prefix: "[Getafreenode]"
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0"
+    header:
+      User-Agent:
+      - "Mozilla/5.0"
+      - "Chrome/113.0.0.0"
+      - "Edg/113.0.1774.42"
+    path: ./代理集缓存/getafreenode.yaml
 
   linuxdo好人2:
     type: http
@@ -258,7 +262,7 @@ proxy-groups:
       - 不知名的好人
       - 蛋黄
       - linuxdo好人2
-      - linuxdo好人
+      - Getafreenode
     filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
 
 
@@ -286,7 +290,7 @@ proxy-groups:
       - mylocal
       - colo优选
       - linuxdo好人2
-      - linuxdo好人
+      - Getafreenode
     filter: "(?i)^(?!unavailable).*$"
     
 
@@ -318,7 +322,7 @@ proxy-groups:
       - Linuxdo冷门节点
       - 订阅 8
       - linuxdo好人2
-      - linuxdo好人
+      - Getafreenode
       - colo优选
       - 不知名的好人
       - 蛋黄

@@ -61,10 +61,10 @@ proxies:
 all: &all {type: select, use: [somelinks, mylinks, 蛋黄, 不知名的好人, Linuxdo好人2]}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Linuxdo好人], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Getafreenode], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
 
 # 备用应急
-backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Linuxdo好人]}
+backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
 
 # 精选节点
 best: &best {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, Linuxdo好人2]}
@@ -118,11 +118,17 @@ proxy-providers:  # Meta支持机场通用订阅
       additional-prefix: "[colo优选]"
 
     
-  Linuxdo好人: # 
+  Getafreenode: # 
     <<: *p
-    url: "https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d"
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0"
+    header:
+      User-Agent: 
+      - "Mozilla/5.0"
+      - "AppleWebKit/537.36"
+      - "Chrome/113.0.0.0"
+      - "Safari/537.36"
     override:
-      additional-prefix: "[Linuxdo好人]"
+      additional-prefix: "[Getafreenode]"
 
     
   Linuxdo好人2: # 
@@ -265,7 +271,7 @@ proxy-groups:
       - Linuxdo冷门节点
       - 神奇的订阅8
       - Linuxdo好人2
-      - Linuxdo好人
+      - Getafreenode
       - colo优选
       - 不知名的好人
       - 蛋黄
