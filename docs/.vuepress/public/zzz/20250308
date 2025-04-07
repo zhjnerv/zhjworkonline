@@ -61,13 +61,13 @@ proxies:
 all: &all {type: select, use: [somelinks, mylinks, 蛋黄, 不知名的好人, Linuxdo好人2]}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Getafreenode], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Getafreenode,mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
 
 # 备用应急
 backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
 
 # 精选节点
-best: &best {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, Linuxdo好人2]}
+best: &best {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, Linuxdo好人2,宝可梦星云]}
 
 # 自动筛选最快节点
 fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 不知名的好人, Linuxdo好人2]}
@@ -196,6 +196,7 @@ proxy-groups:
       - 💟 核心之选
       - 🔁 故障转移
 
+
   - name: 📢 电报
     type: select
     proxies:
@@ -208,6 +209,8 @@ proxy-groups:
       - 📊 测试之选
       - 💟 核心之选
       - 🔁 故障转移
+    use: 
+      - Getafreenode
   - name: ↪️ 漏网之鱼
     type: select
     proxies:
@@ -233,6 +236,8 @@ proxy-groups:
     
   - name: ✅ 解锁 AI
     <<: *ai
+    proxies: 
+      - ⬇ 精选节点
 
   - name: ⬇ 精选节点
     <<: *best

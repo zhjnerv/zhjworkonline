@@ -238,6 +238,8 @@ proxy-groups:
       - ✅ 解锁 AI
       - 💟 核心之选
       - 📊 测试之选
+    use: 
+      - Getafreenode
 
 
   - name: ↪️ 漏网之鱼
@@ -264,6 +266,8 @@ proxy-groups:
       - linuxdo好人2
       - Getafreenode
     filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"
+    proxies: 
+      - 🔄 手动切换
 
 
   - name: 🚀 自动选择
