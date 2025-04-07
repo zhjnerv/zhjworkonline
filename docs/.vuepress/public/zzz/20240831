@@ -78,7 +78,7 @@ proxy-providers:
       filter: Hs|Ns
     override:
       additional-prefix: "[蛋黄]"
-    url: "https://sub.danhu.ddns-ip.net/paste/jGd0KIXz3l5XmaLW/base64"
+    url: #"https://sub.danhu.ddns-ip.net/paste/jGd0KIXz3l5XmaLW/base64"
     path: ./代理集缓存/蛋黄.yaml
 
   不知名的好人:
