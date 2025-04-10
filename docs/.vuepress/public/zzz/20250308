@@ -61,7 +61,7 @@ proxies:
 all: &all {type: select, use: [somelinks, mylinks, 蛋黄, 不知名的好人, Linuxdo好人2]}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Getafreenode,mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港))"}
+ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Getafreenode,mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
 
 # 备用应急
 backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
@@ -211,6 +211,7 @@ proxy-groups:
       - 🔁 故障转移
     use: 
       - Getafreenode
+
   - name: ↪️ 漏网之鱼
     type: select
     proxies:
@@ -233,11 +234,30 @@ proxy-groups:
   - name: 🔄 手动切换
     <<: *all
     filter: "(?i)^(?!unavailable).*$"
-    
+
   - name: ✅ 解锁 AI
     <<: *ai
     proxies: 
       - ⬇ 精选节点
+    
+  - name: ☑️ 解锁 Gemini 
+    type: select
+    use:
+      - somelinks
+      - 宝可梦星云
+      - mylinks
+      - 不知名的好人
+      - 蛋黄
+      - Linuxdo好人2
+      - mylocal
+      - 竹影
+      - 神奇的订阅8
+      - 长期有效自动更新
+      - Linuxdo冷门节点
+      - 测试1-OP-API
+      - Getafreenode
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|ccs))"
+
 
   - name: ⬇ 精选节点
     <<: *best
@@ -288,6 +308,7 @@ proxy-groups:
 rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
+  - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
@@ -304,7 +325,6 @@ rules:
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN,console.anthropic.com,✅ 解锁 AI
   - DOMAIN,anthropic.com,✅ 解锁 AI
-  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
   - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
   - DOMAIN,static.cloudflareinsights.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
