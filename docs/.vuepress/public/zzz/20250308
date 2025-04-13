@@ -309,16 +309,17 @@ rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
   - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
+  - DOMAIN,gemini.google.com,☑️ 解锁 Gemini
+  - RULE-SET,Gemini, ☑️ 解锁 Gemini 
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
-  - DOMAIN,fujm2.qqdk2019.net,DIRECT
-  - DOMAIN,fujm.qqdk2019.net,DIRECT
+  - DOMAIN,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN,fujm.qqdk2019.net,🌏️ 节点选择
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN-SUFFIX,4chat.me,DIRECT
-  - RULE-SET,Gemini, ✅ 解锁 AI
   - DOMAIN,claude.ai,✅ 解锁 AI
   - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
   - DOMAIN,anthropic.com,✅ 解锁 AI
