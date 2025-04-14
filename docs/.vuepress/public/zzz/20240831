@@ -335,24 +335,26 @@ proxy-groups:
       - somelinks
       - 宝可梦星云
 
-
 rules:
-  - RULE-SET,ai,✅ 解锁 AI
-  - RULE-SET,Gemini,✅ 解锁 AI
+  - IP-CIDR6,::/0,↪️ 漏网之鱼
+# 解锁AI
+  - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
+  - DOMAIN-SUFFIX,gemini.google.com,☑️ 解锁 Gemini
+  - DOMAIN-SUFFIX,zhjwork.online,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm.qqdk2019.net,🌏️ 节点选择
+  - RULE-SET,Gemini, ☑️ 解锁 Gemini 
+  - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
-  - DOMAIN-KEYWORD,aistudio,✅ 解锁 AI
-  - DOMAIN-KEYWORD,fujm,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN-SUFFIX,4chat.me,DIRECT
-  - DOMAIN,claude.ai,✅ 解锁 AI
-  - DOMAIN,console.anthropic.com,✅ 解锁 AI
-  - DOMAIN,anthropic.com,✅ 解锁 AI
-  - DOMAIN-SUFFIX,aistudio.google.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,claude.ai,✅ 解锁 AI
+  - DOMAIN-SUFFIX,anthropic.com,✅ 解锁 AI
   - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
-  - DOMAIN,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,static.cloudflareinsights.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
   - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
@@ -376,11 +378,14 @@ rules:
   - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
   - DOMAIN-KEYWORD,openai,✅ 解锁 AI
+
+# 默认规则
   - RULE-SET,collection,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
   - MATCH,↪️ 漏网之鱼
 
 rule-providers:
+
   collection: 
     type: http
     behavior: classical
@@ -403,6 +408,7 @@ rule-providers:
     path: ./rules/Gemini.yaml
     url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Gemini.yaml"
     interval: 86400
+
 
   Google:
     type: http
