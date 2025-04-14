@@ -67,7 +67,7 @@ ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 1
 backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
 
 # 精选节点
-best: &best {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, Linuxdo好人2,宝可梦星云]}
+best: &best {type: select, url: "https://www.google.com/generate_204", use: [somelinks, mylinks, Linuxdo好人2,宝可梦星云]}
 
 # 自动筛选最快节点
 fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 不知名的好人, Linuxdo好人2]}
@@ -309,25 +309,22 @@ rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
   - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
-  - DOMAIN,gemini.google.com,☑️ 解锁 Gemini
+  - DOMAIN-SUFFIX,gemini.google.com,☑️ 解锁 Gemini
+  - DOMAIN-SUFFIX,zhjwork.online,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm.qqdk2019.net,🌏️ 节点选择
   - RULE-SET,Gemini, ☑️ 解锁 Gemini 
   - RULE-SET,ai, ✅ 解锁 AI
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
-  - DOMAIN,fujm2.qqdk2019.net,🌏️ 节点选择
-  - DOMAIN,fujm.qqdk2019.net,🌏️ 节点选择
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
   - DOMAIN-SUFFIX,4chat.me,DIRECT
-  - DOMAIN,claude.ai,✅ 解锁 AI
-  - DOMAIN-SUFFIX,console.anthropic.com,✅ 解锁 AI
-  - DOMAIN,anthropic.com,✅ 解锁 AI
-  - DOMAIN,claude.ai,✅ 解锁 AI
-  - DOMAIN,console.anthropic.com,✅ 解锁 AI
-  - DOMAIN,anthropic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,claude.ai,✅ 解锁 AI
+  - DOMAIN-SUFFIX,anthropic.com,✅ 解锁 AI
   - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
-  - DOMAIN,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,static.cloudflareinsights.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
   - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
   - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
