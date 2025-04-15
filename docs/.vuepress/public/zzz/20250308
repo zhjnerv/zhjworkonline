@@ -67,10 +67,10 @@ ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 1
 backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
 
 # 精选节点
-best: &best {type: select, url: "https://www.google.com/generate_204", use: [somelinks, mylinks, Linuxdo好人2,宝可梦星云]}
+best: &best {type: select, url: "https://www.google.com/generate_204", use: [somelinks, mylinks, Linuxdo好人2,神奇的订阅9]}
 
 # 自动筛选最快节点
-fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [somelinks, mylinks, 不知名的好人, Linuxdo好人2]}
+fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [神奇的订阅9, mylinks, 不知名的好人, Linuxdo好人2]}
 
 # 订阅更新和延迟测试相关
 p: &p {type: http, interval: 21600, health-check: {enable: true, url: "https://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
@@ -167,11 +167,17 @@ proxy-providers:  # Meta支持机场通用订阅
     override:
       additional-prefix: "[Linuxdo冷门节点]"
 
-  宝可梦星云: # 
-    <<: *p
-    url: "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=b79a49035cbd03713e94d4bbfb4c9976"
+  神奇的订阅9: # 
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: "https://www.google.com/generate_204"
+      interval: 1800
+      timeout: 5000
+    url: "https://project-b.enkelte.ggff.net/" # https://linux.do/t/topic/555066
     override:
-      additional-prefix: "[宝可梦]"
+      additional-prefix: "[神奇9]"
 
   长期有效自动更新: #https://github.com/wzdnzd/aggregator/issues/91
     <<: *p
@@ -244,7 +250,7 @@ proxy-groups:
     type: select
     use:
       - somelinks
-      - 宝可梦星云
+      - 神奇的订阅9
       - mylinks
       - 不知名的好人
       - 蛋黄
@@ -273,7 +279,7 @@ proxy-groups:
       - somelinks
       - 竹影
       - mylocal
-      - 宝可梦星云
+      - 神奇的订阅9
 
   - name: 📊 测试之选
     type: select
@@ -281,7 +287,7 @@ proxy-groups:
       - 测试1-OP-API
       - Linuxdo冷门节点
       - mylocal
-      - 宝可梦星云
+      - 神奇的订阅9
       - 长期有效自动更新
     filter: "(?i)^(?!unavailable).*$"
 
@@ -303,7 +309,7 @@ proxy-groups:
       - mylinks
       - 竹影
       - somelinks
-      - 宝可梦星云
+      - 神奇的订阅9
 # 规则
 rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
