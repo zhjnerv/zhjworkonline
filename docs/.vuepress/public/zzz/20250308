@@ -314,6 +314,7 @@ proxy-groups:
 rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
+  - DOMAIN-SUFFIX,api-proxy.me,DIRECT 
   - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
   - DOMAIN-SUFFIX,gemini.google.com,☑️ 解锁 Gemini
   - DOMAIN-SUFFIX,zhjwork.online,🌏️ 节点选择
@@ -324,7 +325,6 @@ rules:
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
   - DOMAIN,fujm2.qqdk2019.net,🌏️ 节点选择
-  - DOMAIN-SUFFIX,api-proxy.me,DIRECT 
   - DOMAIN,fujm.qqdk2019.net,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
