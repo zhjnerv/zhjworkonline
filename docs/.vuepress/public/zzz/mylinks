@@ -49,3 +49,6 @@ hysteria2://65a43b6e-19c5-4fab-b960-d110a07d66a4@209.141.47.127:3234?alpn=h3&ins
 
 vless://77faf160-97ba-4c05-af0f-ffd1f701b4aa@107.172.99.78:33299?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=CcZlzRbD6VLcvuUX07wEfvt7r8rWXMwuZqvWTpKsFTM&fp=chrome#RN直连节点1
 hysteria2://b6ffadff-b7ad-497e-87c4-a2b315db85ea@107.172.99.78:43224?alpn=h3&insecure=1#RN直连节点2
+
+# https://linux.do/t/topic/574775
+vless://2d317da5-47c5-4db4-933f-16d1094668db@hkt-ty-line-1.sudatech.store:20550?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.paypal.com&pbk=cWs2mTxI3sdZlPYsRh239mJFnxi0Y8RmF-ZEtziFNQ8&fp=chrome#HKHKT
