@@ -315,7 +315,8 @@ rules:
   - RULE-SET,Google,✅ 解锁 AI
   - RULE-SET,telegram,📢 电报
   - DOMAIN,fujm2.qqdk2019.net,🌏️ 节点选择
-  - DOMAIN,fujm.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,api-proxy.me,DIRECT 
+  - DOMAIN,fujm.qqdk2019.net,DIRECT
   - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
   - PROCESS-NAME,qbittorrent.exe,DIRECT
   - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
