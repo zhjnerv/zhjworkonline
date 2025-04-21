@@ -244,7 +244,7 @@ proxy-groups:
   - name: ✅ 解锁 AI
     <<: *ai
     proxies: 
-      - ⬇ 精选节点
+      - 📊 测试之选
     
   - name: ☑️ 解锁 Gemini 
     type: select

@@ -269,6 +269,17 @@ proxy-groups:
     proxies: 
       - 🔄 手动切换
 
+  - name: ☑️ 解锁 Gemini 
+    type: select
+    use:
+      - somelinks
+      - mylinks
+      - 不知名的好人
+      - 蛋黄
+      - mylocal
+      - 竹影
+      - Linuxdo冷门节点
+      - Getafreenode
 
   - name: 🚀 自动选择
     type: url-test
