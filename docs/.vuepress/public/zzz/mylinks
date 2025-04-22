@@ -1,43 +1,24 @@
+# 洛杉矶qn
+
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInMzXHU2RDFCXHU2NzQ5XHU3N0Y2cW4iLA0KICAiYWRkIjogInMzLmNjYXYxLmNjIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjAwOTcwOWM3LTYzMTYtNDIyNS05MDg0LWJhMzUwOWZhYWVhOSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiY2hhY2hhMjAtcG9seTEzMDUiLA0KICAibmV0IjogIndzIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogInMzLmNjYXYxLmNjIiwNCiAgInBhdGgiOiAiL2hhcHB5IiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogInMzLmNjYXYxLmNjIiwNCiAgImFscG4iOiAiIg0KfQ==
 
-洛杉矶qn
 
+# 西雅图
 vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlx1ODk3Rlx1OTZDNVx1NTZGRSIsDQogICJhZGQiOiAiczIuY2NhdjEuY2MiLA0KICAicG9ydCI6ICI0NDMiLA0KICAiaWQiOiAiMDA5NzA5YzctNjMxNi00MjI1LTkwODQtYmEzNTA5ZmFhZWE5IiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJjaGFjaGEyMC1wb2x5MTMwNSIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiczIuY2NhdjEuY2MiLA0KICAicGF0aCI6ICIvaGFwcHkiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiczIuY2NhdjEuY2MiLA0KICAiYWxwbiI6ICIiDQp9
 
-西雅图
 
 
-
-https://linux.do/t/topic/487202
-
-vless://69bd62bd-96f9-4431-a8fb-734bc39acf72@209.141.47.127:30001?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=-bl3I3wywWBit7mmRq36AyOi5ETKnQZhrnGjuuCEH1s&fp=chrome#233boy-reality-209.141.47.127
-vless://6af42270-4aaa-4126-b312-6cd4e94b62e2@209.141.47.127:30002?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=dash.cloudflare.com&pbk=3SytUXd_LBt-4LWE6DPdIuXLF6O9HDRdHfPstvfdWDc&fp=chrome#233boy-reality-209.141.47.127
-vless://c65fa3dd-176e-4216-9b29-2791a0952aaf@209.141.47.127:30003?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=nv2BMBtlbp3inbHAdIuQuM_OUBHvqQG0mrCPHuU-1AI&fp=chrome#233boy-reality-209.141.47.127
-vless://148e4833-0997-4105-a32d-a3534cdc405e@209.141.47.127:30004?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=-cz8O1OD_lBGnerqaAQrTy8a_UoXguSdF86ax4PtsVk&fp=chrome#233boy-reality-209.141.47.127
-vless://c27ce794-8cfb-4a3f-803c-cc037c40cacb@209.141.47.127:30005?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=1ptUmDWaBGis5SITjUiMttr--h956niiv7Oo5DC0rlY&fp=chrome#233boy-reality-209.141.47.127
-vless://a09e182d-3085-4e0b-9c4d-0e4024c6b5f7@209.141.47.127:30006?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=w8Mjcdt-3dIJ4jhwT0QNaXl5cBD2WVeKmsv9Hg0W8H0&fp=chrome#233boy-reality-209.141.47.127
-vless://9137d2af-68f3-432f-a935-8d50ed6356e1@209.141.47.127:30007?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.amazon.com&pbk=cj9Me57Zsr17SfH8-kVx_SrUtqV6GRZs-pDpkEnrw0I&fp=chrome#233boy-reality-209.141.47.127
-
-hysteria2://cc8270bf-fcd1-47ab-b161-6b556e083e91@209.141.47.127:50001?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
-hysteria2://34b99733-b272-4f40-9244-12116fd1d84b@209.141.47.127:50002?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
-hysteria2://7f296eb7-d9d4-4541-8b30-6f543e1053a2@209.141.47.127:50004?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
-hysteria2://1ea83632-34af-40b6-9817-94d007033fbb@209.141.47.127:50003?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
-hysteria2://08a354ec-a45f-4faf-a4bf-6b56cd84b261@209.141.47.127:50005?alpn=h3&insecure=1#233boy-hysteria2-209.141.47.127
-
-
+# 不知名
+vless://9326d2fc-5d5e-31e4-8e7b-b3800ae6c642@154.201.91.70:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&sni=learn.microsoft.com&fp=random&pbk=6CRKsmWYwlivNa1Zv_X_wOVZHdVujOnbP5eGJdUhq3E&sid=51e5cd9ae8199dd1&spx=&#9929+CMI2节点
 
 vless://248917da-866f-425f-ea14-a7504e12451c@45.192.243.61:57545?encryption=none&security=reality&sni=swdist.apple.com&fp=chrome&pbk=UK7qxWWGfRQcQfwaGpHnqmmqqJBut4jxve8AeDDJ2UI&allowInsecure=1&type=tcp&headerType=none#%E4%B8%9C%E4%BA%AC-DUCKY%20CLOUD
 
 vless://19f5c2fc-ba51-49f2-bcfb-79eca1be8d2d@156.229.160.81:23742?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=TCjQoA8FYWELNjoIDgj-NWsjivAqMz1AyyE1F2PYqi4&fp=chrome#USA-reality-156.229.160.81
 vless://fa59050b-1ca3-474b-aa1a-b7058d79f75b@156.246.94.220:54854?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.amazon.com&pbk=0FC6OFyfJJJoxulSNvQwDArwYigxABrcHmm0CPXsOlQ&fp=chrome#JP1-reality-156.246.94.220
-vless://0ca430a8-d4a9-41c2-9096-cbe073578843@156.246.95.253:62492?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=NQEG-uVCTDaw6KN56MmbJpOJTZwC3ADYjKhiqwL9lRg&fp=chrome#JP2-reality-156.246.95.253
-vless://f212a7d3-7175-40bb-bba2-fde5668893e6@156.246.89.131:63134?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.ebay.com&pbk=sJyLIpS_6XMDEDhIgr0Xq2yAI8LdUaktWyrUKIVMOSw&fp=chrome#JP3-reality-156.246.89.131
-vless://e190cf54-cabc-4585-88ec-0e80f72f1abf@45.192.249.184:4132?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=tAiPw07Na8UsZ8m7dfTy9bDqqc-aVECs_-NLlGk-YQY&fp=chrome#JP4-reality-45.192.249.184
-vless://ce6ffc52-2256-4ff5-bbdd-5e7a6a461c0e@141.11.149.38:57298?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.ebay.com&pbk=z_S3J3u97NbAuVvzAv0hxb4CfU1WNxPPHMUGGJb82x4&fp=chrome#HK1-reality-141.11.149.38
-vless://0b49afbe-9b09-42bd-b6d7-023341e8d0ce@154.83.85.129:960?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=aws.amazon.com&pbk=Q7Qm8S9r4Bbfj5Qcjbxo5qrHXxcoIIZKI9vLDj0Iq2k&fp=chrome#HK1-reality-154.83.85.129
-trojan://f5MEyNDXNB@8.211.130.68:30200?type=tcp&security=tls&fp=chrome&alpn=h3%2Ch2&sni=vline.ovinc.co
-vless://41dee366-2fd1-4308-be54-bd40190b539b@178.236.37.37:28649?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=Uqq3Rvmjxwo3DMwc7owIqQrtgN8465_m3eiUkMkfM28&fp=chrome#JP5-reality-178.236.37.37
 
+
+
+# CCB节点
 vless://9f3dde87-88dc-4baf-b4c2-ce976f8b0351@209.141.47.127:19626?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.paypal.com&pbk=LRFoayv4UHWEHprryRDj_4JyeTkpbgIsBWTYApsnEAA&fp=chrome#CCB-reality-209.141.47.127
 
 hysteria2://65a43b6e-19c5-4fab-b960-d110a07d66a4@209.141.47.127:3234?alpn=h3&insecure=1#CCB-hysteria2-209.141.47.127
@@ -52,3 +33,34 @@ hysteria2://b6ffadff-b7ad-497e-87c4-a2b315db85ea@107.172.99.78:43224?alpn=h3&ins
 
 # https://linux.do/t/topic/574775
 vless://2d317da5-47c5-4db4-933f-16d1094668db@hkt-ty-line-1.sudatech.store:20550?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.paypal.com&pbk=cWs2mTxI3sdZlPYsRh239mJFnxi0Y8RmF-ZEtziFNQ8&fp=chrome#HKHKT
+
+
+# 不知名的2
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@www.csgo.com:443?security=tls&sni=512306.xyz&type=ws&path=?ed%3D2980&host=512306.xyz&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9%20%E8%AF%B7%E5%8B%BF%E5%A4%A7%E9%87%8F%E4%BD%BF%E7%94%A8
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@visa.cn:443?security=tls&sni=mht.mhtadayon.ir&type=ws&path=?ed%3D2740&host=mht.mhtadayon.ir&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9%20%E7%A6%81%E6%AD%A2%E6%BB%A5%E7%94%A8
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@visa.cn:443?security=tls&sni=bpb0713.515434.xyz&type=ws&path=?ed%3D2599&host=bpb0713.515434.xyz&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9%20%E6%B5%81%E9%87%8F%E6%9C%89%E9%99%90
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@visa.cn:443?security=tls&sni=laopeng.us.kg&type=ws&path=?ed%3D2765&host=laopeng.us.kg&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9%20%E4%BC%98%E5%85%88%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E8%8A%82%E7%82%B9
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@www.vpslook.com:443?security=tls&sni=bpb.64kb.cc&type=ws&path=?ed%3D5108&host=bpb.64kb.cc&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@japan.com:443?security=tls&sni=singjack.us.kg&type=ws&path=?ed%3D3813&host=singjack.us.kg&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@america.com:443?security=tls&sni=152.sjzkn1.tk&type=ws&path=?ed%3D2918&host=152.sjzkn1.tk&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@visa.cn:443?security=tls&sni=green-cyw.pages.dev&type=ws&path=?ed%3D4769&host=green-cyw.pages.dev&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
+ss://Y2hhY2hhMjA6blV0aFo3ejNWbXlW@14.18.253.178:9001#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF1
+ss://Y2hhY2hhMjA6cGFzc0xVc08yS3R1ZXI3N3R1@14.18.253.178:8321#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF
+ss://Y2hhY2hhMjA6djVhVVV0bWUzanhz@14.18.253.178:9003#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF3
+ss://Y2hhY2hhMjA6UFRnRkxMclQ1cFZn@14.18.253.178:9002#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF2
+ss://Y2hhY2hhMjA6czZaYXU5aW9pYw==@14.18.253.178:9004#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF4
+ss://Y2hhY2hhMjA6c0pNZGNJN05Qag==@14.18.253.178:9005#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF5
+ss://Y2hhY2hhMjA6RHZQZkthOHZzVjlL@14.18.253.178:8334#%F0%9F%87%B8%F0%9F%87%AC%20%E6%96%B0%E5%8A%A0%E5%9D%A1
+ss://Y2hhY2hhMjA6YXZwQnFGRm1zWUJO@14.18.253.178:8335#%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC1
+ss://Y2hhY2hhMjA6R3FiY0NmaDM2NWFU@14.18.253.178:8331#%F0%9F%87%AF%F0%9F%87%B5%20%E6%97%A5%E6%9C%AC2
+ss://Y2hhY2hhMjA6QURabVJRVUdIVHdY@14.18.253.178:8339#%F0%9F%87%B0%F0%9F%87%B7%20%E9%9F%A9%E5%9B%BD%E9%A6%96%E5%B0%94
+ss://Y2hhY2hhMjA6ZDNiYUs2TlcySEVj@14.18.253.178:8349#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BD%E7%BA%BD%E7%BA%A6
+ss://Y2hhY2hhMjA6OEJaNXVCclB1VURZ@14.18.253.178:8332#%F0%9F%87%B8%F0%9F%87%AC%20%E7%BE%8E%E5%9B%BD%E6%B4%9B%E6%9D%89%E7%9F%B6%E6%96%B0
+ss://Y2hhY2hhMjA6d0RhekhEdTYzZ2Nn@14.18.253.178:8344#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BD%E8%BE%BE%E6%8B%89%E6%96%AF
+ss://Y2hhY2hhMjA6anJnYzY0c0ZTTFFN@14.18.253.178:8333#%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BD%E6%B3%95%E5%85%B0%E5%85%8B%E7%A6%8F
+ss://Y2hhY2hhMjA6M2ZuM0NINVN3aDJO@14.18.253.178:8337#%F0%9F%87%AC%F0%9F%87%A7%20%E8%8B%B1%E5%9B%BD
+ss://Y2hhY2hhMjA6cjhqaDZaZXlrSHZC@14.18.253.178:8342#%F0%9F%87%BA%F0%9F%87%B8%20%E7%BE%8E%E5%9B%BD%E6%B4%9B%E6%9D%89%E7%9F%B6
+ss://Y2hhY2hhMjA6TjlrNGYyUE9SbDE0@14.18.253.178:8348#%F0%9F%87%AE%F0%9F%87%B1%20%E4%BB%A5%E8%89%B2%E5%88%97
+ss://Y2hhY2hhMjA6ZGtZc2RnV3FlZ05W@14.18.253.178:8343#%F0%9F%87%A8%F0%9F%87%A6%20%E5%8A%A0%E6%8B%BF%E5%A4%A7
+ss://Y2hhY2hhMjA6eld5UXZKYlFSWmFW@14.18.253.178:8341#%F0%9F%87%A6%F0%9F%87%BA%20%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A
+ss://Y2hhY2hhMjA6cTJrU0dwNGF5RktC@14.18.253.178:8347#%F0%9F%87%AB%F0%9F%87%B7%20%E6%B3%95%E5%9B%BD%E5%B7%B4%E9%BB%8E
