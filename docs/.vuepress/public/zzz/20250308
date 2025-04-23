@@ -58,16 +58,16 @@ dns:
 ###开始建立锚点
 proxies: 
 # 所有节点
-all: &all {type: select, use: [somelinks, mylinks, 蛋黄, 不知名的好人, Linuxdo好人2]}
+all: &all {type: select, include-all: true}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, Getafreenode,mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
+ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
 
 # 备用应急
 backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
 
 # 精选节点
-best: &best {type: select, url: "https://www.google.com/generate_204", use: [somelinks, mylinks, Linuxdo好人2,神奇的订阅9]}
+best: &best {type: select, url: "https://www.google.com/generate_204", use: [长期有效自动更新,神奇的订阅9]}
 
 # 自动筛选最快节点
 fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [神奇的订阅9, mylinks, 不知名的好人, Linuxdo好人2]}
@@ -199,7 +199,7 @@ proxy-groups:
       - ⬇ 备用应急
       - DIRECT
       - 📊 测试之选
-      - 💟 核心之选
+
       - 🔁 故障转移
       - 🔵 负载均衡
 
@@ -214,7 +214,7 @@ proxy-groups:
       - ⬇ 备用应急
       - DIRECT
       - 📊 测试之选
-      - 💟 核心之选
+
       - 🔁 故障转移
     use: 
       - Getafreenode
@@ -229,7 +229,7 @@ proxy-groups:
       - ⬇ 备用应急
       - DIRECT
       - 📊 测试之选
-      - 💟 核心之选
+
       - 🔁 故障转移
       - 🔵 负载均衡
 
@@ -249,21 +249,7 @@ proxy-groups:
       - 📊 测试之选
     
   - name: ☑️ 解锁 Gemini 
-    type: select
-    use:
-      - somelinks
-      - 神奇的订阅9
-      - mylinks
-      - 不知名的好人
-      - 蛋黄
-      - Linuxdo好人2
-      - mylocal
-      - 竹影
-      - 神奇的订阅8
-      - 长期有效自动更新
-      - Linuxdo冷门节点
-      - 测试1-OP-API
-      - Getafreenode
+    <<: *all
     filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|ccs))"
 
 
@@ -275,13 +261,6 @@ proxy-groups:
     filter: "(?i)^(?!unavailable).*$"
 
 
-  - name: 💟 核心之选
-    type: select
-    use:
-      - somelinks
-      - 竹影
-      - mylocal
-      - 神奇的订阅9
 
   - name: 📊 测试之选
     type: select
@@ -299,39 +278,13 @@ proxy-groups:
     url: https://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 100
-    use:
-      - 测试1-OP-API
-      - 长期有效自动更新
-      - Linuxdo冷门节点
-      - 神奇的订阅8
-      - Linuxdo好人2
-      - Getafreenode
-      - colo优选
-      - 不知名的好人
-      - 蛋黄
-      - mylinks
-      - 竹影
-      - somelinks
-      - 神奇的订阅9
+    <<: *all
 
   - name: 🔁 故障转移
     type: fallback
     url: "https://www.google.com/generate_204"
     interval: 60
-    use:
-      - 测试1-OP-API
-      - 长期有效自动更新
-      - Linuxdo冷门节点
-      - 神奇的订阅8
-      - Linuxdo好人2
-      - Getafreenode
-      - colo优选
-      - 不知名的好人
-      - 蛋黄
-      - mylinks
-      - 竹影
-      - somelinks
-      - 神奇的订阅9
+    <<: *all
 # 规则
 rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
