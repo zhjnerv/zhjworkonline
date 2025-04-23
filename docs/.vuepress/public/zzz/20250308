@@ -201,6 +201,7 @@ proxy-groups:
       - 📊 测试之选
       - 💟 核心之选
       - 🔁 故障转移
+      - 🔵 负载均衡
 
 
   - name: 📢 电报
@@ -230,6 +231,7 @@ proxy-groups:
       - 📊 测试之选
       - 💟 核心之选
       - 🔁 故障转移
+      - 🔵 负载均衡
 
 
 
@@ -291,6 +293,26 @@ proxy-groups:
       - 长期有效自动更新
     filter: "(?i)^(?!unavailable).*$"
 
+  - name: 🔵 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - 测试1-OP-API
+      - 长期有效自动更新
+      - Linuxdo冷门节点
+      - 神奇的订阅8
+      - Linuxdo好人2
+      - Getafreenode
+      - colo优选
+      - 不知名的好人
+      - 蛋黄
+      - mylinks
+      - 竹影
+      - somelinks
+      - 神奇的订阅9
 
   - name: 🔁 故障转移
     type: fallback
