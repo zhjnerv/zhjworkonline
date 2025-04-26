@@ -126,26 +126,6 @@ proxy-providers:
       interval: 300
     path: ./mylocal/somelinks.yaml
 
-  LINUXDO:
-    type: http
-    interval: 4100
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 410
-    path: ./proxy_providers/zeabur.yaml
-    url: #"https://clash.llleman.com/clach.yml" #https://linux.do/t/topic/187035
-
-  胖虎:
-    type: http
-    interval: 4400
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 440
-    path: ./proxy_providers/胖虎.yaml
-    url: "https://raw.githubusercontent.com/gitbigg/dy/main/jd" #你的订阅链接
-
   getafreenode:
     type: http
     interval: 4550
@@ -155,130 +135,6 @@ proxy-providers:
      interval: 550
     path: ./proxy_providers/getafreenode.yaml
     url: "https://getafreenode.com/subscribe/?uuid=3a47a8d5-dfb2-4798-aaea-c4a31ba00b71" #你的订阅链接
-
-  colo优选:
-    type: http
-    interval: 4700
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4470
-    path: ./proxy_providers/dy9.yaml
-    url: "https://dingyue.qqdk2019.net" #你的订阅链接
-
-  barry-far_V2ray-Configs: #纯链接
-    type: http
-    interval: 4800
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 480
-    path: ./proxy_providers/barry-far_V2ray-Configs.yaml
-    url: #"https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt" #你的订阅链接
-
-  peasoft-NoMoreWalls:
-    type: http
-    interval: 4900
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 490
-    path: ./proxy_providers/peasoft-NoMoreWalls.yaml
-    url: #"https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml" #你的订阅链接
-
-  mahdibland-V2RayAggregator:
-    type: http
-    interval: 5000
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 5000
-    path: ./proxy_providers/mahdibland-V2RayAggregator.yaml
-    url: #"https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml" #你的订阅链接
-
-  aiboboxx-v2rayfree: #没什么大用，放弃了
-    type: http
-    interval: 5100
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 5100
-    path: ./proxy_providers/aiboboxx-v2rayfree.yaml
-    url: #"https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2" #你的订阅链接
-
-  ermaozi-get_subscribe:
-    type: http
-    interval: 5200
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 5200
-    path: ./proxy_providers/ermaozi-get_subscribe.yaml
-    url: #"https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml" #你的订阅链接
-
-  w1770946466-Auto_proxy: #base64链接
-    type: http
-    interval: 5300
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 5300
-    path: ./proxy_providers/w1770946466-Auto_proxy.yaml
-    url: #"https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription7" #你的订阅链接
-
-  t.me-SSRSUB:
-    type: http
-    interval: 5500
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 1500
-    path: ./proxy_providers/SSRSUB.yaml
-    url: #"https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml" #你的订阅链接
-
-  蛋黄:
-    type: http
-    interval: 4200
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4200
-    path: ./proxy_providers/蛋黄.yaml
-    url: # https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64 #clash订阅链接
-    filter: Hs|Ns
-
-  空订阅:
-    type: http
-    interval: 4300
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 4300
-    path: ./proxy_providers/dy5.yaml
-    url: # https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d #你的订阅链接
-
-#这里开始是空的配置----
-
-  dy01:
-    type: http
-    interval: 4600
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 460
-    path: ./proxy_providers/dy01.yaml
-    url: # 'https://45.137.181.216/link/R26SPGJS18NRZIOA?clash=1' # cloudflare-pages-vpn
-
-
-  mjjonone:
-    type: http
-    interval: 5400
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 5400
-    path: ./proxy_providers/mjjonone.yaml
-    url: # https://allsub.king361.cf #https://github.com/mjjonone/mjj?tab=readme-ov-file
 
   o00p:
     type: http
@@ -290,10 +146,6 @@ proxy-providers:
     path: ./proxy_providers/o00p.yaml
     url: https://clash.nko.me/yaml #https://t.me/c/1472750099/3005
 
-
-
-
-#还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
 
 #分割线，下面是"代理"页面出现的分组，"name"是一级分组，"proxies"是二级分组，选节点用的
 proxy-groups:
@@ -319,20 +171,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🔑 手动选择②
     type: select
@@ -342,20 +181,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🚩 社交平台IP归属地
     type: select
@@ -387,7 +213,6 @@ proxy-groups:
     tolerance: 90
     use:
       - somelinks
-      - colo优选
   - name: mylink
     type: url-test
     url: https://cp.cloudflare.com/generate_204
@@ -407,8 +232,6 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - mjjonone
-      - 空订阅
   - name: ❗ openAI
     type: select
     proxies:
@@ -487,20 +310,7 @@ proxy-groups:
     type: select
     use:
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
   - name: 🛡️ 隐私防护
     type: select
@@ -526,7 +336,6 @@ proxy-groups:
       - 🔑 手动选择②
       - 🛠️ 故障转移
       - 🔵 负载均衡
-
   - name: ⏬ 下载平台
     type: select
     proxies:
@@ -555,20 +364,7 @@ proxy-groups:
     tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p 
   - name: 🔵 负载均衡
     type: load-balance
@@ -578,20 +374,7 @@ proxy-groups:
     tolerance: 100
     use:
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p 
       - somelinks
   - name: ♻️ 自动选择
@@ -602,20 +385,7 @@ proxy-groups:
     use:
       - somelinks
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p 
 #分割线，下面是节点按地区分组并自动测延迟
   - name: 🇺🇸 美国节点
@@ -624,20 +394,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: 美|🇺🇸|(?i)US|(?i)States|American
   - name: 🍁 其他地区
@@ -646,20 +403,7 @@ proxy-groups:
       - mylink
       - somelinks
       - mylocal
-      - LINUXDO
-      - 蛋黄
-      - 胖虎
       - getafreenode
-      - dy01
-      - colo优选
-      - barry-far_V2ray-Configs
-      - peasoft-NoMoreWalls
-      - mahdibland-V2RayAggregator
-      - aiboboxx-v2rayfree
-      - ermaozi-get_subscribe
-      - w1770946466-Auto_proxy
-      - mjjonone
-      - t.me-SSRSUB
       - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
     filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
   - name: Global
@@ -674,7 +418,6 @@ proxy-groups:
       - 🔵 负载均衡
       - 我的所有
       - ♻️ 自动选择
-  
 
 #分割线，下面是分流规则
 rule-providers:
@@ -684,78 +427,66 @@ rule-providers:
     interval: 86400
     url: "https://raw.fastgit.org/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
     path: ./Rules/IPfake.yaml
-
   YouTube:
     type: http
     behavior: classical
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
     path: ./Rules/YouTube.yaml
-
   Spotify:
     type: http
     behavior: classical
     interval: 86400
     url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
     path: ./Rules/Spotify.yaml
-
-
   Telegram:
     type: http
     behavior: classical
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
     path: ./Rules/Telegram.yaml
-
   Google:
     type: http
     behavior: classical
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
     path: ./Rules/google.yaml
-
   BanEasyPrivacy:
     type: http
     behavior: classical
     interval: 86400
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml"
     path: ./Rules/BanEasyPrivacy.yaml
-
   Advertising:
     type: http
     behavior: classical
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical.yaml
     path: ./Rules/Advertising.yaml
-
   Download:
     type: http
     behavior: classical
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Download/Download.yaml
     path: ./Rules/Download.yaml
-
   ChinaMax:
     type: http
     behavior: classical
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
     path: ./Rules/ChinaMax.yaml
-
   Global:
     type: http
     behavior: classical
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
     path: ./Rules/Global.yaml
-
   Lan:
     type: http
     behavior: classical
     interval: 86400
     url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
     path: ./Rules/Lan.yaml
-
   github:
     type: http
     behavior: classical
