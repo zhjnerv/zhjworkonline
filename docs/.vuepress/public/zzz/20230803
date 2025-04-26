@@ -95,26 +95,8 @@ proxies:
     password: 87f055ba
     sni: www.bing.com
     skip-cert-verify: true
-  - name: hy2-us-ccs
-    type: hysteria2
-    server: 107.175.32.131
-    port: 25217
-    password: c938f338
-    sni: www.bing.com
-    skip-cert-verify: true
 #分割线，下面是放你的机场订阅链接的
 proxy-providers:
-  sharecentrepro:
-    type: http
-    interval: 3700
-    exclude-filter: "套餐到期|欢迎使用|剩余流量"
-    health-check:
-     enable: true
-     url: https://cp.cloudflare.com/generate_204
-     interval: 700
-    url: "https://sub.sharecentre.online/sub"
-    path: ./proxy_providers/sharecentrepro.yaml
-
   mylink:
     type: http
     interval: 3800
@@ -262,7 +244,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4200
     path: ./proxy_providers/蛋黄.yaml
-    url: https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64 #clash订阅链接
+    url: # https://sub.danhu.ddns-ip.net/paste/FWbcKx4qEbTadcUr/base64 #clash订阅链接
     filter: Hs|Ns
 
   空订阅:
@@ -273,7 +255,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 4300
     path: ./proxy_providers/dy5.yaml
-    url: https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d #你的订阅链接
+    url: # https://linka.lmscunb.cc:2087/api/v1/client/subscribe?token=4d4f352798492675a9800947f6090f3d #你的订阅链接
 
 #这里开始是空的配置----
 
@@ -285,7 +267,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 460
     path: ./proxy_providers/dy01.yaml
-    url: 'https://45.137.181.216/link/R26SPGJS18NRZIOA?clash=1' # cloudflare-pages-vpn
+    url: # 'https://45.137.181.216/link/R26SPGJS18NRZIOA?clash=1' # cloudflare-pages-vpn
 
 
   mjjonone:
@@ -296,7 +278,7 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 5400
     path: ./proxy_providers/mjjonone.yaml
-    url: https://allsub.king361.cf #https://github.com/mjjonone/mjj?tab=readme-ov-file
+    url: # https://allsub.king361.cf #https://github.com/mjjonone/mjj?tab=readme-ov-file
 
   o00p:
     type: http
@@ -306,20 +288,19 @@ proxy-providers:
      url: https://cp.cloudflare.com/generate_204
      interval: 600
     path: ./proxy_providers/o00p.yaml
-    url: https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fsdk.bhqt.fun%3A443&insert=false #https://t.me/c/1472750099/3005
+    url: https://clash.nko.me/yaml #https://t.me/c/1472750099/3005
 
 
 
 
 #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
 
-#分割线，下面是“代理”页面出现的分组，“name”是一级分组，“proxies”是二级分组，选节点用的
+#分割线，下面是"代理"页面出现的分组，"name"是一级分组，"proxies"是二级分组，选节点用的
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - somelinks
       - DIRECT
       - ♻️ 自动选择
@@ -334,12 +315,10 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
     use:
       - mylink
       - somelinks
       - mylocal
-      - sharecentrepro
       - LINUXDO
       - 蛋黄
       - 胖虎
@@ -359,9 +338,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
     use:
-      - sharecentrepro
       - mylink
       - somelinks
       - mylocal
@@ -395,7 +372,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - somelinks
       - DIRECT
       - 🔑 手动选择
@@ -427,7 +403,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
     use:
       - mylink
       - somelinks
@@ -438,7 +413,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - mylink
       - somelinks
       - mylocal
@@ -455,7 +429,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - ♻️ 自动选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -472,7 +445,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - 🚀 节点选择
       - 🇺🇸 美国节点
       - 🍁 其他地区
@@ -489,7 +461,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - 🇺🇸 美国节点
       - 🍁 其他地区
       - 🔑 手动选择
@@ -516,7 +487,6 @@ proxy-groups:
     type: select
     use:
       - mylocal
-      - sharecentrepro
       - LINUXDO
       - 蛋黄
       - 胖虎
@@ -544,7 +514,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - mylink
       - somelinks
       - mylocal
@@ -586,7 +555,6 @@ proxy-groups:
     tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
     use:
       - mylocal
-      - sharecentrepro
       - LINUXDO
       - 蛋黄
       - 胖虎
@@ -610,7 +578,6 @@ proxy-groups:
     tolerance: 100
     use:
       - mylocal
-      - sharecentrepro
       - LINUXDO
       - 蛋黄
       - 胖虎
@@ -635,7 +602,6 @@ proxy-groups:
     use:
       - somelinks
       - mylocal
-      - sharecentrepro
       - LINUXDO
       - 蛋黄
       - 胖虎
@@ -655,7 +621,6 @@ proxy-groups:
   - name: 🇺🇸 美国节点
     type: select
     use:
-      - sharecentrepro
       - mylink
       - somelinks
       - mylocal
@@ -678,7 +643,6 @@ proxy-groups:
   - name: 🍁 其他地区
     type: select
     use:
-      - sharecentrepro
       - mylink
       - somelinks
       - mylocal
@@ -702,7 +666,6 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
-      - hy2-us-ccs
       - somelinks
       - 🔑 手动选择
       - 🚀 节点选择
