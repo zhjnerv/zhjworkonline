@@ -101,7 +101,7 @@ proxy-providers:  # Meta支持机场通用订阅
   
   蛋黄: # BPB
     <<: *p
-    url: "https://sub.danhu.ddns-ip.net/paste/jGd0KIXz3l5XmaLW/base64"
+    url: "https://sub.danhu.ddns-ip.net/paste/0aLyIfZNNKGnpKW9/base64"
     override:
       additional-prefix: "[蛋黄]"
 
