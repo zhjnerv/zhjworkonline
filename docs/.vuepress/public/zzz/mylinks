@@ -16,6 +16,8 @@ vless://248917da-866f-425f-ea14-a7504e12451c@45.192.243.61:57545?encryption=none
 vless://19f5c2fc-ba51-49f2-bcfb-79eca1be8d2d@156.229.160.81:23742?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=TCjQoA8FYWELNjoIDgj-NWsjivAqMz1AyyE1F2PYqi4&fp=chrome#USA-reality-156.229.160.81
 vless://fa59050b-1ca3-474b-aa1a-b7058d79f75b@156.246.94.220:54854?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.amazon.com&pbk=0FC6OFyfJJJoxulSNvQwDArwYigxABrcHmm0CPXsOlQ&fp=chrome#JP1-reality-156.246.94.220
 
+hysteria2://share:a7690af7-03ed-48fa-bc93-561b7df50695@share.078900.xyz:11451/?insecure=1&obfs=salamander&obfs-password=25b2b0cc-8663-4746-9773-1b053ca00ef6
+
 
 
 # CCB节点
