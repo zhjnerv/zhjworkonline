@@ -1,38 +1,9 @@
-
-# url 里填写自己的订阅,名称不能重复
-proxy-providers:
-  provider1:
-    type: http
-    interval: 3600
-    health-check: 
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: "https://jott.live/raw/somelink"
-
-  provider2:
-    type: http
-    interval: 3600
-    health-check: 
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    url: "https://jott.live/raw/mylink"
-
-mode: rule
-ipv6: true
-log-level: info
-allow-lan: true
 mixed-port: 7890
-unified-delay: false
-tcp-concurrent: true
-external-controller: '0.0.0.0:9090'
-
-geodata-mode: true
-geox-url:
-  geoip: "https://fastly.jsdelivr.net/gh/MerlinKodo/meta-rules-dat@release/geoip.dat"
-  geosite: "https://fastly.jsdelivr.net/gh/MerlinKodo/meta-rules-dat@release/geosite.dat"
-  mmdb: "https://fastly.jsdelivr.net/gh/MerlinKodo/meta-rules-dat@release/country.mmdb"
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: "0.0.0.0:9090"
 
 find-process-mode: strict
 global-client-fingerprint: chrome
@@ -40,231 +11,288 @@ global-client-fingerprint: chrome
 profile:
   store-selected: true
   store-fake-ip: true
-
-sniffer:
-  enable: true
-  sniff:
-    TLS:
-      ports: [443, 8443]
-    HTTP:
-      ports: [80, 8080-8880]
-      override-destination: true
-
 tun:
   enable: true
-  stack: system
+  stack: system  # 让 Mihomo 直接使用系统的网络协议栈
+  auto-route: true  # 自动配置路由
+  auto-detect-interface: true  # 自动检测网卡
   dns-hijack:
-    - 'any:53'
-  auto-route: true
-  auto-detect-interface: true
+    - 198.18.0.2  # 劫持 DNS 解析，防止 DNS 泄漏
+    - "[fd00::1]"  # 确保 IPv6 DNS 也被劫持
+
 
 dns:
   enable: true
-  listen: :1053
   ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
-  fake-ip-filter:
-    - '*'
-    - '+.lan'
-    - '+.local'
   default-nameserver:
     - 223.5.5.5
+    - 223.6.6.6
+    - 2400:3200::1      # 阿里DNS IPv6地址
+    - 2400:3200:baba::1 # 阿里DNS IPv6地址
   nameserver:
-    - 'tls://8.8.4.4#dns'
-    - 'tls://1.0.0.1#dns'
-  proxy-server-nameserver:
-    - https://doh.pub/dns-query
-  nameserver-policy:
-    "geosite:cn,private":
-      - https://doh.pub/dns-query
-      - https://dns.alidns.com/dns-query
+    - 1.1.1.1
+    - 8.8.8.8
+    - "https://[2606:4700:4700::1111]/dns-query" # Cloudflare IPv6 DNS
+    - 2606:4700:4700::1111 # Cloudflare IPv6 DNS
+    - 2001:4860:4860::8888 # Google IPv6 DNS
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+    - tls://[2606:4700:4700::1111]:853 # Cloudflare IPv6 DNS (TLS)
+    - tls://[2001:4860:4860::8888]:853 # Google IPv6 DNS (TLS)
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - 'dns.msftncsi.com'
+    - 'www.msftncsi.com'
+    - 'www.msftconnecttest.com'
+    - '+.argotunnel.com'
 
-proxies:
-  # - name: "WARP"
-  #   type: wireguard
-  #   server: engage.cloudflareclient.com
-  #   port: 2408
-  #   ip: "172.16.0.2/32"
-  #   ipv6: "2606::1/128"        # 自行替换
-  #   private-key: "private-key" # 自行替换
-  #   public-key: "public-key"   # 自行替换
-  #   udp: true
-  #   reserved: "abba"           # 自行替换
-  #   mtu: 1280
-  #   dialer-proxy: "dns"
-  #   remote-dns-resolve: true
-  #   dns:
-  #     - https://dns.cloudflare.com/dns-query
+###开始建立锚点
+proxies: 
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60000
+    password: 87f055ba
+    sni: www.bing.com
+    skip-cert-verify: true
+# 所有节点
+all: &all {type: select, include-all: true}
+
+# 解锁 AI
+ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
+
+
+# 精选节点
+
+# 自动筛选最快节点
+
+# 订阅更新和延迟测试相关
+p: &p {type: http, interval: 21600, health-check: {enable: true, url: "https://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
+
+###结束建立锚点
+
+
+proxy-providers:  # Meta支持机场通用订阅
+
+  somelinks: # 井号后面是注释，可修改
+    <<: *p
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+    override:
+      additional-prefix: "[somelinks]"
+  
+  mylinks: # 下面的蛋黄 是一个标准示例，非可用订阅
+    <<: *p
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+    override:
+      additional-prefix: "[mylinks]"
+  
+
+  竹影: # https://linux.do/t/topic/508201
+    <<: *p
+    url: "https://clash.nko.me/yaml"
+    override:
+      additional-prefix: "[竹影]"
+        
+  Getafreenode: # 
+    <<: *p
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0"
+    header:
+      User-Agent: 
+      - "Mozilla/5.0"
+      - "AppleWebKit/537.36"
+      - "Chrome/113.0.0.0"
+      - "Safari/537.36"
+    override:
+      additional-prefix: "[Getafreenode]"
+
+
+  mylocal:
+    type: file
+    interval: 4000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    path: ./mylocal/测试.yaml
+    override:
+      additional-prefix: "[mylocal]"
+
+
+  星链: #https://github.com/wzdnzd/aggregator/issues/91
+    <<: *p
+    url: "https://xship.top/v1/subscribe?starlink=vkt488mvcqu-6yK5JL2chUpu"
+    override:
+      additional-prefix: "[星链]"
 
 proxy-groups:
 
-  - name: 默认
+# 功能分组
+  
+  - name: 🌏️ 节点选择
     type: select
-    proxies: [DIRECT, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]
+    proxies:
+      - hy2-us-zjh
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - DIRECT
+      - 📊 测试之选
+      - 🔁 故障转移
 
-  - name: dns
+  - name: 📢 电报
     type: select
-    proxies: [DIRECT, 自动选择, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点]
+    proxies:
+      - hy2-us-zjh
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - DIRECT
+      - 📊 测试之选
+      - 🔁 故障转移
+    use: 
+      - Getafreenode
 
-  - name: Google
+  - name: ↪️ 漏网之鱼
     type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: Telegram
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: Twitter
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: Pixiv
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: ehentai
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: 哔哩哔哩
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: 哔哩东南亚
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: 巴哈姆特
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: YouTube
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: NETFLIX
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: Spotify
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: Github
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
-
-  - name: 国内
-    type: select
-    proxies: [DIRECT, 默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择]
-
-  - name: 其他
-    type: select
-    proxies: [默认, 香港, 台湾, 日本, 新加坡, 美国, 其它地区, 全部节点, 自动选择, DIRECT]
+    proxies:
+      - hy2-us-zjh
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - DIRECT
+      - 📊 测试之选
+      - 🔁 故障转移
 
 
-#分隔,下面是地区分组
-  - name: 香港
+  - name: 🚀 自动选择
+    <<: *all
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: 🔄 手动切换
+    <<: *all
+    filter: "(?i)^(?!unavailable).*$"
+
+  - name: ✅ 解锁 AI
+    <<: *ai
+    proxies:
+      - hy2-us-zjh 
+      - 📊 测试之选
+    
+  - name: ☑️ 解锁 Gemini 
+    <<: *all
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|ccs))"
+    proxies:
+      - hy2-us-zjh 
+
+  - name: 📊 测试之选
     type: select
     use:
-      - provider1
-      - provider2
-    filter: "(?i)港|hk|hongkong|hong kong"
+      - mylocal
+      - 星链
+    filter: "(?i)^(?!unavailable).*$"
 
-  - name: 台湾
-    type: select
-    use:
-      - provider1
-      - provider2
-    filter: "(?i)台|tw|taiwan"
-
-  - name: 日本
-    type: select
-    use:
-      - provider1
-      - provider2
-    filter: "(?i)日本|jp|japan"
-
-  - name: 美国
-    type: select
-    use:
-      - provider1
-      - provider2
-    filter: "(?i)美|us|unitedstates|united states"
-
-  - name: 新加坡
-    type: select
-    use:
-      - provider1
-      - provider2
-    filter: "(?i)(新|sg|singapore)"
-
-  - name: 其它地区
-    type: select
-    use:
-      - provider1
-      - provider2
-    filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*"
-
-  - name: 全部节点
-    type: select
-    use:
-      - provider1
-      - provider2
-
-  - name: 自动选择
-    type: url-test
-    use:
-      - provider1
-      - provider2
-    tolerance: 2
-
-
+  - name: 🔁 故障转移
+    type: fallback
+    url: "https://www.google.com/generate_204"
+    interval: 60
+    <<: *all
+# 规则
 rules:
-  # - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT # quic
-  - DOMAIN-SUFFIX,anydesk.com,国内
-  - DOMAIN-SUFFIX,4chat.me,国内
-  - PROCESS-NAME,userNetSchedule.exe,国内 #搜狗词库同步
-  - PROCESS-NAME,DownloadSDKServer.exe,国内 #搜狗词库同步
-  - DOMAIN-SUFFIX,discord.com,Google #聊天软件discord分流规则
-  - DOMAIN-SUFFIX,jott.live,国内
-  - DOMAIN-SUFFIX,qqdk2019.net,其他
-  - DOMAIN-SUFFIX,wipo.int,Google # 世界知识产权组织的分流规则
-  - DOMAIN-SUFFIX,infomaniak.com,Google # ik.me的邮箱规则
-  - DOMAIN-SUFFIX,jdbstatic.com,Google
-  - DOMAIN-SUFFIX,poe.com,Google
-  - DOMAIN-SUFFIX,theb.ai,Google
-  - DOMAIN-SUFFIX,claude.ai,Google
-  - DOMAIN-SUFFIX,quickconnect.to,国内
-  - DOMAIN-SUFFIX,getafreenode.com,其他
-  - DOMAIN-SUFFIX,synology.com,国内
-  - DOMAIN-SUFFIX,sharepoint.com,其他
-  - DOMAIN-SUFFIX,exoclick.com,其他
-  - DOMAIN-SUFFIX,ouo.io,其他
-  - DOMAIN-SUFFIX,p.sda1.dev,其他
-  - DOMAIN-SUFFIX,translate.googleapis.com,Google
-  - DOMAIN-SUFFIX,anonfiles.com,Google 
-  - DOMAIN-SUFFIX,filechan.org,Google  
-  - GEOSITE,biliintl, 哔哩东南亚
-  - GEOSITE,ehentai,ehentai
-  - GEOSITE,github,Github
-  - GEOSITE,twitter,Twitter
-  - GEOSITE,youtube,YouTube
-  - GEOSITE,google,Google
-  - GEOSITE,telegram,Telegram
-  - GEOSITE,netflix,NETFLIX
-  - GEOSITE,bilibili,哔哩哔哩
-  - GEOSITE,bahamut,巴哈姆特
-  - GEOSITE,spotify,Spotify
-  - GEOSITE,geolocation-!cn,其他
+  - IP-CIDR6,::/0,↪️ 漏网之鱼
+# 解锁AI
+  - DOMAIN-SUFFIX,api-proxy.me,DIRECT 
+  - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
+  - DOMAIN-SUFFIX,gemini.google.com,☑️ 解锁 Gemini
+  - DOMAIN-SUFFIX,zhjwork.online,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm.qqdk2019.net,🌏️ 节点选择
+  - RULE-SET,Gemini, ☑️ 解锁 Gemini 
+  - RULE-SET,ai, ✅ 解锁 AI
+  - RULE-SET,Google,✅ 解锁 AI
+  - RULE-SET,telegram,📢 电报
+  - DOMAIN,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN,fujm.qqdk2019.net,DIRECT
+  - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
+  - PROCESS-NAME,qbittorrent.exe,DIRECT
+  - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,4chat.me,DIRECT
+  - DOMAIN-SUFFIX,claude.ai,✅ 解锁 AI
+  - DOMAIN-SUFFIX,anthropic.com,✅ 解锁 AI
+  - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,auth0.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,events.statsigapi.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,featuregates.org,✅ 解锁 AI
+  - DOMAIN-SUFFIX,host.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,identrust.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercom.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercomcdn.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,launchdarkly.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaistatic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,observeit.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,poe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,segment.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,sentry.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-KEYWORD,openai,✅ 解锁 AI
 
-  # - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,CN))),REJECT # quic
-  - GEOIP,google,Google
-  - GEOIP,netflix,NETFLIX
-  - GEOIP,telegram,Telegram
-  - GEOIP,twitter,Twitter
-  - GEOSITE,pixiv,Pixiv
-  - GEOSITE,CN,国内
-  - GEOIP,CN,国内
-  - MATCH,其他
+# 默认规则
+  - RULE-SET,collection,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,↪️ 漏网之鱼
+
+rule-providers:
+
+  collection: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/collection.yaml
+    url: "https://gist.githubusercontent.com/cnfree8964/0864fd1d2e88936a095fb40d74ce4993/raw/collection.yaml"
+
+  ai:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/ai.yaml
+    url: "https://fastly.jsdelivr.net/gh/MadisonWirtanen/WARP-Clash-with-ZJU-Rules@main/ai.yaml"
+    interval: 86400
+    
+  Gemini: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Gemini.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Gemini.yaml"
+    interval: 86400
+
+
+  Google:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Google.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Google.yaml"
+  telegram:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/telegram.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
