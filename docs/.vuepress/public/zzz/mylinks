@@ -11,10 +11,8 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlx1ODk3Rlx1OTZDNVx1NTZGRSIsDQogICJhZGQi
 # 不知名
 vless://9326d2fc-5d5e-31e4-8e7b-b3800ae6c642@154.201.91.70:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&sni=learn.microsoft.com&fp=random&pbk=6CRKsmWYwlivNa1Zv_X_wOVZHdVujOnbP5eGJdUhq3E&sid=51e5cd9ae8199dd1&spx=&#9929+CMI2节点
 
-vless://248917da-866f-425f-ea14-a7504e12451c@45.192.243.61:57545?encryption=none&security=reality&sni=swdist.apple.com&fp=chrome&pbk=UK7qxWWGfRQcQfwaGpHnqmmqqJBut4jxve8AeDDJ2UI&allowInsecure=1&type=tcp&headerType=none#%E4%B8%9C%E4%BA%AC-DUCKY%20CLOUD
 
 vless://19f5c2fc-ba51-49f2-bcfb-79eca1be8d2d@156.229.160.81:23742?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=TCjQoA8FYWELNjoIDgj-NWsjivAqMz1AyyE1F2PYqi4&fp=chrome#USA-reality-156.229.160.81
-vless://fa59050b-1ca3-474b-aa1a-b7058d79f75b@156.246.94.220:54854?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.amazon.com&pbk=0FC6OFyfJJJoxulSNvQwDArwYigxABrcHmm0CPXsOlQ&fp=chrome#JP1-reality-156.246.94.220
 
 hysteria2://share:a7690af7-03ed-48fa-bc93-561b7df50695@share.078900.xyz:11451/?insecure=1&obfs=salamander&obfs-password=25b2b0cc-8663-4746-9773-1b053ca00ef6
 
@@ -46,6 +44,9 @@ vless://89b3cbba-e6ac-485a-9481-976a0415eab9@www.vpslook.com:443?security=tls&sn
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@japan.com:443?security=tls&sni=singjack.us.kg&type=ws&path=?ed%3D3813&host=singjack.us.kg&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@america.com:443?security=tls&sni=152.sjzkn1.tk&type=ws&path=?ed%3D2918&host=152.sjzkn1.tk&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
 vless://89b3cbba-e6ac-485a-9481-976a0415eab9@visa.cn:443?security=tls&sni=green-cyw.pages.dev&type=ws&path=?ed%3D4769&host=green-cyw.pages.dev&encryption=none#%E5%A5%BD%E4%BA%BA%E8%8A%82%E7%82%B9
+
+
+
 ss://Y2hhY2hhMjA6blV0aFo3ejNWbXlW@14.18.253.178:9001#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF1
 ss://Y2hhY2hhMjA6cGFzc0xVc08yS3R1ZXI3N3R1@14.18.253.178:8321#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF
 ss://Y2hhY2hhMjA6djVhVVV0bWUzanhz@14.18.253.178:9003#%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF3
@@ -66,3 +67,19 @@ ss://Y2hhY2hhMjA6TjlrNGYyUE9SbDE0@14.18.253.178:8348#%F0%9F%87%AE%F0%9F%87%B1%20
 ss://Y2hhY2hhMjA6ZGtZc2RnV3FlZ05W@14.18.253.178:8343#%F0%9F%87%A8%F0%9F%87%A6%20%E5%8A%A0%E6%8B%BF%E5%A4%A7
 ss://Y2hhY2hhMjA6eld5UXZKYlFSWmFW@14.18.253.178:8341#%F0%9F%87%A6%F0%9F%87%BA%20%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A
 ss://Y2hhY2hhMjA6cTJrU0dwNGF5RktC@14.18.253.178:8347#%F0%9F%87%AB%F0%9F%87%B7%20%E6%B3%95%E5%9B%BD%E5%B7%B4%E9%BB%8E
+
+
+
+#https://linux.do/t/topic/583116
+vless://c7f7443e-55d6-46ec-85be-60eeda50a3a0@108.214.246.79:31067?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.paypal.com&pbk=a0fcnyYI3lgK-iYD_P8AWfyuWKDCJXRrPsrX0tFOSyY&fp=chrome#双ISPAT&T|reality
+hysteria2://ad77e45c-0485-4357-9d64-1593aabc2c19@108.214.246.79:32321?alpn=h3&insecure=1#双ISPAT&T|hy2
+
+
+#https://linux.do/t/topic/618686/4
+vless://32d8212f-10a0-4c06-ff59-a7b7f9d2dc46@83.147.36.140:34587?type=tcp&security=none#%E7%BE%8E%E5%9B%BD%20%E5%AF%86%E8%8B%8F%E9%87%8C%E5%B7%9E%E5%B0%8F%E9%B8%A1
+
+
+hysteria2://b3429796-fd3b-488a-b137-8886a9717b32@195.14.189.109:25565?alpn=h3&insecure=1#立陶宛hy2
+
+
+
