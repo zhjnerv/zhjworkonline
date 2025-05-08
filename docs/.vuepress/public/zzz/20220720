@@ -174,7 +174,12 @@ proxy-groups:
 
 
   - name: 🚀 自动选择
-    <<: *all
+    <<: *ai 
+    type: url-test
+    url: "https://www.google.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
     filter: "(?i)^(?!unavailable).*$"
     
   - name: 🔄 手动切换
@@ -190,8 +195,7 @@ proxy-groups:
   - name: ☑️ 解锁 Gemini 
     <<: *all
     filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|ccs))"
-    proxies:
-      - hy2-us-zjh 
+
 
   - name: 📊 测试之选
     type: select
