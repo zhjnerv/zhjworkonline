@@ -79,6 +79,9 @@ best: &best {type: select, url: "https://www.google.com/generate_204", use: [星
 # 自动筛选最快节点
 fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [神奇的订阅9, mylinks, 不知名的好人, Linuxdo好人2]}
 
+# 故障转移
+fallback: &fallback {type: fallback, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks,神奇的订阅9, 蛋黄, colo优选, Linuxdo好人2,不知名的好人], }
+
 # 订阅更新和延迟测试相关
 p: &p {type: http, interval: 21600, health-check: {enable: true, url: "https://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
 
@@ -259,6 +262,10 @@ proxy-groups:
     proxies:
       - hy2-us-zjh 
       - 📊 测试之选
+      - 🔁 故障转移
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+  
     
   - name: ☑️ 解锁 Gemini 
     <<: *all
@@ -272,8 +279,6 @@ proxy-groups:
   - name: ⬇ 备用应急
     <<: *backup
     filter: "(?i)^(?!unavailable).*$"
-
-
 
   - name: 📊 测试之选
     type: select
@@ -294,10 +299,8 @@ proxy-groups:
     <<: *all
 
   - name: 🔁 故障转移
-    type: fallback
-    url: "https://www.google.com/generate_204"
-    interval: 60
-    <<: *all
+    <<: *fallback
+    
 # 规则
 rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
