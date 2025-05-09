@@ -92,7 +92,7 @@ proxies:
     type: hysteria2
     server: 141.11.89.172
     port: 60000
-    password: 87f055ba
+    password: 41a11f83
     sni: www.bing.com
     skip-cert-verify: true
 #分割线，下面是放你的机场订阅链接的

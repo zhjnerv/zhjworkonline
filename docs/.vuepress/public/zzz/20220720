@@ -61,15 +61,27 @@ proxies:
     type: hysteria2
     server: 141.11.89.172
     port: 60000
-    password: 87f055ba
+    password: 41a11f83
     sni: www.bing.com
     skip-cert-verify: true
+  - name: US-ColoCrossing
+    type: hysteria2
+    server: 107.175.32.131
+    port: 40266
+    password: 93c16258-48e0-4c72-928c-06434e394540
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    fast-open: true
 # 所有节点
 all: &all {type: select, include-all: true}
 
 # 解锁 AI
 ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
 
+# 故障转移
+fallback: &fallback {type: fallback, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks, 竹影, mylocal, 星链], }
 
 # 精选节点
 
@@ -165,6 +177,7 @@ proxy-groups:
     type: select
     proxies:
       - hy2-us-zjh
+      - US-ColoCrossing
       - 🚀 自动选择
       - 🔄 手动切换
       - ✅ 解锁 AI

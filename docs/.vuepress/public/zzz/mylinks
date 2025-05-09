@@ -81,5 +81,5 @@ vless://32d8212f-10a0-4c06-ff59-a7b7f9d2dc46@83.147.36.140:34587?type=tcp&securi
 
 hysteria2://b3429796-fd3b-488a-b137-8886a9717b32@195.14.189.109:25565?alpn=h3&insecure=1#立陶宛hy2
 
-
+hysteria2://share:a7690af7-03ed-48fa-bc93-561b7df50695@share.078900.xyz:11451/?insecure=1&obfs=salamander&obfs-password=25b2b0cc-8663-4746-9773-1b053ca00ef6#不知名的us
 
