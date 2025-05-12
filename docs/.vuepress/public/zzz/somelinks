@@ -1,5 +1,5 @@
 #virmach
-hysteria2://87f055ba@141.11.89.172:60000/?insecure=1&sni=www.bing.com#virmach-us-Hysteria2
+hysteria2://41a11f83@141.11.89.172:60000/?insecure=1&sni=www.bing.com#virmach-us-Hysteria2
 
 #rack
 hysteria://66.103.206.249:45193?protocol=wechat-video&auth=wtCcjw9B6G32A6xeppUoqRQav0806z4t4SYG5u6KqRsJlITHae&obfsParam=&peer=wechat.com&insecure=1&upmbps=11&downmbps=55&alpn=h3#Hys-US-RACK 
@@ -14,10 +14,11 @@ vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlVTLXJhY2stYWxpc3Qtdm1lc3MtNSIsDQogICJh
 
 
 #ccs
-hysteria2://712061d573875d4c@107.175.32.131:40266/?sni=www.bing.com&alpn=h3&insecure=1#US-ccs-Cloudflare_Warp
-vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICLoh6rnlKh1cy1jY3N8emhqd29ya0BnbWFpbC5jb20iLAogICJhZGQiOiAiMTA3LjE3NS4zMi4xMzEiLAogICJwb3J0IjogNDAyNjQsCiAgImlkIjogIjkxMzk5YmMyLTI1MDgtNDE2OS05MmNlLWViYmMyZGJjMDRkYiIsCiAgImFpZCI6IDAsCiAgIm5ldCI6ICJ0Y3AiLAogICJ0eXBlIjogIm5vbmUiLAogICJob3N0IjogIiIsCiAgInBhdGgiOiAiIiwKICAidGxzIjogIm5vbmUiCn0=
 
-vless://35ab8822-e7f3-4942-b8fd-d278d887adfe@107.175.32.131:40265?type=tcp&security=none#vl-ccs-us|1wYI.love@xray.com
+hysteria2://93c16258-48e0-4c72-928c-06434e394540@107.175.32.131:40266/?sni=www.bing.com&alpn=h3&insecure=1#US-ColoCrossing
+vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICLoh6rnlKh1cy1jY3Mtemhqd29ya0BnbWFpbC5jb20iLAogICJhZGQiOiAiMTA3LjE3NS4zMi4xMzEiLAogICJwb3J0IjogNDAyNjQsCiAgImlkIjogIjkxMzk5YmMyLTI1MDgtNDE2OS05MmNlLWViYmMyZGJjMDRkYiIsCiAgInNjeSI6ICJhdXRvIiwKICAibmV0IjogInRjcCIsCiAgInR5cGUiOiAibm9uZSIsCiAgInRscyI6ICJub25lIgp9
+vless://35ab8822-e7f3-4942-b8fd-d278d887adfe@107.175.32.131:40265?type=tcp&security=none#vl-ccs-us-1wYI.love%40xray.com
+
 
 
 #杂项

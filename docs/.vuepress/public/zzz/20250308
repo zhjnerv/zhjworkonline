@@ -57,25 +57,46 @@ dns:
 
 ###开始建立锚点
 proxies: 
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60000
+    password: 41a11f83
+    sni: www.bing.com
+    skip-cert-verify: true
+  - name: US-ColoCrossing
+    type: hysteria2
+    server: 107.175.32.131
+    port: 40266
+    password: 93c16258-48e0-4c72-928c-06434e394540
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    fast-open: true
 # 所有节点
 all: &all {type: select, include-all: true}
 
 # 解锁 AI
-ai: &ai {type: url-test, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
+ai: &ai {type: select, url: "https://www.google.com/generate_204", use: [somelinks, mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
 
 # 备用应急
 backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
 
 # 精选节点
-best: &best {type: select, url: "https://www.google.com/generate_204", use: [长期有效自动更新,神奇的订阅9]}
+best: &best {type: select, url: "https://www.google.com/generate_204", use: [星链,神奇的订阅9]}
 
 # 自动筛选最快节点
 fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [神奇的订阅9, mylinks, 不知名的好人, Linuxdo好人2]}
+
+# 故障转移
+fallback: &fallback {type: fallback, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks,神奇的订阅9, 蛋黄, colo优选, Linuxdo好人2,不知名的好人], }
 
 # 订阅更新和延迟测试相关
 p: &p {type: http, interval: 21600, health-check: {enable: true, url: "https://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
 
 ###结束建立锚点
+
 
 proxy-providers:  # Meta支持机场通用订阅
 
@@ -93,7 +114,7 @@ proxy-providers:  # Meta支持机场通用订阅
   
   蛋黄: # BPB
     <<: *p
-    url: "https://sub.danhu.ddns-ip.net/paste/jGd0KIXz3l5XmaLW/base64"
+    url: "https://sub.danhu.ddns-ip.net/paste/0aLyIfZNNKGnpKW9/base64"
     override:
       additional-prefix: "[蛋黄]"
 
@@ -107,7 +128,7 @@ proxy-providers:  # Meta支持机场通用订阅
 
   竹影: # https://linux.do/t/topic/508201
     <<: *p
-    url: "https://api.2c.lol/sub?target=clash&url=https%3A%2F%2Fsdk.bhqt.fun%3A443&insert=false"
+    url: "https://clash.nko.me/yaml"
     override:
       additional-prefix: "[竹影]"
     
@@ -179,11 +200,11 @@ proxy-providers:  # Meta支持机场通用订阅
     override:
       additional-prefix: "[神奇9]"
 
-  长期有效自动更新: #https://github.com/wzdnzd/aggregator/issues/91
+  星链: #https://github.com/wzdnzd/aggregator/issues/91
     <<: *p
-    url: "https://imperialb.in/r/gynacebx"
+    url: "https://xship.top/v1/subscribe?starlink=vkt488mvcqu-6yK5JL2chUpu"
     override:
-      additional-prefix: "[长期更新]"
+      additional-prefix: "[星链]"
 
 proxy-groups:
 
@@ -192,6 +213,8 @@ proxy-groups:
   - name: 🌏️ 节点选择
     type: select
     proxies:
+      - hy2-us-zjh
+      - US-ColoCrossing
       - 🚀 自动选择
       - 🔄 手动切换
       - ✅ 解锁 AI
@@ -207,6 +230,7 @@ proxy-groups:
   - name: 📢 电报
     type: select
     proxies:
+      - hy2-us-zjh
       - 🚀 自动选择
       - 🔄 手动切换
       - ✅ 解锁 AI
@@ -222,6 +246,8 @@ proxy-groups:
   - name: ↪️ 漏网之鱼
     type: select
     proxies:
+      - hy2-us-zjh
+      - US-ColoCrossing
       - 🚀 自动选择
       - 🔄 手动切换
       - ✅ 解锁 AI
@@ -245,13 +271,19 @@ proxy-groups:
 
   - name: ✅ 解锁 AI
     <<: *ai
-    proxies: 
+    proxies:
+      - hy2-us-zjh 
       - 📊 测试之选
+      - 🔁 故障转移
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+  
     
   - name: ☑️ 解锁 Gemini 
     <<: *all
     filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|ccs))"
-
+    proxies:
+      - hy2-us-zjh 
 
   - name: ⬇ 精选节点
     <<: *best
@@ -260,8 +292,6 @@ proxy-groups:
     <<: *backup
     filter: "(?i)^(?!unavailable).*$"
 
-
-
   - name: 📊 测试之选
     type: select
     use:
@@ -269,7 +299,7 @@ proxy-groups:
       - Linuxdo冷门节点
       - mylocal
       - 神奇的订阅9
-      - 长期有效自动更新
+      - 星链
     filter: "(?i)^(?!unavailable).*$"
 
   - name: 🔵 负载均衡
@@ -281,10 +311,8 @@ proxy-groups:
     <<: *all
 
   - name: 🔁 故障转移
-    type: fallback
-    url: "https://www.google.com/generate_204"
-    interval: 60
-    <<: *all
+    <<: *fallback
+    
 # 规则
 rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
