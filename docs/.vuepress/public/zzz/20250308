@@ -67,8 +67,8 @@ proxies:
   - name: US-ColoCrossing
     type: hysteria2
     server: 107.175.32.131
-    port: 40266
-    password: 93c16258-48e0-4c72-928c-06434e394540
+    port: 60001
+    password: b5b02332-d84e-4258-8768-d3ce8c04a14f
     alpn:
       - h3
     sni: www.bing.com
