@@ -318,6 +318,8 @@ rules:
   - IP-CIDR6,::/0,↪️ 漏网之鱼
 # 解锁AI
   - DOMAIN-SUFFIX,api-proxy.me,DIRECT 
+  - DOMAIN-SUFFIX,argotunnel.com,DIRECT # Cloudflare tunnel规则
+  - DOMAIN-SUFFIX,agocftunel.com.com,DIRECT # Cloudflare tunnel规则
   - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
   - DOMAIN-SUFFIX,gemini.google.com,☑️ 解锁 Gemini
   - DOMAIN-SUFFIX,zhjwork.online,🌏️ 节点选择
