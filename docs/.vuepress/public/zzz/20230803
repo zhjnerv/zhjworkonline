@@ -91,8 +91,8 @@ proxies:
   - name: hy2-us-zjh
     type: hysteria2
     server: 141.11.89.172
-    port: 60000
-    password: 41a11f83
+    port: 60001
+    password: 3ee61cc5
     sni: www.bing.com
     skip-cert-verify: true
 #分割线，下面是放你的机场订阅链接的
