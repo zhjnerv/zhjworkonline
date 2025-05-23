@@ -1,0 +1,573 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+cfw-latency-timeout: 6000
+external-controller: "0.0.0.0:9090"
+
+#分割线，DNS已经TUN等设置
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - 198.18.0.2:53
+  auto-route: true
+  auto-detect-interface: true
+    
+dns:
+  enable: true
+  listen: 127.0.0.1:53
+  ipv6: false
+  nameserver:
+    - 223.5.5.5
+    - 192.168.1.1
+    - 114.114.114.114
+    - 119.29.29.29
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://dns.cloudflare.com/dns-query
+    - tls://dns.google:853
+    - https://1.1.1.1/dns-query
+    - tls://1.1.1.1:853
+    - https://public.dns.iij.jp/dns-query
+    - https://jp.tiar.app/dns-query
+    - https://jp.tiarap.org/dns-query
+    - tls://dot.tiar.app
+  default-nameserver:
+    - 223.5.5.5
+    - 192.168.1.1
+    - 114.114.114.114
+    - 119.29.29.29
+    - https://1.1.1.1/dns-query
+    - tls://1.1.1.1:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 0.0.0.0/8
+      - 10.0.0.0/8
+      - 100.64.0.0/10
+      - 127.0.0.0/8
+      - 169.254.0.0/16
+      - 172.16.0.0/12
+      - 192.0.0.0/24
+      - 192.0.2.0/24
+      - 192.88.99.0/24
+      - 192.168.0.0/16
+      - 198.18.0.0/15
+      - 198.51.100.0/24
+      - 203.0.113.0/24
+      - 224.0.0.0/4
+      - 240.0.0.0/4
+      - 255.255.255.255/32
+    domain:
+      - "+.google.com"
+      - "+.facebook.com"
+      - "+.youtube.com"
+      - "+.githubusercontent.com"
+      - "+.googlevideo.com"
+      - "+.msftconnecttest.com"
+      - "+.msftncsi.com"
+
+#分割线，下面是代理的配置
+proxies:
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60001
+    password: 3ee61cc5
+    sni: www.bing.com
+    skip-cert-verify: true
+#分割线，下面是放你的机场订阅链接的
+proxy-providers:
+  mylink:
+    type: http
+    interval: 3800
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 3800
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+    path: ./proxy_providers/mylink.yaml
+
+  somelinks:
+    type: http
+    interval: 3900
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 900
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+    path: ./proxy_providers/somelinks.yaml
+
+  mylocal:
+    type: file
+    interval: 4000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    path: ./mylocal/somelinks.yaml
+
+  getafreenode:
+    type: http
+    interval: 4550
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 550
+    path: ./proxy_providers/getafreenode.yaml
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0"
+    header:
+      User-Agent: 
+      - "Mozilla/5.0"
+      - "AppleWebKit/537.36"
+      - "Chrome/113.0.0.0"
+      - "Safari/537.36"
+    override:
+      additional-prefix: "[Getafreenode]"
+
+  o00p:
+    type: http
+    interval: 5600
+    health-check:
+     enable: true
+     url: https://cp.cloudflare.com/generate_204
+     interval: 600
+    path: ./proxy_providers/o00p.yaml
+    url: https://clash.nko.me/yaml #https://t.me/c/1472750099/3005
+
+
+#分割线，下面是"代理"页面出现的分组，"name"是一级分组，"proxies"是二级分组，选节点用的
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - somelinks
+      - DIRECT
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 我的所有
+  - name: 🔑 手动选择 #注意配置 use 和 proxies 混用
+    type: select
+    proxies:
+      - hy2-us-zjh
+    use:
+      - mylink
+      - somelinks
+      - mylocal
+      - getafreenode
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+
+  - name: 🚩 社交平台IP归属地
+    type: select
+    proxies:
+      - DIRECT
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🚀 节点选择
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - somelinks
+      - DIRECT
+      - 🔑 手动选择
+      - ♻️ 自动选择
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🚀 节点选择
+
+  - name: somelinks
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 90
+    use:
+      - somelinks
+  - name: mylink
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 1320
+    tolerance: 150
+    use:
+      - mylink
+  - name: mylocal
+    type: select
+    use:
+      - mylocal
+  - name: 我的所有
+    type: select
+    proxies:
+      - hy2-us-zjh
+    use:
+      - mylink
+      - somelinks
+      - mylocal
+  - name: ❗ openAI
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - mylink
+      - somelinks
+      - mylocal
+      - 我的所有
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🚀 节点选择
+  - name: ☎️ 电报消息
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - ♻️ 自动选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🚀 节点选择
+      - mylink
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: 🎬 YouTube
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - 🚀 节点选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - ♻️ 自动选择
+      - mylink
+      - somelinks
+      - mylocal
+      - 我的所有
+  - name: ❓ 谷歌服务
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 我的所有
+      - mylink
+      - somelinks
+      - mylocal
+  - name: 💌 特殊服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🛠️ 故障转移
+      - ♻️ 自动选择
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🔵 负载均衡
+      - 🔀 变化代理池
+      - 🚀 节点选择
+  - name: 🔀 变化代理池
+    type: select
+    use:
+      - mylocal
+      - getafreenode
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+  - name: 🛡️ 隐私防护
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 🔑 手动选择
+      - 🍁 其他地区
+      - 🚀 节点选择
+  - name: ❤️‍🔥 不可描述
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - mylink
+      - somelinks
+      - mylocal
+      - 我的所有
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🇺🇸 美国节点
+      - 🍁 其他地区
+      - 🔑 手动选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+  - name: ⏬ 下载平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 🔑 手动选择
+      - 🍁 其他地区
+      - 🚀 节点选择
+  - name: 🇨🇳 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🔑 手动选择
+      - somelinks
+  - name: 🚫 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🛠️ 故障转移
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300 #测ping时间(秒)
+    tolerance: 15 #容差值：节点差值低于设定值时，不自动切换
+    use:
+      - mylocal
+      - getafreenode
+      - o00p 
+  - name: 🔵 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - mylocal
+      - getafreenode
+      - o00p 
+      - somelinks
+  - name: ♻️ 自动选择
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 320
+    tolerance: 150
+    use:
+      - somelinks
+      - mylocal
+      - getafreenode
+      - o00p 
+#分割线，下面是节点按地区分组并自动测延迟
+  - name: 🇺🇸 美国节点
+    type: select
+    use:
+      - mylink
+      - somelinks
+      - mylocal
+      - getafreenode
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+    filter: 美|🇺🇸|(?i)US|(?i)States|American
+  - name: 🍁 其他地区
+    type: select
+    use:
+      - mylink
+      - somelinks
+      - mylocal
+      - getafreenode
+      - o00p    #还有订阅的话继续往下加 t.me-SSRSUB dy19 ……
+    filter: ^(?!.*(?:🇺🇸|美国|(?i)US)).*
+  - name: Global
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - somelinks
+      - 🔑 手动选择
+      - 🚀 节点选择
+
+      - 🛠️ 故障转移
+      - 🔵 负载均衡
+      - 我的所有
+      - ♻️ 自动选择
+
+#分割线，下面是分流规则
+rule-providers:
+  IPfake:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://raw.fastgit.org/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml"
+    path: ./Rules/IPfake.yaml
+  YouTube:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./Rules/YouTube.yaml
+  Spotify:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./Rules/Spotify.yaml
+  Telegram:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"
+    path: ./Rules/Telegram.yaml
+  Google:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml"
+    path: ./Rules/google.yaml
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Privacy/Privacy_Classical.yaml"
+    path: ./Rules/BanEasyPrivacy.yaml
+  Advertising:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical.yaml
+    path: ./Rules/Advertising.yaml
+  Download:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Download/Download.yaml
+    path: ./Rules/Download.yaml
+  ChinaMax:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
+    path: ./Rules/ChinaMax.yaml
+  Global:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Global/Global_Classical.yaml
+    path: ./Rules/Global.yaml
+  Lan:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Lan/Lan.yaml
+    path: ./Rules/Lan.yaml
+  github:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
+    path: ./Rules/github.yaml
+  NSFW:
+    type: http
+    behavior: classical
+    path: ./RuleSet/NSFW.yaml
+    url: https://raw.githubusercontent.com/tanmoumou252/NSFW-website-rule-for-Clash/main/NSFW.yaml
+    interval: 86400
+  AI:
+    type: http
+    behavior: classical
+    path: ./RuleSet/ai.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    interval: 86400
+  Bing:
+    type: http
+    behavior: classical
+    path: ./RuleSet/bing.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    interval: 86400
+  Copilot:
+    type: http
+    behavior: classical
+    path: ./RuleSet/copilot.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+
+rules:
+  - DOMAIN-SUFFIX,anydesk.com,DIRECT
+  - DOMAIN-SUFFIX,4chat.me,DIRECT
+  - PROCESS-NAME,userNetSchedule.exe,🇨🇳 全球直连 #搜狗词库同步
+  - PROCESS-NAME,DownloadSDKServer.exe,🇨🇳 全球直连 #迅雷
+  - PROCESS-NAME,RayLinkService.exe,🇨🇳 全球直连 #raylink
+  - PROCESS-NAME,rustdesk.exe,DIRECT #rustdesk
+  - DOMAIN-SUFFIX,discord.com,❓ 谷歌服务 #聊天软件discord分流规则
+  - DOMAIN-SUFFIX,chaturbate.com,❤️‍🔥 不可描述
+  - DOMAIN-SUFFIX,stripchat.com,❤️‍🔥 不可描述
+  - DOMAIN-SUFFIX,linkedin.com,❓ 谷歌服务 #领英分流规则
+  - DOMAIN-SUFFIX,msq.pub,❓ 谷歌服务 #wordGPT分流规则
+  - DOMAIN-SUFFIX,jott.live,DIRECT
+  - DOMAIN-KEYWORD,fujm,DIRECT
+  - DOMAIN-SUFFIX,getgrass.io,DIRECT #grass分流
+  - DOMAIN-SUFFIX,ghost.io,DIRECT #grass分流
+  - DOMAIN-SUFFIX,bigdatacloud.net,DIRECT #grass分流
+  - DOMAIN-SUFFIX,wynd.network.net,DIRECT #grass分流
+  - DOMAIN-SUFFIX,amazontrust.com,DIRECT #grass分流
+  - DOMAIN-SUFFIX,qqdk2019.net,🚀 节点选择
+  - DOMAIN-SUFFIX,wipo.int,❓ 谷歌服务 # 世界知识产权组织的分流规则
+  - DOMAIN-SUFFIX,infomaniak.com,❓ 谷歌服务 # ik.me的邮箱规则
+  - DOMAIN-SUFFIX,jdbstatic.com,❤️‍🔥 不可描述
+  - IP-CIDR,149.154.167.220/32,☎️ 电报消息
+  - DOMAIN-SUFFIX,poe.com,❗ openAI
+  - DOMAIN-SUFFIX,caifree.com,❗ openAI
+  - DOMAIN-SUFFIX,theb.ai,❗ openAI
+  - DOMAIN-SUFFIX,claude.ai,❗ openAI
+  - DOMAIN-SUFFIX,quickconnect.to,DIRECT
+  - DOMAIN-SUFFIX,getafreenode.com,💌 特殊服务
+  - DOMAIN-SUFFIX,synology.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,💌 特殊服务
+  - DOMAIN-SUFFIX,exoclick.com,💌 特殊服务
+  - DOMAIN-SUFFIX,ouo.io,Global
+  - DOMAIN-SUFFIX,p.sda1.dev,💌 特殊服务
+  - DOMAIN-SUFFIX,translate.googleapis.com,❓ 谷歌服务
+  - DOMAIN-SUFFIX,anonfiles.com,❓ 谷歌服务 
+  - DOMAIN-SUFFIX,filechan.org,❓ 谷歌服务
+  - RULE-SET,AI,❗ openAI
+  - RULE-SET,Bing,❗ openAI
+  - RULE-SET,Copilot,❗ openAI
+  - RULE-SET,NSFW,❤️‍🔥 不可描述
+  - RULE-SET,YouTube,🎬 YouTube
+  - RULE-SET,Spotify,🎬 YouTube
+  - RULE-SET,Google,❓ 谷歌服务
+  - RULE-SET,github,❓ 谷歌服务
+  - RULE-SET,Telegram,☎️ 电报消息
+  - RULE-SET,BanEasyPrivacy,🛡️ 隐私防护
+  - RULE-SET,Advertising,🚫 广告拦截
+  - RULE-SET,Download,⏬ 下载平台
+  - RULE-SET,IPfake,🚩 社交平台IP归属地
+  - RULE-SET,Lan,🇨🇳 全球直连
+  - RULE-SET,ChinaMax,🇨🇳 全球直连
+  - RULE-SET,Global,Global
+  - MATCH,🐟 漏网之鱼
