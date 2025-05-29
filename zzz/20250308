@@ -1,0 +1,408 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: "0.0.0.0:9090"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+tun:
+  enable: true
+  stack: system  # 让 Mihomo 直接使用系统的网络协议栈
+  auto-route: true  # 自动配置路由
+  auto-detect-interface: true  # 自动检测网卡
+  dns-hijack:
+    - 198.18.0.2  # 劫持 DNS 解析，防止 DNS 泄漏
+    - "[fd00::1]"  # 确保 IPv6 DNS 也被劫持
+
+
+dns:
+  enable: true
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+    - 2400:3200::1      # 阿里DNS IPv6地址
+    - 2400:3200:baba::1 # 阿里DNS IPv6地址
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - "https://[2606:4700:4700::1111]/dns-query" # Cloudflare IPv6 DNS
+    - 2606:4700:4700::1111 # Cloudflare IPv6 DNS
+    - 2001:4860:4860::8888 # Google IPv6 DNS
+  fallback:
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+    - tls://[2606:4700:4700::1111]:853 # Cloudflare IPv6 DNS (TLS)
+    - tls://[2001:4860:4860::8888]:853 # Google IPv6 DNS (TLS)
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - 'localhost.ptlogin2.qq.com'
+    - 'dns.msftncsi.com'
+    - 'www.msftncsi.com'
+    - 'www.msftconnecttest.com'
+    - '+.argotunnel.com'
+
+###开始建立锚点
+proxies: 
+  - name: hy2-us-zjh
+    type: hysteria2
+    server: 141.11.89.172
+    port: 60001
+    password: 3ee61cc5
+    sni: www.bing.com
+    skip-cert-verify: true
+  - name: US-ColoCrossing
+    type: hysteria2
+    server: 107.175.32.131
+    port: 60001
+    password: b5b02332-d84e-4258-8768-d3ce8c04a14f
+    alpn:
+      - h3
+    sni: www.bing.com
+    skip-cert-verify: true
+    fast-open: true
+# 所有节点
+all: &all {type: select, include-all: true}
+
+# 解锁 AI
+ai: &ai {type: select, url: "https://www.google.com/generate_204", use: [somelinks, mylinks], filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|nogemini|ccs))"}
+
+# 备用应急
+backup: &backup {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [蛋黄, colo优选, Getafreenode]}
+
+# 精选节点
+best: &best {type: select, url: "https://www.google.com/generate_204", use: [星链,神奇的订阅9]}
+
+# 自动筛选最快节点
+fly: &fly {type: url-test, url: "https://www.google.com/generate_204", interval: 300, tolerance: 50, lazy: true, use: [神奇的订阅9, mylinks, 不知名的好人, Linuxdo好人2]}
+
+# 故障转移
+fallback: &fallback {type: fallback, url: "https://www.google.com/generate_204", interval: 120, tolerance: 50, lazy: true, use: [somelinks, mylinks,神奇的订阅9, 蛋黄, colo优选, Linuxdo好人2,不知名的好人], }
+
+# 订阅更新和延迟测试相关
+p: &p {type: http, interval: 21600, health-check: {enable: true, url: "https://www.google.com/generate_204", interval: 1800, filter: "(?i)^(?!unavailable).*$"}}
+
+###结束建立锚点
+
+
+proxy-providers:  # Meta支持机场通用订阅
+
+  somelinks: # 井号后面是注释，可修改
+    <<: *p
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/somelinks"
+    override:
+      additional-prefix: "[somelinks]"
+  
+  mylinks: # 下面的蛋黄 是一个标准示例，非可用订阅
+    <<: *p
+    url: "https://zhjnerv.github.io/zhjworkonline/zzz/mylinks"
+    override:
+      additional-prefix: "[mylinks]"
+  
+  蛋黄: # BPB
+    <<: *p
+    url: "https://sub.danhu.ddns-ip.net/paste/0aLyIfZNNKGnpKW9/base64"
+    override:
+      additional-prefix: "[蛋黄]"
+
+ 
+  不知名的好人: # 在你没有弄明白规则的写法之前，不要随意删减somelinks 至Linuxdo好人2，哪怕 url 为空
+    <<: *p
+    url: "https://v1.mk/ZHULueY"
+    override:
+      additional-prefix: "[不知名的好人]"
+
+
+  竹影: # https://linux.do/t/topic/508201
+    <<: *p
+    url: "https://clash.nko.me/yaml"
+    override:
+      additional-prefix: "[竹影]"
+    
+  colo优选: # 
+    <<: *p
+    url: "http://pool.cfip.nyc.mn"
+    override:
+      additional-prefix: "[colo优选]"
+
+    
+  Getafreenode: # 
+    <<: *p
+    url: "https://getafreenode.com/subscribe/?uuid=ADA91529-7BC1-4A5B-8AE7-30ED6D8959C0"
+    header:
+      User-Agent: 
+      - "Mozilla/5.0"
+      - "AppleWebKit/537.36"
+      - "Chrome/113.0.0.0"
+      - "Safari/537.36"
+    override:
+      additional-prefix: "[Getafreenode]"
+
+    
+  Linuxdo好人2: # 
+    <<: *p
+    url: "https://link.chunkburst.cc/c/unlimited" #https://linux.do/t/topic/495576
+    override:
+      additional-prefix: "[Linuxdo好人2]"
+
+  神奇的订阅8: # 
+    <<: *p
+    url: "https://mxlsub.me/free"
+    override:
+      additional-prefix: "[神奇的订阅8]"
+
+  mylocal:
+    type: file
+    interval: 4000
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+    path: ./mylocal/测试.yaml
+    override:
+      additional-prefix: "[mylocal]"
+
+  测试1-OP-API : # 
+    <<: *p
+    url: "https://sub.212306.xyz/share/file/opsub?token=V6xImXVInwsgLRpfAMmUk"
+    override:
+      additional-prefix: "[测试1-OP-API]"
+
+  Linuxdo冷门节点: # 
+    <<: *p
+    url: "https://zrf.zrf.me/zrf" # "https://v1.mk/x87NJ2B" 备用
+  
+    override:
+      additional-prefix: "[Linuxdo冷门节点]"
+
+  神奇的订阅9: # 
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: "https://www.google.com/generate_204"
+      interval: 1800
+      timeout: 5000
+    url: "https://project-b.enkelte.ggff.net/" # https://linux.do/t/topic/555066
+    override:
+      additional-prefix: "[神奇9]"
+
+  星链: #https://github.com/wzdnzd/aggregator/issues/91
+    <<: *p
+    url: "https://xship.top/v1/subscribe?starlink=vkt488mvcqu-6yK5JL2chUpu"
+    override:
+      additional-prefix: "[星链]"
+
+proxy-groups:
+
+# 功能分组
+  
+  - name: 🌏️ 节点选择
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - US-ColoCrossing
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+      - DIRECT
+      - 📊 测试之选
+
+      - 🔁 故障转移
+      - 🔵 负载均衡
+
+
+  - name: 📢 电报
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+      - DIRECT
+      - 📊 测试之选
+
+      - 🔁 故障转移
+    use: 
+      - Getafreenode
+
+  - name: ↪️ 漏网之鱼
+    type: select
+    proxies:
+      - hy2-us-zjh
+      - US-ColoCrossing
+      - 🚀 自动选择
+      - 🔄 手动切换
+      - ✅ 解锁 AI
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+      - DIRECT
+      - 📊 测试之选
+
+      - 🔁 故障转移
+      - 🔵 负载均衡
+
+
+
+  - name: 🚀 自动选择
+    <<: *fly
+    filter: "(?i)^(?!unavailable).*$"
+    
+  - name: 🔄 手动切换
+    <<: *all
+    filter: "(?i)^(?!unavailable).*$"
+
+  - name: ✅ 解锁 AI
+    <<: *ai
+    proxies:
+      - hy2-us-zjh 
+      - 📊 测试之选
+      - 🔁 故障转移
+      - ⬇ 精选节点
+      - ⬇ 备用应急
+  
+    
+  - name: ☑️ 解锁 Gemini 
+    <<: *all
+    filter: "(?i)(us|unitedstates|united states|usa|jp|sg|zgo|tw|sjc|中转 US|中转 TW|中转 JP|GPT|解锁)(?i)(?!.*(hong kong|hk|香港|香|港|ccs))"
+    proxies:
+      - hy2-us-zjh 
+
+  - name: ⬇ 精选节点
+    <<: *best
+
+  - name: ⬇ 备用应急
+    <<: *backup
+    filter: "(?i)^(?!unavailable).*$"
+
+  - name: 📊 测试之选
+    type: select
+    use:
+      - 测试1-OP-API
+      - Linuxdo冷门节点
+      - mylocal
+      - 神奇的订阅9
+      - 星链
+    filter: "(?i)^(?!unavailable).*$"
+
+  - name: 🔵 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 100
+    <<: *all
+
+  - name: 🔁 故障转移
+    <<: *fallback
+    
+# 规则
+rules:
+  - IP-CIDR6,::/0,↪️ 漏网之鱼
+# 解锁AI
+  - DOMAIN-SUFFIX,api-proxy.me,DIRECT 
+  - DOMAIN-SUFFIX,argotunnel.com,DIRECT # Cloudflare tunnel规则
+  - DOMAIN-SUFFIX,agocftunel.com.com,DIRECT # Cloudflare tunnel规则
+  - DOMAIN-KEYWORD,aistudio,☑️ 解锁 Gemini 
+  - DOMAIN-SUFFIX,gemini.google.com,☑️ 解锁 Gemini
+  - DOMAIN-SUFFIX,zhjwork.online,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,fujm.qqdk2019.net,🌏️ 节点选择
+  - RULE-SET,Gemini, ☑️ 解锁 Gemini 
+  - RULE-SET,ai, ✅ 解锁 AI
+  - RULE-SET,Google,✅ 解锁 AI
+  - RULE-SET,telegram,📢 电报
+  - DOMAIN,fujm2.qqdk2019.net,🌏️ 节点选择
+  - DOMAIN,fujm.qqdk2019.net,DIRECT
+  - PROCESS-NAME,DownloadSDKServer.exe,DIRECT
+  - PROCESS-NAME,qbittorrent.exe,DIRECT
+  - DOMAIN-SUFFIX,qqdk2019.net,🌏️ 节点选择
+  - DOMAIN-SUFFIX,4chat.me,DIRECT
+  - DOMAIN-SUFFIX,claude.ai,✅ 解锁 AI
+  - DOMAIN-SUFFIX,anthropic.com,✅ 解锁 AI
+  - DOMAIN,browser-intake-datadoghq.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,static.cloudflareinsights.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,ai.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,algolia.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,api.statsig.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,auth0.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,events.statsigapi.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,featuregates.org,✅ 解锁 AI
+  - DOMAIN-SUFFIX,host.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-SUFFIX,identrust.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercom.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,intercomcdn.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,launchdarkly.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaistatic.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,observeit.net,✅ 解锁 AI
+  - DOMAIN-SUFFIX,poe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,segment.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,sentry.io,✅ 解锁 AI
+  - DOMAIN-SUFFIX,stripe.com,✅ 解锁 AI
+  - DOMAIN-SUFFIX,turn.livekit.cloud,✅ 解锁 AI
+  - DOMAIN-KEYWORD,openai,✅ 解锁 AI
+
+# 默认规则
+  - RULE-SET,collection,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,↪️ 漏网之鱼
+
+rule-providers:
+
+  collection: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/collection.yaml
+    url: "https://gist.githubusercontent.com/cnfree8964/0864fd1d2e88936a095fb40d74ce4993/raw/collection.yaml"
+
+  ai:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/ai.yaml
+    url: "https://fastly.jsdelivr.net/gh/MadisonWirtanen/WARP-Clash-with-ZJU-Rules@main/ai.yaml"
+    interval: 86400
+    
+  Gemini: 
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Gemini.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Gemini.yaml"
+    interval: 86400
+
+
+  Google:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/Google.yaml
+    url: "https://cdn.jsdelivr.net/gh/zuluion/Clash-Template-Config@master/Filter/Google.yaml"
+  telegram:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rules/telegram.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Telegram/Telegram.yaml"

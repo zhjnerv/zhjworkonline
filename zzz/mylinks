@@ -1,0 +1,25 @@
+# 洛杉矶qn
+
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInMzXHU2RDFCXHU2NzQ5XHU3N0Y2cW4iLA0KICAiYWRkIjogInMzLmNjYXYxLmNjIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjAwOTcwOWM3LTYzMTYtNDIyNS05MDg0LWJhMzUwOWZhYWVhOSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiY2hhY2hhMjAtcG9seTEzMDUiLA0KICAibmV0IjogIndzIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogInMzLmNjYXYxLmNjIiwNCiAgInBhdGgiOiAiL2hhcHB5IiwNCiAgInRscyI6ICJ0bHMiLA0KICAic25pIjogInMzLmNjYXYxLmNjIiwNCiAgImFscG4iOiAiIg0KfQ==
+
+
+# 西雅图
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlx1ODk3Rlx1OTZDNVx1NTZGRSIsDQogICJhZGQiOiAiczIuY2NhdjEuY2MiLA0KICAicG9ydCI6ICI0NDMiLA0KICAiaWQiOiAiMDA5NzA5YzctNjMxNi00MjI1LTkwODQtYmEzNTA5ZmFhZWE5IiwNCiAgImFpZCI6ICIwIiwNCiAgInNjeSI6ICJjaGFjaGEyMC1wb2x5MTMwNSIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiczIuY2NhdjEuY2MiLA0KICAicGF0aCI6ICIvaGFwcHkiLA0KICAidGxzIjogInRscyIsDQogICJzbmkiOiAiczIuY2NhdjEuY2MiLA0KICAiYWxwbiI6ICIiDQp9
+
+
+
+# 不知名
+vless://9326d2fc-5d5e-31e4-8e7b-b3800ae6c642@154.201.91.70:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&sni=learn.microsoft.com&fp=random&pbk=6CRKsmWYwlivNa1Zv_X_wOVZHdVujOnbP5eGJdUhq3E&sid=51e5cd9ae8199dd1&spx=&#9929+CMI2节点
+
+
+vless://19f5c2fc-ba51-49f2-bcfb-79eca1be8d2d@156.229.160.81:23742?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.cloudflare.com&pbk=TCjQoA8FYWELNjoIDgj-NWsjivAqMz1AyyE1F2PYqi4&fp=chrome#USA-reality-156.229.160.81
+
+hysteria2://share:a7690af7-03ed-48fa-bc93-561b7df50695@share.078900.xyz:11451/?insecure=1&obfs=salamander&obfs-password=25b2b0cc-8663-4746-9773-1b053ca00ef6
+
+
+
+# CCB节点
+vless://9f3dde87-88dc-4baf-b4c2-ce976f8b0351@209.141.47.127:19626?encryption=none&security=reality&flow=xtls-rprx-vision&type=tcp&sni=www.paypal.com&pbk=LRFoayv4UHWEHprryRDj_4JyeTkpbgIsBWTYApsnEAA&fp=chrome#CCB-reality-209.141.47.127
+
+hysteria2://65a43b6e-19c5-4fab-b960-d110a07d66a4@209.141.47.127:3234?alpn=h3&insecure=1#CCB-hysteria2-209.141.47.127
+
