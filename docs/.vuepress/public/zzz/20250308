@@ -183,7 +183,7 @@ proxy-providers:  # Meta支持机场通用订阅
 
   Linuxdo冷门节点: # 
     <<: *p
-    url: "https://kkb.9901158.xyz/loc.yaml" # "https://v1.mk/x87NJ2B" 备用
+    url: "https://zrf.zrf.me/zrf" # "https://v1.mk/x87NJ2B" 备用
   
     override:
       additional-prefix: "[Linuxdo冷门节点]"
